@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-50-5045.1d5c2f0f-4203-4db9-b63c-b6d80d04207e",
+  "text": "FINAL DIAGNOSIS: Summary Statement. The right lower lobe neoplasm is an invasive poorly differentiated adenocarcinoma (2.5 cm) with pleural and. angiolymphatic invasion. Two sump nodes (Parts 4 and 7) are involved by metastatic adenocarcinoma. All margins of. resection are free of tumor. The stage is T2 N1 MX. PART 1: BONE, SIXTH (6TH) RIB, RESECTION -. PENDING DECALCIFICATION. PART 2: BONE, FIFTH (5TH) RIB, RESECTION -. PENDING DECALCIFICATION. PART 3: LYMPH NODE, NEAR RIGHT STEM BRONCHUS, BIOPSY -. TWO (2) BENIGN REACTIVE LYMPH NODES. NO TUMOR SEEN. PART 4: LYMPH NODE, 11R SUMP NODE, BIOPSY -. ONE OF ONE (1/1) LYMPH NODE WITH METASTATIC ADENOCARCINOMA. PART 5: LYMPH NODE, 11 BASILAR VEIN, BIOPSY -. ONE (1) BENIGN REACTIVE LYMPH NODE, NO TUMOR SEEN. PART 6: LUNG, BASILAR SEGMENT OF RIGHT LOWER LOBE, SEGMENTECTOMY -. A. INVASIVE POORLY DIFFERENTIATED ADENOCARCINOMA (2.5 CM). B. VISCERAL PLEURAL INVASION IDENTIFIED. C. ANGIOLYMPHATIC INVASION IDENTIFIED. D. ALL MARGINS OF RESECTION FREE OF TUMOR. E. BACKGROUND LUNG SHOWING EMPHYSEMA, AIRSPACE SMOKER'S MACROPHAGES, AND. BRONCHIOLOECTASIS. F. STAGE T2 N1 MX. PART 7: LYMPH NODE, MIDDLE LOBE SUMP NODE, BIOPSY -. ONE OF ONE (1/1) LYMPH NODE WITH METASTATIC ADENOCARCINOMA. PART 8: PLEURA, BIOPSY -. PORTION OF BENIGN FIBROADIPOSE TISSUE, PLEURA, AND SKELETAL MUSCLE.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "The right lower lobe neoplasm is an invasive poorly differentiated adenocarcinoma (2.5 cm) with pleural and. angiolymphatic invasion.",
+        "confidence": "high",
+        "reason": "Tumor measures 2.5 cm and visceral pleural invasion is identified; pleural invasion upstages a size-based T1 to T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Two sump nodes (Parts 4 and 7) are involved by metastatic adenocarcinoma.",
+        "confidence": "high",
+        "reason": "Metastatic carcinoma in ipsilateral interlobar/sump lymph nodes (parts 4 and 7/11R) corresponds to N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "The stage is T2 N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists MX (distant metastasis not assessed); no distant metastases documented in the report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Two sump nodes (Parts 4 and 7) are involved by metastatic adenocarcinoma.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": "The report explicitly states T2; the pathology documents a 2.5 cm tumor with visceral pleural invasion, which supports T2 staging.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": "The report explicitly states N1 and documents metastatic adenocarcinoma in intrapulmonary/sump lymph nodes (parts 4 and 7), consistent with N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": "The report explicitly states MX (distant metastasis cannot be assessed) and provides no documented distant metastases.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. STAGE T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

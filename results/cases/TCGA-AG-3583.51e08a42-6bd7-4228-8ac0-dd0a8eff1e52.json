@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AG-3583.51e08a42-6bd7-4228-8ac0-dd0a8eff1e52",
+  "text": "Diagnosis: Rectosigmoidal resection material with inclusion of a poorly differentiated mucinous. adenocarcinoma of the colorectal type, 2.5 cm from the aboral resection margin with. a. maximum diameter of 8.5 cm and with infiltration of the perirectal fatty tissue and nine. regional lymph node metastases. The tumor extends to within direct proximity of the. circumferential resection margin. Tumor-free colon resection margins. Tumor-free. mesenteric resection margin. Tubular adenoma of the colon mucosa with high-grade. dysplasia and transition to an intramucosal adenocarcinoma (synonym according to WHO: high-grade intraepithelial neoplasia; according to UICC: pTis) and also diverticulosis coli. Tumor stage: pT3 pN2 (9/34) pMX; G3 L1 V0, R1.",
+  "gold": {
+    "T": "T3",
+    "N": "N2",
+    "M": "M1"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN2 (9/34) pMX; G3 L1 V0, R1.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT3; text also describes infiltration of the perirectal fatty tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2 (9/34)",
+        "value_norm": "N2",
+        "evidence": "Tumor stage: pT3 pN2 (9/34) pMX; G3 L1 V0, R1.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pN2 and documents nine regional lymph node metastases (9/34).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN2 (9/34) pMX; G3 L1 V0, R1.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMX indicating distant metastasis could not be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2 (9/34)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN2 (9/34) pMX",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT3 and describes infiltration of the perirectal fatty tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Tumor stage: pN2 (9/34) pMX",
+        "confidence": "high",
+        "reason": "Report documents nine regional lymph node metastases (9/34) and explicitly lists pN2.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN2 (9/34) pMX",
+        "confidence": "high",
+        "reason": "Report explicitly states pMX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2 (9/34)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

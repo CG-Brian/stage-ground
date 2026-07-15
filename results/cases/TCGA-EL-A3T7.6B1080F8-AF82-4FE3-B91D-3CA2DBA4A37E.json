@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-EL-A3T7.6B1080F8-AF82-4FE3-B91D-3CA2DBA4A37E",
+  "text": "Pathology. port. Pathology,. OB: Accessior. Case type: Surgical Case. DIAGNOSIS. (A) THYROID, PAPILLARY TOTAL THYROID THYROIDECTOMY: CARCINOMA (2.0 CM) WITH FOCAL EXTRATHYROIDAL EXTENSION. Lymphovascular invasion is not identified. Resection margins are free of tumor. Entire report and diagnosis completed by. GROSS DESCRIPTION. THYROIDECTOMY A total thyroidectomy specimen, 7.2 x 3.5x1 1.5 cm. Within the inferior one-half confined of the within right the lobe. (A) TOTAL is a 2.0 x 1.5 x 1.0 - cm oval circumscribed tumor with a friable tan cut surface. The tumor is of the left lobe. of thyroid; the thyroid no extracapsular extension is identified. There is a secondary 0.2 cm tan nodule in the superior pole of. the thyroid. The parenchyma away from these two nodules is red-brown and unremarkable. thyroid CODE: A1-A4, tumor, right lobe of thyroid; A5, thyroid parenchyma inferior to tumor, right lobe; A10, A6, inferior 0.2. pole, right SECTION lobe of thyroid; A7, superior aspect. right lobe of thyroid; A8, isthmus; A9, inferior pole, left lobe of thyroid; cm. tan nodule, superior left lobe of thyroid. CLINICAL HISTORY. Carcinoma, thyroid. SNOMED CODES. T-B6000, M-80503. These tests have not been specifically cleared or approved. \"Some teets reported here may have been developed and performance characteristics determined by. by the U.S. Food and Drug Administration.\". Released by:",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1b",
+        "value_norm": "T1",
+        "evidence": "CARCINOMA (2.0 CM) WITH FOCAL EXTRATHYROIDAL EXTENSION.",
+        "confidence": "medium",
+        "reason": "Tumor size 2.0 cm corresponds to T1b ( >1 cm and ≤2 cm ). Report documents focal (minimal) extrathyroidal extension; under AJCC 8th edition minimal/focal ETE does not upstage beyond size-based T category. Confidence reduced by a conflicting line in the report stating \"no extracapsular extension is identified.\"",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph nodes or nodal status are described in the report. \"Lymphovascular invasion is not identified\" is reported but does not establish nodal status.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or metastatic workup is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "THYROID, PAPILLARY TOTAL THYROID THYROIDECTOMY: CARCINOMA (2.0 CM) WITH FOCAL EXTRATHYROIDAL EXTENSION.",
+        "confidence": "medium",
+        "reason": "Tumor size 2.0 cm corresponds to T1b (>1 cm to ≤2 cm). Report mentions focal extrathyroidal extension but also contains a contradictory statement ('no extracapsular extension is identified'), creating uncertainty; microscopic extrathyroidal extension typically does not upstage under AJCC 8th edition.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention lymph node sampling or nodal status.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention distant metastasis.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "CARCINOMA (2.0 CM) WITH FOCAL EXTRATHYROIDAL EXTENSION. ... a 2.0 x 1.5 x 1.0 - cm oval circumscribed tumor ... the thyroid no extracapsular extension is identified.",
+        "confidence": "medium",
+        "reason": "Tumor size is 2.0 cm consistent with T1 (≤2 cm). Report also states 'focal extrathyroidal extension' but later notes 'no extracapsular extension is identified', producing conflicting findings; depending on staging system and whether microscopic ETE is counted, staging could differ, so confidence is medium.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "Lymphovascular invasion is not identified.",
+        "confidence": "medium",
+        "reason": "No lymph nodes are described or reported as examined; the statement about lymphovascular invasion refers to tumor vascular invasion, not nodal status, so nodal status cannot be determined from this report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "CARCINOMA (2.0 CM) WITH FOCAL EXTRATHYROIDAL EXTENSION.",
+        "confidence": "medium",
+        "reason": "Diagnosis explicitly reports focal extrathyroidal extension supporting T3; however the report also contains a conflicting statement ('the thyroid no extracapsular extension is identified.') so confidence is reduced.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No lymph nodes mentioned or evaluated and no nodal status provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No assessment or mention of distant metastasis in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

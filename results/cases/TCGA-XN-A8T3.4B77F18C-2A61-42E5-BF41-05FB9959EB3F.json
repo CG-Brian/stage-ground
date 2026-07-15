@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-XN-A8T3.4B77F18C-2A61-42E5-BF41-05FB9959EB3F",
+  "text": "NATURE OF MATERIAL : PANCREAS. BIOPSY : MACROSCOPY. - bottle 1 : specimen made of pancreatic head and segment of duodenum . The pancreas. measures 6.0 X 4,5x 4,5 cm. The duodenum measuring 15.5 cm in length and diameter 2.5 cm. nlt was noted a head injury in pancreas, measuring 2.4 x 2,2 cm. bottle 2 : gallbladder measured 12.2 cm length for 2.5 cm in diameter greater. - bottle 3 : 4 lymph nodes measuring between 0.2 and 1.0 cm cm in major axes. MICROSCOPIC. Product of pancreaticoduodenectomy: invasive ductal adenocarcinoma localized in cephalic portion of pancreas, moderately. differentiated, measuring 2.4 cm. - foci of intraepithelial pancreatic neoplasms associated with high degree dysplasia / dcis. - presence of neoplasm infiltration and perineural associated with angiolymphatic embolization. - lack of infiltration neoplasm duodenal papilla. - surgical margin committed by pancreatic neoplasms. No metastasis in lymph nodes examined 15 (0/15 ) . - Stage: pT2 pNO.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Stage: pT2 pNO.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT2; tumor size also reported as 2.4 cm which is consistent with T2 (>2 cm and ≤4 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "No metastasis in lymph nodes examined 15 (0/15 ) .",
+        "confidence": "high",
+        "reason": "Report documents 0/15 positive lymph nodes and lists pNO.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No pathologic M stage or distant metastasis status is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "- Stage: pT2 pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No metastasis in lymph nodes examined 15 (0/15 ) .",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Stage: pT2 pNO.",
+        "confidence": "high",
+        "reason": "Pathology explicitly reports pT2; tumor measured 2.4 cm, consistent with T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No metastasis in lymph nodes examined 15 (0/15 ) .",
+        "confidence": "high",
+        "reason": "Pathology reports 0/15 nodes positive and lists pNO (pN0).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis provided in the report, so M category cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Stage: pT2 pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No metastasis in lymph nodes examined 15 (0/15 ) .",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "Report contains no statement about distant metastasis or an M stage (no M0/M1/MX provided).",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

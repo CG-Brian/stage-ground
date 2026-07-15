@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AO-A0J9.1E3F3136-6D86-4470-85AA-55B11C9E24CD",
+  "text": "Clinical Diagnosis & History: y/o female with right invasive lobular carcinoma. Specimens Submitted: 1: SP: Right breast. DIAGNOSIS: 1). BREAST, RIGHT; MASTECTOMY: - INVASIVE LOBULAR CARCINOMA, CLASSICAL TYPE, MEASURING 0.4 CM IN. LARGEST DIMENSION MICROSCOPICALLY. FOCAL DUCTAL CARCINOMA IN SITU (DCIS) IS ALSO IDENTIFIED, WITH SQUAMOID. MORPHOLOGY, SOLID TYPE WITH INTERMEDIATE NUCLEAR GRADE AND MINIMAL NECROSIS,. IS PRESENT ADJACENT TO BIOPSY CAVITY. LOBULAR CARCINOMA IN SITU (LCIS) IS ALSO IDENTIFIED, CLASSICAL TYPE (TYPE. A). - THE NIPPLE BASE IS INVOLVED BY INVASIVE CARCINOMA. - CALCIFICATIONS ARE PRESENT IN BENIGN BREAST PARENCHYMA. - NO VASCULAR INVASION IS NOTED. - NO INVOLVEMENT OF THE SURGICAL MARGINS BY INVASIVE CARCINOMA IS. IDENTIFIED. - THE SKIN SHOWS AN ULCER. THE ATTACHED SKELETAL MUSCLE IS UNINVOLVED BY CARCINOMA. - THE NON-NEOPLASTIC BREAST TISSUE SHOWS BIOPSY SITE CHANGES. - FOUR BENIGN INTRAMAMMARY LYMPH NODES (0/4). I ATTEST THAT THE ABOVE DIAGNOSIS IS BASED UPON MY PERSONAL EXAMINATION OF. THE SLIDES (AND/OR OTHER MATERIAL), AND THAT I HAVE REVIEWED AND APPROVED. THIS REPORT. Gross Description: MD. M.D. 1) The specimen is received fresh labeled, \"right breast\" and consists of. a. breast without attached axillary tail. The breast measures 30.5 x 17.5. x. 7.5 cm with overlying skin ellipse measuring 30.5 x 8 cm. The nipple. measures 1.2 x 1.2 x 1 cm and areola measures 5 x 5 cm. Two centimeters. above the nipple (upper inner quadrant), there is a well healed scar,. measuring 8 cm. A skin defect and ulceration is identified in the axillary. area, measuring 1.0 x 0.5 cm. The skin is slightly red, suggestive of a. possible surgical draining site. At the posterior aspect of the specimen,. there is a fibrotic area, measuring 6.5 x 3.5 cm. A suture demarcates the. axilla. The posterior surface of the breast is inked blue. Serial. sectioning of the specimen reveals a biopsy cavity under the scar, measuring. 4. x 4 cm. The biopsy cavity is about 0.3 cm from the posterior inked margin. The cavity is lined by hemorrhagic fibrotic tissue with bright yellow, fat. necrosis. No gross nodule is identified. Under the skin defect, there is a. hemorrhagic area, measuring 1 x 0.4 cm. This area is very close to the. posterior fibrosis. Sectioning the rest of the breast reveals a fatty cut. surface. A few intramammary lymph nodes are identified. Representative. sections are submitted. Summary of sections: N - nipple. NB - nipple base. S - skin with scar. SD -skin defect. F -posterior fibrotic area. D - deep margin. Bx -biopsy cavity. L -lesion under the skin defect. UIQ - upper inner quadrant. LIQ - lower inner quadrant. UOQ - upper outer quadrant. LOQ - lower outer quadrantLN - intramammary lymph nodes, entirely submitted. Summary of Sections: Part 1: SP: Right breast. Block. Sect. Site. PCs. 12. BX. 12. 1. D. 1. 1. F. 1. 2. L. 2. 2. LIQ. 2. 3. LN. 3. 2. LOQ. 2. 1. N. 1. 1. NB. 1. 1. S. 1. SD. 1. 2. UIQ. 2. 2. UOQ. 2.",
+  "gold": {
+    "T": "T2",
+    "N": "N3",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1a",
+        "value_norm": "T1",
+        "evidence": "INVASIVE LOBULAR CARCINOMA, CLASSICAL TYPE, MEASURING 0.4 CM IN. LARGEST DIMENSION MICROSCOPICALLY.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "FOUR BENIGN INTRAMAMMARY LYMPH NODES (0/4).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information regarding distant metastasis is provided in the pathology report; M status cannot be assessed from the specimen.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "INVASIVE LOBULAR CARCINOMA, CLASSICAL TYPE, MEASURING 0.4 CM IN. LARGEST DIMENSION MICROSCOPICALLY.",
+        "confidence": "medium",
+        "reason": "Size (0.4 cm) corresponds to T1b; however the report notes skin ulceration which could indicate skin involvement (T4b) but does not explicitly state tumor invasion of the skin, creating some uncertainty.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "FOUR BENIGN INTRAMAMMARY LYMPH NODES (0/4).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "MEASURING 0.4 CM IN. LARGEST DIMENSION MICROSCOPICALLY.",
+        "confidence": "high",
+        "reason": "Tumor measures 0.4 cm (4 mm) which falls in the T1 category (T1a). Although skin ulceration is described, the report does not state that the tumor directly invades the skin.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "FOUR BENIGN INTRAMAMMARY LYMPH NODES (0/4).",
+        "confidence": "high",
+        "reason": "All examined intramammary lymph nodes are benign (0/4), indicating no regional nodal metastasis.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "Distant metastasis is not addressed in the pathology report, so M status cannot be determined from this specimen.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "INVASIVE LOBULAR CARCINOMA, CLASSICAL TYPE, MEASURING 0.4 CM IN. LARGEST DIMENSION MICROSCOPICALLY.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "FOUR BENIGN INTRAMAMMARY LYMPH NODES (0/4).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis or clinical/radiologic M staging is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

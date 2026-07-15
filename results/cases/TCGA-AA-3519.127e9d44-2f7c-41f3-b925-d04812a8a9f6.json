@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AA-3519.127e9d44-2f7c-41f3-b925-d04812a8a9f6",
+  "text": "Diagnosis/Diagnoses: 16-cm long large bowel resection specimen including a polypoid, moderately differentiated. adenocarcinoma of the colorectal type with infiltration of the pericolic fatty tissue and with three. regional lymph node metastases. Tumor-free large bowel resection margins. Tumor-free. mesenteric resection margin. An inflammatory portion of the urinary bladder fused with the large. bowel and a ductus deferens segment, adhering in the tumor area. Tumor stage: pT3 pN1 (3/43) pMX; G2, LO V0, local R0.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (3/43) pMX;",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT3 and describes infiltration of pericolic fatty tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "with three. regional lymph node metastases.",
+        "confidence": "high",
+        "reason": "Report documents three regional lymph node metastases and lists pN1 (3/43), corresponding to N1 (1–3 positive nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN1 (3/43) pMX;",
+        "confidence": "high",
+        "reason": "Report explicitly states pMX, indicating metastasis cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (3/43) pMX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "with three. regional lymph node metastases.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN1 (3/43) pMX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (3/43) pMX;",
+        "confidence": "high",
+        "reason": "Report states pT3 (pathologic T3), and text describes infiltration of the pericolic fatty tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Tumor stage: pT3 pN1 (3/43) pMX;",
+        "confidence": "high",
+        "reason": "Report states pN1 and documents three regional lymph node metastases (3/43), which corresponds to N1 (1-3 positive nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN1 (3/43) pMX;",
+        "confidence": "high",
+        "reason": "Report gives pMX indicating pathologic M stage cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1 (3/43)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

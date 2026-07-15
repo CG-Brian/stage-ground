@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AR-A2LL.B2314041-3E85-4E3F-8924-39FC285B08B2",
+  "text": "Final Diagnosis. Breast, left, simple mastectomy: Infiltrating pleomorphic lobular carcinoma with focal signet. ring cell features, Nottingham grade II (of III) [tubules 3/3, nuclei 2/3, mitoses 1/3; Nottingham. score 6/9], forming a mass (9.2 x 4.2 x 3.2 cm) located in the central region of the breast with. a. separate nodule (0.8 x 0.7 x 0.6 cm) located adjacent to the main mass on the inferior aspect. [AJCC pT3]. Lobular carcinoma in situ is present within and outside the invasive component. (0.6 cm in greatest dimension). Angiolymphatic invasion is absent. The non-neoplastic breast. parenchyma shows proliferative fibrocystic changes. Calcifications are present in benign ducts. and acini. The tumor does not involve the nipple, skin, or underlying chest wall. All surgical. resection margins, including the deep margin, are negative for tumor (minimum tumor free. margin, 0.4 cm, deep margin). Sentinel lymph nodes; left axillary Nos. 1, 2, 3, and 4; sentinel biopsy: Multiple (4) left axillary. sentinel lymph nodes without blue dye are negative for metastatic carcinoma [AJCC pNO (i-). (sn)]. Immunohistochemical cytokeratin stain was performed on the paraffin embedded sentinel. lymph node tissue and confirms the H&E impression. Her-2/Neu has been ordered on paraffin-embedded tissue.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "[AJCC pT3]",
+        "confidence": "high",
+        "reason": "Report explicitly labels the tumor with AJCC pT3; tumor measured 9.2 x 4.2 x 3.2 cm which is consistent with T3 (>5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0 (i-)(sn)",
+        "value_norm": "N0",
+        "evidence": "[AJCC pNO (i-). (sn)]",
+        "confidence": "high",
+        "reason": "Multiple (4) sentinel lymph nodes are negative for metastatic carcinoma and the report gives the AJCC designation indicating no nodal metastasis (pN0, isolated tumor cells negative, sentinel nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0?",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement about distant metastasis or pM category in the report; no pathologic evidence of metastasis documented, so pM cannot be confirmed from this report alone.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "forming a mass (9.2 x 4.2 x 3.2 cm) located in the central region of the breast with. a. separate nodule (0.8 x 0.7 x 0.6 cm) located adjacent to the main mass on the inferior aspect. [AJCC pT3].",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Sentinel lymph nodes; left axillary Nos. 1, 2, 3, and 4; sentinel biopsy: Multiple (4) left axillary. sentinel lymph nodes without blue dye are negative for metastatic carcinoma [AJCC pNO (i-). (sn)].",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "forming a mass (9.2 x 4.2 x 3.2 cm) located in the central region of the breast with. a. separate nodule (0.8 x 0.7 x 0.6 cm) located adjacent to the main mass on the inferior aspect. [AJCC pT3].",
+        "confidence": "high",
+        "reason": "Report explicitly states AJCC pT3 and documents primary tumor size >5 cm (9.2 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Sentinel lymph nodes; left axillary Nos. 1, 2, 3, and 4; sentinel biopsy: Multiple (4) left axillary. sentinel lymph nodes without blue dye are negative for metastatic carcinoma [AJCC pNO (i-). (sn)].",
+        "confidence": "high",
+        "reason": "All sampled sentinel lymph nodes are reported negative for metastatic carcinoma and report gives pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or a pathologic M category is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "[AJCC pT3]",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Multiple (4) left axillary sentinel lymph nodes without blue dye are negative for metastatic carcinoma [AJCC pNO (i-). (sn)].",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement of distant metastasis (M) or pM staging in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-J8-A3O0.33E08AA4-5DD6-4C54-89C1-5EC2C548800F",
+  "text": "FINAL DIAGNOSIS. A) Thyroid, right lobe and isthmus, resection: Papillary carcinoma (see. synoptic report). B) Thyroid, left lobe, completion thyroidectomy: Benign thyroid tissue. C) Lymph node, left paratracheal, biopsy: Three lymph nodes, parathyroid. and thymic tissue with no evidence of malignancy. D) Central compartment: Thyroid tissue and fibroadipose tissue with no. evidence of malignancy. No lymph nodes are seen. E) Paratracheal tissue, right: Fibroadipose tissue with no evidence of. malignancy. A: Thyroid Gland. HISTOLOGIC TYPE: Papillary carcinoma. Follicular variant. TUMOR SITE: Right Lobe. TUMOR SIZE: Greatest Dimension: 2.8 cm. PRIMARY TUMOR (pT): pT2: Tumor more than 2 cm, but not more than 4 cm, limited to thyroid. REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis. NUMBER OF LYMPH NODE(S) INVOLVED: 0. NUMBER OF LYMPH NODE(S) EXAMINED: 3. DISTANT METASTASIS (pM): pMX: Cannot be assessed. MARGINS: Margins uninvolved by carcinoma. ~electronic signature~. A) RIGHT THYROID LOBE AND ISTHMUS, FS. B) LEFT THYROID LOBE. C) LEFT PARATRACHEAL LYMPH NODE. D) CENTRAL COMPARTMENT LYMPH NODES. E) RIGHT PARATRACHEAL TISSUE. FROZEN SECTION. Thyroid, right lobe, resection: Papillary carcinoma. Seen with Dr. GROSS DESCRIPTION. A) Received fresh for intraoperative consultation labeled \"right thyroid lobe and. isthmus.\" The specimen consists of a portion of dark red/purple thyroid tissue,. overall measuring 8.3 X 5.5 X 3.0 cm, 30 grams. The specimen is inked and serially. sectioned revealing a firm encapsulated mass measuring 2.8 X 2.7 X 2.5 cm. A. representative section is submitted for frozen and subsequent permanent section. evaluation in cassette A1. Touch preparations are prepared. The sections are. submitted for frozen and subsequent permanent section evaluation in cassettes. A1-A2. Additional sections are submitted for permanent sections as follows: Sections from mass submitted in cassettes A3-A5; section of uninvolved thyroid A6. Tissue is submitted for the. B) In formalin labeled \"left thyroid lobe\". The specimen consists of a portion of dark. red to purple thyroid tissue measuring 5.0 X 3.3 x 1.8 cm, 11 grams. The specimen. is inked and serially sectioned. Sectioning is unremarkable. Representative. sections are submitted in cassettes B1-B6. C) In formalin labeled \"left paratracheal lymph node\". The specimen consists of an. ovoid portion of pink/tan soft tissue measuring 1.0 cm in greatest dimension. The. specimen is bisected and submitted entirely in cassette C1. D) In formalin labeled \"central compartment lymph nodes\". The specimen consists. of an irregular portion of pink/tan soft tissue measuring 2.5 X 1.5 X 0.8 cm. The. specimen is dissected in search of lymph nodes. Multiple possible lymph nodes are. identified. These are submitted whole in cassettes D1-D2. E) In formalin labeled \"right paratracheal tissue\". The specimen consists of an. ovoid portion of pink/tan soft tissue measuring 1.3 X 1.0 X 0.6 cm. The specimen is. bisected and submitted entirely in cassette E1. CLINICAL INFORMATION. RIGHT THYROID MASS.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2: Tumor more than 2 cm, but not more than 4 cm, limited to thyroid.",
+        "confidence": "high",
+        "reason": "Greatest tumor dimension 2.8 cm and the report explicitly assigns pT2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis. NUMBER OF LYMPH NODE(S) INVOLVED: 0. NUMBER OF LYMPH NODE(S) EXAMINED: 3.",
+        "confidence": "high",
+        "reason": "Three regional lymph nodes were examined and no metastasis was identified; report states pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "DISTANT METASTASIS (pM): pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": "Report explicitly states distant metastasis cannot be assessed (pMX).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2: Tumor more than 2 cm, but not more than 4 cm, limited to thyroid.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "DISTANT METASTASIS (pM): pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2: Tumor more than 2 cm, but not more than 4 cm, limited to thyroid.",
+        "confidence": "high",
+        "reason": "Pathology report explicitly states pT2 with tumor size 2.8 cm.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": "Pathology report explicitly states pN0 and notes 0 of 3 lymph nodes involved.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "DISTANT METASTASIS (pM): pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": "Pathology report explicitly states pMX (cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2: Tumor more than 2 cm, but not more than 4 cm, limited to thyroid.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "DISTANT METASTASIS (pM): pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

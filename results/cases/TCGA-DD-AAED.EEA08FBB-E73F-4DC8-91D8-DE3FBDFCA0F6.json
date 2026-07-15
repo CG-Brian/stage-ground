@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DD-AAED.EEA08FBB-E73F-4DC8-91D8-DE3FBDFCA0F6",
+  "text": "CLINICAL DIAGNOSIS: Hepatocellular carcinoma suggested. Specimen : Liver ,LN. Gross Photo : GROSS: Specimen status: Fresh. Operation: Partial hepatectomy. Organ: Liver (18.0 x 9.5 X 7.0 cm, 617.0 gm). Gallbladder (7.3 cm in length, 3.1 cm in diameter, 0,3 cm in thickness). [Liver]. Lesion: A hepatic mass. Size: 8,5 x 7.8 X 10.5 cm. Cut surface: Well demarcated, nodular lesion with area of necrosis. Gross type: Expansile. Extent: Confined to the hepatic parenchyma. Serosal surface: Bulging but smooth. Resection margin: Not involved, grossly (safety margin: 0.4 cm). Remaining parenchyme: Non-cirrhotic. [Gallbladder]. Serosal surface: Yellowish pink and smooth. Mucosal surface: Dark green and velvety. Stone: No stone. Representative sections submitted. Gross photo: Present. Blocks. T1-4, TB, mass of liver X 5. RM, resection margin X 1. L, NB, nontumorous liver parenchyme x 2. LN, fatty tissue x 1. GB, gallbladder X 1. MICROSCOPIC: Tumor type: Hepatocellular carcinoma. Edmondson-steiner grade. The worst differentiation III. The major differentiation III. Histologic type: Trabecular. Fatty change: No. Fibrous capsule formation: Yes. Capsular infiltration: Yes. Septum formation: No. Surgical resection margin invasion: No. Serosal invasion: No. Portal vein invasion: No. Vascular invasion: Yes. Bile duct invasion: No. Remaining liver parenchyme: Periportal fibrosis (stage 2) with mild steatosis. NOT reported. Gross: liver,ectomy,hepatocellular carcinoma, Periportal fibrosis, mild steatosis. T56000, P10, M81703, Periportal fibrosis, mild steatosis. gallbladder,ectomy,autolysis. T57000, P10, M54001. DIAGNOSIS: Liver, partial hepatectomy: Hepatocellular carcinoma, moderately differentiated. Periportal fibrosis with mild steatosis. Galllbladder, cholecystectomy: Autolysis. Suggestion :",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Vascular invasion: Yes.",
+        "confidence": "high",
+        "reason": "Single hepatic mass (Size: 8,5 x 7.8 X 10.5 cm) with vascular invasion. According to AJCC criteria, a solitary tumor with vascular invasion is staged as T2.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "LN, fatty tissue x 1.",
+        "confidence": "medium",
+        "reason": "A lymph node specimen was submitted but no metastatic carcinoma in nodes is reported. Report does not explicitly state nodal metastasis; assumed negative.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": "Extent: Confined to the hepatic parenchyma.",
+        "confidence": "medium",
+        "reason": "No distant metastases documented in the report and tumor confined to liver parenchyma; pathologic M stage not explicitly stated but no metastasis reported.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Size: 8,5 x 7.8 X 10.5 cm. Vascular invasion: Yes.",
+        "confidence": "medium",
+        "reason": "Solitary tumor >2 cm with vascular invasion is most consistent with pT2 (AJCC); uncertainty remains because report does not specify major-branch vascular invasion which could indicate a higher T category.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "LN, fatty tissue x 1",
+        "confidence": "medium",
+        "reason": "A lymph node/fatty tissue specimen was submitted but no metastatic involvement is described in the report.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention distant metastasis or pathologic M staging.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Vascular invasion: Yes.",
+        "confidence": "high",
+        "reason": "Solitary hepatic tumor >5 cm with vascular (microscopic) invasion and no serosal invasion — corresponds to AJCC T2 for hepatocellular carcinoma.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "LN, fatty tissue x 1.",
+        "confidence": "medium",
+        "reason": "No lymph node metastasis reported in the pathology report; only one lymph node specimen was submitted.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastasis reported clinically or pathologically in the report.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Lesion: A hepatic mass. Size: 8,5 x 7.8 X 10.5 cm. Cut surface: Well demarcated, nodular lesion with area of necrosis. Gross type: Expansile. Extent: Confined to the hepatic parenchyma. Serosal surface: Bulging but smooth. Resection margin: Not involved, grossly (safety margin: 0.4 cm). Remaining parenchyme: Non-cirrhotic. [Gallbladder]. Serosal surface: Yellowish pink and smooth. Mucosal surface: Dark green and velvety. Stone: No stone. Representative sections submitted. Gross photo: Present. Blocks. T1-4, TB, mass of liver X 5. RM, resection margin X 1. L, NB, nontumorous liver parenchyme x 2. LN, fatty tissue x 1. GB, gallbladder X 1. MICROSCOPIC: Tumor type: Hepatocellular carcinoma. Edmondson-steiner grade. The worst differentiation III. The major differentiation III. Histologic type: Trabecular. Fatty change: No. Fibrous capsule formation: Yes. Capsular infiltration: Yes. Septum formation: No. Surgical resection margin invasion: No. Serosal invasion: No. Portal vein invasion: No. Vascular invasion: Yes.",
+        "confidence": "medium",
+        "reason": "Report documents a solitary hepatic tumor with vascular invasion (\"Vascular invasion: Yes.\") — a finding that corresponds to pathologic T2 for hepatocellular carcinoma by standard staging rules; the report does not explicitly state an AJCC T category.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No pathologic assessment of regional lymph node metastasis is reported. A specimen entry lists \"LN, fatty tissue x 1\" but no result (no statement of nodal involvement or negativity).",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No information about distant metastasis (no statement of M0/M1) is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

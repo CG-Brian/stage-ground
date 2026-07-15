@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-B0-4810.8f4d743f-d115-484d-b01d-0ceea8ebc2af",
+  "text": "FINAL DIAGNOSIS. PART 1: BONE, LEFT 11 TH RIB, EXCISION -. PORTION OF RIB BONE WITH NORMOCELLULAR MARROW SHOWING TRILINEAGE HEMATOPOIESIS;. NEGATIVE FOR TUMOR. PART 2: LEFT KIDNEY, RADICAL NEPHRECTOMY -. A. INVASIVE MODERATELY TO POORLY DIFFERENTIATED RENAL CELL CARCINOMA, MIXED CLEAR CELL. AND GRANULAR CELL TYPES (FUHRMAN GRADE 3/4), 11.5 CM. B. INVASIVE TUMOR EXTENDS TO PERIRENAL ADIPOSE TISSUE, RENAL PELVIC ADIPOSE TISSUE, AND. INVADES THE PROXIMAL RENAL VEIN; BUT DOES NOT EXTEND BEYOND GEROTA'S FASCIA. C. VASCULAR AND URETERAL MARGINS ARE NEGATIVE FOR TUMOR. D. THE TWO OF TWO HILAR LYMPH NODES WITH METASTATIC RENAL CELL CARCINOMA. E. LEFT ADRENAL GLAND, NEGATIVE FOR TUMOR. F. PATHOLOGIC STAGE T3; N1; MX; G3. G. SURROUNDING KIDNEY PARENCHYMA WITH MASSIVE FAT. PART 3: LYMPH NODE, RETROPERITONEUM, EXCISION -. FOUR BENIGN REACTIVE LYMPH NODES, NO TUMOR SEEN. PART 4: LYMPH NODE, PERIHILAR, EXCISION -. PERIPHERAL NERVE AND GANGLIA; NO LYMPHOID TISSUE OR TUMOR SEEN. Final Diagnosis. URINE: SATISFACTORY FOR INTERPRETATION. ATYPICAL UROTHELIAL CELLS IN CLUSTERS AND SINGLE CELLS, SUSPICIOUS FOR MALIGNANCY. RULE OUT UROTHELIAL CARCINOMA. Final Diagnosis. BONE, FIBULA, RIGHT, BIOPSY -. ATYPICAL CELLS WITH CLEAR CELL AND GRANULAR CELL MORPHOLOGY, CONSISTENT WITH METASTATIC RENAL. CELL CARCINOMA. Comment: Slides from previous kidney neoplasm &. The morphology of the current bone lesion is similar. to previous renal lesion. nmunohistochemistry will be performed to confirm the diagnosis. Results will be issued in an. addendum. Addendum. Addendum. The immunohistochemical examination was performed by using antibodies against cytokeratin 7 (CK7), cytokeratin 20. (CK20), CD10, vimentin and epithelial membrane antigen (EMA). The neoplastic cells stained with EMA, vimentin and. CD10, but not with CK7 or CK20. These findings strongly support the diagnosis of metastatic renal cell carcinoma. Clinical correlation is recommended. Final Diagnosis. Urine: SATISFACTORY FOR INTERPRETATION. NEGATIVE. NO MALIGNANT CELLS SEEN. Smears show granular casts with few wbc's and rare rbc's,. Final Diagnosis. Urine: SATISFACTORY FOR INTERPRETATION. NEGATIVE. NO MALIGNANT CELLS SEEN. RBCS NOTED.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "B. INVASIVE TUMOR EXTENDS TO PERIRENAL ADIPOSE TISSUE, RENAL PELVIC ADIPOSE TISSUE, AND. INVADES THE PROXIMAL RENAL VEIN; BUT DOES NOT EXTEND BEYOND GEROTA'S FASCIA.",
+        "confidence": "high",
+        "reason": "Tumor invades perirenal adipose tissue and the proximal renal vein, which meets criteria for T3 (report also records pathologic stage T3).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "D. THE TWO OF TWO HILAR LYMPH NODES WITH METASTATIC RENAL CELL CARCINOMA.",
+        "confidence": "high",
+        "reason": "Two of two hilar lymph nodes are positive for metastatic renal cell carcinoma; pathologic stage recorded as N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. PATHOLOGIC STAGE T3; N1; MX; G3.",
+        "confidence": "medium",
+        "reason": "The report's pathologic stage is explicitly listed as MX, but separate biopsy results in the report describe metastatic renal cell carcinoma in bone (fibula), which suggests M1; this creates discordance between the pathologic stage entry and other findings.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "F. PATHOLOGIC STAGE T3; N1; MX; G3.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "D. THE TWO OF TWO HILAR LYMPH NODES WITH METASTATIC RENAL CELL CARCINOMA.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M1",
+        "value_norm": "M1",
+        "evidence": "Final Diagnosis. BONE, FIBULA, RIGHT, BIOPSY -. ATYPICAL CELLS WITH CLEAR CELL AND GRANULAR CELL MORPHOLOGY, CONSISTENT WITH METASTATIC RENAL. CELL CARCINOMA.",
+        "confidence": "high",
+        "reason": "Although the nephrectomy pathologic stage line lists MX, a separate bone (fibula) biopsy is diagnostic of metastatic renal cell carcinoma, indicating M1.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "B. INVASIVE TUMOR EXTENDS TO PERIRENAL ADIPOSE TISSUE, RENAL PELVIC ADIPOSE TISSUE, AND. INVADES THE PROXIMAL RENAL VEIN; BUT DOES NOT EXTEND BEYOND GEROTA'S FASCIA.",
+        "confidence": "high",
+        "reason": "Tumor invades renal vein and perirenal adipose tissue but does not extend beyond Gerota's fascia, consistent with T3; pathologic stage explicitly records T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "D. THE TWO OF TWO HILAR LYMPH NODES WITH METASTATIC RENAL CELL CARCINOMA.",
+        "confidence": "high",
+        "reason": "Two of two hilar lymph nodes contain metastatic renal cell carcinoma, consistent with N1; pathologic stage explicitly records N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. PATHOLOGIC STAGE T3; N1; MX; G3.",
+        "confidence": "medium",
+        "reason": "Pathologic stage is recorded as MX (distant metastasis cannot be assessed). However, the report documents metastatic renal cell carcinoma in a fibula biopsy, creating inconsistency between explicit staging and other findings.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "F. PATHOLOGIC STAGE T3; N1; MX; G3.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "F. PATHOLOGIC STAGE T3; N1; MX; G3.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. PATHOLOGIC STAGE T3; N1; MX; G3.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

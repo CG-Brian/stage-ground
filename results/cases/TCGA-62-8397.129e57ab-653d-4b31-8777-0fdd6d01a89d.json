@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-62-8397.129e57ab-653d-4b31-8777-0fdd6d01a89d",
+  "text": "Pathology Report-Summary: Material: Lung, right, lower lobe: 16.0 X 8.5 X 7.0 cm. Tumor: 3.7 X 2.8 X 3.0 cm. Diagnosis: Adenocarcinoma, mixed subtype (partially: papillary, acinar, mucinous). Infiltration of pleura parietalis. pT3, pNO (0/42), pMx, G2.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Infiltration of pleura parietalis. pT3",
+        "confidence": "high",
+        "reason": "Report explicitly records pT3 and notes parietal pleural invasion, which supports T3 assignment.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "pNO (0/42)",
+        "confidence": "high",
+        "reason": "Report explicitly records pN0 with 0 of 42 lymph nodes positive.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": "Report explicitly records pMx (distant metastasis not assessed pathologically).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Infiltration of pleura parietalis. pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO (0/42)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": "pathologic M stated as pMx (cannot be assessed)",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO (0/42)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO (0/42)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

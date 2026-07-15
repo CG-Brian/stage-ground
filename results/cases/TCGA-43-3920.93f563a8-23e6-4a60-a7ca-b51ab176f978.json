@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-43-3920.93f563a8-23e6-4a60-a7ca-b51ab176f978",
+  "text": "SPECIMEN. A. Level 10. B. Level 11. C. Level 12. D. Right upper lobe. E. 2R. F. 4R. G. Level 8. H. Level 7. I. Level 9. CLINICAL NOTES. GROSS DESCRIPTION. A. Received fresh, subsequently fixed in formalin labeled. \"level 10\" is a 1 X 0.8 x 0.4 cm. black-tan irregular soft. tissue fragment which is bisected and entirely submitted in one. cassette. AS-1. B. Received fresh, subsequently fixed in formalin labeled. \"level 11\" is a 0.9 X 0.6 x 0.4 cm. pink-black irregular. soft tissue fragment. The specimen is bisected and entirely. submitted in one cassette. AS-1. C. Received fresh, subsequently fixed in formalin labeled. \"level 12\" are two black-tan irregular soft tissue. fragments which are 1.8 cm. and 1 cm. in greatest dimension. The. specimens are entirely submitted in one cassette. AS-1. D. Received fresh, subsequently fixed in formalin labeled. \"right upper lobe\" is a 15 x 14 x 5 cm. lobe of lung. The. specimen shows a 3.5 cm. indurated focus on the pleura. This area. is inked blue. The specimen is sectioned to show a large white tan. indurated mass which is 5.0 x 5.0 x 4.5 cm. This specimen is. sectioned to show the tumor coming within 1.5 cm. from the surgical. stapled margin (inked black) This also comes within 3.5 cm. from. GROSS DESCRIPTION. the hilum. The tumor mass is firm and indurated. The remainder of. the cut surface shows a pink-red spongy parenchyma. No discrete. hilar nodes are grossly identified. Representative sections of the. specimen are submitted as follows: Block 1, 2 - tumor to pleura;. block 3 - tumor to surgical margin; block 4 - tumor to normal;. block. 5 - representative normal; block 6 - hilar and vascular margins;. block 7 - possible hilar nodes. RS-7. E. Received fresh, subsequently fixed in formalin labeled. \"2R\" are three yellow-red fatty tissue fragments which may. contain possible lymphoid tissue. These range from 0. cm. to 1.2. cm. in greatest dimension. The specimens are entirely submitted in. one cassette. AS-1. F. Received fresh, subsequently fixed in formalin labeled. \"4R\" is a 1.2 cm. pink fleshy nodule which shows black. discoloration on cut surface. There is also a minute aggregate. measuring 0.4 X 0.3 x 0.2 cm. The larger is bisected and the. specimens are entirely submitted as follows block 1 - larger lymph. node; 2 - smaller aggregate. G. Received fresh, subsequently fixed in formalin labeled. \"level 8\" is a 0.6 x 0.4 x 0.3 cm. pink-red irregular soft. tissue fragment which is entirely submitted in one cassette. AS-1. H. Received fresh, subsequently fixed in formalin labeled. 'level 7\" is an aggregate of yellow-pink-red irregular. soft. tissue fragment which may contain lymphoid tissue measuring 1.5 x. 0.8 x 0.3 cm. The specimens are entirely submitted in one cassette. AS-1. I. Received fresh, subsequently fixed in formalin labeled. \"level 9\" are two black-pink irregular soft tissue. fragments which are 1.2 cm. and 0.5 cm. in greatest dimension. The. specimens are entirely submitted in one cassette with the larger. bi-valved. The specimens are entirely submitted in one cassette. AS-1. GROSS DESCRIPTION. MICROSCOPIC DESCRIPTION. A-C. Sections of the level 10, level 11, and level 12. lymph. nodes demonstrate no evidence of metastatic disease in one. lymph node each. D. The following template applies to the right upper. lobe. Histologic type Squamous cell carcinoma. Histologic grade Poorly differentiated. Primary tumor : measures 5 cm, (pT2) : Margins of resection: Uninvolved. Direct extension of tumor : Not identified. Venous (large vessel) invasion: Not identified. Arterial (large vessel) invasion : Not identified. Lymphatic (small vessel) invasion Not identified. Regional lymph nodes (pN) : Negative as described in other. specimens. (pN0). Distant metastasis (pM) : Cannot evaluated by this specimen (pMX) . Other findings Four lymph nodes are negative for metastatic. disease. E. There is no evidence of metastatic disease to four 2R. lymph nodes. F. There is no evidence of metastatic disease to 3 4R. lymph. nodes. G. There is no evidence of metastatic disease to one level. 8 lymph node. H. There is no evidence of metastatic disease to four. level. 7 lymph nodes. I. There is no evidence of metastatic disease to two level. 9 lymph nodes. MICROSCOPIC DESCRIPTION. 3x7, 4x2. DIAGNOSIS. A. Level 2 lymph node, resection -. No evidence of resection to one lymph node (0/1) . B. Level 11 lymph node, resection -. No evidence of metastasis to one lymph node (0/1). C. Level 12 lymph nodes, resection. No evidence of metastasis to one lymph node (0/1) . D. Lung, right upper lobe, lobectomy -. Poorly differentiated squamous cell carcinoma, 5 cm. in. greatest dimension. Surgical margins uninvolved. Four lymph nodes with no evidence of metastatic disease. E. 2R lymph nodes, resection -. No evidence of metastasis to 4 lymph nodes (0/4). F. 4R lymph nodes, resection. No evidence of metastasis to 3 lymph nodes (0/3). G. Level 8 lymph node, resection -. No evidence of metastasis to 1 lymph node (0/1). H. Level 7 lymph node, resection -. No evidence of metastasis to 4 lymph nodes (0/4). I. Level 9 lymph node, resection -. No evidence of metastasis to 2 lymph nodes (0/2). ---- End Of Report --.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor : measures 5 cm, (pT2) : Margins of resection: Uninvolved.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Regional lymph nodes (pN) : Negative as described in other specimens. (pN0).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : Cannot evaluated by this specimen (pMX) .",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor : measures 5 cm, (pT2) :",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Regional lymph nodes (pN) : Negative as described in other. specimens. (pN0).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : Cannot evaluated by this specimen (pMX) .",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor : measures 5 cm, (pT2) :",
+        "confidence": "high",
+        "reason": "Report explicitly states tumor measures 5 cm and lists (pT2).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Regional lymph nodes (pN) : Negative as described in other. specimens. (pN0).",
+        "confidence": "high",
+        "reason": "Report explicitly states pN0 and multiple lymph nodes are negative for metastasis (0/X).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : Cannot evaluated by this specimen (pMX) .",
+        "confidence": "high",
+        "reason": "Report explicitly indicates distant metastasis cannot be evaluated and gives pMX.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor : measures 5 cm, (pT2)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Regional lymph nodes (pN) : Negative as described in other. specimens. (pN0)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : Cannot evaluated by this specimen (pMX) .",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

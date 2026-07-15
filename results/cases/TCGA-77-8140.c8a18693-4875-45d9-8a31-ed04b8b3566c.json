@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-77-8140.c8a18693-4875-45d9-8a31-ed04b8b3566c",
+  "text": "Histopathology Report. HISTORY. Right upper lobe mass. 1: Right lower lobe lung. 2: Right level 4 lymph node. 3: Right middle lobe lymph node. MACROSCOPIC. Five specimens received: 1: The second specimen is labelled \"right upper lobe for frozen section\" and. consists of a nodule measuring 17 x 9 x 6 mm. Frozen section diagnosis: Organising pneumonia with a BOOP pattern. Phoned to. [Residual frozen section fragments remnants blocked, 1A.]. 2: The first specimen is labelled \"right upper lobe nodule\" and consists of a. wedge of lung tissue measuring 20 X 13 X 5 mm. The tissue contains a pale. glistening nodule measuring approximately 7 mm in diameter. Frozen section diagnosis: Organising pneumonia. Phoned to. [Frozen section remnants blocked, 2A. Remaining fragments sectioned into 4RS. and blocked, 2B.]. 3: The third specimen is labelled \"right lower lobe\" and consists of a right. lower lobe of lung measuring 115 X 90 x 80 mm. The pleural surface appears. largely puckered, extending from the diaphragmatic surface of the lung and from. the posterior to anterior pleural surfaces. A large firm mass is palpable. beneath the area of pleural puckering. On sectioning, a large tumour mass is. confirmed, measuring 60 x 48 x 70 mm. The tumour has a cream to yellow cut. surface with areas of grey to black mottling. The tumour appears to approach. both the posterior and anterior and diaphragmatic surfaces. The tumour is. approximately 6 mm away from the medial pleural margin. On opening of the. bronchial tree, the tumour appears to arise from a bronchial branch. approximately 10 mm away from the bronchial resection margin. A large vessel. runs through the middle of the tumour. However it does not appear. macroscopically invaded. The uninvolved lung parenchyma appears unremarkable. [Bronchial resection margin, 3A; peribronchial lymph nodes, 3B; tumour with. anterior pleural margin, 3C; tumour with posterior pleural margin, 3D; tumour. in relation to bronchus, 3E; vascular resection margin and section through. tumour with large vessel, 3F; tumour with diaphragmatic pleural surface, 3G;. uninvolved lung, 3H.]. Page 1 of. Histopathology Report. 4: The fourth specimen is labelled \"right lymph node\" and consists of a lymph. node measuring 10 x 8 X 6 mm. The node has a pinkish red cut surface and is. soft. [Specimen bisected, wrapped and blocked in toto, 4A.]. 5: The fifth specimen is labelled \"middle lobe lymph node and consists of two. lymph nodes, the first measuring 20 x 12 x 10 mm and the second 12 x 7 X 9 mm. Both nodes feel firm and on sectioning have a cream cut surface. [Each node. bisected and one-half blocked, 5A]. MICROSCOPIC. 1-2: The specimens are similar. Paraffin sections confirm the frozen section. diagnosis of organising pneumonia. In areas the pneumonia has a BOOP-type. pattern. Fibrinous exudate is present on the pleural surface. There is no. evidence of malignancy. 3: Sections show a moderately to poorly differentiated squamous cell carcinoma. The tumour shows focal clear cell change. It is subpleural and there is a. suspicion of pleural invasion in an area of pleural scarring. Fibrinous. exudate but no tumour is present on the pleural surface. Focal blood vessel. invasion is present but there is no lymphatic permeation. Many of the. pulmonary arteries show fibrous intimal thickening and focally there are. features of a previously recanalised thrombus. The vessel infiltrated by. carcinoma appears distal to this. No perineural permeation is identified. The. lesion is well clear of the bronchial resection margin but there is mild active. chronic inflammation, squamous metaplasia with moderate dysplasia. Metastatic. deposits are noted within a peribronchial lymph node. The adjacent lung shows. evidence of emphysema, organising pneumonia and nodules of luminal fibrin. 4: Sections of the lymph nodes show reactive changes only. There is no. evidence of malignancy. 5: Sections of the lymph nodes show extensive replacement by metastatic. squamous cell carcinoma. SUMMARY. Right lower lobe and lymph nodes: 1: Moderately to poorly differentiated squamous cell carcinoma; 70 mm in. maximal dimension. 2: Blood vessel permeation identified but no lymphatic or perineural invasion. present. 3: Possible pleural invasion identified, special stains being performed; clear. of bronchial margin. 4: Peribronchial and right middle lobe lymph node metastases. 5: T2N1MX. Page 2 c. Histopathology Report. SUPPLEMENTARY REPORT. Carcinoma invades through the inner elastic lamina of the pleura but not. through the outer lamina or convincingly into the visceral pleura itself. c.c. Lung Cancer Registry.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "5: T2N1MX.",
+        "confidence": "medium",
+        "reason": "Pathologist's summary lists T2. However the tumour is reported as 70 mm in maximal dimension and that size would typically map to T3 ( >5–7 cm) under current AJCC staging; staging system used by the report is not specified.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "4: Peribronchial and right middle lobe lymph node metastases.",
+        "confidence": "high",
+        "reason": "Metastatic deposits documented in peribronchial and right middle lobe lymph nodes on microscopy.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "5: T2N1MX.",
+        "confidence": "high",
+        "reason": "Report explicitly records MX (distant metastasis cannot be assessed from the specimen).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "5: T2N1MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "4: Peribronchial and right middle lobe lymph node metastases.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "5: T2N1MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T2N1MX.",
+        "confidence": "medium",
+        "reason": "The report explicitly records T2 in the summary, but the recorded tumour size of 70 mm (7.0 cm) could meet criteria for a higher T category in some staging editions, creating some uncertainty.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Peribronchial and right middle lobe lymph node metastases.",
+        "confidence": "high",
+        "reason": "Metastatic deposits are noted in peribronchial and right middle lobe nodes, consistent with N1 (ipsilateral peribronchial/intrapulmonary nodal involvement).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "T2N1MX.",
+        "confidence": "high",
+        "reason": "The report explicitly records MX (distant metastasis cannot be assessed); no distant metastases are described in the report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T2N1MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Peribronchial and right middle lobe lymph node metastases.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "T2N1MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

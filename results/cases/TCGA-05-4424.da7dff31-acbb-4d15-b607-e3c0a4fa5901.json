@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-05-4424.da7dff31-acbb-4d15-b607-e3c0a4fa5901",
+  "text": "Main diagnosis/diagnoses: Locally advanced, peripheral bronchopulmonary, histologically mixed adenocarcinoma of the. right upper lobe of the lung with an acinar and solid component, slight mucin formation and. localization in S1 and S2. TNM classification on the basis of this material pT3 pNO pMX V1 R1, stage IIB. C34.1 M8255/3. Comment/supplementary remark: The carcinoma has spread into the adhesive part of the chest wall, where it has infiltrated both. the soft tissue and the 3rd rib, extending in a circumscribed manner as far as the outer. resection surface at the thoracic skin, which explains the R1 classification. The carcinoma has. also spread as far as the visceral pleura of the adhesive part evidently from S6 of the upper. lobe. The resection margin of the bronchus and vessels, the other resection margins of the. resected chest wall material, the lung parenchyma of the resection material evidently taken. from S6 and all the lymph nodes identified and removed are tumor-free.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "TNM classification on the basis of this material pT3 pNO pMX V1 R1, stage IIB. The carcinoma has spread into the adhesive part of the chest wall, where it has infiltrated both. the soft tissue and the 3rd rib, extending in a circumscribed manner as far as the outer. resection surface at the thoracic skin, which explains the R1 classification.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3 and describes invasion of chest wall and rib, findings that correspond to T3.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "TNM classification on the basis of this material pT3 pNO pMX V1 R1, stage IIB. the resection margin of the bronchus and vessels, the other resection margins of the. resected chest wall material, the lung parenchyma of the resection material evidently taken. from S6 and all the lymph nodes identified and removed are tumor-free.",
+        "confidence": "high",
+        "reason": "Report lists pNO (interpreted as pN0) and states that all lymph nodes identified and removed are tumor-free, indicating no regional nodal metastasis.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "TNM classification on the basis of this material pT3 pNO pMX V1 R1, stage IIB.",
+        "confidence": "medium",
+        "reason": "Report explicitly lists pMX (metastasis cannot be assessed on this surgical specimen).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "TNM classification on the basis of this material pT3 pNO pMX V1 R1, stage IIB.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "all the lymph nodes identified and removed are tumor-free.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM classification on the basis of this material pT3 pNO pMX V1 R1, stage IIB.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3 pNO pMX V1 R1, stage IIB.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT3; description of chest wall and rib infiltration is consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "The resection margin of the bronchus and vessels, the other resection margins of the resected chest wall material, the lung parenchyma of the resection material evidently taken from S6 and all the lymph nodes identified and removed are tumor-free.",
+        "confidence": "high",
+        "reason": "Report states pN0 and that all identified lymph nodes are tumor-free.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pT3 pNO pMX V1 R1, stage IIB.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMX indicating distant metastasis not assessed on this material.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

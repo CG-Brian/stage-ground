@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-D8-A1JT.72AF26A2-FAD0-42FD-A63C-6E8E2597B84E",
+  "text": "page 1 / 2. copy No. 5. Examination: Histopathological examination. Cost of diagnostic procedure. Material: Multiple organ resection - left breast. Material received or. Expected time of examination: up to 8 working days. Clinical diagnosis: Cancer of the left breast. Results of immunohistochemical examination: Estrogen receptors found in over 75% of neoplastic cell nuclei. Progesterone receptors found in over 75% of neoplastic cell nuclei. HER2 protein stained with HercepTest™M by. Score = 2+, verification by the FISH method recommended. Macroscopic description: Left breast sized 26 x 20 x 5.5 cm removed along with axillary tissues sized 10 x 8 x 2.5 cm and a 25 x 14 cm skin. flap. Tumour sized 2.6 x 2 x 1.8 cm found in the outer lower quadrant, 5.3 cm from the lower boundary, 1.2 cm. from the base and 1.4 cm from the skin. Microscopic description: Carcinoma ductale partim papillare - NHG1 (2 + 2 +3/22 mitoses/ 10 HPF, visual area diameter: 0.55 m). Glandular tissue showing lesions of the type fibrosa et cystica, hyperplasia ductalis simplex. Invasive lesions reaching the base. Axillary lymph nodes: Lymphonodulitis chronica et lymphonodorum No XV. Examination: Histopathological examination 1. page 2 / 2. Results of immunohistochemical examination: RESULT OF HER2/neu GENE AMPLIFICATION with the FISH method by. HER2 DNA Probe Kit. HER-2 gene AMPLIFICATION NOT FOUND. Histopathological diagnosis: Mixed ductal and papillary invasive carcinoma of the left breast. Usual ductal hyperplasia (. 1. Fibrocystic. changes. Lymph nodes negative for cancer.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Tumour sized 2.6 x 2 x 1.8 cm found in the outer lower quadrant, 5.3 cm from the lower boundary, 1.2 cm. from the base and 1.4 cm from the skin.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension is 2.6 cm, which falls in the pT2 category (>2 cm to ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes negative for cancer.",
+        "confidence": "high",
+        "reason": "No metastatic carcinoma identified in examined axillary lymph nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis in the pathology report; pathologic M status is not directly assessed in this specimen.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumour sized 2.6 x 2 x 1.8 cm found in the outer lower quadrant",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes negative for cancer",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumour sized 2.6 x 2 x 1.8 cm found in the outer lower quadrant",
+        "confidence": "high",
+        "reason": "Tumor largest dimension 2.6 cm, which fits T2 (>2 cm and ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes negative for cancer.",
+        "confidence": "high",
+        "reason": "No metastatic carcinoma identified in sampled axillary lymph nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report contains no statement of distant metastasis; no evidence of metastatic disease provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumour sized 2.6 x 2 x 1.8 cm found in the outer lower quadrant",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes negative for cancer.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report contains no information about distant metastasis or systemic staging (no mention of M0/M1 assessment).",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

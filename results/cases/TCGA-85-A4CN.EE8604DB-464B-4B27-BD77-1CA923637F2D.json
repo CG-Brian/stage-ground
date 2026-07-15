@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-85-A4CN.EE8604DB-464B-4B27-BD77-1CA923637F2D",
+  "text": "Gross Description: Lobe with the bronchus obstructed by a tumoral structure with a diameter of 6/7/6. cm; the tumor spreads to periphery without invading the pleura. Microscopic Description: TUMOR FRAGMENT: Bronchopulmonary neoplasm of epidermoid carcinoma type, with keratinization, G2, formed of solid. beaches of relatively pleomorphic cells with intralobular keratotic globes; fibrous-inflammatory stromal. reaction. INTERLOBAR LYMPH NODE: Lymph node with neoplastic infiltrates of the epidermoid carcinoma. HILAR LYMPH NODE: with tumoral infiltrates. ICD - 6 - 3. TRIANGULAR LIGAMENT LYMPH NODE: 3 lymph nodes; no metastases. SUBAORTIC LYMPH NODE: No metastases. Diagnosis Details: Comments: Formatted Path Reports: LUNG TISSUE CHECKLIST. Specimen type: Lobectomy. Tumor site: Lung. Tumor size: 6x7x6cm. Histologic type: Squamous cell carcinoma. Histologic grade: Moderately differentiated. Tumor extent: Not specified. Other tumor nodules: Not specified. Lymph nodes: 2/6 positive for metastasis (Regional 2/6). Lymphatic invasion: Not specified. Venous invasion: Not specified. Margins: Not specified. Evidence of neo-adjuvant treatment: Not specified. Additional pathologic findings: Not specified. Comments: Left-lower.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Lobe with the bronchus obstructed by a tumoral structure with a diameter of 6/7/6. cm; the tumor spreads to periphery without invading the pleura. Tumor size: 6x7x6cm.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension 7 cm → T3 (tumor >5–≤7 cm). No pleural invasion reported.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "INTERLOBAR LYMPH NODE: Lymph node with neoplastic infiltrates of the epidermoid carcinoma. HILAR LYMPH NODE: with tumoral infiltrates. Lymph nodes: 2/6 positive for metastasis (Regional 2/6).",
+        "confidence": "high",
+        "reason": "Metastatic involvement of interlobar and hilar (ipsilateral) nodes = N1.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases reported in the pathology specimen; only regional lymph node metastases identified.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor size: 6x7x6cm.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph nodes: 2/6 positive for metastasis (Regional 2/6).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor size: 6x7x6cm.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension 7 cm, which corresponds to T3 (>5 cm to 7 cm).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph nodes: 2/6 positive for metastasis (Regional 2/6).",
+        "confidence": "high",
+        "reason": "Two positive ipsilateral interlobar/hilar lymph nodes (interlobar and hilar) consistent with N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases reported in the pathology report; only regional lymph node metastases identified.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor size: 6x7x6cm.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension reported as 7 cm, which corresponds to T3 based on tumor size.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "INTERLOBAR LYMPH NODE: Lymph node with neoplastic infiltrates of the epidermoid carcinoma. HILAR LYMPH NODE: with tumoral infiltrates.",
+        "confidence": "high",
+        "reason": "Metastatic involvement is described in interlobar and hilar lymph nodes (regional nodes), consistent with N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information provided about distant metastasis or distant metastatic workup in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

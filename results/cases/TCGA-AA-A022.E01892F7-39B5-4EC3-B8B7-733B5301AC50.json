@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AA-A022.E01892F7-39B5-4EC3-B8B7-733B5301AC50",
+  "text": "Diagnosis: This is a poorly differentiated carcinoma (in this case, conforming to the neuro-endocrine. type, G3), with infiltration of the terminal ileum and the serosa (p T 4) and with. extensive infiltration of the lymph and blood vessels (L 1, V 1), furthermore, with free. resection margins in the region of the mucosal membrane and a free ligature area and free. lymph nodes (p N 0). Tumor classification: ICDO-DA-M 8140/3. G3. p T 4, L 1, V 1, p NO, MX.",
+  "gold": {
+    "T": "T4",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT4",
+        "value_norm": "T4",
+        "evidence": "infiltration of the terminal ileum and the serosa (p T 4)",
+        "confidence": "high",
+        "reason": "Report explicitly states 'p T 4' indicating pathologic T4; normalized to 'pT4'.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "free lymph nodes (p N 0)",
+        "confidence": "high",
+        "reason": "Report explicitly states 'p N 0' (free lymph nodes); normalized to 'pN0'.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "p T 4, L 1, V 1, p NO, MX.",
+        "confidence": "high",
+        "reason": "Report lists 'MX' indicating metastasis cannot be assessed; normalized to 'pMX'.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "infiltration of the terminal ileum and the serosa (p T 4)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "free. lymph nodes (p N 0)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "infiltration of the terminal ileum and the serosa (p T 4)",
+        "confidence": "high",
+        "reason": "Pathology report explicitly states p T 4 and describes serosal infiltration.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "free. lymph nodes (p N 0).",
+        "confidence": "high",
+        "reason": "Report explicitly indicates p N 0 (free lymph nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "p T 4, L 1, V 1, p NO, MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists MX for metastatic status.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "(p T 4)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "(p N 0)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

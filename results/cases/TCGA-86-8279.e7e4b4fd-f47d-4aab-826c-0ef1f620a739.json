@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-86-8279.e7e4b4fd-f47d-4aab-826c-0ef1f620a739",
+  "text": "Gross. Microsc. Diagnos. Comme. Descript. opic. is. nts. ion. Descript. Details. ion. OpenCli. nica ID. LUNG TISSUE CHECKLIST. Specimen type: Excision of tumor. Tumor site: Lung. Tumor size: 3 X 3 X 3 cm. Histologic type: Adenocarcinoma. Histologic grade: Poorly differentiated. Tumor extent: Visceral pleura. Other tumor nodules: Not specified. Lymph nodes: 1/1 positive for metastasis (Intrathoracical 1/1). Lymphatic invasion: Not specified. Venous invasion: Not specified. Margins: Not specified. Evidence of neo-adjuvant treatment: Not specified. Additional pathologic findings: Not specified. Comments: Positive for CD15, CK7, TTF1, CEA; negative for CK20,. CDX2. Lateralit. y. Right-. upper.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2a",
+        "value_norm": "T2",
+        "evidence": "Tumor extent: Visceral pleura.",
+        "confidence": "high",
+        "reason": "Tumor measures 3 x 3 x 3 cm (≤3 cm) but invades visceral pleura; visceral pleural invasion upstages a ≤3 cm tumor to T2a under lung TNM rules.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph nodes: 1/1 positive for metastasis (Intrathoracical 1/1).",
+        "confidence": "high",
+        "reason": "One intrathoracic/ipsilateral lymph node positive for metastasis, consistent with N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases are reported in the pathology report; M status is not documented pathologically.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumor size: 3 X 3 X 3 cm. Tumor extent: Visceral pleura.",
+        "confidence": "high",
+        "reason": "Visceral pleural invasion is documented and upstages a tumor to at least T2 despite size at 3 cm.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph nodes: 1/1 positive for metastasis (Intrathoracical 1/1).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumor size: 3 X 3 X 3 cm. Tumor extent: Visceral pleura.",
+        "confidence": "high",
+        "reason": "Tumor measures 3 cm (≤3 cm) but invades visceral pleura, which upstages to T2 in lung cancer staging.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph nodes: 1/1 positive for metastasis (Intrathoracical 1/1).",
+        "confidence": "medium",
+        "reason": "A single positive intrathoracic lymph node is most consistent with N1; the term 'intrathoracical' is slightly ambiguous regarding exact nodal station (hilar vs mediastinal).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Other tumor nodules: Not specified.",
+        "confidence": "medium",
+        "reason": "No documentation of distant metastasis or pathologic assessment of distant sites in the report, so M status cannot be determined.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumor size: 3 X 3 X 3 cm. Histologic type: Adenocarcinoma. Histologic grade: Poorly differentiated. Tumor extent: Visceral pleura.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph nodes: 1/1 positive for metastasis (Intrathoracical 1/1).",
+        "confidence": "medium",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or M status is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

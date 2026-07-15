@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DJ-A4V5.E4745F67-4727-4DF5-826A-3CEA904ED623",
+  "text": "id & Neck. 1 And Neck. Clinical Diagnosis & History: Papillary carcinoma of right thyroid. Specimens Submitted: 1: Delphain lymph node. 2: Total thyroidectomy central compartment lymph node. 3: Right para-esophageal lymph node. DIAGNOSIS: 1. Delphain lymph node; excision: - Three out of four lymph nodes positive for metastatic papillary thyroid carcinoma (3/4). - The largest lymph node measures 0,5 cm. - The largest metastatic focus measures 0.3 cm. - No extranodal extension seen. - A separate fragment of thyroid with chronic lymphocytic thyroiditis. 2. Total thyroidectomy central compartment lymph node: Part # 2. Tumor Type: Papillary carcinoma, classical type. Histologic Grade: Well differentiated. Mitotic Activity: Not identified. Tumor Necrosis: Not identified. Other Tumor Features: Calcification of non-psammoma type. Marked stromal reaction. Psammoma bodies. Extensive squamous metaplasia. Tumor Location: Right lobe. Tumor Size: Greatost-diameterio4.1 em. Tumor Encapsulation: None Identified. Blood Vessel Invasion: Not identified. Extrathyroid Extension: Invades:peithyroidal tissue. Surgical Margins: Tumor is present focally at the inked posterior margin. Tumor Multicentricity: Not identified. Non-Neoplastic Thyroid: Exhibits chronic lymphocytic thyroiditis. Parathyroid Glands: Identified. One parathyroid gland seen. Lymph Nodes: Tumor is present in eight lymph nodes (8/8). The largest positive lymph node measures 0.9 cm and the largest. metastatic focus measures 0.7 cm. Comment: Extensive psammoma bodies are noted in the non-neoplastic thyroid. 3. Right para-esophageal lymph node; excision: - Four out of five lymph nodes positive form metastatic carcinoma (4/5). - Largest lymph node measures 1.1 cm and is almost entirely involved by metastatic carcinoma. - No extranodal extension seen. - Benign parathyroid gland. ATTEST THAT THE ABOVE DIAGNOSIS IS BASED UPON MY PERSONAL EXAMINATION OF THE SLIDES (AND/OR OTHER MATERIAL), AND THAT I HAVE. REVIEWED AND APPROVED THIS REPORT. Gross Description: 1. The specimen is received fresh, labeled \"Delphian lymph node\", and consists of multiple pink tan firm lymph nodes ranging from. 0.3 to 0.5 cm in greatest dimension. All identified lymph nodes are submitted. Summary of sections: LN - lymph nodes. 2. The speciment is received frest, tabeled \"total thyroldectomy centrat compartment tymph node dissection, and consists of a. thyroid weighing 39g. The right lobe measures 5 cm x 4 cm x 2.0 cm, the left lobe measures 5 cm x 2.5 cm x 1.0 cm and the. isthmus measures 1.0 cm x 0.8 cm x 0.5 cm. The external surface is covered by a thin fibrous capsule. The posterior surface of. the specimen is inked black, and the anterior is inked blue. Sectioning reveals one nodule. The nodule is located in the right. lobe and measures 4.1 cm x 3.2 cm x 1.0 cm and it is in contact with the capsule, displays firm cut surfaces, and is not. encapsulated. Sections through the remaining tissue reveal no other lesions. The remaining thyroid parenchyma is red. brown. and beefy. Various lymph nodes are identified measuring from 0.3cm to 0,5 cm. Representative sections of the specimen are. submitted for TPS. The remaining tissue is serially sectioned and entirely submitted. Summary of sections: RN - right nodule, entirely submitted. RL right lobe. LL left lobe. IS isthmus. LN- lymph nodes. 3. The specimen is received fresh, labeled \"right paraesophageal lymph nodes\", and consists of multiple pink tan firm lymph nodes. ranging from 0.6 to 1.1 cm in greatest dimension. All identified lymph nodes are submitted. Summary of sections: BLN - bisected lymph nodes. LN - lymph nodes. Summary of Sections: Part 1: Delphain lymph node. Block. Sect. Site. PCs. 2. LN. 2. Part 2: Total thyroldectomy central compartment lymph node. Block. Sect. Site. PCs. 2. IST. 2. 3. LL. 3. 3. LN. 3. 1. RL. 1. 8. RN. 8. Part 3: Right para-esophageal lymph node. Block. Sect. Site. PCs. 3. BLN. 3. 1. LN. 1.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a",
+        "value_norm": "T3",
+        "evidence": "The nodule is located in the right. lobe and measures 4.1 cm x 3.2 cm x 1.0 cm and it is in contact with the capsule, displays firm cut surfaces, and is not. encapsulated. Extrathyroid Extension: Invades:peithyroidal tissue.",
+        "confidence": "high",
+        "reason": "Tumor greatest dimension >4.0 cm (4.1 cm) → pT3a per AJCC 8th ed. Microscopic/limited extrathyroidal extension into perithyroidal tissue does not upstage beyond T3a in AJCC 8.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1a",
+        "value_norm": "N1",
+        "evidence": "Three out of four lymph nodes positive for metastatic papillary thyroid carcinoma (3/4). Tumor is present in eight lymph nodes (8/8). Four out of five lymph nodes positive form metastatic carcinoma (4/5).",
+        "confidence": "medium",
+        "reason": "Multiple positive central compartment nodes (prelaryngeal/Delphian and central compartment nodes) support at least N1a. Right para-esophageal nodes are reported positive as well; if those are classified outside the central compartment in a given staging schema they could represent N1b, hence moderate confidence.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are mentioned in the pathology report, but no explicit metastatic workup or statement of M0 is provided.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "The nodule is located in the right. lobe and measures 4.1 cm x 3.2 cm x 1.0 cm",
+        "confidence": "medium",
+        "reason": "Greatest tumor diameter 4.1 cm (>4 cm) supports T3; report also notes extrathyroidal extension ('Extrathyroid Extension: Invades:peithyroidal tissue') but the extent is not fully specified, creating some ambiguity for subtyping.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1a",
+        "value_norm": "N1",
+        "evidence": "Lymph Nodes: Tumor is present in eight lymph nodes (8/8).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "The nodule is located in the right lobe and measures 4.1 cm x 3.2 cm x 1.0 cm and it is in contact with the capsule, displays firm cut surfaces, and is not encapsulated.",
+        "confidence": "medium",
+        "reason": "Maximum tumor diameter >4.0 cm (4.1 cm) consistent with T3 (AJCC 8th ed. T3a = >4 cm limited to thyroid). Report also notes invasion of perithyroidal tissue (microscopic extrathyroidal extension) which is described but does not clearly indicate gross ETE; therefore T3 is assigned.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Tumor is present in eight lymph nodes (8/8).",
+        "confidence": "high",
+        "reason": "Multiple regional lymph nodes positive for metastatic papillary thyroid carcinoma (Delphian, central compartment and para‑esophageal nodes documented positive).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases are reported in the pathology specimen or report. Pathologic assessment limited to thyroid and regional lymph nodes; no evidence of distant disease documented.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor Size: Greatost-diameterio4.1 em. Tumor Encapsulation: None Identified. Blood Vessel Invasion: Not identified. Extrathyroid Extension: Invades:peithyroidal tissue.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph Nodes: Tumor is present in eight lymph nodes (8/8). The largest positive lymph node measures 0.9 cm and the largest. metastatic focus measures 0.7 cm.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis (M) or assessment of distant metastatic disease in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

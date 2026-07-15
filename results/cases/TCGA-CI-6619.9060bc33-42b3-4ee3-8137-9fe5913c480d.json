@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-CI-6619.9060bc33-42b3-4ee3-8137-9fe5913c480d",
+  "text": "STRESFY. RESTILL. POSTOPERATIVE DIAGNOSIS: poure, LEGION :N RECTUM. ATESTORY: A. TRANSVERSE COLOS - pours. \", MECTOM . 13% OF. ADRNOMATONIS WITH GRACE DYSPLABIA, TRANAVERGE COLOR. a. BIOPSY GPECIMINN, RECTEM, ABIONING. INFILTRATING. or QUANTITATIVE : ARE. MICROSCOFECI.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M1"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "TX",
+        "value_norm": "TX",
+        "evidence": "INFILTRATING.",
+        "confidence": "low",
+        "reason": "Report is garbled and does not specify tumor depth or extent; the word 'INFILTRATING.' suggests invasion but does not allow assignment of a specific T category.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No clear mention of regional lymph nodes or nodal status in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report is illegible/garbled and contains no pT designation or clear description of tumor depth/invasion.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No nodal status, node counts, or mention of regional lymph node involvement in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis (pM) or imaging findings is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report text is garbled/illegible and contains no clear description of tumor depth or pathologic T stage.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph node count or nodal status is reported in the provided text.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis is present in the provided text.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "Report contains no explicit primary tumor (pT/T) descriptor, tumor size, or TNM staging statement. Text is nonspecific/garbled (e.g., 'POSTOPERATIVE DIAGNOSIS: poure, LEGION :N RECTUM.') and provides no basis for assigning a T stage.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "Report contains no information about regional lymph nodes, lymph node count, nodal status, or a pN/N descriptor. No basis in the text to determine N stage.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "Report contains no statement regarding distant metastasis, imaging, or a pM/M descriptor. No basis in the text to determine M stage.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DD-AAD1.D0035DF7-2E83-44E0-8FF1-C9A057E11AE3",
+  "text": "CLINICAL DIAGNOSIS: HCC. Specimen : liver. Photo. GROSS: Specimen: Liver: 9.0 x 7.5 x 5.5 cm, 203.0 gm (unfixed). Operation: Segmentectomy. Lesion: A well-defined mass (6.3 X 5.0 X 3.5 cm). Cut surface: Yellowish tan, and granular. Gross type. HCC: Multinodular confluent. Resection margin: Involved by tumor. Others: Satellite nodule: no. Remaining parenchyma: Unremarkable. Portal vein invasion: No. Gross photo: Present. Blocks. T1-5 and TB, tumor and surrounding tissue X 6. RM, resection margin X 1. NB, remaining hepatic parenchyme X 1. MICROSCOPIC: Hepatocellular carcinoma: Yes. The worst differentiation IV/IV. The major differentiation III/IV. Histologic type: Trabecular, pseudoglandular, compact. Cell type: Hepatic, clear. Fatty change: No. Cholangiocarcinoma: No. Combined hepatocellular and cholangiocarcinoma: No. Fibrous capsule formation: No. Septum formation: Yes. Surgical resection margin invasion: Yes. Serosal invasion: No. Portal vein invasion: No. Microvessel invasion: No. NOT reported. Gross: Liver, ectomy, hepatocellular carcinoma. T56000, P10, M81703. DIAGNOSIS: Liver, segment 7, segmentectomy: Hepatocellular carcinoma. Suggestion :",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1b",
+        "value_norm": "T1",
+        "evidence": "Lesion: A well-defined mass (6.3 X 5.0 X 3.5 cm). Portal vein invasion: No. Microvessel invasion: No.",
+        "confidence": "high",
+        "reason": "Solitary hepatic tumor >2 cm without vascular invasion → pathologic T1b (AJCC classification: T1 = solitary without vascular invasion; subdivided at 2 cm).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": "NOT reported.",
+        "confidence": "high",
+        "reason": "No lymph nodes were mentioned or examined in the report, so pathologic nodal status cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "NOT reported.",
+        "confidence": "low",
+        "reason": "Distant metastasis is not addressed in the pathology report, so pathologic M status cannot be determined.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "Lesion: A well-defined mass (6.3 X 5.0 X 3.5 cm). Portal vein invasion: No. Microvessel invasion: No. Satellite nodule: no.",
+        "confidence": "medium",
+        "reason": "Solitary tumor >2 cm without reported vascular invasion suggests T1b (AJCC staging); report does not state pathologic T explicitly and staging edition is not specified.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No regional lymph nodes or nodal status are mentioned in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention distant metastasis.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Lesion: A well-defined mass (6.3 X 5.0 X 3.5 cm). Portal vein invasion: No. Microvessel invasion: No.",
+        "confidence": "medium",
+        "reason": "Solitary hepatic tumor (6.3 cm) with no vascular invasion; by AJCC criteria a solitary tumor without vascular invasion is staged T1.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "NOT reported.",
+        "confidence": "high",
+        "reason": "No regional lymph node assessment or status documented in the report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No documentation of distant metastasis or metastatic workup in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Lesion: A well-defined mass (6.3 X 5.0 X 3.5 cm). Cut surface: Yellowish tan, and granular. Gross type. HCC: Multinodular confluent. Resection margin: Involved by tumor. Others: Satellite nodule: no. Remaining parenchyma: Unremarkable. Portal vein invasion: No.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph node assessment or nodal status reported in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or metastatic workup is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

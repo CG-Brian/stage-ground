@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-44-A47F.FC0E596B-733C-4532-AF0D-94B4A4ECB90C",
+  "text": "Final Surgical Pathology Report. Procedure. Diagnosis. A. Lymph node, level X, excision: Two lymph nodes negative for metastatic carcinoma (0/2). Vessel negative for tumor. B. Lung, left upper lobe, excision: Invasive moderately differentiated adenocarcinoma (see microscopic. description). The tumor measures 5.5 cm in dimension. Two of 8 hilar lymph nodes positive for metastatic carcinoma (2/8). C. Lymph node, level VII, excision: One lymph node negative for metastatic carcinoma (0/1) . D. Lymph node, level V, excision: One lymph node negative for metastatic carcinoma (0/1). Microscopic Description: Histologic type: Adenocarcinoma. Histologic grade: Moderately differentiated. Primary tumor (pT) : Tumor measures 5.5 cm in dimension and is organ. confined, pT2b. Margins of resection: Tumor is present approximately 4 mm from the. bronchial margin. The vascular margin is negative. Direct extension of tumor: Tumor shows minimal extension into the. pleura. Vessel invasion: Present in a large vessel. Regional lymph nodes (pN) : 2 hilar lymph nodes are positive for. carcinoma with one showing probable direct extension and the other. showing metastatic tumor, the remaining lymph nodes are negative, pN1. Distant metastasis (pM) : pMX. Other findings: Dr. has reviewed this case. Specimen. A. Level X. B. Left upper lobe. C. Level VII. D. Level V. Clinical Information. Lung cancer. Gross Description. A. Received fresh labeled \"level X\" are 2 soft gray-black tissues in. keeping with lymph nodes averaging 1.3 cm in greatest dimension. Also. received within the specimen container is a 1.1 x 0.4 x 0.15 cm. fragment of soft tan-pink tissue in keeping with vessel which has. several associated staples. RS 2. Summary: 1 - 2 lymph nodes in toto, 2 - possible vascular tissue. B. Received fresh labeled \"left upper lobe\" is a 233 g, 18.5 x 11.0 x. 3.8 cm lobectomy specimen with attached 1 cm in length, 3.5 x 1.0 cm in. diameter bronchial stump. The pleura is tan-pink-red with a focal area. of retraction, subsequently inked blue. An indurated focus is present. subjacent to the area of retraction. On sectioning, there is a. moderately well-circumscribed, 5.5 x 4.2 x 3.8 cm tan-white tumor mass. extends to within 0.1 cm of the inked pleural surface. The tumor. extends to the vicinity of the hilum and appears to be within the. proximal bronchial stump (to within approximately 0.8 cm of the true. bronchial stump margin, see block 5). A portion of tumor and a portion. of normal parenchyma are submitted for tissue procurement as requested. The parenchyma throughout the remainder of the specimen is spongiform. tan-pink to tan red. No additional mass lesion or abnormality is. noted. Several soft gray-black tissues in keeping with lymph nodes. measuring up to 1.3 cm in greatest dimension are recovered from the. vicinity of the hilum. RS 10. Summary: 1 - bronchial stump margin, 3 - vascular margins, 2 and 4 -. tumor to inked pleural surface, 5 - tumor extending up bronchus. (following initial removal of bronchial stump margin), 6 - tumor to. normal, 7 and 8 - random normal, 9 - 6 hilar lymph nodes, 10 - one. bisected hilar lymph node. C. Received fresh labeled \"level VII\" is a 0.5 cm slightly rubbery. gray-black tissue in keeping with lymph node with a scant amount of. associated adipose tissue. AS1. D. Received fresh labeled \"level V\" is a 0.6 cm gray-black tissue in. keeping with lymph node with a moderate amount of associated tan gold. adipose tissue. AS1.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2b",
+        "value_norm": "T2",
+        "evidence": "Primary tumor (pT) : Tumor measures 5.5 cm in dimension and is organ. confined, pT2b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "Regional lymph nodes (pN) : 2 hilar lymph nodes are positive for. carcinoma with one showing probable direct extension and the other. showing metastatic tumor, the remaining lymph nodes are negative, pN1.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2b",
+        "value_norm": "T2",
+        "evidence": "Primary tumor (pT) : Tumor measures 5.5 cm in dimension and is organ. confined, pT2b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Regional lymph nodes (pN) : 2 hilar lymph nodes are positive for. carcinoma with one showing probable direct extension and the other. showing metastatic tumor, the remaining lymph nodes are negative, pN1.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor (pT) : Tumor measures 5.5 cm in dimension and is organ. confined, pT2b.",
+        "confidence": "high",
+        "reason": "Report explicitly documents pathologic tumor stage pT2b (tumor 5.5 cm), corresponding to T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Regional lymph nodes (pN) : 2 hilar lymph nodes are positive for. carcinoma with one showing probable direct extension and the other. showing metastatic tumor, the remaining lymph nodes are negative, pN1.",
+        "confidence": "high",
+        "reason": "Report explicitly documents pathologic nodal stage pN1 with two positive hilar nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : pMX.",
+        "confidence": "high",
+        "reason": "Report explicitly documents pMX (distant metastasis cannot be assessed pathologically).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pT2b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

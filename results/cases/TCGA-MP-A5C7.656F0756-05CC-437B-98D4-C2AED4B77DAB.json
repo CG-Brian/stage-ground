@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-MP-A5C7.656F0756-05CC-437B-98D4-C2AED4B77DAB",
+  "text": "TISSUE DESCRIPTION: A1 B1 C1 01 D2 D3 D4 D5 D6 D7 D8 E1 F1. Lett upper lobe lung (185.0 grams), ,station 6 lymph nodes, station 7. lymph nodes, station 9L lymph nodes, station 10L lymph nodes,. station 11L lymph nodes. DIAGNOSIS: Lung, left upper lobe, lobectomy: Invasive grade 2 (of 4). adenocarcinoma, forming a well-circumscribed 4.0 x 3.0 x 2.6 cm. central mass, puckering the pleura but without visceral pleural. invasion. The bronchial margin is negative for tumor (by 4.0 cm). Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (11) intrapulmonary. peribronchial lymph nodes. No tumor is identified in a single (1) left hilar. (station 10L) lymph node. No tumor is identified in multiple (2) left interlobar. (station 11L) lymph nodes. Lymph nodes, mediastinal, excision: No tumor is identified in multiple (2) para-aortic. (station 6) lymph nodes. No tumor is identified in multiple (2) subcarinal. (station 7) lymph nodes. NO tumor is identitied in a single (1) left pulmonary. ligament (station 9L) lymph node.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2a",
+        "value_norm": "T2",
+        "evidence": "forming a well-circumscribed 4.0 x 3.0 x 2.6 cm. central mass, puckering the pleura but without visceral pleural. invasion.",
+        "confidence": "high",
+        "reason": "Maximum tumor dimension 4.0 cm corresponds to T2a (AJCC 8th); report explicitly states no visceral pleural invasion.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (11) intrapulmonary. peribronchial lymph nodes. No tumor is identified in a single (1) left hilar. (station 10L) lymph node. No tumor is identified in multiple (2) left interlobar. (station 11L) lymph nodes. Lymph nodes, mediastinal, excision: No tumor is identified in multiple (2) para-aortic. (station 6) lymph nodes. No tumor is identified in multiple (2) subcarinal. (station 7) lymph nodes. NO tumor is identitied in a single (1) left pulmonary. ligament (station 9L) lymph node.",
+        "confidence": "high",
+        "reason": "All sampled regional (hilar and mediastinal) lymph nodes are reported negative for tumor.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention/evaluation of distant metastasis in the pathology report; absence of metastatic disease cannot be confirmed pathologically from this report alone.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2a",
+        "value_norm": "T2",
+        "evidence": "adenocarcinoma, forming a well-circumscribed 4.0 x 3.0 x 2.6 cm. central mass, puckering the pleura but without visceral pleural. invasion.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (11) intrapulmonary. peribronchial lymph nodes. No tumor is identified in a single (1) left hilar. (station 10L) lymph node. No tumor is identified in multiple (2) left interlobar. (station 11L) lymph nodes. Lymph nodes, mediastinal, excision: No tumor is identified in multiple (2) para-aortic. (station 6) lymph nodes. No tumor is identified in multiple (2) subcarinal. (station 7) lymph nodes. NO tumor is identitied in a single (1) left pulmonary. ligament (station 9L) lymph node.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "forming a well-circumscribed 4.0 x 3.0 x 2.6 cm. central mass, puckering the pleura but without visceral pleural. invasion.",
+        "confidence": "high",
+        "reason": "Maximum tumor dimension 4.0 cm → T2 (tumor >3 cm and ≤5 cm); no visceral pleural invasion reported.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No tumor is identified in multiple (11) intrapulmonary. peribronchial lymph nodes.",
+        "confidence": "high",
+        "reason": "Multiple hilar/intrapulmonary and mediastinal lymph nodes (stations 6, 7, 9L, 10L, 11L and intrapulmonary) were sampled and reported negative.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases are mentioned in the pathology report; the specimen and report are limited to the primary tumor and regional nodes, so distant metastasis was not pathologically identified.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "forming a well-circumscribed 4.0 x 3.0 x 2.6 cm. central mass, puckering the pleura but without visceral pleural. invasion.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (11) intrapulmonary. peribronchial lymph nodes. No tumor is identified in a single (1) left hilar. (station 10L) lymph node. No tumor is identified in multiple (2) left interlobar. (station 11L) lymph nodes. Lymph nodes, mediastinal, excision: No tumor is identified in multiple (2) para-aortic. (station 6) lymph nodes. No tumor is identified in multiple (2) subcarinal. (station 7) lymph nodes. NO tumor is identitied in a single (1) left pulmonary. ligament (station 9L) lymph node.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement about distant metastasis or M status in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

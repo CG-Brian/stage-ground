@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DJ-A13R.1A4EFF12-E96A-4D1E-8BA7-C126E7333211",
+  "text": "Clinical Diagnosis & History: Multinodular golter. Specimens Submitted: 1: Thyrold, thyroidectomy. DIAGNOSIS: 1. Thyrold, thyroldectomy: Tumor Type: Papillary carcinoma, follicular variant. with oncocytic features. Histologic Grade: Well differentiated. Mitotic Activity: Mild to moderate. Tumor Necrosis: Not identified. Tumor Location: arising in a parasitic nodule. Tumor Size: Greatest diameter is 5 cm. Tumor Encapsulation: Completely surrounded. Capsular Invasion: Not identified. Blood Vessel invasion: Not identified. Extrathyroid Extension: Not identified. Surgical Margins: Free of tumor. Tumor Multicentricity: Separate focus of papillary microcarcinoma measuring 0.35cm in right lobe. psammoma bodies also present. Non-Neoplastic Thyrold: Exhibits nodular hyperplasia. Clinical Diagnosis & History: Multinodular goiter. Specimens Submitted: 1: Thyroid, thyroidectomy. DIAGNOSIS: 1. Thyroid, thyroidectomy: Tumor Type: Papillary carcinoma, follicular variant. with oncocytic features. Histologic Grade: Well differentiated. Mitotic Activity: Mild to moderate. Tumor Necrosis: Not identified. Tumor Location: arising In a parasitic nodule. Tumor Size: Greatest diameter is 5 cm. Tumor Encapsulation: Completely surroundad. Capsular Invasion: Not identified. Blood Vassal Invasion: Not identified. Extrathyroid Extension: Not identified. Surgical Margins: Frea of tumor. Tumor Multicantricity: Separate focus of papillary microcarcinoma measuring 0.35cm in right lobe. psammoma bodies also present. Non-Neoplastic Thyroid: Exhibits nodular hyperplasia. Exhibits chronic lymphocytic thyroiditis. Parathyroid Glands: Not identified. Lymph Nodes: Two benign lymph nodes (0/2). LATTEST THAT THE ABOVE DIAGNOSIS IS BASED UPON MY PERSONAL EXAMINATION OF THE SLIOES (AND/OR OTHER MATERIAL), AND THAT I HAVE. REVIEWED AND APPROVED THIS REPORT. Gross Description: 1). The specimen is received fresh, labeled \"total thyroid\" and consists of a thyroid weighing 74.5 G. The right lobe measures 5. x. 3.8 x .5 Cm the left lobe measures 6.5 x Cm and the isthmus measures 2.2 x 2 x 0.8 Cm. A 5 x 4.5 x 4 cm mass is. attached to the right lobe by a fibrous \"stalk\" measuring 2.2 x 1.8 x 0.3 cm. The mass is covered by a thin fibrous capsule. The. external surface is covered by a thin fibrous capsule. The posterior surface of the thyroid, the mass and the posterior surface. of. the stalk are inked black and the anterior surface of the thyroid and the stalk is inked blue. Sectioning reveals that the mass is not. connected through the thyroid parenchyma. The cut surface of the mass is tan with focal hemorrhage, homogeneous and fleshy. Sections through the remaining tissue reveal diffuse vague tan nodularity without a dominant nodule. Representative sections of. the specimen are submitted for TPS, cytogenetics and flow cytometry and a photograph has been taken. The remaining tissue. is. serially sectioned. The thyrold is submitted entirely from superior to inferior. The tumor is representatively submitted. Summary of sections: T tumor mass. TS - tumor with the \"stalk\". RL right lobe. LL left lobe. IS isthmus. Summary of Sections: Part 1: Thyroid, thyroidectomy. Block. Sect. Site. PCs. 2. IS. 2. 8. LL. 8. 8. RL. 8. 5. 5. 1. TS.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a",
+        "value_norm": "T3",
+        "evidence": "Tumor Size: Greatest diameter is 5 cm. Tumor Encapsulation: Completely surrounded. Extrathyroid Extension: Not identified.",
+        "confidence": "high",
+        "reason": "Tumor >4 cm confined to the thyroid without extrathyroidal extension (AJCC 8th edition pT3a).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: Two benign lymph nodes (0/2).",
+        "confidence": "high",
+        "reason": "No regional lymph node metastasis identified in submitted nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases reported in the pathology specimen; distant staging not assessed by this pathology report.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor Size: Greatest diameter is 5 cm. Extrathyroid Extension: Not identified.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: Two benign lymph nodes (0/2)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor Size: Greatest diameter is 5 cm. Extrathyroid Extension: Not identified.",
+        "confidence": "high",
+        "reason": "Tumor >4 cm and confined to the thyroid (no extrathyroidal extension) consistent with AJCC T3 (T3a: >4 cm limited to thyroid).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: Two benign lymph nodes (0/2).",
+        "confidence": "high",
+        "reason": "Pathologic evaluation showed no nodal metastasis (0 of 2 nodes involved).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases are described in the pathology report; M0 inferred from absence of metastatic findings in submitted specimens (pathology cannot fully exclude clinical/radiologic metastasis).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor Size: Greatest diameter is 5 cm. Tumor Encapsulation: Completely surrounded. Capsular Invasion: Not identified. Blood Vessel invasion: Not identified. Extrathyroid Extension: Not identified.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: Two benign lymph nodes (0/2).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No information regarding distant metastasis or M status is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

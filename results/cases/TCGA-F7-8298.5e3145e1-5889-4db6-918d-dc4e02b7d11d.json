@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-F7-8298.5e3145e1-5889-4db6-918d-dc4e02b7d11d",
+  "text": "Case ID. Gross Description. Microscopic Description. Diagnosis Details. Comments. LARYNX TISSUE CHECKLIST. Specimen type: Laryngectomy. Tumor site: Glottis. Tumor size: 4 X 4 X 2 cm. Histologic type: Squamous cell carcinoma. Histologic grade: Well differentiated. Tumor extent: Vocal cord. Lymph nodes: 0/14 positive for metastasis. (Regional 0/14). Margins: Not specified. Evidence of neo-adjuvant treatment: Not. specified. Comments: None. Laterality. Case ID.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2 (inferred)",
+        "value_norm": "T2",
+        "evidence": "Tumor site: Glottis. Tumor size: 4 X 4 X 2 cm. ... Tumor extent: Vocal cord.",
+        "confidence": "low",
+        "reason": "Report documents tumor confined to vocal cord with a size of 4 x 4 x 2 cm but does not state vocal cord mobility, paraglottic or cartilage invasion. AJCC glottic T category depends on extent and mobility rather than size alone; given the relatively large size an inference of T2 was made but cannot be assigned definitively from the provided information.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes: 0/14 positive for metastasis. (Regional 0/14).",
+        "confidence": "high",
+        "reason": "Pathologic examination of 14 regional lymph nodes showed no metastatic carcinoma.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0 (not documented)",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis is provided in the pathology report; pathologic M cannot be confirmed from this report alone.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Tumor site: Glottis. Tumor extent: Vocal cord. Tumor size: 4 X 4 X 2 cm.",
+        "confidence": "medium",
+        "reason": "Tumor is documented as confined to the vocal cord (glottis) with no mention of impaired mobility or invasion of cartilage/adjacent structures; size is relatively large and details needed to assign a higher-confidence T substage are absent.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes: 0/14 positive for metastasis. (Regional 0/14).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Tumor extent: Vocal cord.",
+        "confidence": "medium",
+        "reason": "Report specifies tumor extent limited to the vocal cord; no mention of vocal cord fixation, sub/supraglottic extension, cartilage invasion, or other features required for higher T categories. Tumor size is reported but size alone does not define glottic T stage.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes: 0/14 positive for metastasis. (Regional 0/14).",
+        "confidence": "high",
+        "reason": "Pathology documents 0 of 14 regional lymph nodes positive.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Tumor size: 4 X 4 X 2 cm.",
+        "confidence": "low",
+        "reason": "Report does not state a pathologic T category. Although tumor size and site are given, the report lacks required staging descriptors (e.g., invasion beyond the larynx, vocal cord mobility/fixation, paraglottic space or cartilage invasion) needed to assign a T stage.",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes: 0/14 positive for metastasis. (Regional 0/14).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement about distant metastasis or pathologic M stage in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

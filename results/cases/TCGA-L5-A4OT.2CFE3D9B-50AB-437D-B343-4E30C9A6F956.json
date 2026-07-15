@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-L5-A4OT.2CFE3D9B-50AB-437D-B343-4E30C9A6F956",
+  "text": "PREVIOUS DIAGNOSIS INQUIRY. 1. SEX: M. PROCEDURE: SPHS. year-old male with history of obesity, gastric stapling, and. gastroesophageal refiux. Tumor at GE junction is poorly differentiated. infiltrating adenocarcinoma. Clinical Diagnosis: Esophageal carcinoma. Operative Procedure/Tissue Submitted: PROCEDURE: SPGD. 1. \"High lesser curvature perigastric soft tissue\". Received in a small. container is a 1.6 cm soft tissue bit. Frozen section control. 2. \"Thoracic esophagus, stitch marks origin of left gastric artery and celiac. node\". Received in format in in a large container is a segment of esophagus. (4. cm long x 5.5 cm circumference) with attached proximal stomach (16 cm long. x. average 6 cm circumference). 8.5 x 5 cm full circumferential ulcer/erosion. involving the entire gastroesophageal junction and upper half of proximal. stomach. 8.5 cm long x 0.5 cm in diameter fistula tract on the deep. beriesophageal fibroadipose tissue on the left lateral side, extends from the. distal resection margin to a little past the mid point of the stomach. Esophageal mucosal utceration/erosion is 3 cm from the nearest proximal. esophageal margin and 7 cm from the nearest distal stomach margin. Stitch in. the deep periesophageal fibroadipose tissue, area inked green. Remaining deep. fibroadipose tissue underneath ulcer/erosion inked blue. Tumor invades to a. maximal depth of 2 cm, invading through the muscularis and into the. adventitia; possibly to the deep resection margin at multiple areas. There are. multiple staple lines running along the left lateral side of the distal. stomach. Portion of artificial mesh at the distal margin. 2A-2C. Full thickness sections of tumor underlying ulcer/erosion with maximal. invasion. (Each. 2D. Area under ulcer/erosion extending to stitch. 2E. Tumor involving gastroesophageal junction and extending towards proximal. resection margin. 2F-2G. Full thickness section from tumor extending to distal resection margin,. bisected. 2M. Lymph node under tumor, section trisected. 21. One possible lymph node bisected. 23. One possibte tymph node rerietty sectioned. 2K. Three possible lymph nodes. 2L. One possible Lymph node bisected. 2M. Ulcer/erosion with adjacent fistula tract on the left lateral side of the. stomach. 3. \"Cervical esophageal margin.. Received in formatin in a small container is. a 1.8 cm long x 1.5 cm in diameter segment of esophagus with staple line. at. one end. Proximal margin submitted in one cassette. FROZEN SECTION REPORT. PREVIOUS DIAGNOSIS INQUIRY. 2. SEX: M. 1. Adenocarcinoma. have reviewed and interpreted the frozen section. material at the time it was requested. have reviewed and interpreted the frozen section. material at the time it was requested. Permanent sections confirm frozen section report. PROCEDURE: SPMI. ESOPHAGEAL, CARDIAC AND GASTROESOPHAGEAL JUNCTION CARCINOMA: Type of carcinome: Adenocarcinome a the GE junction, not otherwise specified. Depth of invasion: Adventitia. Number of positive lymph nodes: 6/11. Extranodal metastasis: Unknown. Pattern of invasion: Infiltrative. Esophageal and gastric resection margins involved: No. Deep resection margin involved: Yes. TNM classification: 13,N Mx. PROCEDURE: SPOX. 1-3. Esophagus, transhiatal esophagectomy: Adenocarcinom arising at the. gastroesophageal junction, not otherwise specified. The neoplasm invades. through the entire esophageal wall and into the adjacent adventitia. Multiple. peripheral soft tissue margins are positive. The neoplasm partially undermines. the adjacent squamous mucosa. The esophageal and gastric margins are negative. for malignancy. Metastatic adenocarcinoma involving six of the 11 lymph nodes. See template.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M1"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "The neoplasm invades through the entire esophageal wall and into the adjacent adventitia.",
+        "confidence": "high",
+        "reason": "Depth of invasion to adventitia corresponds to T3 for esophageal carcinoma.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Number of positive lymph nodes: 6/11.",
+        "confidence": "high",
+        "reason": "Six positive regional lymph nodes corresponds to N2 (3–6 positive nodes).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "TNM classification: 13,N Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly lists M as Mx (distant metastasis not assessed) and no distant metastases documented in the specimen.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Depth of invasion: Adventitia.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Number of positive lymph nodes: 6/11.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "TNM classification: 13,N Mx.",
+        "confidence": "medium",
+        "reason": "Report lists 'Mx' (metastasis cannot be assessed) and does not document distant metastasis.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor invades to a maximal depth of 2 cm, invading through the muscularis and into the adventitia; possibly to the deep resection margin at multiple areas.",
+        "confidence": "high",
+        "reason": "Invasion into the adventitia corresponds to T3 for esophageal cancer.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Number of positive lymph nodes: 6/11.",
+        "confidence": "high",
+        "reason": "Six positive regional lymph nodes falls in the N2 category (3-6 positive nodes).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM classification: 13,N Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly documents Mx (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Depth of invasion: Adventitia.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Number of positive lymph nodes: 6/11.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM classification: 13,N Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

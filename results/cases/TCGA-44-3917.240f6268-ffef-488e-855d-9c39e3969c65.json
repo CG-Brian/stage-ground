@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-44-3917.240f6268-ffef-488e-855d-9c39e3969c65",
+  "text": "SPECIMEN. A. Level 10 lymph node. B. Right upper lobe. C. R4 lymph node right side. D. Level 7 lymph node right side. CLINICAL NOTES. PRE-OP DIAGNOSIS: Lung mass. GROSS DESCRIPTION. A. Received unfixed labeled \"level 10 lymph node\" and. consists of three portions of soft reddish brown tissue,. the smallest measures 0.7 x 0.3 x 0.3 cm. The largest measures 1 X. 0.8 X 0.5 cm. The two smaller nodes are submitted all in block 1. The largest node is bisected. On sectioning it is homogeneous,. soft. and reddish brown. It is bisected and is all submitted in block 2. AS-2. B. Received fresh for tissue procurement as \"right upper. lobe\". It consists of a lobe of lung weighing 190 grams. and measuring 17 X 11.2 x 4.2 cm. There is a longitudinal staple. line medially measuring 17 cm in length. The pleural surface. contains a moderate amount of anthracotic pigmentation. On the. inferior edge there are two adjacent dull white soft plaque-like. areas which are 0.5 cm apart. Each of these flattened areas. measures 0. cm in greatest dimension. There is also a mass. palpable in the inferior portion of the specimen. Overlying pleura. is smooth and glistening. On section, there is a discrete fleshy. tan necrotic tumor mass measuring 3.1 X 3.2 x 3 cm. Samples are. taken for tissue procurement. Tumor does not approximate pleural. surfaces. A touch preparation is made and examined in order to. obviate the need for flow cytometry. A second staple line is found. joining the first in its mid portion. The second staple line. measures 3.5 cm in length. Upon removing this shorter staple line,. the bronchial margin is identified and appears normal. When probing. GROSS DESCRIPTION. this bronchus, tumor is encountered within 2 cm of the staple line. Major vessels are also stapled and appear unremarkable at their. margins. Also noted in the hilar area are two adjacent, soft,. blackened lymph nodes measuring up to 1.1 cm in greatest dimension. BLOCK SUMMARY: 1 - Small pleural \"plaques\"; 2 - bronchial and. vascular margins of resection; 3 - hilar nodal tissue; 4 - tumor. with bronchus; 5-9 - additional tumor; 10 - random section. C. Received fresh subsequently fixed in formalin labeled. \"R4 lymph node right side\" is a 4 x 3.5 X 1.5 cm aggregate. of brown gray tan irregular soft tissue fragments grossly. consistent. with lymphoid tissue. The specimens are entirely submitted in two. cassettes. AS-2. D. Received fresh subsequently fixed in formalin labeled. \"level 7 lymph node\" are multiple red black irregular soft. tissue fragments which may contain possible lymphoid tissue. This. has an aggregate measurement of 4 X 3 x 1 cm. The specimens are. entirely submitted in one cassette. AS-1. MICROSCOPIC DESCRIPTION. A, C & D, microscopic examination performed. B. This right upper lobe of lung contains a 3.2 cm. poorly. differentiated adenocarcinoma. All margins are negative for tumor. The tumor invades and ulcerates a major bronchus. Please see the. template below: Histologic type: Adenocarcinoma. Histologic grade: Poorly differentiated. Primary tumor (pT) : The tumor measures 3.2 cm in greatest. dimension, pT2. MICROSCOPIC DESCRIPTION. Margins of resection: Bronchial and vascular margins. negative for tumor. Direct extension of tumor: None identified. Venous (large vessel) invasion: Negative. Arterial (large vessel) invasion: Negative. Lymphatic (small vessel) invasion: Negative. Regional lymph nodes (pN) : Attached to the main specimen. there are two lymph nodes which are negative for. metastatic. disease. Multiple other nodes are identified in parts A,. C & D and all are negative, pNO. Distant metastasis (pM) : Cannot be assessed. Other findings : Two nonspecific small areas of fibrosis. noted in a subpleural location. 5,4x3,64. DIAGNOSIS. A. Level 10 lymph node, dissection - Three lymph nodes negative. for. metastatic disease, 0/3. B. Right upper lobe, lobectomy - Right upper lobe of lung with. poorly differentiated adenocarcinoma, invading and ulcerating. bronchial tissue. All margins and pleural surfaces negative. for tumor. Two additional lymph nodes present negative for. metastatic disease, 0/2. C. R4 lymph nodes right side, dissection - Multiple reactive lymph. nodes with anthracotic pigmentation, all negative for metastatic. disese. D. Level 7 lymph nodes, right side, dissection - Multiple reactive. lymph nodes with anthracotic pigmentation, all negative for. metastatic disease. DIAGNOSIS. End Of Report --.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor (pT) : The tumor measures 3.2 cm in greatest. dimension, pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Regional lymph nodes (pN) : Attached to the main specimen. there are two lymph nodes which are negative for. metastatic. disease. Multiple other nodes are identified in parts A,. C & D and all are negative, pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM cannot be assessed",
+        "value_norm": "INVALID",
+        "evidence": "Distant metastasis (pM) : Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor (pT) : The tumor measures 3.2 cm in greatest. dimension, pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Regional lymph nodes (pN) : Attached to the main specimen. there are two lymph nodes which are negative for. metastatic. disease. Multiple other nodes are identified in parts A,. C & D and all are negative, pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Distant metastasis (pM) : Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Primary tumor (pT) : The tumor measures 3.2 cm in greatest. dimension, pT2.",
+        "confidence": "high",
+        "reason": "Report explicitly states tumor measures 3.2 cm and lists pT2; size and pathologist staging support T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Regional lymph nodes (pN) : Attached to the main specimen. there are two lymph nodes which are negative for. metastatic. disease. Multiple other nodes are identified in parts A,. C & D and all are negative, pNO.",
+        "confidence": "high",
+        "reason": "All examined regional lymph nodes are reported negative for metastasis (0/3, 0/2) and report lists pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : Cannot be assessed.",
+        "confidence": "high",
+        "reason": "Report explicitly states distant metastasis cannot be assessed, corresponding to MX.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Distant metastasis (pM) : Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DG-A2KJ.F5EBC22F-D2D9-4944-9A24-390811798F5B",
+  "text": "Sample Type TUMOUR. Sample Preparation. Fresh Frozen. Site of Primary (Event). Cervical. Site of Tissue. cervix. Year of Sample Collection. Age at Sample Collection (yrs). Sample Comments. Days to Procedure Date. 0. Days to Diagnosis. 18. Type of Procedure. Surgical resection. Site of Primary (Histology). Cervix. Bilateral Disease. Tumour Size (cm). 2.8999999999999999. Histology. Squamous cell carcinoma, nonkeratinizing. Grade/Differentiation. N/A. Pathological T. T1b. Pathological N. N1. Number of Nodes Sampled. 1. Number of Nodes Positive. 23. Clinical M. M0. Histology Comments. Possible lymphovascular invasion is seen. Report states. grade 3/3. All resection margins are clear.",
+  "gold": {
+    "T": "T1",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "Pathological T. T1b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Pathological N. N1.\nNumber of Nodes Sampled. 1. Number of Nodes Positive. 23.",
+        "confidence": "medium",
+        "reason": "Pathological N is explicitly given as N1, but the reported node counts are contradictory (sampled 1 vs positive 23), reducing confidence.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0 (clinical only)",
+        "value_norm": "M0",
+        "evidence": "Clinical M. M0.",
+        "confidence": "low",
+        "reason": "No pathologic M category provided in the report; only clinical M0 is documented.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "Pathological T. T1b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Pathological N. N1. Number of Nodes Sampled. 1. Number of Nodes Positive. 23.",
+        "confidence": "medium",
+        "reason": "Pathological N is explicitly stated as N1, but node counts in the report are internally inconsistent (1 sampled vs 23 positive), suggesting possible data entry error.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Clinical M. M0.",
+        "confidence": "medium",
+        "reason": "Only clinical M is provided; no pathologic M (pM) is reported.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Pathological T. T1b.",
+        "confidence": "high",
+        "reason": "Pathological T is explicitly reported as T1b (mapped to T1).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Pathological N. N1.",
+        "confidence": "medium",
+        "reason": "Pathological N is explicitly reported as N1, but node counts in the report are inconsistent (Number of Nodes Sampled: 1 vs Number of Nodes Positive: 23), reducing confidence.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No pathologic M category provided in the report; only a clinical M is listed ('Clinical M. M0.').",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Pathological T. T1b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Pathological N. N1.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No pathologic M provided; only 'Clinical M. M0.' is present in the report.",
+        "grounded": false,
+        "boundary_tag": "over_abstention"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-67-6216.9f6ac234-e3d8-44a9-b82d-0552e49224be",
+  "text": "PRIORITY: FROZEN SEC. JURGICAL PROCEDURES: LUNG-LOBECTOMY, REGIONAL LYMPH. CLINICAL HISTORY. PERTINENT CLINICAL HISTORY. RIGHT MEDDLE LOBE MASS. GROSS DESCRIPTION. The specimen is submitted fresh for frozen section as \"right middle. Lobe - please assess resection margins (TCGA) 11 and consists of a wedge. shaped segment of lung measuring 10 x 4.5 x 2.5 cm. The surgical margin. exhibits a line of metallic staples measuring 9 cm. The pleural surface. is pink and smooth. After removal of the staples; there are several. ligated vessels which measure 'up to 0.4 cm in length and 0.3 cm in. diameter. Sectioning of the lung exhibits pink slightly air filled tissue. exhibiting a firm pale white tumor measuring 1.8 X 1.3 x 0.9 cm. The. tumor approaches to within approximately 2 cm from the bronchial margin. Representative sections are submitted in 9 cassettes as follows: Cassette 1: Bronchial margin and vessel margin. Cassettes 2-5: Tumor showing surrounding normal parenchyma and. bronchus. Cassette 6: Remaining small segments of tumor not used for. Cassettes 7 and 8: Normal lung. FSP: Used for frozen section. FROZEN SECTION DIAGNOSIS: Right middle lobe: Adenocarcinomia extending to. within 3-4 mm of the parenchymal margin and. > 2 cm of bronchial margin. B. The specimen is submitted fresh as \"right middle lobar node' and. consists of a gray black lymph node measuring 1 cm in dimension; bisected. and submitted in toto; 2 (1).-. GROSS: DESCRIPTION. C. The specimen is submitted fresh as \"right lower lobar node\" and. consists of a gray black lymph node measuring 1.3 cm in dimension;. bisected and submitted in toto; 2 (1). FINAL DIAGNOSIS. A. RIGHT MIDDLE LOBE (LOBECTOMY SPECIMEN) : MODERATELY DIFFERENTIATED. GLAND FORMING AND PAPILLARY ADENOCARCINOMA WITH FOCAL PSAMMOMA BODY. FORMATION, GRADE II, 1.8 CM MAXIMUM DIAMETER. THE TUMOR IS CONFINED. WITHIN THE LUNG, AND EXTENDS TO WITHIN APPROXIMATELY 4 MM OF THE. PARENCHYMAL MARGIN AT ITS CLOSEST APPROACH AND > 2 CM FROM THE. BRONCHIAL MARGIN. VASCULAR MARGINS AND FOUR HILAR LYMPH NODES ARE. FREE OF DISEASE. RANDOM SECTIONS OF THE REMAINING LUNG ARE. UNREMARKABLE. B. RIGHT MIDDLE LOBAR LYMPH NODE: SINGLE. LYMPH NODE WITH NO EVIDENCE OF. MALIGNANCY. C. RIGHT LOWER LOBAR LYMPH NODE: SINGLE LYMPH NODE WITH NO EVIDENCE OF. MALIGNANCY. SYNOPTIC REPORT. SYNOPTIC REPORT: LUNG. (CAP/AJCC/ACS - REQUIRED ELEMENTS). SPECIMEN TYPE: LOBECTOMY. SPECIMEN INTEGRITY : INTACT. LATERALITY: FRIGHT. TUMOR SITE. MIDDLE LOBE. TUMOR SIZE: 1.8 CM. TUMOR FOCALITY (SPECIFY) : UNIFOCAL. HISTOLOGIC TYPE: ADENOCARCINOMA. HISTOLOGIC GRADE: EXTENT OF INVASION: CONFINED WITHIN LUNG. EXTENTION TO PLEURA/OTHER STRUCTURES (SPECIFY) : NOT IDENTIFIED. ADDITIONAL PERTINENT FINDINGS - ATELECTASIS, PNEUMONIA, ETC: (SEE. NARRATIVE). MARGINS: BRONCHIAL: UNINVOLVED. PARENCHYMAL: UNINVOLVED. VASCULAR: UNINVOLVED. OTHER. MARGINS (PARIETAL PLEURAL/CHEST WALL, ETC. IF APPLICABLE) : N/A. SYNOPTIC. REPORT. DISTANCE TO PERTINENT MARGIN (S) (AS APPLICABLE) : 4. MM FROM STAPLED. PARENCHYMAL MARGIN. NEOADJUVANT TREATMENT EFFECT (IF APPLICABLE) : N/A. VENOUS INVASION: NOT IDENTIFIED. ARTERIAL (LARGE VESSEL) INVASION: NOT IDENTIFIED. LYMPHATIC INVASION:NOT IDENTIFIED. LYMPH NODE (INCLUDING 10:S19905) : N1 - # INVOLVED/# EXAMINED: 0/6. N2 - # INVOLVED/#EXAMINED: 0/4+. N3 - # INVOLVED/# EXAMINED : 0/1+. OTHER PERTINENT FINDINGS: (SEE NARRATIVE). pTNM STAGE: pTla NO MX.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1a",
+        "value_norm": "T1",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pTNM as pT1a; tumor size 1.8 cm (≤2 cm) in the report is consistent with T1a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": "Report documents N1: 0/6, N2: 0/4+, N3: 0/1+ and states lymph nodes are free of disease.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "medium",
+        "reason": "Report lists MX indicating distant metastasis cannot be assessed (no M0/M1 specified).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1a",
+        "value_norm": "T1",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "medium",
+        "reason": "Report explicitly lists pT1a, but the recorded tumor size is 1.8 cm which would typically be staged as T1b, creating an internal inconsistency.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": "The report lists pathologic stage pT1a (mapped to T1). Tumor size is 1.8 cm supporting a T1-level tumor.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "N1 - # INVOLVED/# EXAMINED: 0/6. N2 - # INVOLVED/#EXAMINED: 0/4+. N3 - # INVOLVED/# EXAMINED : 0/1+.",
+        "confidence": "high",
+        "reason": "No lymph node involvement reported; synoptic nodes show 0 involved in N1/N2/N3 stations and the report lists N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly records MX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pTla NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

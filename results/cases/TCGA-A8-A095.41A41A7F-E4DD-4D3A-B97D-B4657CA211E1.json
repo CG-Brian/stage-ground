@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-A8-A095.41A41A7F-E4DD-4D3A-B97D-B4657CA211E1",
+  "text": "2. Invasive ductal breast carcinoma (maximum diameter 1.8 cm, malignancy grade II) with. angioinvasion and infiltration of the neural sheath in the tumor periphery. Likewise in the. tumor periphery a concomitant DCIS (malignancy grade II, procomponent of tumor < 10%). Distant fibrocystic parenchyma of the breast with fibroadenoma buds free of tumor and/or. DCIS. Tumor classification: G2 (L1, V0), pTlc, pNO (sn), MX, R0 (minimum width of dorsocranial. safety margin 1 cm!). 1711E1.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1c",
+        "value_norm": "T1",
+        "evidence": "Tumor classification: G2 (L1, V0), pTlc, pNO (sn), MX, R0",
+        "confidence": "high",
+        "reason": "Report lists pTlc (interpreted as pT1c) and tumor maximum diameter 1.8 cm, which corresponds to T1c (>1–2 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0 (sn)",
+        "value_norm": "N0",
+        "evidence": "Tumor classification: G2 (L1, V0), pTlc, pNO (sn), MX, R0",
+        "confidence": "high",
+        "reason": "Report explicitly states pNO (sn), indicating no regional lymph node metastasis on sentinel node assessment.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Tumor classification: G2 (L1, V0), pTlc, pNO (sn), MX, R0",
+        "confidence": "high",
+        "reason": "Report explicitly records MX (distant metastasis cannot be assessed); no information on distant spread provided.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1c",
+        "value_norm": "T1",
+        "evidence": "pTlc",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO (sn)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "MX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pTlc",
+        "confidence": "high",
+        "reason": "Report indicates pT1c (written as 'pTlc') and tumor diameter 1.8 cm, which corresponds to T1 (T1c = 1.0–2.0 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO (sn)",
+        "confidence": "high",
+        "reason": "Report states pN0 (sentinel node), i.e., no regional lymph node metastasis.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "MX",
+        "confidence": "high",
+        "reason": "Report explicitly records MX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pTlc",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO (sn)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "MX",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

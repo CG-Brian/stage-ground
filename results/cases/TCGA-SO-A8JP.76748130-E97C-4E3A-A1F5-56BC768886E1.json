@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-SO-A8JP.76748130-E97C-4E3A-A1F5-56BC768886E1",
+  "text": "Normal Blood ID: SPECIMEN(S): Left testicle. FINAL DIAGNOSIS: Testicle, left, radical orchiectomy: - Histologic type: Seminoma, classical, pure. - Intratubular germ cell neoplasia: Present. - Extent of invasion: 1. Invasion or penetration of tunica albuginea: Absent. 2. Invasion of tunica vaginalis: Absent. 3. Involvement of paratesticular structures (epididymis or. cord): Absent. 4. Angiolymphatic invasion: Absent. - Resection margins (including spermatic cord): All margins. negative. - Lymph nodes: Not included in specimen. COMMENT: Sections of the tumor show a classical seminoma; it does not extend. through the tunica albuginea. The adjacent testicular tissue shows. intratubular germ cell neoplasia, hypospermatogenesis and maturation. arrest. There is no evidence of vascular invasion. CLINICAL HISTORY: The patient is a. -year-old male with left testicle mass. GROSS: One formalin-filled container is received labeled with the patient's. name, medical record number. The container is labeled \"left testicle.\" The specimen consists of a. 5.8 X 4.9 x 3.4 cm, 64.0 gm left orchiectomy specimen with attached 10.0. cm in length and 1.2 cm in diameter segment of spermatic cord. The. resection margins are inked. Serial sectioning along the long axis of. the testicle demonstrates a 4.4 X 4.3 X 3.2 cm mixed pink-tan and dark. red circumscribed tumor with focal areas of hemorrhage. The tumor is. 11.0 cm from the closest spermatic cord resection margin, 0.2 cm from. the tunica vaginalis margin and 0.4 cm from the epididymis. The tumor. occupies 70% of total testicle volume. Representative tissue was. procured for potential future studies. Representative sections are. submitted in twelve cassettes. Summary of sections: 1 - distal spermatic cord resection margin. 2 - closest tunica vaginalis margin. 3 - epididymis. 4 - intersection between the proximal spermatic cord and tumor. 5 through 10 - tumor. 11 - normal testicle parenchyma. 12 - representative section of spermatic cord at middle and distal. segment. MICROSCOPIC: Microscopic evaluation is performed.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1",
+        "value_norm": "T1",
+        "evidence": "- Extent of invasion: 1. Invasion or penetration of tunica albuginea: Absent. 2. Invasion of tunica vaginalis: Absent. 3. Involvement of paratesticular structures (epididymis or. cord): Absent. 4. Angiolymphatic invasion: Absent.",
+        "confidence": "high",
+        "reason": "Tumor is limited to the testis without invasion of tunica albuginea, tunica vaginalis, epididymis or spermatic cord and with no lymphovascular invasion, consistent with pT1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNx",
+        "value_norm": "NX",
+        "evidence": "Lymph nodes: Not included in specimen.",
+        "confidence": "high",
+        "reason": "No regional lymph nodes were submitted or examined in the surgical specimen, so pathologic nodal status cannot be determined.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "The pathology report contains no assessment of distant metastasis (no metastatic sites or biopsies reported); distant metastatic status cannot be determined pathologically.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "- Extent of invasion: 1. Invasion or penetration of tunica albuginea: Absent. 2. Invasion of tunica vaginalis: Absent. 3. Involvement of paratesticular structures (epididymis or. cord): Absent. 4. Angiolymphatic invasion: Absent.",
+        "confidence": "high",
+        "reason": "Tumor confined to testis with no invasion of tunica vaginalis, spermatic cord/paratesticular structures, or angiolymphatic invasion.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Lymph nodes: Not included in specimen.",
+        "confidence": "high",
+        "reason": "No lymph nodes were submitted or evaluated in the specimen.",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention distant metastasis or clinical/pathologic M status.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "- Extent of invasion: 1. Invasion or penetration of tunica albuginea: Absent. 2. Invasion of tunica vaginalis: Absent. 3. Involvement of paratesticular structures (epididymis or. cord): Absent. 4. Angiolymphatic invasion: Absent.",
+        "confidence": "high",
+        "reason": "Tumor is limited to the testis without invasion of tunica albuginea or vaginalis, no paratesticular involvement, and no angiolymphatic invasion, consistent with pT1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "Lymph nodes: Not included in specimen.",
+        "confidence": "high",
+        "reason": "No lymph nodes were submitted with the specimen, so nodal status cannot be assessed pathologically.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "Distant metastasis cannot be determined from the orchiectomy specimen (no pathologic assessment of metastases provided).",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Invasion or penetration of tunica albuginea: Absent.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "Lymph nodes: Not included in specimen.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of metastatic evaluation or statement of M0/M1 in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

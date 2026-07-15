@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-67-3776.fa5eb6ae-8741-4e93-950d-384fa70b9f1d",
+  "text": "SURGICAL PROCEDURES: RESECTION, REGIONAL LYMPH. CLINICAL HISTORY. PRE-OPERATIVE DIAGNOSIS: RIGHT LOWER LOBE CA. GROSS DESCRIPTION. A. The specimen is submitted fresh for frozen section as \"level 10\" and. consists of a pink red cauterized segment of tissue measuring 1 x 0.7 X. 0.5 cm, sectioned and submitted in toto, 3 (1) labeled \"FSP\" used for. frozen section. FROZEN SECTION DIAGNOSIS: Adeno CA. B. The specimen is submitted fresh as \"inferior pulmonary ligament lymph. nodes level 9\" and consists of two deep red 0.3 and 0.9 cm nodules. submitted intact and in toto; 2 (1). C. The specimen is submitted fresh as \"level 8R\" and consists of a deep. red to black 1 cm nodular bisected and submitted in toto; 2 (1). D. The specimen is submitted fresh as \"level liR\" and consists of two. deep red to black semi nodular segments of tissue measuring 0. and 0.8 cin. in dimension. Submitted intact and in toto, 2 (1) -. E. The specimen is submitted fresh as \"level 7\" and consists of two deep. red nodules measuring 0. cm and 0.6 cm in dimension; submitted, 2 (1). F. The specimen is submitted fresh as \"subcarinal level 7\" and consists. of two deep red to black 0.1 and 1. semi nodular segments of tissue. The. largest marked with black dye for identification purposed. The largest is. bisected and submitted in toto, 3 (1). G. The specimen is submitted fresh as \"right lower lobe - stitch on 11R. node\" and consists of a 133 gram (formalin fixed), 14 x 9 x 3.4 cm lung. lobectomy received with a stitch designating the 11R node. The outer. GROSS DESCRIPTION. pleural surface shows a 3 x 2 cm firm puckered indurated area. The. pleural surface overlying this area is inked blue. The remaining pleural. surface is pink to purple tan, smooth and glistening with focal areas of. anthracotic pigmentation. The specimen is received with a stapled. bronchial margin measuring 1.5 cm in diameter with adjacent stapled. vasculature margin measuring 0.5 cm in length and 1 cm in diameter and 0.2. cm in length and 1.2 cm in diameter. The stapled margin measures 5 cm in. length. The stapled margin is removed and the underlying parenchyma inked. black. Sectioning reveals a 3.8 x 2.8 X 2.5 cm tan gray to white firm. focally hemorrhagic mass corresponding to the previously described. puckered area on the pleural surface grossly appearing to abut the blue. inked pleura, measuring 3.5 cm from the bronchial margin and 4.5 cm from. the parenchyma underlying the stapled resection margin. The remaining. parenchyma is inked red, spongy, homogenous and grossly unremarkable. No. other discrete masses or nodularities are grossly identified. At the. hilum are two gray black lymph nodes including the one previously. designated with a stitch at the 11R node measuring 0.8 and 1 cm in. greatest dimension, each of which are submitted entirely intact. Representative sections are submitted, multiple (8) as follows: 1: Vasculature and bronchial margin. 2: Mass with closest blue inked pleural surface. 3: Additional sections of mass. 4: Perpendicular section of the stapled resection closest to. mass. 5: Mass with adjacent uninvolved parenchyma. 6: Uninvolved parenchyma and pleura. One intact hilar lymph node. 8: Intact 11R node designated by stitch. X1-2: Additional sections of the tumor. FINAL DIAGNOSIS. A. LYMPH NODE, LEVEL 10, BIOPSY: METASTATIC ADENOCARCINOMA INVOLVING MULTIPLE LYMPH NODE. FRAGMENTS. B. LYMPH NODE, INFERIOR PULMONARY LIGAMENT LEVEL 9, BIOPSY: TWO LYMPH NODES, NEGATIVE FOR TUMOR. C. LYMPH NODE, LEVEL 8R, BIOPSY: LYMPH NODE, NEGATIVE FOR TUMOR. FINAL DIAGNOSIS. D. LYMPH NODE, LEVEL llR, BIOPSY: LYMPH NODE, NEGATIVE FOR TUMOR. E. LYMPH NODE, LEVEL 7, BIOPSY: LYMPH NODE, NEGATIVE FOR TUMOR. F. LYMPH NODE, SUBCARINAL LEVEL 7, BIOPSY: LYMPH NODE, NEGATIVE FOR TUMOR. G. LUNG, RIGHT LOWER LOBE, LOBECTOMY: MODERATELY DIFFERENTIATED ADENOCARCINOMA. SEE SYNOPTIC REPORT. SYNOPTIC REPORT. SYNOPTIC REPORT: LUNG. (CAP/AJCC/ACS - REQUIRED ELEMENTS). SPECIMEN TYPE: LOBECTOMY. LATERALITY: RIGHT. TUMOR SITE: RIGHT LOWER LOBE. TUMOR SIZE: 3.8 CM. HISTOLOGIC TYPE: ADENOCARCINOMA. HISTOLOGIC GRADE: 2 (MODERATELY DIFFERENTIATED). EXTENT OF INVASION: CONFINED TO LUNG. EXTENTION TO PLEURA/OTHER STRUCTURES (SPECIFY) : NONE. MARGINS: BRONCHIAL: UNINVOLVED. PARENCHYMAL: UNINVOLVED. VASCULAR: UNINVOLVED. DISTANCE TO PERTINENT MARGIN (S) : 3.5 CM FROM THE BRONCHIAL MARGIN. VENOUS INVASION: ABSENT. ARTERIAL (LARGE VESSEL) INVASION: ABSENT. LYMPH NODE : N1 - # INVOLVED/# EXAMINED: 2/3 (INVOLVEMENT OF LEVEL 10 NODE. AND A PERIHILAR LYMPH NODE ON THE LOBECTOMY SPECIMEN). f, N2 - # INVOLVED/#EXAMINED: 0/8+. f, N3 - # INVOLVED/# EXAMINED: 0/0. SYNOPTIC REPORT. OTHER PERTINENT FINDINGS: - ON GROSS AND MICROSCOPIC EXAMINATION, A SEPARATE TUMOR NODULE IS NOT. IDENTIFIED. - NO PLEURAL INVASION IS IDENTIFIED. ON THE LOBECTOMY SPECIMEN, METASTATIC CARCINOMA IS PRESENT IN ONE OF. TWO PERIHILAR LYMPH NODES. UNINVOLVED LUNG IS UNREMARKABLE. pTNM STAGE: pT2 N1 MX.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "TUMOR SIZE: 3.8 CM.",
+        "confidence": "high",
+        "reason": "Tumor measures 3.8 cm, which falls in the pT2 size category (>3 cm to ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "LYMPH NODE : N1 - # INVOLVED/# EXAMINED: 2/3 (INVOLVEMENT OF LEVEL 10 NODE. AND A PERIHILAR LYMPH NODE ON THE LOBECTOMY SPECIMEN).",
+        "confidence": "high",
+        "reason": "Two regional (hilar/perihilar) lymph nodes are reported positive (2/3), consistent with N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pT2 N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly records MX, indicating distant metastasis cannot be assessed from the provided information.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pTNM STAGE: pT2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "LYMPH NODE : N1 - # INVOLVED/# EXAMINED: 2/3 (INVOLVEMENT OF LEVEL 10 NODE. AND A PERIHILAR LYMPH NODE ON THE LOBECTOMY SPECIMEN).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pT2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "TUMOR SIZE: 3.8 CM.",
+        "confidence": "high",
+        "reason": "Tumor measures 3.8 cm, which corresponds to T2; report also lists pT2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "LYMPH NODE : N1 - # INVOLVED/# EXAMINED: 2/3 (INVOLVEMENT OF LEVEL 10 NODE. AND A PERIHILAR LYMPH NODE ON THE LOBECTOMY SPECIMEN).",
+        "confidence": "high",
+        "reason": "Two regional (N1) lymph nodes are reported positive (2/3).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pT2 N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly records M stage as MX (distant metastasis not assessed/pathologic M not determined).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pTNM STAGE: pT2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pTNM STAGE: pT2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM STAGE: pT2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

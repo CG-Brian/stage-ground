@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BR-4253.4f808990-c2cf-480b-8acf-580269da7dee",
+  "text": "STOMACH TISSUE CHECKLIST. Specimen type: Gastrectomy. Tumor Site: Body, lesser curvature. Tumor configuration: Exophytic. (polypoid). Tumor size: 11.0 x 9.0 x 2.5 cm. Histologic type: Adenocarcinoma. Histologic grade: Poorly differentiated. Extent of invasion: Serosa (visceral peritoneum). Lymph nodes: 3 of 8 lymph nodes positive for metastasis. Margins - Proximal margin: Not specified. Distal. margin: Not specified. Omental (radial) margin: Not specified. Lymphatic invasion: Not specified. Venous invasion: Not specified. Perineural. invasion: Not specified. Additional pathologic findings: Not specified. Comments: None.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT4a",
+        "value_norm": "T4",
+        "evidence": "Extent of invasion: Serosa (visceral peritoneum).",
+        "confidence": "high",
+        "reason": "Tumor invasion of serosa (visceral peritoneum) corresponds to T4a in gastric cancer staging.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pN2",
+        "value_norm": "N2",
+        "evidence": "3 of 8 lymph nodes positive for metastasis.",
+        "confidence": "high",
+        "reason": "Three positive regional lymph nodes corresponds to N2 (3-6 positive nodes) in gastric cancer staging.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis is provided in the report; M stage is not documented.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T4a",
+        "value_norm": "T4",
+        "evidence": "Extent of invasion: Serosa (visceral peritoneum).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Lymph nodes: 3 of 8 lymph nodes positive for metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "Extent of invasion: Serosa (visceral peritoneum).",
+        "confidence": "high",
+        "reason": "Invasion of serosa (visceral peritoneum) corresponds to T4 (tumor invades serosa) for gastric cancer.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Lymph nodes: 3 of 8 lymph nodes positive for metastasis.",
+        "confidence": "high",
+        "reason": "Three positive regional lymph nodes corresponds to N2 (3–6 positive nodes) for gastric cancer.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastasis is reported in the pathology specimen; only regional nodal status is provided.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "Extent of invasion: Serosa (visceral peritoneum).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Lymph nodes: 3 of 8 lymph nodes positive for metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or M stage in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

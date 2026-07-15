@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-CZ-5452.9624f2f0-6ea5-45f5-9bd2-8ae9e5a62398",
+  "text": "Report Status: Amend/Addenda. Type: Surgical Pathology. Specimen Type: Kidney, partial or total resection. Procedure Date: PATHOLOGIC DIAGNOSIS: A. SPECIMEN LABELED \"RIGHT KIDNEY\": RENAL CELL CARCINOMA, clear cell type (14.0 cm), Fuhrman grade II of IV. No extrarenal extension identified. No lymphovascular invasion identified. Ureteral, renal vein, and renal artery margins negative for tumor. AJCC Classification (6th Edition) : T2 NO MX. The non-neoplastic kidney will be evaluated by Renal Pathology, and the. findings will be reported in an addendum. B. SPECIMEN LABELED \"REGIONAL LYMPH NODE\": Five (5) lymph nodes negative for tumor. CLINICAL DATA: History: old male with right varicocele. CT revealed large right renal. mass. Operation: Nephrectomy. Operative Findings: None given. Clinical Diagnosis: None given. TISSUE SUBMITTED: #1. Right kidney. #2. Regional lymph node. GROSS DESCRIPTION: The specimen is received fresh, in two parts, each labeled with the patients. name and unit number. Part A, labeled \"right kidney\", and consists of a 1,360 gram kidney (23.0 x 12. x 8.2 cm), with ureter (11.5 cm in length x 0.3 cm), renal vein (1.3 cm in. length x 0.7 cm), and renal artery (2.0 cm in length x 0.4 cm in diameter) The. soft tissue resection margin is inked black and the kidney is bisected to. reveal a multilobulated mass in the mid to lower pole (14.0 x 11.2 x 6.1 cm). The mass is predominantly tan/yellow with multiple hemorrhagic foci. The tumor. is less than 0.1 cm from the inked resection, 10.6 cm from the ureteral margin,. 1.8 cm from the renal vein margin, and 4 cm from the renal artery margin. The. tumor grossly appears to abut the perirenal adipose tissue. The tumor grossly. extends to but does not involve the renal pelvis. The remainder of the renal. parenchyma demonstrates well-demarcated cortical medullary junctions and is. grossly unremarkable. A representative section of the tumor is submitted for. electron microscopy, cytogenetic analysis, and tissue banking. A. representative section of normal cortex is submitted for electron microscopy,. immunofluorescence, and tissue banking. The specimen is photographed. Representative sections are submitted. MICRO A1: Ureter, renal vein, renal artery resection margin, 3 frags,. MICRO A2: T1, 1 frag,. MICRO A3: T2, 1 frag,. MICRO A4: T3, 1 frag,. MICRO A5-A6: Tumor with soft tissue resection margin, 2 frags,. MICRO A7-A8: Tumor extending into perirenal fat. 2 frags,. MICRO A9: Tumor abutting renal pelvis, 1 frag,. MICRO A10: Tumor with adjacent and uninvolved renal parenchyma, 1 frag,. MICRO All: Uninvolved renal parenchyma, 1 frag,. Part B, labeled \"regional lymph nodes\", and consists of one fragment of adipose. I attrology report. Report Status: Final. Type: Cytogenetics. Cytogeneticist: KARYOTYPE: T1:44,XY,- -3, add (6) (q13) , 14, add (16) (q22) , der (19). t (1;19) (q13;q21) [1]/ 46,XY [cp4]. T2:41-44,X, -Y, -3, add (6) (q13), -14, add (16) (q22) [cp5]. METAPHASES COUNTED: 10. ANALYZED: 10. SCORED: 0. BANDING: GTG. INTERPRETATION: Two different specimens of this specimen were karyotyped. Clonal aberrations that included loss of the short arm of chromosome 3 (-3). were demonstrated in each of 5 cells from one specimen, and were also seen in. 1. of 5 metaphase cells from the second specimen. Loss of chromosome 3 is a typical finding in renal cell carcinoma, clear cell. type. COMMENTS. Mosaicism and small chromosome anomalies may not be detectable using the. standard methods employed. Chromosome analysis was performed at a level of 400. bands or greater. INDICATION FOR TEST: RCC.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX.",
+        "confidence": "medium",
+        "reason": "The report explicitly lists T2, but there is conflicting text: 'MICRO A7-A8: Tumor extending into perirenal fat.' Perirenal fat invasion would upstage to at least T3a, so confidence in the recorded T2 is reduced.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Five (5) lymph nodes negative for tumor.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX.",
+        "confidence": "high",
+        "reason": "MX (cannot be assessed) is explicitly stated in the report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX",
+        "confidence": "high",
+        "reason": "Report explicitly states AJCC T2. Note: MICRO A7-A8 states \"Tumor extending into perirenal fat\", which could indicate T3a, but the formal AJCC classification in the report is T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Five (5) lymph nodes negative for tumor.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX",
+        "confidence": "high",
+        "reason": "Report explicitly lists MX (distant metastasis cannot be assessed); no statement of M0 or metastatic disease is provided.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX.",
+        "confidence": "high",
+        "reason": "The pathology report's AJCC classification explicitly states T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Five (5) lymph nodes negative for tumor.",
+        "confidence": "high",
+        "reason": "Five regional lymph nodes were examined and reported negative for tumor; AJCC line also shows NO.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX.",
+        "confidence": "high",
+        "reason": "The AJCC classification in the report explicitly lists MX (metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX.",
+        "confidence": "medium",
+        "reason": "The report's AJCC line states T2, but other sections conflict (e.g. \"MICRO A7-A8: Tumor extending into perirenal fat.\"), which could indicate a higher T stage. Internal inconsistency lowers confidence.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Five (5) lymph nodes negative for tumor.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th Edition) : T2 NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

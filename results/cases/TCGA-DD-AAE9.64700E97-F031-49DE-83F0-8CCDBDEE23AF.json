@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DD-AAE9.64700E97-F031-49DE-83F0-8CCDBDEE23AF",
+  "text": "CLINICAL DIAGNOSIS: Hepatocellular carcinoma suggested. Specimen : Liver and Liver mass. Gross Photo : GROSS: Specimen status: Fresh. Operation: Partial hepatectomy. Organs: Liver (19.0 X 12.5 X 4.3 cm, 374.0 gm). Lesion: A well-defined round firm mass (5.0 x 4.8 x 4.0 cm). Cut surface: Yellowish tan and granular appearance. Gross type: HCC: Expanding nodular. Resection margin: Not involved grossly (safety margin: 1.0 cm). Others: Satellite nodule: No. Representitive sections were submitted. Gross photo: Present. Blocks. T1-4, - TB, tumor mass X 5. NB, L, liver parenchyma X 2. MICROSCOPIC: Hepatocellular carcinoma: Yes. The worst differentiation III. The major differentiation II. Histologic type: Trabecular. Cell type: Hepatic. Fatty change: No. Fibrous capsule formation: Complete capsule. Capsular infiltration: No. Septum formation: No. Surgical resection margin invasion: No, safety margin (1.0 cm). Serosal invasion: No. Portal vein invasion: No. Microvessel invasion: No. Intrahepatic metastasis: Unknown. Multicentric occurrence: Unknown. NOT reported. Gross: liver, ,ectomy, ,hepatocellular carcinoma,Steatohepatitis,milds steatosis,periportal fibrosis. T56000, P10, M81703, Steatohepatitis, mild steatosis, periportal fibrosis. DIAGNOSIS: Liver, partial hepatectomy: Hepatocellular carcinoma, moderately differentiated. Steatohepatitis with mild steatosis and periportal fibrosis (stage 2). Suggestion :",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "A well-defined round firm mass (5.0 x 4.8 x 4.0 cm). Portal vein invasion: No. Microvessel invasion: No.",
+        "confidence": "high",
+        "reason": "Solitary hepatic tumor >2 cm and ≤5 cm without vascular invasion corresponds to T1b (AJCC staging).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "Nx",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph nodes sampled or lymph node status described in the pathology report, so pathologic N cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or metastatic sites in the pathology specimen/report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "Lesion: A well-defined round firm mass (5.0 x 4.8 x 4.0 cm). Portal vein invasion: No. Microvessel invasion: No.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention regional lymph nodes",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Lesion: A well-defined round firm mass (5.0 x 4.8 x 4.0 cm). Portal vein invasion: No. Microvessel invasion: No.",
+        "confidence": "high",
+        "reason": "Solitary tumor with maximum dimension 5.0 cm and no portal or microvascular invasion; corresponds to T1 (specifically T1b for >2 cm to ≤5 cm without vascular invasion).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "NOT reported.",
+        "confidence": "high",
+        "reason": "No lymph nodes were sampled or mentioned in the pathology report, so regional nodal status cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Intrahepatic metastasis: Unknown.",
+        "confidence": "medium",
+        "reason": "Distant metastatic status is not assessed or reported in this surgical pathology specimen; cannot determine M0 vs M1 from the report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Lesion: A well-defined round firm mass (5.0 x 4.8 x 4.0 cm).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph node or nodal assessment reported in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis (M) reported in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

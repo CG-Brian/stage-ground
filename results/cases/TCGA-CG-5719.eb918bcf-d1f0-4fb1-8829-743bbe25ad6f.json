@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-CG-5719.eb918bcf-d1f0-4fb1-8829-743bbe25ad6f",
+  "text": "Diagnosis: Highly differentiated invasive gastric adenocarcinoma of the intestinal type with infiltration. of all wall layers of the attached loop of colon, of the separately submitted colon segment,. of the organ capsule of the pancreas with marked perineural tumor growth in parts and with. a metastasis of the tumor in a pericolic lymph node and three peripancreatic lymph nodes,. all with tumor-free resection margins, and tumor-free jointly resected hepatic and splenic. parenchyma. The regional lymph nodes of the adjacent fatty tissue of the greater and lesser. curvature of the stomach (N=7), the hepatoduodenal region (N = 1), and from the area of. the common hepatic artery (N=7) = were all tumor-free. Tumor classification: M 8140/3,. pT4, pNo,.",
+  "gold": {
+    "T": "T4",
+    "N": "N0",
+    "M": "M1"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT4",
+        "value_norm": "T4",
+        "evidence": "Tumor classification: M 8140/3,. pT4, pNo,.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Tumor classification: M 8140/3,. pT4, pNo,.",
+        "confidence": "medium",
+        "reason": "Report text also states \"a metastasis of the tumor in a pericolic lymph node and three peripancreatic lymph nodes,\" which conflicts with the stated pN0; final classification line was used despite this discrepancy.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": "tumor-free jointly resected hepatic and splenic. parenchyma.",
+        "confidence": "low",
+        "reason": "No explicit pM status given; liver and spleen parenchyma were reported tumor-free, but presence of metastases in pericolic/peripancreatic nodes (not clearly designated as regional vs non-regional) and the report's use of 'M 8140/3' (an ICD-O code) create uncertainty.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "Tumor classification: M 8140/3,. pT4, pNo,.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Tumor classification: M 8140/3,. pT4, pNo,.",
+        "confidence": "low",
+        "reason": "Report text also states \"a metastasis of the tumor in a pericolic lymph node and three peripancreatic lymph nodes\", which conflicts with the pN0 designation; thus nodal status is ambiguous.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not specify pM status or distant metastasis; nodal metastases described in non-regional nodes create ambiguity regarding metastatic (M) classification.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "pT4",
+        "confidence": "high",
+        "reason": "Explicitly reported as pT4 in the tumor classification line.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNo,.",
+        "confidence": "medium",
+        "reason": "The tumor classification line reports pNo, but earlier text describes metastases in a pericolic lymph node and three peripancreatic lymph nodes, creating conflicting information and lowering confidence.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "tumor-free jointly resected hepatic and splenic. parenchyma.",
+        "confidence": "medium",
+        "reason": "No explicit pM is given in the report. Resected liver and splenic parenchyma were reported tumor-free, but absence of a formal pM designation makes M status indeterminate (MX).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "pT4",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNo,",
+        "confidence": "low",
+        "reason": "The report's classification line states \"pNo,\" but earlier the report also states \"with a metastasis of the tumor in a pericolic lymph node and three peripancreatic lymph nodes,.\" These conflicting statements lower confidence in the N0 assignment.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No explicit M0 or M1 is reported. The report shows \"Tumor classification: M 8140/3,. pT4, pNo,.\" but does not state M0 or M1.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

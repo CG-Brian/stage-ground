@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-77-7141.c8d8d890-f2a1-4b25-ba59-bcf0f69553b2",
+  "text": "HISTORY. MACROSCOPIC. Four specimens received: 1: The specimen is labelled \"left upper lobe\" and consists of a lobectomy specimen measuring 130 x. 80 X 35 mm. The bronchial portion of the specimen measures approximately 30 mm in length and has. a bifurcation adjacent to the resection margin with two adjacent lumens measuring approximately 13. mm in diameter, one of which is plugged by cream to pink tumour. No palpable mass is present within. the lobectomy specimen. The pleural surface demonstrates mild anthracotic pigmentation. Several. small peribronchial lymph nodes are present. Tumour is seen plugging the two described bronchi and,. on sectioning, is seen to involve several adjacent second order branches. The tumour appears clear of. the peribronchial soft tissue resection margins and does not appear to be invading lung parenchyma. macroscopically. The tumour extends approximately 45 mm along the first and second order bronchi. [TS of bronchial resection margin containing tumour plug and peribronchial lymph nodes, 1A; TS of. bronchial resection margin not containing tumour, inked side down, and peribronchial nodes, 1B; TS of. first order bronchi containing tumour, IC-D; TS of intrapulmonary bronchi, 1E; section of normal lung,. 1F; sections of tumour and normal lung taken for lung tumour research project]. 2: The specimen is labelled \"lingular margin left lobe\" and consists of an opened strip of bronchial. wall measuring approximately 32 X 4 x 2 mm. The mucosal surface appears normal. The specimen is. not oriented in any way. [BIT on edge, 2A]. 3: The specimen is labelled \"hilar lymph nodes\" and consists of five small pieces of fatty tissue each. of which appears to contain a small lymph node, the largest of which measures approximately 6 mm in. maximum extent. [All wrapped and BIT, 3A]. 4: The specimen is labelled \"mediastinal lymph nodes\" and consists of fatty tissue containing two. identifiable lymph nodes measuring 3 mm and 11 mm in maximum extent respectively. [Both BIT,. 4Al. MICROSCOPIC. 1: Sections show a largely exophytic, moderately differentiated squamous cell carcinoma which fills. bronchial lumens and invades down to and between bronchial cartilages to abut the external bronchial. soft tissue resection margin in areas. Definite transection of tumour nests at these margins is not. identified. Tumour involves one of the bronchial end resection margins. There is no invasion of lung. parenchyma. No lymphatic or vascular invasion is found, but focal perineural infiltration is noted. None of the peribronchial lymph nodes contains metastatic carcinoma, although tumour abuts the. capsule of one node. The distal lung parenchyma is atelectatic and contains a few scattered. fibromuscular scars. 2: Sections show bronchial wall lined by partly denuded respiratory epithelium. There is focal thin. squamous metaplasia but no evidence of dysplasia or malignancy. 3 & 4: Sections show anthracotic lymph nodes in which there is no evidence of metastatic carcinoma. SUMMARY. Left upper lobectomy and lymph node sampling: Largely endobronchial, moderately differentiated squamous cell carcinoma, 45 mm in greatest. dimension. Perineural invasion present. No vascular or lymphatic invasion present. No lymph node metastases. Pathological stage T2 NO. T-28000 M-80703 P1-03000. cc: Lung Cancer Registry.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pathological stage T2; tumour size reported as 45 mm (supports T2).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No lymph node metastases.",
+        "confidence": "high",
+        "reason": "Multiple peribronchial, hilar and mediastinal nodes were sampled and no metastatic carcinoma was identified.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": null,
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Distant metastasis (M stage) is not documented in the pathology report and cannot be determined from the surgical specimen.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No lymph node metastases.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO.",
+        "confidence": "high",
+        "reason": "Report explicitly states pathological stage T2; tumour measured 45 mm in greatest dimension which is consistent with T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No lymph node metastases.",
+        "confidence": "high",
+        "reason": "Report documents that sampled peribronchial, hilar and mediastinal nodes contain no metastatic carcinoma; summary lists 'NO'.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information regarding distant metastasis is provided in the pathology report; M stage typically requires clinical/radiologic assessment and is not assigned here.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No lymph node metastases.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement regarding distant metastasis or M stage is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

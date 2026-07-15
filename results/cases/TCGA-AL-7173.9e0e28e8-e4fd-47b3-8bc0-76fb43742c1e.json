@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AL-7173.9e0e28e8-e4fd-47b3-8bc0-76fb43742c1e",
+  "text": "Sex: F. Source of Specimen(s): 1: Para caval Lymph Node. 2: Right Kidney, resection. 3: Para caval Lymph Node. 4: Peri renal fat. Gross Description: Received in four parts. Source of tissue: 1. Labeled #1, \"paracaval lymph node\". Intraoperative Consultation: NO TUMOR SEEN PER. VERIFIED). Gross Description: Received fresh for frozen section diagnosis labeled. \", paracaval lymph node\" is a 1.8 x 1.1 x 0.6. cm brownish-tan firm rounded lymph node. Submitted entirely for frozen. section as IFSA. Source of tissue: 2. Labeled #2, \"right kidney\". Gross Description: Received fresh labeled. right kidney\" is a 273 gram/13 X 7 x 5 cm kidney partially covered by. retracted perinephric fat. Upon sectioning, obliterating approximately. two-thirds of the kidney by volume located within the mid/inferior pole is. a 8.5 x 5.5 x 5.0 cm hemorrhagic golden orangish-tan partially necrotic,. encapsulated rounded tumor mass. Along the outer surface vantage point. this mass appears very unevenly lobulated, and some points appear to. extend through the capsule to the inked outer surface. Also, this. impinging mass significant reduces the volume of the pelvocaliceal. collecting system, and the remaining viewable pelvic mucosa appears. pale-tan and glistening. The outer superior pole kidney surface is. lobulated, and this somewhat normal appearing renal parenchyma has. somewhat demarcated corticomedullary borders with a cortex thickness of. 0.9 cm. Upon opening, the 13.5 x 0.5 cm uninvolved ureter has an. unremarkable mucosal surface, and a very short vein segment is probed. closely along, but uninvolved by a tumor edge. Within the hilar fat are three pale grayish white hard rounded metastatic. appearing lymph nodes ranging in size 0.4-0.9 cm, and within the superior. pole fat is a 0.9 cm hemorrhagic firmness for probable lymph node, and no. obvious adrenal gland. Representative sections9. Designation of Sections: 2A vascular and ureteral margins. 2B/2C. capsule invasion?, and tumor in relation to normal kidney. 2D additional. tumor along outer surface. 2E/2F tumor in relation to pelvic mucosa. 2G. tumor in relation to vein. 2H superior pole. 2I lymph nodes. Source of tissue: 3. Labeled #3, \"paracaval lymph node\". Gross Description: Received fresh labeled'. paracaval lymph node\" is an 8 x 1.5 x 0.5 cm portion of soft lobulated fat. containing four potential lymph nodes ranging in size 0.2-1.9 cm. The. largest lymph node is color-coded by the application of black ink prior to. sectioning. Entirely submitted in 3A. Source of tissue: 4. Labeled #4, \"fat around kidney\". Gross Description: Received fresh labeled'. fat around kidney\" is a 6.5 x 5.5 X 0.4 cm portion of partially. hemorrhagic soft lobulated fat. Upon palpation, the 0.3 x 0.2 cm firm. focus is designated by the application of black ink. Otherwise, there are. no other obvious findings. Representative sections) 1. Final Diagnosis: 1. Paracaval lymph node, excision: - No tumor seen in one lymph node, (0/1). 2. Right kidney, nephrectomy: - Papillary renal cell carcinoma type 2, 8.5 cm, involving renal sinus and. perinephric fat. - Surgical resection margins are free of carcinoma. - Metastatic papillary renal cell carcinoma involving four of five hilar. lymph nodes, (4/5). - Extracapsular extension is identified. 3. Paracaval lymph nodes, excision: - No tumor seen in eight lymph nodes, (0/8). 4. Fat around kidney, excision: - Benign adipose tissue. pTNM: T3 N2 Mx.",
+  "gold": {
+    "T": "T3",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Papillary renal cell carcinoma type 2, 8.5 cm, involving renal sinus and. perinephric fat.",
+        "confidence": "high",
+        "reason": "Tumor invades renal sinus and perinephric fat, which corresponds to pathologic T3 (T3a).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Metastatic papillary renal cell carcinoma involving four of five hilar. lymph nodes, (4/5).",
+        "confidence": "high",
+        "reason": "Four of five regional (hilar) lymph nodes are positive, meeting criteria for N2 (>1 regional node).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "pTNM: T3 N2 Mx.",
+        "confidence": "high",
+        "reason": "Pathologic report states Mx, indicating distant metastasis cannot be assessed from this specimen/report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Papillary renal cell carcinoma type 2, 8.5 cm, involving renal sinus and. perinephric fat.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Metastatic papillary renal cell carcinoma involving four of five hilar. lymph nodes, (4/5).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "pTNM: T3 N2 Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "- Papillary renal cell carcinoma type 2, 8.5 cm, involving renal sinus and. perinephric fat.",
+        "confidence": "high",
+        "reason": "Tumor involves renal sinus and perinephric fat and report lists pTNM T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "- Metastatic papillary renal cell carcinoma involving four of five hilar. lymph nodes, (4/5).",
+        "confidence": "high",
+        "reason": "Multiple (4/5) regional lymph nodes positive and report lists pTNM N2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM: T3 N2 Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly states Mx (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pTNM: T3 N2 Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pTNM: T3 N2 Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM: T3 N2 Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

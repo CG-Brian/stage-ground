@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AA-3844.8445e6a1-3a39-4261-b971-d3409f6b88a3",
+  "text": "Findings and diagnosis relating to the problem: The material in I) - as regards block A - shows a marked finding in terms of an adenocarcinoma. of the colon with characteristic tumor cell groups, mostly in a tubular arrangement, and a marked. tendency to spread to the fatty connective tissue, as well as moderate to low-grade lymph nodes. (G2 to 3, pT3, L1, V1). The material also shows seven conglomerate metastases of the carcinoma described with. extensive necrosis (7 of 18) and - with regard to the resection margins - free resection margins,. here of the cryptic epithelium type with goblet cells, regular submucosa and muscularis. and in II a regular anastomosis ring, here with regular cryptic epithelium, lined with goblet cells,. isolated lymph follicles and regular submucosa and muscularis. Tumor classification: ICDO-DA M-8140/3, G2 to 3, pT3, L1, V1, pN2, locally R0.",
+  "gold": {
+    "T": "T3",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "(G2 to 3, pT3, L1, V1).",
+        "confidence": "high",
+        "reason": "The report explicitly states pT3 and describes tumor spread into fatty connective tissue, consistent with pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2",
+        "value_norm": "N2",
+        "evidence": "The material also shows seven conglomerate metastases of the carcinoma described with. extensive necrosis (7 of 18) and - with regard to the resection margins - free resection margins, here of the cryptic epithelium type with goblet cells, regular submucosa and muscularis. Tumor classification: ICDO-DA M-8140/3, G2 to 3, pT3, L1, V1, pN2, locally R0.",
+        "confidence": "high",
+        "reason": "The report explicitly states pN2 and documents seven metastatic lymph nodes (7 of 18).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No explicit pathologic M stage or distant metastases are reported; metastases described are regional lymph nodes.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "(G2 to 3, pT3, L1, V1)",
+        "confidence": "high",
+        "reason": "Pathology report explicitly states pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2",
+        "confidence": "high",
+        "reason": "Pathology report explicitly states pN2 and describes seven metastatic nodes (7 of 18).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information or M category for distant metastasis is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of M or distant metastasis (no pM or M status) in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DE-A0XZ.DDD69861-E047-4D17-862A-06626959C9AD",
+  "text": "Diagnosis: A: Thyroid, total thyroidectomy. Tumor histologic type: papillary thyroid carcinoma. Tumor size: 2.0 cm (gross), largest in any one slide 1.1 cm. Tumor growth pattern: papillary. Extent of invasion: Extra-capsular: not identified. Vascular: not identified. Tumor multicentricity: Multifocal. Surgical margins: Close, but negative (to <0.5 mm of the R lobe anterior margin (A1)). Background thyroid: Lymphocytic thyroiditis, nodular hyperplasia. Lymph nodes: Specimen A: metastatic papillary thyroid carcinoma (1/3). Total: metastatic papillary thyroid carcinoma (5/7). Largest metastasis : 1.1 cm (B1). Extra-nodal extension: present (B1). AJCC Stage: pTl pN1 pMx. B: Lymph nodes, right central neck, dissection. - Metastatic papillary thyroid carcinoma (4/4). Clinical History: papillary thyroid cancer. Gross Description: Received are two appropriately labeled containers. Container A is additionally labeled \"total thyroid.\". Specimen fixation: formalin. Type of specimen: total thyroidectomy. Size and weight of specimen: 6.2 grams; 4.3 cm medial to lateral, 4.9 cm superior to inferior, and 1.2 cm. anterior to posterior. Orientation: As per the requisition, the stitch designates the left superior pole. The specimen is inked as. follows: posterior=green, anterior=violet, isthmus=yellow. Tumor location: right inferior thyroid gland. Tumor description: solitary, rounded, red/tan, gritty cut surface, circumscribed, non-encapsulated. Tumor size: 2 x 1.2x1.6 cm. Confinement/non-confinement to the thyroid gland: confined. Distance of tumor from surgical margins: The tumor abuts the anterior and posterior margins of the right. thyroid lobe. Appearance of thyroid gland away from tumor: multinodular appearance. Tissue submitted for special investigations: representative tumor is submitted to Tissue Procurement. Lymph nodes: See Specimen B. Digital photograph taken: no. Block Summary: A1-A2 - right superior thyroid nodule, submitted in contiguous sections, inferior to superior. A3 - representative right middle thyroid adjacent to right inferior thyroid nodule. A4 - representative right superior thyroid. A5 - isthmus. A6 - representative left thyroid lobe. Tissue remains. Container B is additionally labeled \"right central neck dissection.\" The specimen consists of two red/brown. fibrofatty tissue fragments measuring 3.4 x 1.8 x 1.1 cm in aggregate. Isolated from the tissue fragment are. four lymph node candidates ranging in size from 1.2 cm to 1.6 cm in greatest dimension. The specimen is. otherwise grossly unremarkable. Block summary: B1 - one lymph node candidate, trisected. B2 - three lymph node candidates. Grossing Pathologist: Light Microscopy: Light microscopic examination is performed. Resident Physician: Attending Pathologist: I have personally conducted the evaluation of the above specimens and have rendered the above. diagnosis(es).",
+  "gold": {
+    "T": "T1",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1b",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 2.0 cm (gross), largest in any one slide 1.1 cm.",
+        "confidence": "high",
+        "reason": "Greatest tumor dimension 2.0 cm, confined to the thyroid with no extrathyroidal extension; >1 cm and ≤2 cm corresponds to pT1b per AJCC.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1a",
+        "value_norm": "N1",
+        "evidence": "Total: metastatic papillary thyroid carcinoma (5/7).",
+        "confidence": "high",
+        "reason": "Metastatic lymph nodes identified (5/7 positive) and nodes were from a right central neck dissection (central compartment), consistent with pN1a; extranodal extension is also reported.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": "AJCC Stage: pTl pN1 pMx.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMx (distant metastasis cannot be assessed); no documentation of distant metastasis workup in the report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 2.0 cm (gross), largest in any one slide 1.1 cm.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension ≤2.0 cm and >1.0 cm, confined to the thyroid with no extracapsular invasion identified.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1a",
+        "value_norm": "N1",
+        "evidence": "Total: metastatic papillary thyroid carcinoma (5/7).",
+        "confidence": "high",
+        "reason": "Multiple metastatic regional lymph nodes identified on right central neck dissection (central compartment).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "AJCC Stage: pTl pN1 pMx.",
+        "confidence": "high",
+        "reason": "Report explicitly records pMx (distant metastasis cannot be assessed from this specimen).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 2.0 cm (gross), largest in any one slide 1.1 cm.",
+        "confidence": "high",
+        "reason": "Greatest tumor dimension is 2.0 cm and tumor is confined to the thyroid without extra-capsular or vascular invasion, consistent with pT1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Total: metastatic papillary thyroid carcinoma (5/7).",
+        "confidence": "high",
+        "reason": "Multiple lymph nodes are reported positive for metastatic papillary thyroid carcinoma and the report lists pN1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Stage: pTl pN1 pMx.",
+        "confidence": "high",
+        "reason": "The pathologist assigned pMx (distant metastasis cannot be assessed) in the AJCC staging line.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 2.0 cm (gross)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Total: metastatic papillary thyroid carcinoma (5/7).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

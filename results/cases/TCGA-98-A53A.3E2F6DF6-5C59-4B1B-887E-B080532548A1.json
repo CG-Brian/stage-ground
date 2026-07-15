@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-98-A53A.3E2F6DF6-5C59-4B1B-887E-B080532548A1",
+  "text": "Observation Date. Last Edited Date. Diagnosis. A. Lymph node, level IX-A, excision: - Negative for malignancy. B. Lymph node, level IX-B, excision:- - Negative for malignancy. C. Lymph node, level VIII, excision: - Negative for malignancy. D. Lymph node, level VII-A, excision: - Negative for malignancy. E. Lymph node, level VII-B, excision: - Negative for malignancy. F. Lymph node, level VII-C, excision: - Negative for malignancy. G. Lymph node, level VII-D, excision: - Negative for malignancy. H. Lymph node, level VII-E, excision: - Negative for malignancy. I. Lymph node, level VII-F, excision:- Negative for malignancy. J. Lymph node, level X, excision: - Negative for malignancy. K. Lymph node, level II-R, excision: - Negative for malignancy. L. Lymph node, level IV-A, excision: - Negative for malignancy. M. Lymph node, level IV-B, excision: - Negative for malignancy. N. Lymph node, level IV-C, excision: - Negative for malignancy. O. Lymph node, level IV-D, excision: - Negative for malignancy. P. Lymph node, level IV-E, excision: - Negative for malignancy. Q. Lymph node, level XII, excision: - Negative for malignancy. R. Lung, right middle lobe, excision: - Squamous cell carcinoma, moderately differentiated. - The tumor measures. 3.5 cm in maximum dimension. - Vascular invasion is present. - The pleura is uninvolved by tumor. S. Bronchial margin, biopsy: - Negative for malignancy. Clinical Information: The patient is a. year old black male with right middle lobe mass. Frozen Section Diagnosis. RFS1: Lung, right middle lobe, lobectomy:- - Squamous cell carcinoma. SFS1: Bronchial margin, excision: - Negative for carcinoma. Gross Description. The specimen is received in nineteen containers, each labeled with the patients name and medical record number. The first container is labeled \"level 9 lymph node - A.\" It consists of 1 cm in greatest dimension yellow-tan tissue,. submitted in its entirety. The second container is labeled \"level 9 lymph node -B.\" It consists of nodal tissue measuring 0.8 cm in greatest. dimension, it is placed in a single cassette in its entirety. The third container is labeled \"level 8 lymph node.\" It consists of nodal tissue measuring 0.7 cm in greatest. dimension, submitted in its entirety. The fourth container is labeled \"level 7 lymph node - A.\" It consists of fragmented and black-yellow tissue measuring. 1.5 cm in greatest dimension, submitted in its entirety. K1-. Level 2R lymph node. L1-. Level 4 lymph node - A. M1-. Level 4 lymph node - B. N1-. Level 4 lymph node - C. O1-. Level 4 lymph node - D. P1-. Level 4 lymph node - E. Q1-. Level 12 lymph node. R1-. Frozen section. R2-R3. Stapled margin. R4-R10. Tumor. R11-. Representative section through uninvolved lung. S1-. Bronchial margin. Microscopic Description. A microscopic examination has been performed. SP Synoptic Report R: Thorax Lung. SPECIMEN: Lobe(s) of lung: RML. PROCEDURE: Lobectomy. SPECIMEN INTEGRITY: Intact. SPECIMEN LATERALITY: Right. TUMOR SITE: Middle lobe. TUMOR SIZE: Greatest dimension: 3.5 cm. TUMOR FOCALITY: Unifocal. HISTOLOGIC TYPE: Squamous cell carcinoma. HISTOLOGIC GRADE: G2: Moderately differentiated. VISCERAL PLEURA INVASION: Not identified. TUMOR EXTENSION: Not identified. BRONCHIAL MARGIN: Uninvolved by invasive carcinoma. LYMPH-VASCULAR INVASION: Present. PRIMARY TUMOR (pT): pT2a: Tumor > 3 cm, and < 5 cm in greatest dimension surrounded by lung or visceral. pleura, without bronchoscopic evidence of invasion in the main bronchus; or Tumor < 5 cm in greatest dimension with. any of the following: involves main bronchus, 2 cm or more distal to the carina; invades the visceral pleura; associated. with atelectasis or obstructive pneumonitis that extends to the hilar region. REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis. DISTANT METASTASIS (pM): Not applicable.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2a",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2a: Tumor > 3 cm, and < 5 cm in greatest dimension surrounded by lung or visceral. pleura, without bronchoscopic evidence of invasion in the main bronchus; or Tumor < 5 cm in greatest dimension with. any of the following: involves main bronchus, 2 cm or more distal to the carina; invades the visceral pleura; associated. with atelectasis or obstructive pneumonitis that extends to the hilar region.",
+        "confidence": "high",
+        "reason": "Synoptic report explicitly assigns pT2a and tumor size is 3.5 cm.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": "Synoptic report explicitly states no regional lymph node metastasis and multiple sampled nodes are documented as negative.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Not applicable",
+        "value_norm": "INVALID",
+        "evidence": "DISTANT METASTASIS (pM): Not applicable.",
+        "confidence": "high",
+        "reason": "Synoptic report explicitly indicates pM is not applicable.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2a",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2a",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "DISTANT METASTASIS (pM): Not applicable.",
+        "confidence": "medium",
+        "reason": "report states pM is 'Not applicable' and does not provide information about distant metastasis",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2a: Tumor > 3 cm, and < 5 cm in greatest dimension surrounded by lung or visceral. pleura, without bronchoscopic evidence of invasion in the main bronchus; or Tumor < 5 cm in greatest dimension with. any of the following: involves main bronchus, 2 cm or more distal to the carina; invades the visceral pleura; associated. with atelectasis or obstructive pneumonitis that extends to the hilar region.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT2a and tumor measures 3.5 cm (>3 cm and <5 cm), which corresponds to T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": "Report explicitly indicates no regional lymph node metastasis (pN0) and multiple examined nodes are negative.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "DISTANT METASTASIS (pM): Not applicable.",
+        "confidence": "medium",
+        "reason": "Report lists pM as 'Not applicable', indicating distant metastasis was not assessed pathologically; therefore MX (cannot be assessed) is selected.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2a: Tumor > 3 cm, and < 5 cm in greatest dimension surrounded by lung or visceral. pleura, without bronchoscopic evidence of invasion in the main bronchus; or Tumor < 5 cm in greatest dimension with. any of the following: involves main bronchus, 2 cm or more distal to the carina; invades the visceral pleura; associated. with atelectasis or obstructive pneumonitis that extends to the hilar region.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO: No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report states 'DISTANT METASTASIS (pM): Not applicable.' No pathologic or clinical M-stage value is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

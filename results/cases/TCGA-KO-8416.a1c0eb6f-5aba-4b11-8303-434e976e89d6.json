@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-KO-8416.a1c0eb6f-5aba-4b11-8303-434e976e89d6",
+  "text": "MODIFIED REPORT - REVIEW ADDENDUM SECTION. ADDENDUM. DIAGNOSIS. RIGHT KIDNEY AND ADRENAL: RENAL CELL CARCINOMA, CHROMOPHOBE TYPE (SEE COMMENT). COMMENT. The purpose of this addendum report is to classify this renal carcinoma based on the immunohistochemical pattern. The tumor is. positive for cytokeratin 7 and CD117 and shows weak diffuse cytoplasmic positivity for CD10. DIAGNOSIS. (A) RIGHT KIDNEY AND ADRENAL: RENAL CELL CARCINOMA (8.5 CM IN MAXIMUM DIMENSION), FUHRMAN GRADE 3 (SEE COMMENT). TUMOR IS CONFINED TO THE KIDNEY. INVASION OF INTRAPARENCHYMAL HILAR VESSELS IS PRESENT. Extraparenchymal hilar vessels are free of tumor. Margins of resection are free of tumor. Chronic interstitial nephritis and glomerulosclerosis in kidney adjacent to tumor. Unremarkable adrenal gland. COMMENT. Immunohistochemical stains are pending and the results will be reported in a supplemental report. GROSS DESCRIPTION. (A) RIGHT KIDNEY AND ADRENAL - A radical nephrectomy specimen (19.0 X 12.0 X 7.0 cm), including the right kidney (13.0 X. 5.5 X 3.0 cm), segment of the renal artery, the renal vein and ureter (14.0 cm in length and averaging 0.4 cm in diameter) in the. adrenal gland (6.0 X 2.0 X 1.5 cm). There is an 8.5 X 8.5 X 6.5 cm well circumscribed tumor arising from the anterior surface of the kidney, involving the upper. and. middle. pole. The. tumor pushes into the perinephric adipose tissue and extends to within 0.2 cm from the inked Gerota's fascia. in an area marked by Dr. as abutting the colon. The tumor is centrally cystic (approximately 60% of the tumor). This cyst is. filled with brown opaque fluid. The wall of the tumor consists of lobulated brown, friable tissue which is surrounded by a thickened. fibrous capsule. The tumor pushes into but does not appear to invade the renal sinus and does not appear to invade the. perinephric adipose tissue or the renal vein. The adjacent kidney parenchyma is unremarkable. No additional masses are identified. The pelvicalyceal system is. smooth and devoid of any lesions. No lymph nodes are identified in the hilum of the kidney. Cross sections of the right adrenal. gland show unremarkable cortex and medulla. Portions of the tumor have been submitted for possible electron microscopy, on hold. The tumor and normal renal. parenchyma are submitted for research purposes. INK CODE: Blue - Gerota's fascia/area marked by surgeon as adherent to colon. SECTION CODE: A1-A3, closest approach mass to inked Gerota's fascia/area marked by surgeon as adherent to colon,. frozen section; A4, vascular and ureter margins; A5, representative of adrenal gland; A6-A13, representative of tumor (A6-A8 with. relationship to renal sinus; A9-A10, with relationship to nonneoplastic kidney; A11-A12, with relationship to perinephric adipose. tissue; A13, additional representative section); A14, A15, no-neoplastic kidney. FS/DX: MARGIN FREE OF TUMOR. 1.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2a",
+        "value_norm": "T2",
+        "evidence": "(A) RIGHT KIDNEY AND ADRENAL: RENAL CELL CARCINOMA (8.5 CM IN MAXIMUM DIMENSION), FUHRMAN GRADE 3 (SEE COMMENT). TUMOR IS CONFINED TO THE KIDNEY. INVASION OF INTRAPARENCHYMAL HILAR VESSELS IS PRESENT.",
+        "confidence": "high",
+        "reason": "Tumor maximum dimension 8.5 cm and described as confined to the kidney; by AJCC staging, tumor >7 cm but limited to the kidney corresponds to T2a.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": "No lymph nodes are identified in the hilum of the kidney.",
+        "confidence": "medium",
+        "reason": "No lymph nodes were submitted or identified for pathologic evaluation, so nodal status cannot be assigned.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "Distant metastasis is not assessed in this pathology report (no metastatic sites or clinical staging information provided).",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2a",
+        "value_norm": "T2",
+        "evidence": "RENAL CELL CARCINOMA (8.5 CM IN MAXIMUM DIMENSION), FUHRMAN GRADE 3 (SEE COMMENT). TUMOR IS CONFINED TO THE KIDNEY.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "Nx",
+        "value_norm": "NX",
+        "evidence": "No lymph nodes are identified in the hilum of the kidney.",
+        "confidence": "high",
+        "reason": "no regional lymph nodes were submitted for pathologic examination",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "RENAL CELL CARCINOMA (8.5 CM IN MAXIMUM DIMENSION), FUHRMAN GRADE 3 (SEE COMMENT). TUMOR IS CONFINED TO THE KIDNEY.",
+        "confidence": "high",
+        "reason": "Tumor size >7 cm (8.5 cm) and explicitly stated as confined to the kidney, consistent with pT2.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No lymph nodes are identified in the hilum of the kidney.",
+        "confidence": "high",
+        "reason": "No lymph nodes were identified and there is no mention of nodal metastasis.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No statement regarding distant metastasis in the pathology report; metastasis cannot be assessed from this specimen.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "RENAL CELL CARCINOMA (8.5 CM IN MAXIMUM DIMENSION), FUHRMAN GRADE 3 (SEE COMMENT). TUMOR IS CONFINED TO THE KIDNEY.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No lymph nodes are identified in the hilum of the kidney.",
+        "confidence": "medium",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information regarding distant metastasis or clinical/radiologic assessment is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

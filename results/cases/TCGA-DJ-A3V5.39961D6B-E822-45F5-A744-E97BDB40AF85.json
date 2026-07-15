@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DJ-A3V5.39961D6B-E822-45F5-A744-E97BDB40AF85",
+  "text": "Head & Neck. Head And Neck. Clinical Diagnosis & History: 1.4 cm right thyroid nodule with FNA positive for papillary carcinoma. Multiple nodules seen on Ultrasound. Specimens Submitted: 1: Jugular node (fs). 2: Right paratracheal lymph node(fs). 3: Delphian node. 4: Total thyroidectomy. DIAGNOSIS: 1. \"Jugular node\"; biopsy: - Benign fibroadipose tissue, skeletal muscle and nerves. 2. \"Right paratracheal lymph node\"; biopsy: - Benign fibroadipose tissue. 3. \"Delphian node\"; biopsy: - Benign fibroadipose tissue. 4. Total thyroidectomy: Part # 4. Tumor Type: Papillary carcinoma, tall cell variant >50% Tall cell features pu TSS few. Mitotic Activity: Not Identified. Tumor Necrosis: Not identified. Other Tumor Features: Calcification of non-psammoma type. Marked stromal reaction. Tumor Location: Right lobe. Tumor Size: Greatest diameter is 1.4 cm. Tumor Encapsulation: None Identified. Blood Vessel Invasion: Not identified. Extrathyroid Extension: Invades:perithyroidal fibroadipose tissue. Surgical Margins: Positive for tumor. Tumor Multicentricity: Not identified. Adenoma(s) (away from the carcinoma): Not Identified. Non-Neoplastic Thyroid: Exhibits nodular hyperplasia. Parathyroid Glands: Not identified. Lymph Nodes: One benign perithyroidal lymph node (0/1). ATTEST THAT THE ABOVE DIAGNOSIS IS BASED UPON MY PERSONAL EXAMINATION OF THE SLIDES (AND/OR OTHER MATERIAL), AND THAT I HAVE. REVIEWED AND APPROVED THIS REPORT. Gross Description: D. 1) The specimen is received fresh for frozen section consultation, labeled \"jugular node frozen\" and consists of a 1.2 x 1.0 x 0.3 cm. soft tissue. The specimen is entirely submitted for frozen section. Summary of sections: FSC - frozen section control. 2) The specimen is received fresh for frozen section consultation, labeled \"right paratracheal lymph nodes\" and consists of two. pieces of adipose tissue measuring 0.9 and 1.1 cm in greatest dimension. There is no lymph node identified grossly. The. specimen is entirely submitted for frozen section,. Summary of sections: FSC - frozen section control. 3). The specimen is received in formalin labeled \"Delphian node.' It consists of a single piece of pale tan soft. tissue. measuring. 0.7 x 0.6 x 0.3 cm. The specimen is entirely submitted. Summary of sections: U - undesignated. 4). The specimen is received fresh and placed in formalin, labeled total thyroidectomy, stitch marks right lobe and consists of a. thyroid weighing 11.5 g after fixation. The right lobe measures 4.2 x 2.1 x 1.2 cm, the left lobe measures 4 x 2 X 1 cm and the. isthmus measures 1.7 x 0.7 x 0.5 cm. The external surface is covered by a thin fibrous capsule. The posterior surface of the. specimen is inked black, and the anterior is inked blue. Sectioning reveals a 1.4 x 1.2 x 1.1 cm white-tan, irregular, partly calcified. tumor nodule in the right lobe. The remaining thyroid parenchyma is red tan and beefy. Representative sections of the specimen. submitted for. The remaining tissue is serially sectioned and entirely submitted. Summary of sections: N - nodule, right lobe. LL left lobe. IS isthmus. Summary of Sections: Part 1: Jugular node (fs). Block. Sect. Site. PCs. 1. fsc. 1. Part 2: Right paratracheal lymph node(fs). Block. Sect. Site. PCs. 1. fsc. 1. Part 3: Delphian node. Block. Sect. Site. PCs. 1. u. 1. Part 4: Total thyroidectomy. Block. Sect. Site. PCs. 1. IS. 2. 6. LL. 6. 6. N. 6. Intraoperative Consultation: Note: The diagnoses given in this section pertain only to the tissue sample examined at the time of the intraoperative consultation. 1. Frozen Section Diagnosis: Jugular node (fs): Benign fibromuscular tissue. No lymphold tissue present. Permanent Diagnosis: Same. 2. Frozen Section Diagnosis: Right paratracheal lymph node (fs): Benign fibrous and fatty tissue. Permanent Diagnosis: Same.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T1b (per AJCC 8th ed.; tumor 1.4 cm confined to thyroid — minimal extrathyroidal extension noted but not upstaging under AJCC8)",
+        "value_norm": "T1",
+        "evidence": "Tumor Size: Greatest diameter is 1.4 cm. Extrathyroid Extension: Invades:perithyroidal fibroadipose tissue.",
+        "confidence": "medium",
+        "reason": "Tumor measures 1.4 cm -> T1 (>1 cm and ≤2 cm = T1b). Reported invasion of perithyroidal fibroadipose tissue represents minimal extrathyroidal extension; under AJCC 8th edition minimal (microscopic) ETE is not used to upstage T category. If using older AJCC7 criteria, minimal ETE would have resulted in T3.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: One benign perithyroidal lymph node (0/1).",
+        "confidence": "high",
+        "reason": "All submitted regional lymph nodes were benign (0 of 1 positive).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are reported in the pathology report and no metastatic sites were sampled; staging as M0 is based on absence of documented metastasis in this report but imaging/clinical data are not provided.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "Tumor Size: Greatest diameter is 1.4 cm.",
+        "confidence": "high",
+        "reason": "Tumor is >1 cm and ≤2 cm (T1b). Although report notes invasion of perithyroidal fibroadipose tissue (microscopic extrathyroidal extension), minimal ETE does not upstage T category per current staging conventions.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: One benign perithyroidal lymph node (0/1).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor Size: Greatest diameter is 1.4 cm. Extrathyroid Extension: Invades:perithyroidal fibroadipose tissue.",
+        "confidence": "medium",
+        "reason": "Tumor is 1.4 cm (would be T1 by size alone) but report documents invasion of perithyroidal fibroadipose tissue (extrathyroidal extension), which is being interpreted here as indicating a higher T-category (T3). Confidence is medium because staging rules (AJCC editions) differ on how minimal extrathyroidal extension is handled.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: One benign perithyroidal lymph node (0/1).",
+        "confidence": "high",
+        "reason": "No metastatic carcinoma identified in examined regional lymph nodes (0/1).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis is provided in the pathology report, so M status cannot be assessed from this report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Extrathyroid Extension: Invades:perithyroidal fibroadipose tissue.",
+        "confidence": "medium",
+        "reason": "The report documents invasion into perithyroidal fibroadipose tissue (extrathyroidal extension), which upstages the tumor beyond T1; exact T-category mapping can vary by staging edition (e.g., minimal vs gross ETE), so confidence is moderate.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: One benign perithyroidal lymph node (0/1).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis (no statement or specimens addressing distant disease) is present in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

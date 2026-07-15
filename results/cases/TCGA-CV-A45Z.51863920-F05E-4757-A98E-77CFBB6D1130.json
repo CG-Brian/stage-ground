@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-CV-A45Z.51863920-F05E-4757-A98E-77CFBB6D1130",
+  "text": "Sex: M. Case type: Surgical History. Case imported from legacy computer system. The format of this report does not match the original case. For cases prior to. section \"SPECIMEN\" may have been added. DIAGNOSIS. (A) RIGHT FALSE CORD: INVASIVE SQUAMOUS CARCINOMA. (B) NOSE RIGHT PAROTID BULB: Lymph node, no tumor. RIGHT THYROID LOBECTOMY: Multinodular goiter. (D). LARYNGECTOMY: SQUAMOUS CARCINOMA, GRADE 3 WITH LYMPHATIC INVASION INVOLVING RIGHT. AND LEFT SUPRAGLOTTIC REGIONS. MARGINS OF RESECTION FREE,. THICKNESS OF THE TUMOR, 1.2 CM. SQUAMOUS CARCINOMA IN SITU IN RIGHT VENTRICLE. Large tracheal margin of resection free of tumor. Seven right cervical lymph nodes, no tumor. TWO cervical lymph nodes, no tumor. Entire report and diagnosis completed by: Report released by: GROSS DESCRIPTION. (A) RIGHT FALSE CORD - Three fragments of tan-pink tissue admixed with blood. clot (overall 0.5 x 0.4 x 0.2 cm). Entirely submitted for frozen section in. A. FS/DX: SQUAMOUS CELL CARCINOMA, INVASIVE. (B) NODE, RIGHT PAROTID BULB - A lymph node, 1.5 x 0.6 x 0.7 cm. Bisected in. toto in B. (c) RIGHT THYROID LOBECTOMY - A right lobe of the thyroid (5.0 x 3.0 x 1.7. cm), with several nodules, ranging from 0.2 to 1.1 cm. A more preserved. portion of thyroid tissue is at the superior aspect, it is red-brown and. meaty; the nodules range from red to light brown color. The specimen sampled. for frozen section in C1 and C2; representative sections are submitted in. C3-c6. INK CODE: vellow - isthmus margin; blue - thyroid surface. (D) LARYNGECTOMY - A laryngectomy and attached soft tissue and lymph node. dissection with overall measurements of 8.0 x 6.0 x 5.0 cm. A light tan. indurated and ulcerated lesion located in the right supraglottic area and. extending to the midline approximately 0.5 cm into the left supraglottic area. is 2.0 x 1.5 x 1.0 cm mass. The mucosal and external surfaces specimen are. uninvolved grossly by tumor. The specimen is submitted sequentially from. right to left. SECTION CODE: D1-D17, lymph nodes, right; D18-D19, lymph nodes, left. Sex: M. Case type: Surgical History. FS/DX: MUCOSA, NO TUMOR PRESENT. ADDITIONAL STUDIES. PHOTO: (A) LARYNX. SNOMED CODES. M-80703 T-24455.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "LARYNGECTOMY: SQUAMOUS CARCINOMA, GRADE 3 WITH LYMPHATIC INVASION INVOLVING RIGHT. AND LEFT SUPRAGLOTTIC REGIONS. MARGINS OF RESECTION FREE,. THICKNESS OF THE TUMOR, 1.2 CM.",
+        "confidence": "medium",
+        "reason": "Tumor involves right and left supraglottic regions (multisite supraglottic involvement consistent with T2). No mention of vocal cord fixation, paraglottic space or cartilage invasion to upstage to T3/T4.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Seven right cervical lymph nodes, no tumor. TWO cervical lymph nodes, no tumor.",
+        "confidence": "high",
+        "reason": "Multiple cervical lymph nodes were examined and reported negative for tumor; parotid node also reported as no tumor.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are mentioned in the pathology report, but no distant sites were sampled or imaging results provided to definitively exclude metastasis.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "LARYNGECTOMY: SQUAMOUS CARCINOMA, GRADE 3 WITH LYMPHATIC INVASION INVOLVING RIGHT. AND LEFT SUPRAGLOTTIC REGIONS. is 2.0 x 1.5 x 1.0 cm mass. THICKNESS OF THE TUMOR, 1.2 CM.",
+        "confidence": "medium",
+        "reason": "Tumor involves right and left supraglottic regions (multiple subsites) and measures ~2.0 cm — consistent with T2 for supraglottic laryngeal cancer; pathologic T not explicitly stated in report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Seven right cervical lymph nodes, no tumor. TWO cervical lymph nodes, no tumor.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "A light tan. indurated and ulcerated lesion located in the right supraglottic area and. extending to the midline approximately 0.5 cm into the left supraglottic area. is 2.0 x 1.5 x 1.0 cm mass.",
+        "confidence": "medium",
+        "reason": "Tumor arises in the supraglottic region and extends across the midline into the opposite supraglottic area (involvement of more than one supraglottic subsite → T2). Vocal cord mobility/fixation not reported, so staging has some uncertainty.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Seven right cervical lymph nodes, no tumor. TWO cervical lymph nodes, no tumor.",
+        "confidence": "high",
+        "reason": "Multiple regional lymph nodes examined and reported as having no tumor.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No information about distant metastasis is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No documented pathologic T stage (pT) or explicit T-category assignment in the report; tumor measurements are given but no T category is provided.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Seven right cervical lymph nodes, no tumor.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or M status in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-21-5784.5d154faf-bb6e-4237-80cf-9d02e2127adb",
+  "text": "Clinical History/Diagnosis: Right Lung CA. Source of Specimen(s). 1: 11R Lymph Node. 2: 3A Lymph Node. 3: 10 R Lymph Node. 4: Right upper lobe Lung, resection (segmental or lobe). 5: Level 7 Lymph Node. 6: Level 10 Lymph Node. ESTE: 7: Level 4R Lymph Node. Gross Description: Received in seven parts. Source of Tissue: 1. Labeled #1, \"11R lymph node\". Gross Description: Received fresh labeled, 11R. lymph node\". It consists of multiple soft black-brown anthracotic lymph. nodes measuring from 0.1 up to 0.5 cm in greatest dimension. The lymph. nodes are entirely submitted in 1A-1B. Source of Tissue: 2. Labeled #2, \"3A lymph node\". Gross Description: Received fresh labeled, 3A. lymph node\". It consists of a soft black-brown anthracotic lymph node. measuring 0.8 x 0.6 x 0.3 cm. The specimen is entirely submitted in 2A. Source of Tissue: 3. Labeled #3, \"10R lymph node\". Gross Description: Received fresh labeled \", 10R. lymph node\". It consists of three soft black-brown anthracotic lymph nodes. measuring from 0.2 up to 0.5 cm in greatest dimension. Entirely submitted. in 3A. Source of Tissue: 4. Labeled #4, \"right upper lobe\". Intraonerative Consultation: BRONCHIAL MARGIN WITH NO TUMOR SEEN PER. Gross Description: Received fresh labeled,. right upper lobe\". It consists of a lobe of lung weighing 197 grams and. measuring 14 X 9 X 4 cm. A gray nodular indurated area is identified on. the pleura measuring 3 x 2.5 cm in greatest dimension. The bronchial and. vascular margins are grossly unremarkable. The specimen is serially. sectioned to reveal a 4 x 3.2 X 2.1 cm ill-defined gray mass located. approximately 1.5 cm from the bronchial and vascular margins. The mass. grossly corresponds to the previously described pleural induration. The. remaining lung parenchyma is red-brown, congested with no other masses. present. The bronchial margin is frozen in 4FS. Additional random sections. of the remainder of the specimen are submitted in 4A-4H. Designation of Sections: 4FS - frozen section, 4A- vascular margins, 4B-4E-. random section of tumor with closest pleura, 4F- tumor with adjacent. normal uninvolved parenchyma, 4G- peribronchial lymph nodes, 4H-. uninvolved parenchyma. Source of Tissue: 5. Labeled #5, \"level 7 lymph nodes\". Gross Description: Received fresh labeled \",. level 7 lymph nodes\". It consists of multiple soft black-brown. anthracotic lymph nodes measuring from 0.1 up to 1.5 cm in greatest. dimension. The lymph nodes are entirely submitted in 5A-5B. Source of Tissue: 6. Labeled #6, \"level 10 lymph nodes\". Gross Description: Received fresh labeled. level 10 lymph nodes\". It consists of a soft black-brown anthracotic. lymph node measuring 0.8 x 0.5 x 0.5 cm. The lymph node is bisected and. entirely submitted in 6A. Source of Tissue: 7. Labeled #7, \"level 4R lymph nodes\". Gross Description: Received fresh labeled \", ,. level 4R lymph nodes\". It consists of multiple soft black-brown. anthracotic lymph nodes measuring from 0.1 up to 0.7 cm in greatest. dimension. The lymph nodes are entirely submitted in 7A-7C. Final Diagnosis: 1. 11R lymph nodes, excision: - No tumor seen in thirteen lymph nodes (0/13). 2. 3A lymph nodes, excision: - No tumor seen in three lymph nodes (0/3). 3. 10R lymph nodes, excision: - No tumor seen in two lymph nodes (0/2). 4. Right lung, upper lobe, lobectomy: - Squamous cell carcinoma, high grade (4.0 cm). - Angiolymphatic invasion is not identified. - Visceral pleura free of tumor. - Vascular and bronchial margins free of tumor. - Two peribronchial lymph nodes with no tumor seen (0/2). 5. Level 7 lymph nodes, excision: - No tumor seen in two lymph nodes (0/2). 6. Level 10 lymph nodes, excision: - No tumor seen in four lymph nodes (0/4). 7. Level 4R lymph nodes, excision: - No tumor seen in sixteen lymph nodes (0/16). LUNG TEMPLATE. Specimen Type. Lobectomy. Laterality. Right. Tumor Size. Greatest dimension: 4.0 cm (T1 if <=3.0 cm; otherwise T2). Histologic Type. Squamous cell carcinoma. Histologic Grade. Poorly differentiated. Extension of Tumor. Carcinoma does not involve visceral pleura (T1 unless > 3.0 cmT2)/. Venous (Large Vessel) Invasion. Absent. Arterial (Large Vessel) Invasion. Absent. Margins. Margins uninvolved by invasive carcinoma. Regional Lymph Nodes. 32 regional lymph nodes examined. No regional lymph node metastasis. pTNM: T2 NO Mx.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumor Size. Greatest dimension: 4.0 cm (T1 if <=3.0 cm; otherwise T2).",
+        "confidence": "high",
+        "reason": "Tumor greatest dimension 4.0 cm and report explicitly maps this size to T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Regional Lymph Nodes. 32 regional lymph nodes examined. No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": "Thirty-two regional lymph nodes were examined with no metastasis reported.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "pTNM: T2 NO Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly records M as Mx (distant metastasis not assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumor Size. Greatest dimension: 4.0 cm (T1 if <=3.0 cm; otherwise T2).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Regional Lymph Nodes. 32 regional lymph nodes examined. No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "pTNM: T2 NO Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumor Size. Greatest dimension: 4.0 cm (T1 if <=3.0 cm; otherwise T2).",
+        "confidence": "high",
+        "reason": "Tumor greatest dimension is 4.0 cm which meets criteria for T2; report also lists pTNM as T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "32 regional lymph nodes examined. No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": "All examined regional lymph nodes are negative for tumor (0/32).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM: T2 NO Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly records M as 'Mx' (distant metastasis not assessed) and no distant metastases are documented in the pathology report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pTNM: T2 NO Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No regional lymph node metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pTNM: T2 NO Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

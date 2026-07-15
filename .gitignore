@@ -1,0 +1,31 @@
+# data (MIT but bulky; reproduce via scripts/01)
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
+
+# results: keep cases + metrics (small, the actual deliverable the README and
+# UI depend on). Ignore predictions/ (raw LLM outputs, regenerable, larger).
+results/predictions/*
+!results/predictions/.gitkeep
+
+# secrets
+.env
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# notebooks
+.ipynb_checkpoints/
+
+# web (Next.js)
+web/node_modules/
+web/.next/
+web/next-env.d.ts
+
+# editor / OS
+.DS_Store

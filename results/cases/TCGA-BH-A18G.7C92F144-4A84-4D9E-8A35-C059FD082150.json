@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BH-A18G.7C92F144-4A84-4D9E-8A35-C059FD082150",
+  "text": "PATIENT HISTORY: CHIEF COMPLAINT/PRE-OP/POST-OP DIAGNOSIS: Right breast cancer. LMP DATE: PROCEDURE: Right needle localized segmental mastectomy and right axilla sentinel node biopsy. SPECIFIC CLINICAL QUESTION: Not provided. OUTSIDE TISSUE DIAGNOSIS: No. PRIOR MALIGNANCY: No. CHEMORADIATION THERAPY: No. OTHER DISEASES: No. FINAL DIAGNOSIS: PART 1: RIGHT AXILLARY SENTINEL LYMPH NODE #1, BIOPSY -. ONE (1) LYMPH NODE, NEGATIVE FOR NEOPLASM (0/1). PART 2: RIGHT BREAST AT 8 O'CLOCK, NEEDLE LOCALIZED SEGMENTAL MASTECTOMY -. A. INVASIVE DUCIAL CARCINOMA, NOTTINGHAM GRADE 3 (NUCLEAR GRADE 3, TUBULE SCORE 3, MITOTIC. ACTIVITY SCORE 2; TOTAL SCORE: 8/9). B. TUMOR MEASURES 2.7 CM (GROSS MEASUREMENT). C. NO LYMPHOVASCULAR SPACE INVASION IS IDENTIFIED. D. MARGINS ARE NEGATIVE FOR NEOPLASM; TUMOR APPROACHES MOST CLOSELY TO THE SUPERIOR. MARGIN (0/9) CM. E. ATYPICAL DUCTAL HYPERPLASIA, AND RADIAL SCAR. F. SCLEROSING ADENOSIS AND FIBROCYSTIC CHANGES. G. FIBROSIS, SUGGESTIVE OF PREVIOUS BIOPSY. H. SKIN, NEGATIVE FOR TUMOR. TUMOR PREVIOUSLY REPORTED TO BE POSITIVE FOR ER AND PR AND NEGATIVE FOR HER-2/neu. J. PATHOLÓGIC STAGE: PT2 pNO pMX. PART 3: RIGHT BREAST, EXCISION (102 GRAMS) -. A. FAT NECROSIS AND FIBROSIS. B. FIBROCYSTIC CHANGES AND COLUMNAR CELL CHANGE. C. SKIN WITH NO SIGNIFICANT PATHOLOGIC DIAGNOSIS. PART 4: LEFT BREAST TISSUE, EXCISION (254 GRAMS) -. A. SCLEROSING ADENOSIS, COLUMNAR CELL CHANGE, AND FIBROCYSTIC CHANGES. 8. SKIN WITH NO SIGNIFICANT PATHOLOGIC DIAGNOSIS. CASE SYNOPSIS: SYNOPTIC - PRIMARY INVASIVE CARCINOMA OF BREAST. LATERALITY: Right. PROCEDURE: Segmental. Lower outer quadrant. SIZE OF TUMOR: Maximum dimension invasive component: 27 mm. MULTICENTRICITY/MULTIFOCALITY OF INVASIVE FOCI: TUMOR TYPE (invasive component): Ductal adenocarcinoma, NOS. NOTTINGHAM SCORE: Nuclear grade: 3. Tubule formation: 3. Mitotic activity score: 2. Total Nottingham score: 8. Nottingham grade (1, 2. 3): 3. ANGIOLYMPHATIC INVASION: DERMAL LYMPHATIC INVASION: CALCIFICATION: SURGICAL MARGINS INVOLVED BY INVASIVE COMPONENT: Distance of invasive tumor to closest margin: 9 mm. LYMPH NODES POSITIVE: 0. LYMPH NODES EXAMINED: 1. METHOD(S) OF LYMPH NODE EXAMINATION: H/E stain. T STAGE, PATHOLOGIC: pT2. N STAGE MODIFIER: (sn). N STAGE, PATHOLOGIC: pNO. M STAGE: Not applicable. ESTROGEN RECEPTORS: positive. PROGESTERONE RECEPTORS: positive. HER2/NEU: 1+.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "T STAGE, PATHOLOGIC: pT2.",
+        "confidence": "high",
+        "reason": "Tumor maximum dimension 27 mm (2.7 cm), which falls in the pT2 category (2–5 cm); pathologic T explicitly reported as pT2.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "ONE (1) LYMPH NODE, NEGATIVE FOR NEOPLASM (0/1).",
+        "confidence": "high",
+        "reason": "Zero of one sentinel lymph node positive; pathologic N explicitly reported as pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "PATHOLÓGIC STAGE: PT2 pNO pMX.",
+        "confidence": "high",
+        "reason": "Report documents pMX (metastasis not assessed) and M stage listed as not applicable; distant metastasis was not evaluated/pathologically assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T STAGE, PATHOLOGIC: pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "N STAGE, PATHOLOGIC: pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLÓGIC STAGE: PT2 pNO pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T STAGE, PATHOLOGIC: pT2.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT2 and tumor maximum dimension 27 mm (supports T2).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "N STAGE, PATHOLOGIC: pNO.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pN0 and notes 1 sentinel lymph node negative (0/1).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLÓGIC STAGE: PT2 pNO pMX.",
+        "confidence": "medium",
+        "reason": "Report lists pMX and also 'M STAGE: Not applicable', indicating metastasis was not pathologically assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T STAGE, PATHOLOGIC: pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "N STAGE, PATHOLOGIC: pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLÓGIC STAGE: PT2 pNO pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

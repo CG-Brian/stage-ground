@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DD-A3A4.C755324B-9B82-4319-BDD8-EB8A24107AAC",
+  "text": "TISSUE DESCRIPTION: Left lobe liver (2195 grams, 26 x 16 x 9 cm), separately submitted tissue from. Segment V liver (30 grams, 5 x 4 x 3 cm), needle biopsy from Segment V liver No. 1. (2 mm) and No.2 (7 mm), left periportal lymph node (2.1 x 1.3 x 0.8 cm) and. gallbladder (8 x 3.5 x 2 cm). A1, B1, C1, C2, C3, C4, C5, C6, C7, D1, D2, E1. DIAGNOSIS: Liver, left lobe, excision: Grade 3 (of 4), hepatocellular carcinoma, usual type,. forming a 25 x 16 x 9 cm multinodular mass. The tumor is located in left lobe. The. hepatic capsule is free of tumor. The surgical margins are free of tumor, the. clearance being 1.2 cm microscopically. Extramural vascular invasion is not. identified. The tumor is encapsulated by a 0.5 cm thick fibrous capsule. The. approximate percent of necrosis is 10%. The non-neoplastic liver will be assessed. on permanent sections and an addendum will be issued. Liver, Segment V, excision: Grade 3 (of 4) hepatocellular carcinoma, forming a mass. (3 x 2 x 1.8 cm). The margins are negative for tumor. Liver, Segment V, needle biopsy #1: Hemangioma. Liver, Segment V, needle biopsy #2: Negative for tumor. Lymph node, periportal, excision: A single benign lymph node is identified. Gallbladder, cholecystectomy: No diagnostic abnormalities. ADDENDUM: Permanent sections of the adjacent non-neoplastic liver tissue show no diagnostic. abnormalities. An iron stain and PAS-D are negative. Seen with Dr.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "forming a 25 x 16 x 9 cm multinodular mass.",
+        "confidence": "high",
+        "reason": "Multiple tumors with at least one tumor >5 cm (multinodular mass 25 x 16 x 9 cm) corresponds to T3 for hepatocellular carcinoma.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Lymph node, periportal, excision: A single benign lymph node is identified.",
+        "confidence": "high",
+        "reason": "No metastatic carcinoma identified in the sampled periportal lymph node.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0 (not definitively assessed)",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are reported in the submitted specimens and distant sites were not evaluated in this pathology report; M status cannot be confirmed from this report alone.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Liver, left lobe, excision: Grade 3 (of 4), hepatocellular carcinoma, usual type,. forming a 25 x 16 x 9 cm multinodular mass.",
+        "confidence": "high",
+        "reason": "Multinodular tumor with largest dimension 25 x 16 x 9 cm — multiple tumors with a lesion >5 cm corresponds to T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph node, periportal, excision: A single benign lymph node is identified.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention distant metastasis or evaluation for metastatic disease.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "forming a 25 x 16 x 9 cm multinodular mass. Liver, Segment V, excision: Grade 3 (of 4) hepatocellular carcinoma, forming a mass. (3 x 2 x 1.8 cm).",
+        "confidence": "high",
+        "reason": "Multiple tumor nodules are present, including a very large lesion (25 x 16 x 9 cm) and a second lesion (3 x 2 x 1.8 cm); multiple tumors with at least one >5 cm corresponds to T3.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph node, periportal, excision: A single benign lymph node is identified.",
+        "confidence": "high",
+        "reason": "Periportal lymph node excision showed a benign node with no nodal metastasis identified.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases are reported in the pathology specimen(s); only local/regional tissues were examined and no metastatic disease was identified.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "forming a 25 x 16 x 9 cm multinodular mass.",
+        "confidence": "medium",
+        "reason": "Report documents a multinodular tumor measuring 25 x 16 x 9 cm (and a separate 3 x 2 x 1.8 cm lesion), consistent with multiple tumors with at least one >5 cm (AJCC pT3 criteria). No explicit pT stated in report.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "A single benign lymph node is identified.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement in the report regarding distant metastasis or involvement of non-regional sites (no basis to assign M0 or M1).",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-FR-A3R1.C9C95AC5-22B2-4C6C-A1C0-9D5F920AFB72",
+  "text": "Diagnosis: A: Sentinel lymph node #1, right axilla, removal. -No evidence of melanoma in 1 sentinel lymph node (0/1). -Melan A and S100 protein immunostains and levels are negative. in all four. blocks. B: Sentinel lymph node #2, right axilla, removal. -No evidence of melanoma in 1 sentinel lymph node (0/1). -Melan A and S100 protein immunostains and levels are negative. in both blocks. C: Sentinel lymph node #3, right axilla, removal. -No evidence of melanoma in 1 sentinel lymph node (0/1). -Melan A and S100 protein immunostains and levels are negative. D: Skin, right arm, wide excision. Histologic type: Nodular melanoma. Breslow depth: 63 mm (6.3 cm) - this thickness is. substantially thicker than the initial biopsy Ulceration: EXTENSIVELY PRESENT. Consumption of the epidermis: present. Margins: all margins are widely free. Clark level: V. Vertical growth phase: present. Mitoses: 3.75 per square mm. Tumor infiltrating lymphocytes: present, focally brisk. Regression: not identified. Lymphovascular space invasion: not identified. Satellite nodule: not identified. Perineural invasion: not identified. Coexisting nevus: not identified. Pigmentation: present, minimal. Solar elastosis present, mild. Other features: necrosis is also present. AJCC Staging. pT4b. pNO. pMx. This staging information is based on this pathologic specimen. and may be incomplete. A comprehensive review of all available. information is recommended to determine final staging. Comment: The frozen section diagnosis is confirmed. Intraoperative Consult Diagnosis: Frozen section was requested. FSA1: Right axillary lymph node, biopsy. - No neoplasm identified. Clinical History: -year-old. with right arm melanoma. Gross Description: Received are four formalin-filled containers. Specimen A is. submitted fresh for frozen section. Container A: Received is a 3.0 X 2.1 X 1.0 cm lymph node. Representative section is frozen as FSA1. Grossly, this area is. suspicious for hemorrhage?, remaining sections are submitted in. blocks A2-A4,. Container B is additionally labeled \"sentinel lymph node #2.\". Received is a brown/tan unoriented soft tissue fragment. measuring 1.4 X 0.9 x 0.4 cm. The specimen is serially sectioned. and submitted entirely in blocks B1 and B2,. Container C is additionally labeled \"sentinel lymph node #3. \". Received is a single unoriented 1.2 X 1.1 X 0.7 cm brown/tan. soft tissue fragment. The specimen is serially sectioned and. submitted entirely in block C1,. Container D is additionally labeled \"skin, right arm melanoma,. wide excision. Specimen fixation: formalin. Specimen type: wide excision. Tumor site: right arm. Orientation of the specimen: The specimen is oriented with a. short stitch/superior designated as 12 o' clock, and a long. stitch lateral designated as 9 o' clock. Inking: yellow=12 0' clock to 3 o' clock, blue=3 O' clock to 6. o'clock, red=6 o' clock to 9 o' clock, green=9 o' clock to 12 O' ,. clock, deep margin=black except for a central recessed area. which is inked orange. Skin ellipse dimensions: 9.7 X 8.9 cm. Tumor size and description: The tumor is 10.5 X 8.7 X 6.3 cm. The tumor overhangs the skin ellipse at 3 o' clock X. approximately 2.5 cm. The tumor is exophytic, raised with. lobulated borders. Microscopic pigmentation: There are multiple white/tan nodules. ranging in diameter from 0.2 to 0.3 cm towards the posterior. aspect of the tumor, and several foci of hemorrhages mainly. towards the posterior aspect of the tumor. Satellite nodules: none identified. Distance of tumor from margins: 1.9 cm at the 12 0' clock, 2. 1. cm at 3 o' clock, 2.4 cm at 6 o' clock, and 1.8 cm at 9 0' clock. Digital photograph taken: not taken. Tissue submitted for special investigation: none. Block summary : D1, D2 - deep en face margin from 12 o' clock to 3 o' clock. D3, D4 - deep en face margin from 3 o' clock to 6 0' clock. D5-D7 - - deep en face margin from 6 o' clock to 9 o' clock. D8, D9 - deep en face margin from 9 o' clock to 12 o' clock. D10-D21 - - radial perpendicular sections from the biopsy site to. corresponding. clock number margin: D10, 12 o' clock; D11, 1. o' clock; etc. D21=11 o' clock. D22-D25 representative sections from the tumor, abutting the. orange margin. Light Microscopy: Light microscopic examination is performed. S100 protein and. Melan A immunostains were performed on each sentinel lymph node. block and were medically necessary. All are negative for. metastatic melanoma. S100 and Melan A were also utilized to. evaluate a small area in block D11. These stains are negative. thereby arguing against a satellite metastasis.",
+  "gold": {
+    "T": "T4",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT4b",
+        "value_norm": "T4",
+        "evidence": "AJCC Staging. pT4b.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT4b and documents a Breslow depth of 63 mm and extensive ulceration consistent with T4b.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "AJCC Staging. pNO.",
+        "confidence": "high",
+        "reason": "Sentinel lymph nodes are reported negative for melanoma (0/1 in nodes) with negative immunostains, and the report lists pN0.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": "AJCC Staging. pMx.",
+        "confidence": "medium",
+        "reason": "Report explicitly lists pMx (distant metastasis cannot be assessed from this specimen); staging may be incomplete pending clinical/radiologic information.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T4b",
+        "value_norm": "T4",
+        "evidence": "AJCC Staging. pT4b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "All are negative for metastatic melanoma.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "AJCC Staging. pT4b. pNO. pMx.",
+        "confidence": "high",
+        "reason": "report explicitly records pMx (distant metastasis not assessed)",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "pT4b.",
+        "confidence": "high",
+        "reason": "Pathologic staging listed as pT4b in the AJCC Staging line, which maps to T4 category.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO.",
+        "confidence": "high",
+        "reason": "Pathologic staging listed as pN0 in the AJCC Staging line and sentinel nodes reported as 0/1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx.",
+        "confidence": "high",
+        "reason": "Pathologic staging lists pMx indicating distant metastasis cannot be assessed from this specimen.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "pT4b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

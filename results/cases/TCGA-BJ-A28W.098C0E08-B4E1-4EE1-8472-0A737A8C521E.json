@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BJ-A28W.098C0E08-B4E1-4EE1-8472-0A737A8C521E",
+  "text": "PATIENT HISTORY: CHIEF COMPLAINT/PRE-OP/POST-OP DIAGNOSIS: Right thyroid nodule. PROCEDURE: Thyroidectomy total. SPECIFIC CLINICAL QUESTION: Not answered. OUTSIDE TISSUE DIAGNOSIS: Not answered. PRIOR MALIGNANCY: Not answered. 11.1 Collection Date: CHEMORADIATION: Not answered. ORGAN TRANSPLANT: Not answered. IMMUNOSUPPRESSION: Not answered. OTHER DISEASES: Not answered. FINAL DIAGNOSIS: PART 1: THYROID, TOTAL THYROIDECTOMY (45 GRAMS) -. A. PAPILLARY THYROID CARCINOMA, TWO FOCI, LEFI AND.RIGHT. B. LARGEST FOCUS: RIGHT (3.0 CM), WELL DEMARCATED, FOLLICULAR PATTERN PREDOMINANT (see. comment). C. LEFT FOCUS: TALL CELL VARIANT (0.8 CM). D. ALL FOCI CONFINED TO THYROID; NO ANGIOLYMPHATIC INVASION. E. ONE REACTIVE LYMPH NODE, NO TUMOR PRESENT (0/1). F. PATHOLOGIC STAGE: pT2 NO. G. CHRONIC LYMPHOCYTIC THYROIDITIS. PART 2: LYMPH NODES, CENTRAL COMPARTMENT, SELECTIVE DISSECTION -. THREE LYMPH NODES, NO TUMOR PRESENT (0/3). COMMENT: Select slides were reviewed with Dr. who agree that the larger nodule contains. papillary carcinoma. Given the focality of the diagnostic nuclear features in the larger nodule, it is possible that the. carcinoma is arising within a follicular adenoma. CASE SYNOPSIS: SYNOPTIC DATA - PRIMARY THYROID TUMORS. SPECIMEN TYPE: Total Thyroidectomy. TUMOR SITE: Right Lobe, Left Lobe. TUMOR FOCALITY: Multifocal. TUMOR SIZE (largest nodule): Greatest Dimension: 3 cm. HISTOLOGIC TYPE: Papillary carcinoma. TNM DESCRIPTORS: m. PRIMARY TUMOR (pT): pT2. REGIONAL LYMPH NODES (pN): pNO. Number of regional lymph nodes examined: 4. Number of regional lymph nodes involved: 0. EXTRANODAL EXTENSION: Not identified. DISTANT METASTASIS (pM): Not applicable. EXTRATHYROIDAL EXTENSION: Not identified. MARGINS: Margins uninvolved by carcinoma. LYMPH-VASCULAR INVASION: Not identified. ADDITIONAL PATHOLOGIC FINDINGS: Other: chronic lymphocitic thyroiditis.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT2 and documents largest tumor 3.0 cm confined to the thyroid consistent with pT2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO. Number of regional lymph nodes examined: 4. Number of regional lymph nodes involved: 0.",
+        "confidence": "high",
+        "reason": "Report explicitly lists no regional node metastasis (pN0) and shows 0/4 nodes involved.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM: Not applicable",
+        "value_norm": "INVALID",
+        "evidence": "DISTANT METASTASIS (pM): Not applicable.",
+        "confidence": "high",
+        "reason": "Report states pM is not applicable and no distant metastasis identified.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO. Number of regional lymph nodes examined: 4. Number of regional lymph nodes involved: 0.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "DISTANT METASTASIS (pM): Not applicable.",
+        "confidence": "medium",
+        "reason": "pM is listed as 'Not applicable' in the report rather than an explicit pM0 or pM1 assignment",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2.",
+        "confidence": "high",
+        "reason": "Pathology explicitly reports pT2 (largest tumor 3.0 cm, confined to thyroid).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO.",
+        "confidence": "high",
+        "reason": "Pathology explicitly reports pN0 and 4 regional nodes examined with 0 involved.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "DISTANT METASTASIS (pM): Not applicable.",
+        "confidence": "medium",
+        "reason": "Distant metastasis is listed as 'Not applicable' (no pathologic assessment of distant metastasis provided).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PRIMARY TUMOR (pT): pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "REGIONAL LYMPH NODES (pN): pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "DISTANT METASTASIS (pM): Not applicable.",
+        "confidence": "medium",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

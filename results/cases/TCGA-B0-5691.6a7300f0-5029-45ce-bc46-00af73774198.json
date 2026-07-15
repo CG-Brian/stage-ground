@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-B0-5691.6a7300f0-5029-45ce-bc46-00af73774198",
+  "text": "FINAL DIAGNOSIS: KIDNEY AND ADRENAL GLAND, LEFT, RADICAL NEPHRECTOMY-. KIDNEY: A. RENAL CELL CARCINOMA, CLEAR (CONVENTIONAL) CELL TYPE, FURMAN GRADE 3-4 (3.2 CM) (see comment). B. ALL SURGICAL MARGINS ARE FREE OF CARCINOMA. C. RENAL VEIN IS FREE OF CARCINOMA. D. THE CARCINOMA DOES NOT EXTEND BEYOND THE RENAL CAPSULE. E. TNM staging = pT1a Nx Mx. ADRENAL GLAND: A. ADRENAL CORTICAL ADENOMA, 3.5 x 2.8 CM (see comment). B. NO EVIDENCE OF MALIGNANCY. COMMENT: The following immunohistochemical stains were performed on a section of the renal tumor (slide D), and the adrenal. cortical adenoma (slide I), with the following results;. Vimentin;. negative in kidney,. negative in adrenal. Cytokeratin CAM 5.2;. positive in kidney,. negative in adrenal. Cytokeratin AE1/AE3;. positive in kidney,. negative in adrenal. EMA;. positive in kidney,. negative in adrenal. Inhibin;. negative in kidney,. positive in adrenal. Melan-A;. negative in kidney,. positive in adrenal. CD-10;. positive in kidney,. positive in adrenal. CD-34;. negative in kidney,. negative in adrenal (positive in background vessels in both). The above immunohistochemical profile confirms these two neoplasms to be separate, i.e. the adrenal mass is not a. metastasis of the renal cell carcinoma.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1a",
+        "value_norm": "T1",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": "Explicitly stated in the report; supported by tumor size (3.2 CM) and note that the carcinoma does not extend beyond the renal capsule.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "Nx",
+        "value_norm": "NX",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": "Explicitly stated in the report (regional lymph nodes not assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": "Explicitly stated in the report (distant metastasis not assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1a",
+        "value_norm": "T1",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "Nx",
+        "value_norm": "NX",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": "Report gives pathologic stage pT1a (mapped to T1).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": "Report lists Nx (regional lymph nodes not assessed) mapped to NX.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": "Report lists Mx (distant metastasis not assessed) mapped to MX.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "E. TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "E. TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "E. TNM staging = pT1a Nx Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

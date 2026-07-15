@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-2J-AABA.FA359088-C46F-4395-9AFA-4B539C3ACF76",
+  "text": "Surgery date: DIAGNOSIS: A. Lymph nodes, common hepatic artery #1, excision: A single (1). lymph node is negative for tumor. B. Lymph nodes, common hepatic artery #2, excision: Fibroadipose. tissue with chronic inflammation. C. Soft tissue, pancreatic portal vein interface, excision: Fibrous. tissue with granulation tissue and acute inflammation. D. Pancreas, neck margin, excision: Negative for tumor. E. Head of pancreas, gallbladder, duodenum, and portion of jejunum;. Whipple resection: Invasive moderately differentiated ductal. adenocarcinoma is identified forming a solid mass (4.3 X 3.5 x 3.1. cm) located in the pancreatic head. The tumor extends beyond the. pancreas to involve the peripancreatic soft tissue, duodenal wall,. and bile duct. Both angiolymphatic and perineural invasion are. absent. Tumor necrosis is absent. The uncinate margin is positive. for invasive carcinoma whereas the portal vein groove and cystic. duct margins are negative. The adjacent non-neoplastic pancreatic. parenchyma shows marked chronic pancreatitis. A single (1) cystic. duct lymph node is negative for tumor. The gallbladder demonstrate. chronic cholecystitis. Multiple (2 of 10) regional lymph nodes are. positive for metastatic adenocarcinoma. F. Lymph nodes, peripancreatic, excision: Multiple (2) lymph nodes. are negative for tumor. G. Lymph nodes, gastrocolic, excision: Multiple (5) lymph nodes are. negative for tumor. H. Lymph nodes, celiac axis, excision: Multiple (2) lymph nodes are. negative for tumor. With available surgical material, [AJCC pT3N1] (7th edition, 2010). This final pathology report is based on the gross/macroscopic. examination and the frozen section histologic evaluation of the. specimen(s). Hematoxylin and Eosin (H&E) permanent sections are. reviewed to confirm these findings. Any substantive changes. identified on permanent section review will be reflected in a. revised report. Interpreted by: GROSS DESCRIPTION: A. Received fresh labeled \"common hepatic artery lymph nodes\" is a. 2.5 x 2.5 x 0.5 cm aggregate of adipose and lymphatic tissue. All. submitted. Grossed by. B. Received fresh labeled \"common hepatic artery lymph node #2\" is a. 2.5 x 2.1 X 0.7 cm aggregate of adipose tissue, lymphatic tissue not. identified grossly. All submitted. Grossed by. C. Received fresh labeled \"pancreatic portal vein interface\" is a. 0.7 x 0.6 X 0.2 cm portion of tan-pink tissue. All submitted. D. Received fresh labeled \"pancreatic neck margin\" is a 3.0 x 2.1 x. 0.8 cm portion of pancreatic tissue with orientation. All. submitted. Grossed by. E. Received fresh labeled \"head of pancreas, gallbladder, duodenum,. portion of jejunum, and pancreas stones\" is a Whipple specimen. consisting of 34.0 cm in length portion of duodenum, 7.0 x 5.2 X 4.8. cm portion of pancreas, and a 16.5 x 5.5 X 2.4 cm gallbladder. The. pancreatic uncinate margin is inked yellow and shaved. The portal. vein groove is inked blue and submitted perpendicularly. There is a. 4.3 x 3.5 x 3.1 cm annular and diffusely infiltrative mass within. the pancreas at the uncinate margin. The mass extends to. peripancreatic soft tissue. A stent is present within the common. bile duct. Multiple irregular fragmented stones are identified. within the pancreas and pancreatic duct system, showing obstruction. toward the ampulla and dilation toward the pancreatic neck margin. The gallbladder contains no choleliths. Peripancreatic lymph nodes. are identified. Representative sections are submitted. Grossed by. F. Received fresh labeled \"peripancreatic lymph nodes\" is a 2.9 X. 2.2 x 0.8 cm aggregate of adipose and lymphatic tissue. Lymph nodes. submitted. Grossed by. G. Received fresh labeled \"gastrocolic lymph nodes\" is a 6.7 x 2.5 x. 0.7 cm aggregate of adipose and lymphatic tissue. Lymph nodes. submitted. Grossed by. H. Received fresh labeled \"celiac axis lymph nodes\" is a 2.9 x 1.0 x. 0.8 cm aggregate of adipose and lymphatic tissue. Lymph nodes. submitted. Grossed by. BLOCK SUMMARY: Part A: Common hepatic artery lymph node. 1 Comm hepatic artery LN 1(A1). 2 Comm hepatic artery LN 1 (A2). Part B: Common hepatic artery lymph node #2. 1 Common hepat artery LN#2(B1). 2 Common hepat artery LN#2(B2). Part C: Pancreatic portal vein interface. 1 Pancreatic portal vein. Part D: Pancreatic neck margin. 1 Pancreatic neck margin 1. 2 Pancreatic neck margin 2. Part E: Head of pancreas, gallbladder, duodenum, portion jejunum,. and pancreas stone. 1 Uncinate margin 1. 2 Uncinate margin 2. 3 Uncinate margin 3. 4 Uncinate margin 4. 5 Bile duct margin. 6 Portal vein groove margin. 7 Ampulla. 8 Pancreatic duct. 9 Pancreatic duct. 10 Peripancreatic LN 1of5(E1). 11 Peripancreatic LN 20f5(E1). 12 Peripancreatic LN 3of5(E1). 13 Peripancreatic LN 4of5(E1). 14 Peripancreatic LN 5of5(E1). 15 Peripancreatic LN 4(E2). 16 Peripancreatic LN 7(E3). 17 Cystic duct LN 1(E4). 18 Gallbladder. 19 Peripancreatic LN 2(E5). 20 Pancreatic mass. 21 Pancreatic mass. Part F: Peripancreatic lymph nodes. 1 Peripancreatic LN 2 (F1). 2 Peripancreatic LN 2 (F2). Part G: Gastro colic lymph nodes. 1 Gastro colic LN 4(G1). 2 Gastro colic LN 2(G2). Part H: Celiac axis lymph nodes. 1 Celiac axis LN 2(H1).",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Invasive moderately differentiated ductal. adenocarcinoma is identified forming a solid mass (4.3 X 3.5 x 3.1. cm) located in the pancreatic head. The tumor extends beyond the. pancreas to involve the peripancreatic soft tissue, duodenal wall,. and bile duct.",
+        "confidence": "high",
+        "reason": "Tumor size 4.3 x 3.5 x 3.1 cm and explicit statement that the tumor extends beyond the pancreas to peripancreatic soft tissue, duodenal wall, and bile duct; report also lists AJCC pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "Multiple (2 of 10) regional lymph nodes are. positive for metastatic adenocarcinoma.",
+        "confidence": "high",
+        "reason": "Two of ten regional lymph nodes contained metastatic adenocarcinoma, consistent with N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases or positive non-regional (distant) sites are reported in the surgical specimen; M stage not explicitly stated in the report, so M0 is inferred from available material.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "With available surgical material, [AJCC pT3N1] (7th edition, 2010).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Multiple (2 of 10) regional lymph nodes are. positive for metastatic adenocarcinoma.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "The tumor extends beyond the. pancreas to involve the peripancreatic soft tissue, duodenal wall,. and bile duct.",
+        "confidence": "high",
+        "reason": "Tumor extends beyond the pancreas into peripancreatic soft tissue and adjacent organs; report explicitly assigns pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Multiple (2 of 10) regional lymph nodes are. positive for metastatic adenocarcinoma.",
+        "confidence": "high",
+        "reason": "Two positive regional lymph nodes (2 of 10) corresponds to N1 (1–3 positive regional nodes); report also lists pN1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No pathologic assessment or statement regarding distant metastasis is provided in the report, so M status is not determined.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "With available surgical material, [AJCC pT3N1] (7th edition, 2010).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Multiple (2 of 10) regional lymph nodes are. positive for metastatic adenocarcinoma.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or M (M0/M1/MX) status in the report; only pT3N1 is provided.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

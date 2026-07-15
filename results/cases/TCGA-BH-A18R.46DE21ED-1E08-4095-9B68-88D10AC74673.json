@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BH-A18R.46DE21ED-1E08-4095-9B68-88D10AC74673",
+  "text": "PATIENT HISTORY: DATE OF LAST DELIVERY: DATE of LMP: PRE-OP DIAGNOSIS: RIGHT BREAST CA. POST-OP DIAGNOSIS: SAME. OPERATIVE PROCEDURE: RIGHT MODIFIED RADICAL MASTECTOMY. CLINICAL HISTORY: MATERIAL SUBMITTED: RIGHT (MOD) RADICAL MASTECTOMY, PROCUREMENT BY SURGICAL PROCEDURE. FINAL DIAGNOSIS: FINAL DIAGNOSIS: RIGNT MODIFIED RADICAL MASTECTOMY: INFILTRATING DUCTAL CARCINOMA, NOTTINGHAM SCORZ 9/9 (TUBULES 3, NUCLEI 3, MITOSIS 3), 8.0 BY 3.0 BY 1.5 CM. (CROSS REFER. - DUCTAL CARCINOMA IN-SITU, NON-COMEDO AND SOLID TYPE, POOR NUCLEAR GRADE, REPRESENTING 5% OF THE TUMOR. VOLUME. - LYMPHOVASCULAR PERMEATION IS SEEN. - MARGINS FREE OF TUMOR. - NIPPLE NEGATIVE FOR PAGET'S DISEASE. - TEN OF FIFTEEN (10/15) LYMPH NODES, POSITIVE FOR METASTATIC CARCINOMA WITH EXTRACAPSULAR EXTENSION (3). NOTE ER/PR immunoperoxidase assay and Her-2/NEU testing will be performed on block \"A4\". ESTROGEN/PROGESTERONE RECEPTORS AND HER-2/NEU PERFORMED ON RIGHT BREAST TISSUE. ESTROGEN RECEPTOR (0-85%; 1-10%; 2-5%; 3-0%) HSCORE OF 20. ESTROGEN RECEPTOR IS INTERPRETED AS BORDERLINE. PROGESTERONE RECEPTOR (0-1004) HSCORE OF 0. PROGESTERONE RECEPTOR IS INTERPRETED AS NEGATIVE. HSCORE: <= 15 NEGATIVE. > 15 <= 30 BORDERLINE. > 30 POSITIVE. HER-2/NEU - DAKO HERCEPTEST: A STRONG COMPLETE MEMBRANE STAINING IS OBSERVED IN MORE THAN 10% OF THE TUMOR. CELLS. HER-2/NEU IS INTERPRETED AS POSITIVE (SCORE 3+).",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "INFILTRATING DUCTAL CARCINOMA, NOTTINGHAM SCORZ 9/9 (TUBULES 3, NUCLEI 3, MITOSIS 3), 8.0 BY 3.0 BY 1.5 CM.",
+        "confidence": "high",
+        "reason": "Greatest tumor dimension 8.0 cm (>5 cm) corresponds to T3.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pN3a",
+        "value_norm": "N3",
+        "evidence": "TEN OF FIFTEEN (10/15) LYMPH NODES, POSITIVE FOR METASTATIC CARCINOMA WITH EXTRACAPSULAR EXTENSION (3).",
+        "confidence": "high",
+        "reason": "10 positive axillary lymph nodes meets the criterion for pN3a (metastases in ≥10 axillary lymph nodes).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis in the pathology report; pathological M status not documented in this report.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "INFILTRATING DUCTAL CARCINOMA, NOTTINGHAM SCORZ 9/9 (TUBULES 3, NUCLEI 3, MITOSIS 3), 8.0 BY 3.0 BY 1.5 CM.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "TEN OF FIFTEEN (10/15) LYMPH NODES, POSITIVE FOR METASTATIC CARCINOMA WITH EXTRACAPSULAR EXTENSION (3).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "8.0 BY 3.0 BY 1.5 CM.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension 8.0 cm (>5 cm) consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "TEN OF FIFTEEN (10/15) LYMPH NODES, POSITIVE FOR METASTATIC CARCINOMA WITH EXTRACAPSULAR EXTENSION (3).",
+        "confidence": "high",
+        "reason": "10 positive regional lymph nodes (>=10) meets criteria for N3.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of distant metastasis in the report; absence of documented metastatic disease supports M0.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "8.0 BY 3.0 BY 1.5 CM.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "TEN OF FIFTEEN (10/15) LYMPH NODES, POSITIVE FOR METASTATIC CARCINOMA WITH EXTRACAPSULAR EXTENSION (3).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No documentation of distant metastasis or imaging/clinical statement addressing M stage in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

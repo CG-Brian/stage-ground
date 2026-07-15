@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-CZ-5467.9c47b43a-cb8d-4f92-99de-40435a57c5e2",
+  "text": "Report Status: Amend/Addenda. Type: Surgical Pathology. Specimen Type: Lymph node biopsy (non-heme). Procedure Date: Addended. PATHOLOGIC DIAGNOSIS: A. SPECIMEN LABELED \"RETROPERITONEAL NODEY : Two (2) lymph nodes negative for tymor. B. SPECIMEN LABELED \"RT KIDNEY\": RENAL CELL CARCINOMA, clear cell type (11.0 cm), Fuhrman grade IV, with focal. sarcomatoid differentiation, involving the middle and upper pole. Tumor invades small (non-muscular) vein. Tumor invades perinephric adipose tissue. Soft tissue resection margins are negative for tumor. Tumor is <0.1 cm of the. margin. Renal artery, vein and ureter margins are negative for tumor. Portion of adrenal gland negative for tumor. AJCC/3a/0/X. The non-neoplastic kidney will be evaluated by Renal Pathology, and the. findings will be reported in an addendum. Part B of this case was reviewed by Dr. Pathology Division,. who concurs with the diagnosis. CLINICAL DATA: History: R renal mass invading psoas + liver. Operation: Nephrectomy,. Operative Findings: Not provided. Clinical Diagnosis: None given. TISSUE SUBMITTED: A. Retroperitoneal node. B. Rt kidney. GROSS DESCRIPTION: The specimen is received fresh, in two parts, each labeled with the patient's. name and unit number. Part A, \"#1. Retroperitoneal node\", consists of one pink/red fragment of soft. tissue (2.3 x 1.1 x 0.3 cm) No lymph nodes are identified. The entire. specimen is submitted for histologic examination. Micro A1: 1 frag,. Part B, \"#2. RT kidney\", consists of a radical nephrectomy specimen (762.5. gram, 21.0 x 10.0 x 8.8 cm) with ureter (4.5 cm in length x 0.2 cm in. diameter), possible arteries (5.0 cm in length x 0.5 cm in diameter), vein #1. (2.2 cm in length x 0.7 cm in diameter), vein #2 (2.2 cm in length x 0.2 cm in. diameter), and a portion of disrupted adrenal gland (5.0 x 1.5 x 0.8 cm). without masses or lesions grossly. A tan/red to tan/yellow, encapsulated mass. (11.0 x 9.5 X 8.2 cm) is located in the upper pole 10.0 cm from the ureter. margin, 5.5 cm from the vein #1 margin, 2.0 cm from vein #2 margin, 4.3 cm from. the artery margin, and abutting the outer surface of the specimen (inked. black) . Approximately 70% of the tumor is hemorrhagic with approximately 50%. necrosis in multiple nodules. The remainder of the mass is tan/white and. homogenous, and present as a single nodule in the lower part of the mass. abutting the more hemorrhagic nodule. The uninvolved renal parenchyma is. Printed: 11/20/2007 17:16. mepore. pink/tan and unremarkable. Gross photographs are taken. Representative. tions of the tumor are submitted for cytogenetics, tissue bank and Dr. lab. Representative sections of uninvolved kidney are submitted. for EM, IF and tissue bank. No lymph nodes are identified. Micro B1: Ureter, artery, and vein margins, 4 frags,. Micro B2: Tumor quick fix (T1), hemorrhagic/necrotio area, 1 frag,. Micro B3: Tumor quick fix (T2). tan/white/homogenous areas, 1 frag. Micro B4: Tumor T1 with respect to T2, 1 frag,. Micro B5-B6: Tumor with respect to Gerota's fascia, 1-2 frags each,. Micro B7: Tumor with respect to perirenal adipose tissue, ? invasion, 1 frag,. Micro B8: Tumor with respect to renal parenchyma, 1 frag,. Micro B9: Adrenal gland, 4 frags,. Micro B10: Uninvolved renal parenchyma, 1 frag,. By his/her signature below, the senior physician certifies that he/she. personally conducted a microscopic examination (\"gross only\" exam if so stated). of the described specimen (s) and rendered or confirmed the diagnosis (es). related thereto. Final Diagnosis by. ADDENDUM #1: B. SPECIMEN LABELED \"RT KIDNEY\": Staging should read as follows: AJCC Classification (6th edition) : T3a NO MX. The diagnosis remains unchanged. Addendum #1 by. ADDENDUM: RENAL PATHOLOGY EVALUATION OF KIDNEY PARENCHYMA: RIGHT KIDNEY, NEPHRECTOMY: MILD CHRONIC CHANGES OF THE KIDNEY PARENCHYMA, MOST LIKELY. AGE-RELATED, INCLUDING: - FOCAL GLOBAL GLOMERULOSCLEROSIS, GLOMERULI) i. - FOCAL TUBULAR ATROPHY AND INTERSTITIAL FIBROSIS (<5% OF THE PARENCHYMA). - ARTERIAL AND ARTERIOLAR SCLEROSIS, MODERATE (SEE NOTE). NOTE: The kidney parenchyma examined shows minimal chronic changes, as summarized. above. The kidney parenchyma has been evaluated by. Renal. Pa. MICROSCOPIC DESCRIPTION: Sections of formalin-fixed, paraffin-embedded tissue (block B10) were evaluated. using H&E, PAS, Jones¹ silver methenamine, and AFOG (trichrome) stains. The sample consists of cortex and medulla. There are 373 glomeruli present, of. which 4 (1.1%) are globally sclerosed. The remaining glomeruli show no. significant expansion of the mesangial areas. There are no discernible craters. or double contours of the glomerular capillary wall basement membranes. Rare. distal tubules contain PAS-positive hyaline casts. Less than 5% of the. cortical parenchyma shows tubular atrophy and interstitial fibrosis. Arteries. and arterioles exhibit moderate sclerosis and hyalinosis. Page: 3 of. Report Status: Final. Type: Cytogenetics. PATIEN?. Cytogeneticist: KARYOTYPE: T1: 47, x, -x, der (3) t (3;14) (p2?1;q2?2), del (14) (q2?2), +16, +18 [cp5]/46, XX[2]. METAPHASES COUNTED: 7. ANALYZED: 7. SCORED: 0. BANDING: GTG. INTERPRETATION: Five of 7 metaphases obtained from sample T1, contained the clonal. aberrations described above, including loss of the short arm of chromosome 3,. der(3), a characteristic finding in renal cell carcinoma, clear cell type. Cell cultures from specimen T2 were attempted but unsuccessful, and the. cytogenetic analysis could not be performed. COMMENTS: Mosaicism and small chromosome anomalies may not be detectable using the. standard methods employed. Chromosome analysis was performed at a level of 400. bands or greater. INDICATION FOR TEST: ? RCC. Page: 1 of 1.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "Tumor invades small (non-muscular) vein. Tumor invades perinephric adipose tissue.",
+        "confidence": "high",
+        "reason": "Addendum explicitly assigns T3a and microscopic description documents invasion of renal vein and perinephric fat consistent with T3a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Two (2) lymph nodes negative for tymor.",
+        "confidence": "high",
+        "reason": "Pathologic specimen(s) show lymph nodes negative for tumor and addendum lists N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": "Addendum explicitly reports MX (distant metastasis cannot be assessed pathologically); clinical history notes possible liver involvement but no pathological confirmation in this report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX. Tumor invades perinephric adipose tissue. Tumor invades small (non-muscular) vein.",
+        "confidence": "high",
+        "reason": "The addendum explicitly lists T3a (mapped to T3) and the report documents perinephric fat and venous invasion consistent with T3a staging.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Two (2) lymph nodes negative for tymor.",
+        "confidence": "high",
+        "reason": "Pathology reports lymph nodes as negative and the addendum indicates N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": "The addendum explicitly reports M as MX (metastasis cannot be assessed) despite clinical history mentioning possible liver involvement.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Classification (6th edition) : T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

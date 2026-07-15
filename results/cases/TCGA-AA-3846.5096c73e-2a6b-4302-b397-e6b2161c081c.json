@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AA-3846.5096c73e-2a6b-4302-b397-e6b2161c081c",
+  "text": "Diagnosis: This is a poorly differentiated adenocarcinoma of the sigmoid colon of histopathological. differentiation grade G3, with erosions of the inner tumor surface, with peritumorous chronic. recurrent secondary inflammation with an acute inflammatory flare, with tumor infiltration of the. colon wall layers as far as the pericolic fatty connective tissue, with carcinomatous lymphangitis,. with tumor-free lymph nodes (0/16) with moderate chronic lymphadenitis and tumor-free. overview slices from all other parts of the resection material described. According to the section preparations available, the tumor spread of the sigmoid carcinoma. corresponds to the tumor stage pT3, pNO (0/16), MX, L1, R0. with regard to the so-called radial resection margin, this shows a mature, predominantly fatty. connective tissue,. with regard to the lymph nodes, these show a metastasis (1 of 13) of the carcinoma described. Summary tumor classification: ICDO-DA M-8140/3. G3.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "According to the section preparations available, the tumor spread of the sigmoid carcinoma. corresponds to the tumor stage pT3, pNO (0/16), MX, L1, R0.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3 and describes tumor infiltration of the colon wall into the pericolic fatty connective tissue, consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "with regard to the lymph nodes, these show a metastasis (1 of 13) of the carcinoma described.",
+        "confidence": "medium",
+        "reason": "There is a documented nodal metastasis (1 of 13), which corresponds to pN1. However the report also contains a contradictory statement listing pN0 (0/16); due to this internal inconsistency confidence is reduced.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "According to the section preparations available, the tumor spread of the sigmoid carcinoma. corresponds to the tumor stage pT3, pNO (0/16), MX, L1, R0.",
+        "confidence": "high",
+        "reason": "The report explicitly lists MX (distant metastasis not assessed) and no distant metastases are described elsewhere.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "According to the section preparations available, the tumor spread of the sigmoid carcinoma. corresponds to the tumor stage pT3, pNO (0/16), MX, L1, R0.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "with regard to the lymph nodes, these show a metastasis (1 of 13) of the carcinoma described.",
+        "confidence": "medium",
+        "reason": "Report contains contradictory statements (earlier lists pN0 (0/16) and later states a nodal metastasis 1/13); N1 selected based on explicit metastasis statement.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "According to the section preparations available, the tumor spread of the sigmoid carcinoma. corresponds to the tumor stage pT3, pNO (0/16), MX, L1, R0.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3 and describes tumor infiltration into pericolic fatty connective tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "with regard to the lymph nodes, these show a metastasis (1 of 13) of the carcinoma described.",
+        "confidence": "medium",
+        "reason": "The report is internally inconsistent: it also lists pNO (0/16) earlier, but a later sentence documents 1/13 lymph nodes with metastasis, therefore N1 was chosen with moderate confidence.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pT3, pNO (0/16), MX",
+        "confidence": "high",
+        "reason": "Report explicitly records MX (distant metastasis not assessed) and no distant metastases are described.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO (0/16)",
+        "confidence": "medium",
+        "reason": "Report contains a conflicting statement: \"with regard to the lymph nodes, these show a metastasis (1 of 13) of the carcinoma described.\"",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "MX",
+        "confidence": "medium",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

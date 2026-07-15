@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-E5-A4U1.0010AA87-DA61-42F2-8A3D-49DCDDB7484C",
+  "text": "SPECIMEN(S): A. TURBT LEFT WALL BLADDER. B. TURBT DEEP BITES LEFT WALL. C. TURBT BLADDER NECK. D. TURBT PROSTATIC URETHRA. CLINICAL HISTORY: TURBT. PRE-OPERATIVE DIAGNOSIS: Bladder cancer. GROSS DESCRIPTION: A. TURBT LEFT WALL BLADDER. Received fresh labeled with the patient's identification and \"left wall bladder\" aggregate of pink-. tan friable tissue chips weighing 4.98 g and measuring 3.5 x 2.5 x 1.3 cm; tissue is procured and. the remainder submitted entirely in cassettes A1-A4. B. TURBT DEEP BITES LEFT WALL. Received fresh labeled with the patient's identification and \"deep bite left wall\" are pink-tan. tissue chips in aggregate weighing 0.33 g and measuring 2.1 x 1.7 x 0.5 cm. They are bisected. and a portion is submitted for tissue procurement; remainder submitted entirely in cassette B1. C. TURBT BLADDER NECK. Received fresh labeled with the patient's identification and \"bladder neck\" are pink-tan tissue. chips in aggregate weighing 0.59 g and measuring 2.2 X 1.4 x 0.6 cm. A portion is submitted for. tissue procurement and the remainder submitted entirely in cassette C1. D. TURBT PROSTATIC URETHRA. Received fresh labeled with the patient's identification and \"prostate urethra\" are pink-tan. tissue chips in aggregate weighing 0.15 g and measuring 1.5 X 0.8 x 0.5 cm. The largest piece is. bisected and is submitted for tissue procurement; remainder submitted entirely in cassette 01. DIAGNOSIS: A. BLADDER, LEFT WALL, TRANSURETHRAL RESECTION: - INVASIVE UROTHELIAL CELL CARCINOMA, HIGH GRADE. - INVADING INTO THE MUSCULARIS PROPRIA. - SUSPICIOUS FOR ANGIOLYMPHATIC INVASION. B. BLADDER, LEFT WALL, TRANSURETHRAL RESECTION: - INVASIVE UROTHELIAL CELL CARCINOMA, HIGH GRADE. - INVADING INTO THE MUSCULARIS PROPRIA. C. BLADDER, NECK, TRANSURETHRAL RESECTION: - PAPILLARY UROTHELIAL CELL CARCINOMA, HIGH GRADE. - NO INVASION IDENTIFIED. D. URETHRA, PROSTATIC, TRANSURETHRAL RESECTION: - URETHRA DENUDED OF MUCOSA. - NO MALIGNANCY IDENTIFIED.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "- INVADING INTO THE MUSCULARIS PROPRIA.",
+        "confidence": "high",
+        "reason": "Report explicitly states tumor invades the muscularis propria; no mention of extension beyond muscle or into perivesical tissue.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph nodes submitted or mentioned in the TURBT pathology report, so nodal status is not assessable.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "A. BLADDER, LEFT WALL, TRANSURETHRAL RESECTION: - INVASIVE UROTHELIAL CELL CARCINOMA, HIGH GRADE. - INVADING INTO THE MUSCULARIS PROPRIA.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention regional lymph nodes or nodal evaluation",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "INVADING INTO THE MUSCULARIS PROPRIA.",
+        "confidence": "high",
+        "reason": "Report explicitly states invasion into the muscularis propria, which corresponds to pathologic T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No lymph nodes or nodal status are described in the pathology report, so nodal status cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information about distant metastases is provided in the pathology report, so metastatic status cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "INVADING INTO THE MUSCULARIS PROPRIA.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No lymph node assessment or mention of nodal status in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of metastatic disease or metastatic assessment in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

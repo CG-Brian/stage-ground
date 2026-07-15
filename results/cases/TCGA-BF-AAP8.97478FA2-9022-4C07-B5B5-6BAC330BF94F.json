@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BF-AAP8.97478FA2-9022-4C07-B5B5-6BAC330BF94F",
+  "text": "Male. Clinical diagnosis: Melanoma. Gross description: The material presented - skin from right hand, surgical resection. Microscopic description: Received material is skin patch measured 5.5 cmx 6 cmx 5 cm Grade 3. presented with epitheloid melanoma. Final diagnosis: Epitheloid Melanoma. Confidential.",
+  "gold": {
+    "T": "T4",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pTX",
+        "value_norm": "TX",
+        "evidence": "Received material is skin patch measured 5.5 cmx 6 cmx 5 cm Grade 3.",
+        "confidence": "high",
+        "reason": "Report gives specimen dimensions but does not provide Breslow thickness, depth of invasion, or ulceration status required to assign a pathologic T category for melanoma.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No lymph nodes described or submitted and no pathologic nodal assessment reported.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No information on regional/distant metastasis or pathologic metastatic evaluation is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not provide tumor pT, Breslow depth, thickness, or specific invasion details.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on regional lymph node evaluation or involvement.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis or staging (clinical or pathologic).",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "TX",
+        "value_norm": "TX",
+        "evidence": "Received material is skin patch measured 5.5 cmx 6 cmx 5 cm Grade 3. presented with epitheloid melanoma. Final diagnosis: Epitheloid Melanoma.",
+        "confidence": "low",
+        "reason": "No pathologic tumor (T) descriptors provided (no Breslow depth, no invasion depth/ulceration, only specimen size and diagnosis), so primary tumor cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about regional lymph node examination or nodal status in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or imaging/clinical metastatic evaluation in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No tumor T-category, Breslow thickness, depth of invasion, or explicit T stage is reported. The report only states specimen dimensions and diagnosis.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No nodal assessment, sentinel node biopsy, or regional lymph node status is reported; no N stage is given.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No information on distant metastasis, imaging, or metastatic workup is provided; no M stage is given.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

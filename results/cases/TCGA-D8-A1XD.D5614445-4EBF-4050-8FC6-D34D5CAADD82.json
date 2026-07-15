@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-D8-A1XD.D5614445-4EBF-4050-8FC6-D34D5CAADD82",
+  "text": "page 1 / 2. copy No. Examination: Histopathological examination. Gender: F. Material: 1. Multiple organ resection - left breast with axillary tissues. Expected time of examination: upto 8 working days. Clinical diagnosis: Cancer of the left breast. Macroscopic description: Left breast sizedi21 x 18 x 3 cm removed along with axillary tissues sized 10 x 5 x 2 cm and a 15 x 6 cm skin flap. Weight 520 g. Tumour sized 1.9 x 1.6 x 1.7 cm in the middle part, 1.5 cm from the upper boundary, 1.6 cm from the base and 0 cm from. the skin. Microscopic description: Carcinoma ductale invasivum - NHG2 (2+3+2/10 mitoses/10 HPF - visual area: 0.55mm). Foci of carcinoma ductale in situ (DCIS) found within the tumour (solid and cribrate type, with medium nuclear atypia,. without necrosis and with calcifications of below 5% of the tumour). Infiltratio carcinomatosa mamillae. Focus of carcinoma ductale invasivum found in the glandular tissue (inner lower quadrant - diameter 0.1 cm). Also showing also lesions of the type mastopathia fibrosa et cystica, hyperplasia ductalis simplex (UDH). AXILLARY LYMPH NODES: Metastases carcinomatosae in lymphonodis (No VI/XVIII). Infiltratio capsulae lymphonodi. Preliminary result: Final response to be given after whole of the material is analysed. I. Results of immunohistochemical. examination: Estrogen receptors found in over 75% of neoplastic cell nuclei. Progesterone receptors found in over 75% of neoplastic cell. nuclei. HER2 protein stained with HercepTest™M by DAKO. Negative reaction in invasive cancerous cells ( Score = 1+ ). Examination: Histopathological examination. page 2 / 2. Gender: F. Histopathological diagnosis: Carcinoma ductale invasivum bifocal et ductale in situ mammae sinistrae. Invasive ductal bifocal carcinoma and ductal in situ carcinoma of the left breast. Metastases carcinomatosae in lymphonodis axillae (No VI/XVIII) (NHG2, pT1c, pN2a). Cancer Metastases in axillary lymph nodes.",
+  "gold": {
+    "T": "T1",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1c",
+        "value_norm": "T1",
+        "evidence": "(NHG2, pT1c, pN2a).",
+        "confidence": "high",
+        "reason": "Report explicitly states pT1c; largest invasive tumor dimension given as 1.9 x 1.6 x 1.7 cm which fits T1c (1.0–2.0 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2a",
+        "value_norm": "N2",
+        "evidence": "Metastases carcinomatosae in lymphonodis axillae (No VI/XVIII) (NHG2, pT1c, pN2a).",
+        "confidence": "high",
+        "reason": "Report explicitly states pN2a and documents metastases in axillary lymph nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or a pM designation in the pathology report; pM not explicitly provided.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1c",
+        "value_norm": "T1",
+        "evidence": "(NHG2, pT1c, pN2a)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2a",
+        "value_norm": "N2",
+        "evidence": "(NHG2, pT1c, pN2a)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pT1c",
+        "confidence": "high",
+        "reason": "Report explicitly gives pT1c (and tumor measured 1.9 x 1.6 x 1.7 cm), which corresponds to T1 (>1 cm to ≤2 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2a",
+        "confidence": "high",
+        "reason": "Report explicitly gives pN2a and describes metastases in axillary lymph nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No mention of distant metastasis or pM staging in the pathology report; distant status not assessable from this specimen.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pT1c",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2a",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis or pM stage in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

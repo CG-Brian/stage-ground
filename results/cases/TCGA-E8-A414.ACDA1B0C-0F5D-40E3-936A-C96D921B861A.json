@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-E8-A414.ACDA1B0C-0F5D-40E3-936A-C96D921B861A",
+  "text": "Laterality: Tumor consists of papillae having an fine fibrovascular stalk. covered by a single to mutiple layers of cuboidal epithelial cells. Tumor invades in capsule or vessle. The. cells tend to maintain their polarity. Nuclei are quite regular and contain finely dispersed chromatin, or. intranuclear grooves. Tumor is invasion of lymphocytes and fibrous. Path Report:Tumor type: Papillary carcinoma. Tumor size: 5x3x3cm. Laterality: left. Tumor focality: Unifocal. Invasion of capsule: Yes. Extrathyroidal extension: No.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a",
+        "value_norm": "T3",
+        "evidence": "Tumor size: 5x3x3cm. Extrathyroidal extension: No.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension 5 cm (>4 cm) limited to the thyroid without extrathyroidal extension; per AJCC 8th edition, tumor >4 cm confined to thyroid = T3a. Capsule invasion without gross ETE does not upstage.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No lymph nodes examined or nodal status reported in the pathology report, so pathologic N stage cannot be determined.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information about distant metastasis is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor size: 5x3x3cm. Invasion of capsule: Yes. Extrathyroidal extension: No.",
+        "confidence": "high",
+        "reason": "Largest dimension 5 cm (>4 cm) limited to the thyroid (capsule invasion only, no extrathyroidal extension) → T3 (T3a)",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention regional lymph node status",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor size: 5x3x3cm. Laterality: left. Tumor focality: Unifocal. Invasion of capsule: Yes. Extrathyroidal extension: No.",
+        "confidence": "high",
+        "reason": "Largest dimension 5 cm and no extrathyroidal extension -> AJCC T3 (tumor >4 cm limited to thyroid). Capsular invasion without extrathyroidal extension does not upstage beyond T3a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No lymph node status or nodal sampling mentioned in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information provided about distant metastases in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor size: 5x3x3cm. Laterality: left. Tumor focality: Unifocal. Invasion of capsule: Yes. Extrathyroidal extension: No.",
+        "confidence": "medium",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph node status or nodal metastasis is reported in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement about distant metastasis (M status) is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

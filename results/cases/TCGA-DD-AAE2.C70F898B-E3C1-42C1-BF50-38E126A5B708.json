@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DD-AAE2.C70F898B-E3C1-42C1-BF50-38E126A5B708",
+  "text": "CLINICAL DIAGNOSIS: Hepatocellular carcinoma suggested. Specimen : Liver and Liver mass. Gross Photo : GROSS: Specimen status: Fresh. Operation: Partial hepatectomy. Organ: Liver (17.0 X 8.0 X 5.5 cm, 397.0 gm). Gallbladder (9.5 cm in length, 3.5 cm in diameter, 0.6 cm in wall thickness). [Liver]. Lesion: A hepatic mass. Size: 5.5 X 5.0 X 7.0 cm. Cut surface: Well demarcated, mahogany and nodular. Gross type: Multinodular confluent. Extent: Confined to the hepatic parenchyma. Serosal surface: Bulging but smooth. Resection margin: Not involved, grossly (safety margin: 0.1 cm). Remaining parenchyme: Cirrhosis. [Gallbladder]. Serosal surface: Yellowish pink and smooth. Mucosal surface: Dark green and velvety. Stone: No stone. Representative sections submitted. Gross photo: Present. Blocks. T1-6, TB, mass of liver X 7. L, nontumorous liver parenchyme x 1. GB, gallbladder x 1. MICROSCOPIC: Tumor type: Hepatocellular carcinoma. Edmondson-steiner grade. The worst differentiation II. The major differentiation III. Histologic type: Trabecular. Fatty change: No. Fibrous capsule formation: Yes. Capsular infiltration: No. Septum formation: No. Surgical resection margin invasion: No. Serosal invasion: No. Portal vein invasion: No. Vascular invasion: No. Bile duct invasion: No. Remaining liver parenchyme: Cirrhosis. Parotid gland, aspiration, inflammation, atypical cells. NOT reported. Gross: er,ectomy,hepatocellular carcinoma. T56000, P10, M81703. gallbladder,ectomy,chronic cholecystitis,autolysis. T57000, P10, M43005, M54001. lymph node,biopsy,no tumor. T08000, P50, M09450. DIAGNOSIS: Liver, partial hepatectomy: Hepatocellular carcinoma, well differentiated. Gallbladder, cholecystectomy: Chronic cholecystitis. Autolysis. Lymph node, pericystic, biopsy: No tumor present (0/1). Suggestion :",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1b",
+        "value_norm": "T1",
+        "evidence": "Size: 5.5 X 5.0 X 7.0 cm. Extent: Confined to the hepatic parenchyma.",
+        "confidence": "medium",
+        "reason": "Solitary hepatic tumor with largest dimension 7.0 cm and reported confined to liver; microscopic report states no vascular invasion. By AJCC criteria a solitary tumor without vascular invasion >2 cm is classified as pT1b.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Lymph node, pericystic, biopsy: No tumor present (0/1).",
+        "confidence": "high",
+        "reason": "One regional lymph node was sampled and found negative (0/1).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases reported in the pathology report and only regional nodal sampling (negative) is documented; no metastatic disease identified.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "Size: 5.5 X 5.0 X 7.0 cm. Extent: Confined to the hepatic parenchyma. Portal vein invasion: No. Vascular invasion: No.",
+        "confidence": "medium",
+        "reason": "Solitary hepatic tumor 7.0 cm with no portal or vascular invasion — corresponds to pT1b (solitary >2 cm without vascular invasion) under AJCC staging; exact category may vary by staging edition.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph node, pericystic, biopsy: No tumor present (0/1).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "over_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Size: 5.5 X 5.0 X 7.0 cm. Vascular invasion: No.",
+        "confidence": "high",
+        "reason": "Solitary hepatic tumor >2 cm confined to hepatic parenchyma without vascular or portal vein invasion, consistent with T1 (solitary tumor without vascular invasion).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph node, pericystic, biopsy: No tumor present (0/1).",
+        "confidence": "high",
+        "reason": "Regional lymph node sampled (1/1) was negative for tumor.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No assessment or statement of distant metastasis in the pathology report; only regional node was sampled and was negative.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Lesion: A hepatic mass. Size: 5.5 X 5.0 X 7.0 cm.",
+        "confidence": "medium",
+        "reason": "Report does not state an explicit pT. Inferred as T1 because the specimen shows a solitary hepatic mass confined to the liver with no vascular or serosal invasion (see report lines 'Portal vein invasion: No. Vascular invasion: No.'), but exact TNM criteria/edition is not specified in the report.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph node, pericystic, biopsy: No tumor present (0/1).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or an M assessment is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "over_abstention"
+      }
+    }
+  }
+}

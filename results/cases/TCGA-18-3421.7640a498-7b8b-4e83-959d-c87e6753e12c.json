@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-18-3421.7640a498-7b8b-4e83-959d-c87e6753e12c",
+  "text": "SPECIMEN (s) RECEIVED. 1. Lymph-Node: ST12R Lobar. 2. Lymph node: Interlobar ST11. 3. LUNG: AGNOSIS. L. Lymph-Node, lobar ST12R, biopsy. - Negative for malignancy, lymph node with follicular lymphoid. hyperplasia. 2. Lymph node, interlobar ST11, biopsy: - Negative for malignancy, lymph nodes with follicular lymphoid. hyperplasia. 3. Lung, right lower lobe, lobectomy. Squamous cell carcinoma, moderately differentiated with prominent. necrosis: - Maximal tumour size: 7. 7cm. - Visceral pleura invasion present. - Surgical resection margins negative for malignancy. - All peribronchial lymph nodes (6 lobar and 1 segmental) negative. for. malignancy (x 7). - Remaining lung parenchyma shows mild centroacinar emphysema and focal. non-specific pneumonitis. SYNOPTIC DATA. Specimen Type: Lobectomy. Laterality: Right. Tumor Site: RLL. \"mor Size: Greatest dimension: 7.7 cm. Additional dimensions: 7.5 x 7.0 cm. Page: - 1 of 3. Histologic Type: Squamous cell carcinoma. Histologic Grade: G2: Moderately differentiated. Pathologic staging (pTNM) : pT2: Tumor with any of the following. features of size or extent: greater than 3 cm in greatest dimension;. involves main bronchus, 2 cm or more distal to the carina; invades the. visceral pleura; associated with atelectasis or obstructive pneumonitis. that extends to the hilar region but does not involve the entire lung. pNO: No regional lymph node. metastasis. pMX: Cannot be assessed. Margins: Margins uninvolved by invasive. carcinoma. Distance of invasive carcinoma from. closest margin: 3.5 cm. Margin: (bronchial resection margin). Direct Extension of Tumor: Visceral pleura. Blood Vessel Invasion: Absent. Additional Pathologic Findings : Inflammation (type) : focal chronic. interstial inflammation and fibrosis of undetermined significance. Slight centrilobular emphysema. GROSS DESCRIPTION. 1. The specimen is labeled with the patient's name and as \"ST 12R\". Lymph nodes Multiple lymph nodes ranging from 0.3 to 0.8 cm in greatest. dimension are identified, and are submitted in toto for frozen section. 1A-1B frozen section block the resubmitted. 2. The specimen is labeled with the patient's identification and as. \" interlobar ST11\". Lymph nodes: Multiple lymph nodes ranging from 0.3 x 0.3 x 0.2 to 1.2 x. 1.2 to 0.3 cm are identified, and are submitted in toto as follows. 2A nodes. The specimen is labeled with the patient's name and as \"right lower. Page: 2 of 3. lobe 11. Resection specimen: Right lung lobectomy measuring 19 x 14 x 8cm. Pleural surface: intact, shows surface adhesions, has an area of. puckering measuring 7 x 3.5cm. Number of tumours: 1. Measurements: 7.5 x 7.7 x 7.0cm. peripheral. Distance from resection margins: 3.5 cm from the bronchial resection margin. 4.5 cm from the closest stapled parenchymal resection margin. Descriptive characteristics: Tan to white in colour; solid and partly. riable in consistency; well delineated. ung parenchyma: mildly emphysematous. Lymph Nodes: Multiple peribronchial lymph nodes are identified up to 1.3. cm in greatest dimension. Frozen Section: Yes. Tissue Banking: Yes. Representative sections are submitted as follows: 3A bronchial margin. 3B staple line margin. 3C 4 peribronchial nodes. 3D one peribronchial node bisected. 3E one peribronchial node bisected. 3F-3I tumor. 3J-3K normal lung. 3L one segment al node bisected. 1A, 1B - Lymph nodes, negative for malignancy. Reported to. 1358h. Status: : complete.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Pathologic staging (pTNM) : pT2: Tumor with any of the following. features of size or extent: greater than 3 cm in greatest dimension;. involves main bronchus, 2 cm or more distal to the carina; invades the. visceral pleura; associated with atelectasis or obstructive pneumonitis. that extends to the hilar region but does not involve the entire lung. pNO: No regional lymph node. metastasis. pMX: Cannot be assessed.",
+        "confidence": "medium",
+        "reason": "Report explicitly states pT2, but earlier documented maximal tumor size is 7.7 cm and visceral pleural invasion is present; a greatest dimension >7 cm would typically be staged higher (suggests an internal inconsistency).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Pathologic staging (pTNM) : pT2: Tumor with any of the following. features of size or extent: greater than 3 cm in greatest dimension;. involves main bronchus, 2 cm or more distal to the carina; invades the. visceral pleura; associated with atelectasis or obstructive pneumonitis. that extends to the hilar region but does not involve the entire lung. pNO: No regional lymph node. metastasis. pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "Pathologic staging (pTNM) : pT2: Tumor with any of the following. features of size or extent: greater than 3 cm in greatest dimension;. involves main bronchus, 2 cm or more distal to the carina; invades the. visceral pleura; associated with atelectasis or obstructive pneumonitis. that extends to the hilar region but does not involve the entire lung. pNO: No regional lymph node. metastasis. pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathologic staging (pTNM) : pT2: Tumor with any of the following. features of size or extent: greater than 3 cm in greatest dimension;. involves main bronchus, 2 cm or more distal to the carina; invades the. visceral pleura; associated with atelectasis or obstructive pneumonitis. that extends to the hilar region but does not involve the entire lung.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO: No regional lymph node. metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathologic staging (pTNM) : pT2: Tumor with any of the following. features of size or extent: greater than 3 cm in greatest dimension;. involves main bronchus, 2 cm or more distal to the carina; invades the. visceral pleura; associated with atelectasis or obstructive pneumonitis. that extends to the hilar region but does not involve the entire lung.",
+        "confidence": "high",
+        "reason": "The report explicitly lists pathologic staging as pT2 and describes criteria consistent with T2 (including visceral pleura invasion).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO: No regional lymph node. metastasis.",
+        "confidence": "high",
+        "reason": "The report explicitly states pN0 and documents all examined peribronchial lymph nodes negative for malignancy.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": "The report explicitly states pMX (cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathologic staging (pTNM) : pT2:",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO: No regional lymph node. metastasis.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX: Cannot be assessed.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

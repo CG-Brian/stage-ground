@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-CV-A45U.1AF4D20D-572C-434F-B235-053B66AAD3FE",
+  "text": "OUID:1AF4D20D-572C-434F-B235-053B66AAD. Sex: M. Case type: Surgical History. Case imported from legacy computer system. The format of this report does not match the original case. For cases prior to. the section \"SPECIMEN\" may have been added. SUPPLEMENTAL REPORT. DIAGNOSIS: (D) LEFT HEMIMANDIBULECTOMY: WELL DIFFERENTIATED SQUAMOUS CARCINOMA INVADING MANDIBULAR BONE,. RESECTION MARGIN FREE OF TUMOR. Entire report and diagnosis completed bv: Report released by: ENTIRE. DIAGNOSIS. (A) LEFT NECK, NODES FROM UPPER AND MIDDLE LEVEL 5: Two lymph nodes, no evidence of metastatic disease. (B). LEFT SUPRAOMOHYOID LYMPH NODE DISSECTION: Seven lymph nodes, no evidence of metastatic disease (four. subdigastric, one mid jugular, and one lower jugular). (c). LEFT ALVEOLAR NERVE: Peripheral nerve, no evidence of carcinoma. LEFT HEMIMANDIBULECTOMY. INVASIVE VELL-DIFFERENTIATED SQUAMOUS CARCINOMA, FOCALLY EXTENDING TO. ANTERIOR MUCOSAL MARGIN, OTHER MARGINS FREE OF TUMOR. METASTATIC SQUAMOUS CARCINOMA IN 2 OF 4 SUBMAXILLARY LYMPH NODES WITH. EXTRANODAL EXTENSION. Submandibular gland with mild atrophy, no tumor present. skin and subcutaneous tissue of cheek with extensive necrosis, acute. inflammation and foreign body giant cell reaction, no evidence of. carcinoma. Entire report and diagnosis completed by: Report released by: GROSS DESCRIPTION. Sex: M. Case type: Surgical History. (A) NODAL GROUP FROM LEFT UPPER AND MIDDLE LEVEL 5 - TWO lymph nodes, one. from level 6 (1.2 x 0.8 x 0.4 cm), and one lymph node from level 7 (0.2 x 0.7. x 0.5 cm). Both of the lymph nodes are tan-red and soft to rubbery. SECTION CODE: A1, one lymph node, bisected from level 6; A2, one lymph. node, bisected from level 7. (B) CONTENTS OF LEFT SUPRAOMOHYOID NECK DISSECTION - A left sided neck. dissection (8.0 x 5.5 x 1.5 cm) It is oriented by. into levels 3, 4. and 5. The specimen also includes part of the platysma muscle (8.5 x 3.5 x 0.2. cm), and sternomastoid muscle (4.5 x 3.5 x 2.0 cm). The lymph nodes range in size from 0.2 cm in diameter up to 1.2 x 1.0 x. 0.6 cm. The largest Tymph node is in level 3. The lymph nodes are pink-tan to. red-tan, firm to rubbery. SECTION CODE: B1-B4, level 3 lymph nodes: B1-83, 1 lymph node in each. cassette; B4, 2 lymph nodes; B5, level 4 lymph nodes (2 lymph nodes): 86, B7,. level 5 1ymph nodes (B6, 2 1ymph nodes; B7, 1 lymph node). (c) LEFT ALVEOLAR NERVE, CHECK MARGIN OPPOSITE CLAMP - A single segment of. nerve (0.9 cm length, 0.2 cm diameter). A clamp is present at one end. Section Code: c, for frozen section diagnosis, en face, margin of. end. opposite clamp, remainder of nerve with blue ink at end with clamp. FS/DX: PERIPHERAL NERVE, NO TUMOR PRESENT. (D) LEFT HEMIMANDIBULECTOMY - A left hemimandibulectomy specimen, the ramus. is 9.5 cm and the mandible is 9.3 cm. A 3.5 x 2.6 x 1.5 cm unremarkable. submandibular gland is present. An 11.0 x 6.0 cm ellipse of tan, hair-bearing. skin is present over the lateral aspect of the specimen. A 2.5 x 2.0 cm area. of bulging and ulceration is present in the center of the skin. A 6.3 x 4.2 x 3.0 cm ulcerated tumor overlies the body of the mandible The. mucosal margins range from 0.3 cm to 2.0 cm. The anterior lateral and. posterior medial margins appear to comes to closest to the tumor and the tumor. is firm, tan, and focally necrotic and appears grossly to involve the cortical. bone. The tumor extends into the adjacent subcutaneous and dermal tissue of. the skin. Matted lymph nodes are present near the angle of the mandible. These are grossly involved by partially necrotic tumor. A section of bone. will be submitted after decalcification. SECTION CODE: D1, posterior lateral mucosal margin, en face; D2. posterior lateral mucosal margin en face; D3, central lateral mucosal margin. en face; D4, anterior lateral mucosal margin en face; D5, anterior lateral. mucosal margin perpendicular (closest margin); D6, anterior lateral mucosal. margin en face; D7, anterior medial margin en face; D8, anterior central. mucosal margin en face; D9, central medial mucosal margin perpendicular. (closest to margin); D10, posterior medial mucosal margin en face; D11,. parotid gland; 612, D13, posterior superior skin margin en face; D14, D15,. central superior skin margin en face; D16, D17, anterior superior skin margin. en face; D18, 019, posterior inferior skin margin en face; D20, D21, central. inferior skin margin en face; D22, D23, anterior inferior skin margin en face;. D24-D26, posterior mucosa and tumor; D27-D29, central mucosa and tumor; D30,. D31, anterior mucosa and tumor; D32, tumor and skin; D33, posterior soft. tissue margin en face; D34, anterior soft tissue margin en face; D35, medial. soft tissue margin en face; D36, lateral inferior soft tissue margin en face;. D37, D38, perpendicular sections including tumor mucosa, skin and dermal. bulge; D39, one representative section of one lymph node; D40, representative. section of one lymph node; D41, one lymph node. Sex: M. Case type: Surgical History. SNOMED CODES. M-80703 T-11180.",
+  "gold": {
+    "T": "T4",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT4a",
+        "value_norm": "T4",
+        "evidence": "WELL DIFFERENTIATED SQUAMOUS CARCINOMA INVADING MANDIBULAR BONE,.",
+        "confidence": "high",
+        "reason": "Tumor invades mandibular (cortical) bone, which qualifies as T4a for oral cavity cancers.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN3b",
+        "value_norm": "N3",
+        "evidence": "METASTATIC SQUAMOUS CARCINOMA IN 2 OF 4 SUBMAXILLARY LYMPH NODES WITH. EXTRANODAL EXTENSION.",
+        "confidence": "high",
+        "reason": "Pathologic nodal metastases with extranodal extension; ENE places nodal category at N3b.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases reported in the pathology specimen or report.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T4a",
+        "value_norm": "T4",
+        "evidence": "WELL DIFFERENTIATED SQUAMOUS CARCINOMA INVADING MANDIBULAR BONE,.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3b",
+        "value_norm": "N3",
+        "evidence": "METASTATIC SQUAMOUS CARCINOMA IN 2 OF 4 SUBMAXILLARY LYMPH NODES WITH EXTRANODAL EXTENSION.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "WELL DIFFERENTIATED SQUAMOUS CARCINOMA INVADING MANDIBULAR BONE,.",
+        "confidence": "high",
+        "reason": "Tumor invades mandibular bone (and is >4 cm grossly: 6.3 x 4.2 x 3.0 cm); bone invasion qualifies as T4 for oral cavity tumors.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "METASTATIC SQUAMOUS CARCINOMA IN 2 OF 4 SUBMAXILLARY LYMPH NODES WITH. EXTRANODAL EXTENSION.",
+        "confidence": "high",
+        "reason": "Pathology documents metastatic nodes with extranodal extension; presence of ENE upstages nodal classification (pathologic N3/ pN3b).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis in the report.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "INVADING MANDIBULAR BONE",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "METASTATIC SQUAMOUS CARCINOMA IN 2 OF 4 SUBMAXILLARY LYMPH NODES WITH. EXTRANODAL EXTENSION.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No information on distant metastasis (M) in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

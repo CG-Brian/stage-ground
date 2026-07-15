@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AZ-4315.927b4861-c24e-4ce4-b7dd-2c950f2fb947",
+  "text": "TINAL DIAGNOSIS: TERMINAL ILEUM AND RIGHT COLON, RIGHT HEMI-COLECTOMY -. A. INVASIVE MODERATELY DIFFERENTIATED ADENOCARCINOMA (5,5 CM) OF CECUM. B. ADENOCARCINOMA INVADES THROUGH MUSCULARIS PROPRIA TO SUBSEROSAL ADIPOSE TISSUE. C. PROXIMAL, DISTAL, AND RADIAL MARGINS FREE OF CARCINOMA. D. NO ANGIOLYMPHATIC INVASION PRESENT. E. NO PERINEURAL INVASION PRESENT. F. TWENTY-FIVE BENIGN PERICOLONIC LYMPH NODES (0/25/. G. PATHOLOGIC TUMOR STAGE pT3a, NO, MX. H. TERMINAL ILEUM WITH NO SIGNIFICANT ABNORMALITY. APPENDIX WITH NO SIGNIFICANT ABNORMALITY. CASE SYNOPSIS: SYNOPTIC DATA - PRIMARY COLON, RECTAL, APPENDIX TUMORS. SPECIMEN TYPE: Right hemicolectomy. SPECIMEN LENGTH: 24cm. TUMOR SITE: Cecum. TUMOR CONFIGURATION: Exophytic (polypoid). TUMOR SIZE: Greatest dimension: 5.5 cm. Additional dimensions: 4.0 X 1.3 cm. INTACTNESS OF MESORECTUM: Not applicable. HISTOLOGIC TYPE: Adenocarcinoma. HISTOLOGIC GRADE: Low-grade (well to moderately differentiated). PATHOLOGIC STAGING (pTNM): pT3a/b. pNO. Number of nodes examined: 25. Number of nodes involved: 0. pMX. MARGINS: Proximal margin uninvolved by invasive carcinoma. Distal margin uninvolved by invasive carcinoma. Circumferential (radial) margin - Not applicable. Mesenteric margin uninvolved by invasive carcinoma. ANGIOLYMPHATIC INVASION: Absent. PERINEURAL INVASION: Absent. TUMOR BORDER CONFIGURATION: Infiltrating. TUMORAL LYMPHOCYTIC RESPONSE: Mild to moderate.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC TUMOR STAGE pT3a, NO, MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3a and describes invasion through muscularis propria to subserosal adipose tissue, consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Number of nodes examined: 25. Number of nodes involved: 0.",
+        "confidence": "high",
+        "reason": "Report lists no nodal involvement and documents 25 nodes examined with 0 involved.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC TUMOR STAGE pT3a, NO, MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMX indicating distant metastasis was not assessed pathologically.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC TUMOR STAGE pT3a, NO, MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Number of nodes examined: 25. Number of nodes involved: 0.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC TUMOR STAGE pT3a, NO, MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "G. PATHOLOGIC TUMOR STAGE pT3a, NO, MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3a and describes invasion through the muscularis propria into subserosal adipose tissue, consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Number of nodes involved: 0.",
+        "confidence": "high",
+        "reason": "25 lymph nodes examined with 0 involved; report states pNO.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMX (metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT3a/b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

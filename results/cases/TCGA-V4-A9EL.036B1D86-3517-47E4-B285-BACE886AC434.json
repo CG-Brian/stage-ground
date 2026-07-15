@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-V4-A9EL.036B1D86-3517-47E4-B285-BACE886AC434",
+  "text": "Left eye enucleation. Macroscopy. The eye ball mesures 25 by 25 by 23 mm and presents a posterior segment of optic. nerves measuring 5 mm. At the section, the tumor measures 18 mm main line. Samples have been frozen for genetic studies then the piece has been fixed and. included entirely. Microscopy. The tumor observed macroscopically corresponds to an uveal melanoma, mainly. composed of epithelioïd cells. The cell cytoplasm is often pigmented with melanin. The cyto/nuclear atypia are severe. Presence of large areas of necrosis and. hemorragy, in particular at the centre of the tumor. The lesion is located at a large distance of the optic foramen and the optic nerve on. its entire course and cut end is free of tumor. The tumor infiltrates all of the thickness. of the sclera but there is no extra-scleral tumor extension. Presence of one intra-. scleral endovascular tumor embolism. The ciliary body, the iris and the anterior. chamber are free. Conclusion. Uveal melanoma of the left eye. Epithelioïd cells predominant. Size of the tumor: 18 mm. Tumor invasion of the sclera without extra-scleral extension. Intra-scleral endovascular tumor embolism. Optic nerve, ciliary body and anterior chamber free of tumor.",
+  "gold": {
+    "T": "T4",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T3 (approximate)",
+        "value_norm": "T3",
+        "evidence": "Size of the tumor: 18 mm. Tumor invasion of the sclera without extra-scleral extension.",
+        "confidence": "medium",
+        "reason": "The report gives a maximal tumor dimension of 18 mm which, by AJCC size cutoffs, generally corresponds to a T3-size category (>16 mm). Scleral invasion is present but there is explicitly no extra‑scleral extension (which would upstage to T4). Exact AJCC assignment depends on confirmed largest basal diameter versus thickness and on the specific AJCC edition used; tumor thickness is not reported, so the T3 assignment is approximate.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "Nx",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No regional lymph nodes are mentioned or examined in the pathology report, so pathologic nodal status cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "The report contains no information about distant metastasis or systemic staging, so metastatic status cannot be determined from this specimen.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Size of the tumor: 18 mm. Tumor invasion of the sclera without extra-scleral extension.",
+        "confidence": "low",
+        "reason": "Report gives tumor size and states no extra-scleral extension, but does not provide the full TNM criteria (largest basal diameter vs thickness thresholds and specific AJCC category). Cannot reliably assign a pT category from the available information.",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention regional lymph node assessment or involvement.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention distant metastasis.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Size of the tumor: 18 mm. Tumor invasion of the sclera without extra-scleral extension.",
+        "confidence": "medium",
+        "reason": "The report documents a largest tumor dimension of 18 mm (consistent with AJCC T3 size range) and scleral invasion without extra‑scleral extension. Confidence is medium because the report does not explicitly state whether the 18 mm is largest basal diameter versus thickness and precise AJCC cutoffs are not provided in the report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information about regional lymph node assessment or nodal metastasis in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information about distant metastasis or metastatic workup is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Size of the tumor: 18 mm.",
+        "confidence": "low",
+        "reason": "Report gives tumor size but does not provide required staging parameters (tumor thickness/height, defined largest basal diameter criteria, or explicit AJCC pT category) or specify how the 18 mm measurement maps to pT, so T cannot be assigned reliably.",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph node assessment or mention of nodal status in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No evaluation or statement regarding distant metastasis in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

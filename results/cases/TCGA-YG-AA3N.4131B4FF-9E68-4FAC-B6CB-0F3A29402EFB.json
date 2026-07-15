@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-YG-AA3N.4131B4FF-9E68-4FAC-B6CB-0F3A29402EFB",
+  "text": "Surgical Pathology and Cytopathology. Lab No. Rec.Number. Phys. Ins. Plan. Date of Birth. Room No. Date Received. Date Report. Tissue Examination Report: Specimen : A) SPECIMEN labeled right chest, Skin melanoma, consists of an elliptical. fragment of skin measuring 6 x 3 x 0.7 cm. The epidermal surface is brownish,. with an elevated brownish nodularity that measures 1.6 cm in diameter, being. at 0.9 cm from its nearest peripheral margin. On section the lesion presents. a grayish brown color, being homogeneous and smooth. Beneath it tannish,. rubbery tissue, as well as yellowish adipose tissue are observed; the lesion. being at 0.5 cm from the deep margin. Margins inked. Lesion totally submitted. Peripheral margins. (9 cassettes). B) SPECIMEN labeled right axillary sentinel lymph node #1, consists of an irregular. fragment of yellowish adipose tissue measuring 2.5 x 1,6 cm. On section one lymph. node is identified measuring 2.5 X 1.5 cm, presenting a yellowish, homogeneous,. rubbery parenchyma. 2 cassettes ). C) SPECIMEN labeled left axillary sentinel lymph node #2, consists of an irregular. fragment of yellowish adipose tissue measuring 4.5 x 4.3 x 0,6 cm. On section. two lymph nodes are identified, the larger one measuring 2.5 x 2 cm and the. other measuring 1.5 x 1.4 cm, presenting tannish, homogeneous, rubbery paren-. chymas. Lymph nodes totally submitted. Larger lymph node; II. Second. larger lymph node; III. Addipose tissue. (6 cassettes). Pg. 1 of 2. This report is confidential and contains privileged information. Inappropriate disclosure is prohibited by law. if by accident you receive this report please contact us immediately. Surgical Pathology and Cvtopathology. Lab No. Rec.Number. Phys. Ins. Plan. Date of Birth. Room No. Date Received. Date Report. Tissue Examination Report: DIAGNOSIS: A) RIGHT CHEST, SKIN BIOPSY: - MALIGNANT MELANOMA, NODULAR TYPE, CLARK LEVEL IV, 6 MM IN. DEPTH. - MITOTIC INDEX 1 / MM². - LYMPH-VASCULAR INVASION NOT IDENTIFIED. - TUMOR INFILTRATING LYMPHOCYTES PRESENT, NON-BRISK. - ULCERATION PRESENT. - INKED MARGINS OF THE SPECIMEN, FREE OF TUMOR. B) RIGHT SENTINEL LYMPH NODE #1: - NEGATIVE FOR METASTASIS. C) LEFT SENTINEL LYMPH NODE #2: - TWO (2) LYMPH NODES NEGATIVE FOR METASTASIS. Pathologic Staging: pT4b pNo pMx. Note B), C) : Special stains in progress, report will follow. Pg. 2 of 2. Surgical Pathology and Cytopathologv. Lab No. Rec.Number. Phys. Ins. Plan. Date of Birth. Room No. Date Received. Date Report. Tissue Examination Report: Specimen : ADDENDUM. B & C) IMMUNOPEROXIDASE STAINS FOR HMB45 AND S-100 WERE DONE. AT \". \" AND REPORTED. NEGATIVE. This report is confidential and contains privileged information. Inappropriate disclosure IS pronibited by law. If by accident you receive this report please contact us Immediately.",
+  "gold": {
+    "T": "T4",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT4b",
+        "value_norm": "T4",
+        "evidence": "A) RIGHT CHEST, SKIN BIOPSY: - MALIGNANT MELANOMA, NODULAR TYPE, CLARK LEVEL IV, 6 MM IN. DEPTH. - MITOTIC INDEX 1 / MM². - LYMPH-VASCULAR INVASION NOT IDENTIFIED. - TUMOR INFILTRATING LYMPOCYTES PRESENT, NON-BRISK. - ULCERATION PRESENT. - INKED MARGINS OF THE SPECIMEN, FREE OF TUMOR.",
+        "confidence": "high",
+        "reason": "Tumor thickness 6 mm with ulceration supports T4b (>4.0 mm with ulceration); report explicitly lists pT4b.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "B) RIGHT SENTINEL LYMPH NODE #1: - NEGATIVE FOR METASTASIS. C) LEFT SENTINEL LYMPH NODE #2: - TWO (2) LYMPH NODES NEGATIVE FOR METASTASIS.",
+        "confidence": "high",
+        "reason": "All examined sentinel lymph nodes are reported negative for metastasis and the pathologic staging lists pNo (pN0).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": "Pathologic Staging: pT4b pNo pMx.",
+        "confidence": "high",
+        "reason": "Report explicitly indicates pMx (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T4b",
+        "value_norm": "T4",
+        "evidence": "Pathologic Staging: pT4b pNo pMx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Pathologic Staging: pT4b pNo pMx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "Pathologic Staging: pT4b pNo pMx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "Pathologic Staging: pT4b pNo pMx.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT4b; mapped to T4 (subclassification 'b' not represented in allowed output values).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Pathologic Staging: pT4b pNo pMx.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pNo, corresponding to N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathologic Staging: pT4b pNo pMx.",
+        "confidence": "high",
+        "reason": "Report lists pMx indicating pathologic M status is indeterminate/unknown; mapped to MX.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "pT4b",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNo",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

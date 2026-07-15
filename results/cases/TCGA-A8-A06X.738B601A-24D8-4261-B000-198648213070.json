@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-A8-A06X.738B601A-24D8-4261-B000-198648213070",
+  "text": "Diagnosis: Invasive ductal breast carcinoma (maximum diameter 5.5 cm, malignancy grade. III) with angioinvasion and a mediocranial safety margin at least 3 mm wide. Tumor classification: G3 (L0, V0), pT3, Nx, Mx. Diagnosis: Tumor-free lymph nodes (total N = 11, pN0).",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Tumor classification: G3 (L0, V0), pT3, Nx, Mx.",
+        "confidence": "high",
+        "reason": "Explicitly reported as pT3; tumor maximum diameter 5.5 cm is consistent with T3 (>5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Diagnosis: Tumor-free lymph nodes (total N = 11, pN0).",
+        "confidence": "high",
+        "reason": "Explicitly reported pN0 with 11 tumor-free lymph nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "Tumor classification: G3 (L0, V0), pT3, Nx, Mx.",
+        "confidence": "high",
+        "reason": "Report lists Mx (distant metastasis not assessed) and no metastatic disease is documented.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor classification: G3 (L0, V0), pT3, Nx, Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Tumor-free lymph nodes (total N = 11, pN0).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "Tumor classification: G3 (L0, V0), pT3, Nx, Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": "The report explicitly gives pathologic tumor classification pT3; tumor maximum diameter 5.5 cm is consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Tumor-free lymph nodes (total N = 11, pN0).",
+        "confidence": "high",
+        "reason": "The report documents pN0 and tumor-free lymph nodes (11 examined), which defines N0 despite an earlier 'Nx' listing.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pT3, Nx, Mx.",
+        "confidence": "high",
+        "reason": "The report explicitly records Mx (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Tumor-free lymph nodes (total N = 11, pN0).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Mx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

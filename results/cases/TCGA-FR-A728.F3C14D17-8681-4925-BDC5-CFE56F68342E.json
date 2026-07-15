@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-FR-A728.F3C14D17-8681-4925-BDC5-CFE56F68342E",
+  "text": "DERMATOPATHOLOGY. Diagnosis: A: Left shoulder, excision. Histologic type: Biopsy site changes and residual superficial. spreading melanoma. Breslow depth: 12 mm. Ulceration: EXTENSIVELY PRESENT. Consumption of the epidermis: present. Margins: all margins are widely free. Clark level: IV. Vertical growth phase: present. Mitoses: 6.2 per square mm. Tumor infiltrating lymphocytes: present, non-brisk. Regression: not identified. Lymphovascular space invasion: F RESENT. Satellite nodule not identified. Perineural invasion: not identi: ed. Coexisting nevus: present. Pigmentation: present, mild. Solar elastosis: present, mild. AJCC Staging. pT4b pNx pMx. This staging information is base on this pathologic specimen. and may be incomplete. A comprel nsive review of all available. information is recommended to d ermine final staging. B: Sentinel lymph node, left ax. lary #1, removal. -Metastatic melanoma involving but of 1 sentinel lymph nodes. as a few immunohistochemically-p sitive tumor cells and no. evidence of capsular involvement or extracapsular extension. (1/1). C: Sentinel lymph node, left axi lary #2, removal. -No evidence of melanoma in 1 sencinel lymph node (0/1). - Immunostains and levels are ner.ative in all five blocks. D: Sentinel lymph node, left axillary #3, removal. -Metastatic melanoma involving 1 but of 1 sentinel lymph nodes,. with the largest diameter measuring approximately 7 mm and focal. capsular involvement but no extra capsular extension (1/1). -Metastatic melanoma is seen in t ie H & E sections and. immunostains. -Block D1 will be sent for BRAF t sting. E: Additional superior margin, excision. -No evidence of melanoma. F: Additional lateral margin, excision. -No evidence of melanoma. Clinical History : +year-old woman with melanoma. Gross Description. A: The specimen bears a long suture indicating lateral and a. short suture indicating superior and measures 6.8 X 6 X 2.5 cm. Viewing the specimen with the short suture at the 12:00 position. and the long suture at the 3:00 position, the margin. encompassing the 12:00-3:00 quadrant is inked green, 3:00-6:00. quadrant is inked yellow, 6:00-9:00 quadrant is inked black, and. the 9:00-12:00 quadrant is inked orange. Sections are submitted. as per the block summary. Block Summary : A1-A12: Radial perpendicular sections from biopsy site to. corresponding clock number margin (ie. A1 = 1:00 margin, A2 =. 2:00 margin). A13-A22: Entire biopsy site/lesion. B: The fibrofatty specimen was received labeled with the. patient' S name and measured 24 X 14 X 12 mm. The tissue is. serially sectioned at very thin intervals and entirely submitted. as B1-B5,. C: The fibrofatty specimen was received labeled with the. patient' S name and measured 20 X 20 X 20 mm. The tissue is. serially sectioned at very thin intervals and entirely submitted. as C1-C5,. D: The fibrofatty specimen was received labeled with the. patient' S name and measured 35 X 25 X 18 mm. The tissue is. serially sectioned at very thin intervals and entirely submitted. as D1-D5,. E: The triangular-shaped specimen was received labeled with the. patient' S name and measured 22 X 10 X 6 mm. The specimen is. inked green, serially sectioned, and entirely submitted as E1- -. E2,. F: The triangular-shaped specimen was received labeled with the. patient' S name and two tissues measuring 20 X 20 X 10 mm and 18. X 15 X 12 mm. The specimen is inked green, serially sectioned,. and entirely submitted as F1-F3,. Light Microscopy: Light microscopic examination is performed by Dr. S100 protein. and Melan A immunostains were performed on blocks B1, C1, and. D1; tyrosinase and HMB-45 were performed on blocks B2, C2, and. D2; Sox10 and MiTF were performed on blocks B3, C3, and D3;. KBA. 62 and PNL2 were performed on blocks B4, C4, and D4; and. p75/NGFR was performed on blocks B5, C5, and D5. All are. utilized to evaluate for metastatic melanoma.",
+  "gold": {
+    "T": "T4",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT4b",
+        "value_norm": "T4",
+        "evidence": "Breslow depth: 12 mm. Ulceration: EXTENSIVELY PRESENT.",
+        "confidence": "high",
+        "reason": "Thickness >4.0 mm (12 mm) with extensive ulceration corresponds to pT4b per AJCC.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2 (at least)",
+        "value_norm": "N2",
+        "evidence": "B: Sentinel lymph node, left ax. lary #1, removal. -Metastatic melanoma involving but of 1 sentinel lymph nodes. as a few immunohistochemically-p sitive tumor cells and no. evidence of capsular involvement or extracapsular extension. (1/1). D: Sentinel lymph node, left axillary #3, removal. -Metastatic melanoma involving 1 but of 1 sentinel lymph nodes,. with the largest diameter measuring approximately 7 mm and focal. capsular involvement but no extra capsular extension (1/1).",
+        "confidence": "medium",
+        "reason": "Two sentinel nodes are pathologically positive (1/1 each) indicating at least pN2; the report lists pNx and subclassification (e.g. pN2a vs pN2b) is uncertain from this text alone due to differing criteria (size vs clinical detectability).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": "AJCC Staging. pT4b pNx pMx.",
+        "confidence": "high",
+        "reason": "Report explicitly states pMx; no evaluation of distant metastasis is provided in this pathology specimen.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T4b",
+        "value_norm": "T4",
+        "evidence": "AJCC Staging. pT4b pNx pMx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Metastatic melanoma involving but of 1 sentinel lymph nodes. as a few immunohistochemically-p sitive tumor cells and no. evidence of capsular involvement or extracapsular extension. (1/1). Metastatic melanoma involving 1 but of 1 sentinel lymph nodes,. with the largest diameter measuring approximately 7 mm and focal. capsular involvement but no extra capsular extension (1/1).",
+        "confidence": "high",
+        "reason": "Two sentinel lymph nodes are reported positive (nodes #1 and #3), consistent with pN2 despite the AJCC line listing pNx.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "AJCC Staging. pT4b pNx pMx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "Breslow depth: 12 mm. Ulceration: EXTENSIVELY PRESENT.",
+        "confidence": "high",
+        "reason": "Breslow depth 12 mm (>4 mm) with ulceration corresponds to T4 (report lists pT4b).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "B: Sentinel lymph node, left ax. lary #1, removal. -Metastatic melanoma involving but of 1 sentinel lymph nodes. as a few immunohistochemically-p sitive tumor cells and no. evidence of capsular involvement or extracapsular extension. (1/1). D: Sentinel lymph node, left axillary #3, removal. -Metastatic melanoma involving 1 but of 1 sentinel lymph nodes,. with the largest diameter measuring approximately 7 mm and focal. capsular involvement but no extra capsular extension (1/1).",
+        "confidence": "high",
+        "reason": "Two separate sentinel nodes are reported positive for metastatic melanoma (2 positive regional nodes) -> N2.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "AJCC Staging. pT4b pNx pMx.",
+        "confidence": "high",
+        "reason": "No pathologically confirmed distant metastasis reported; report lists pMx indicating M cannot be assessed from this specimen.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T4",
+        "value_norm": "T4",
+        "evidence": "pT4b",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "pNx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

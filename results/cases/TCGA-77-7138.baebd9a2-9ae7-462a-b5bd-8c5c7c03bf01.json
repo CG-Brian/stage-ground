@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-77-7138.baebd9a2-9ae7-462a-b5bd-8c5c7c03bf01",
+  "text": "LEFT LOWER LOBE. Clinical Notes: SCC left lower lobe lung. Macroscopy: Specimen is labelled \"left lower lobe\" and consists of a lobe of lung measuring 125 x 75 x 60 mm in. the fresh state. There is a cavitated mass present within the lung measuring 70 x 55 x 40 mm with. overlying thickened pleura. On sectioning, it contains thick bloodstained semi-liquid material. Surrounding the cavity, the wall is irregularly roughened and thickened by white sclerotic tissue. The. surrounding lung is yellow in keeping with endogenous lipid pneumonia. It appears well clear of the. bronchial resection margin. No other lesions are identified on sectioning of the lung. [RS bronchial. resection margin and peribronchial lymph nodes, A; tumour and pleura, B-C; RS tumour, D-E; RS. adjacent lung, F; further peribronchial lymph node, G.]. Microscopy: Sections show a moderately differentiated keratinizing squamous cell carcinoma with extensive. necrosis and cavitation. It lies well clear of the bronchial margin and does not invade the pleura,. although the overlying pleura does appear fibrotic. Tumour is seen within a large pulmonary vein. Peribronchial lymph nodes show no evidence of malignancy. Adjacent lung parenchyma shows. organizing obstructive pneumonitis, while distant lung parenchyma is unremarkable. Summary: Left lower lobe: Squamous cell carcinoma. 1. No involvement of pleura, bronchial margin or peribronchial lymph nodes. 2. Vascular infiltration present. 3. Pathological stage T2 NO Mx. P-01100 T-28000 M-80703. Reported by Dr. Pathology Registrar/Pathologist. Further report: Elastic stain demonstrates that there is invasion of tumour into the overlying thickened pleura. No. tumour is present at the pleural surface. Conclusion: Squamous cell carcinoma of left lower lobe. 1. Surgical margins clear. 2. No lymph node metastases. 3. Vascular invasion present. 4. Pleural invasion present. 5. Pathological stage T2 NO MX. Reported by Dr. Anatomical Pathologist.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO Mx.",
+        "confidence": "medium",
+        "reason": "The report explicitly records the pathological stage as T2. However, the tumour is described as 70 x 55 x 40 mm (largest dimension 70 mm = 7.0 cm), which by size criteria would typically be classified as T3 (>5 cm to ≤7 cm). Pleural invasion is also reported. I have followed the pathologist's stated T2 despite this size-based discrepancy.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Peribronchial lymph nodes show no evidence of malignancy.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "Pathological stage T2 NO Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "No lymph node metastases.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "Pathological stage T2 NO Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO MX.",
+        "confidence": "high",
+        "reason": "The report explicitly states the pathological stage as T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Peribronchial lymph nodes show no evidence of malignancy.",
+        "confidence": "high",
+        "reason": "No lymph node metastases were identified on pathology.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological stage T2 NO MX.",
+        "confidence": "high",
+        "reason": "The report explicitly records M as MX (cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological stage T2 NO Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Peribronchial lymph nodes show no evidence of malignancy.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological stage T2 NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

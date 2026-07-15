@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-60-2724.7a4d6104-67c3-4cbc-ab20-34babe747aba",
+  "text": "SPECIMEN(S): A. 4R LYMPH NODE. B. LEVEL 7 LYMPH NODE. C. RIGHT CARINAL PNEUMONECTOMY. D. LEVEL 7 LYMPH NODE. E. LEVEL 9 LYMPH NODE. CLINICAL HISTORY: None provided. PRE-OPERATIVE DIAGNOSIS: SCC of the lung. INTRAOPERATIVE CONSULTATION DIAGNOSIS: FSA/TPA: Lymph node, 4R, excision: No malignancy identified. By. called. FSB/TPB: Lymph node, level 7, excision: No malignancy identified. FSC1; Inferior bronchial margin: Negative for tumor. FSC2: Lateral bronchial margin: Negative for tumor with focal mild squamous dysplasia. Comment: Superior margin is 1.5 cm from the tumor. Grossly negative for tumor. GROSS DESCRIPTION: A. 4R. Received fresh for frozen section are two tan-pink fragments of fibrofatty tissue 0.3 X 0.2 x 0.2. cm and 0.1 x 0.1 x 0.1 cm. The larger tissue fragment is bisected. One touch prep is taken and. the specimen is submitted in toto for frozen section in FSA1. B. LEVEL 7 LYMPH NODE. Received fresh for frozen section is a tan-pink lymph node 0.4 X 0.2 x 0.1 cm. The specimen is. submitted entirely for frozen section in FSB1 Touch preps are taken. C. RIGHT CARINAL PNEUMONECTOMY. Received fresh for frozen section diagnosis is a right carinal pneumonectomy specimen. containing all three lobes and portion of main bronchus measuring 24 x 17 x 6 cm with the. weight of 882 gm. The right main.bronchus is identified measuring 3.0 cm in the greatest. diameter. The right main bronchus shows a 6.0 x 4.5 x 4.0.cm gray-tan, firm and discrete mass. No necrosis or hemorrhage is grossly identified in the tumor. The pleural surface is grossly. uninvolved by the tumor. The inferior and lateral bronchus margin is taken for frozen section. diagnosis. The specimen is inked externally. Cutting through the lung reveals the tumor. involves the middle lobe and portion of the upper lobe. No tumor mass is grossly identified in the. lower lobe. Also identified away from the main tumor is a 3.5 x 2.5 x 2.5 cm necrotic area in the. upper lobe. The necrotic area is approximately 2.0 cm away from the main tumor. A 4.0 x 3.0 x. 2.0 cm hemorrhagic area is also identified in the upper lobe, superior to the necrotic area. Multiple subpleural blebs are identified in the upper lobe. Also noted that the parenchyma in the. upper lobe shows diffuse firm change compared to the lower lobe and middle lobe. Multiple. presumptive peribronchial lymph nodes are identified from specimen. Representative sections are. submitted for microscopic examination as follows: C1: frozen section resubmitted for the inferior bronchial margin. C2: frozen section resubmitted for the lateral bronchial margin. C3: superior bronchial margin. C4-C9: representative sections from tumor. C10-C11: representative sections of the necrotic area in upper lobe. C12-C13: representative section showing the hemorrhage area in upper lobe. C14: representative section showing the subpleural blebs. C15-C16: representative section of the upper lobe. C17: representative section of the middle lobe. C18: representative section of the lower lobe. C19: multiple peribronchial lymph nodes from the upper lobe. C20-C22: peribronchial lymph nodes from the middle lobe. C23-C24: peribronchial nodes from the lower lobe. D. LEVEL 7 LYMPH NODE. Received in formalin is anthracotic lymph node measuring 2 X 0.8 X 0.6 cm. Submitted entirely. in cassette D1. E. LEVEL 9 LYMPH NODE. Received in formalin in is a red-tan lymph node measuring in 1.1 X 0.7 X 0.3 cm. Bisected and. submitted entirely in cassette E1. DIAGNOSIS: A. LYMPH NODE, 4R, EXCISION: TWO REACTIVE LYMPH NODES NEGATIVE FOR TUMOR (0/2). B. LYMPH NODE, LEVEL 7, EXCISION: - ONE REACTIVE LYMPH NODE NEGATIVE FOR TUMOR (0/1). C. LUNG, RIGHT, CARINAL, PNEUMONECTOMY: - MODERATELY DIFFERENTIATED SQUAMOUS CELL CARCINOMA OF. THE RIGHT MAIN BRONCHUS MEASURING 6 X 4.5 X 4 CM. - BRONCHIAL MARGIN IS FREE OF TUMOR. - BRONCHIOPNEUMONIA AND EXTENSIVE NECROSIS AND. INTRABRONCHIAL HEMORRHAGE. - PERIBRONCHIAL LYMPH NODES POSITIVE FOR CARCINOMA (3/39). - SEE SYNOPTIC REPORT. D. LYMPH NODE, LEVEL 7, EXCISION: - ONE REACTIVE LYMPH NODE (0/1). E. LYMPH NODE, LEVEL 9, EXCISION: - ONE REACTIVE LYMPH NODE (0/1). SYNOPTIC REPORT - LUNG. Surgical Procedure: Pneumonectomy. Laterality: Right. Tumor Site: Right main stem bronchus. Tumor Location: Central. Tumor Size: Greatest diameter: 6cm. Additional dimensions: 4.5cm x 4cm. WHO CLASSIFICATION. Squamous cell carcinoma. Histologic Grade: G2: Moderately differentiated. Angiolymphatic Invasion: Absent. Bronchial Margins: Bronchial margins uninvolved. Tumor Distance from margin: 0.2cm. Visceral Pleural Involvement: Absent. Satellite Tumor(s): Absent. Lymph Node Involvement: N1: Ipsilateral Hilar and/or Peribronchial (levels 10-14). Positive 3 / 39. N2: Ipsilateral Mediastinal and/or Subcarinal (Levels 1-9). Negative 0/5. Non-Neoplastic Lung: Emphysematous changes. Pneumonia. Hemorrhage. Additional Pathologic Findings: None identified. Pathological Staging (pTNM): pT 3 N1 MX.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Tumor Size: Greatest diameter: 6cm.",
+        "confidence": "high",
+        "reason": "Report lists pT3; greatest tumor diameter 6 cm supports T3 (tumor >5 cm and ≤7 cm) and tumor arises in the right main bronchus.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PERIBRONCHIAL LYMPH NODES POSITIVE FOR CARCINOMA (3/39).",
+        "confidence": "high",
+        "reason": "Three positive ipsilateral peribronchial/hilar nodes (3/39); N2 nodes reported negative (0/5).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": "The report explicitly states MX indicating distant metastasis was not assessed pathologically.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists pT3; tumor greatest diameter 6 cm supports T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph Node Involvement: N1: Ipsilateral Hilar and/or Peribronchial (levels 10-14). Positive 3 / 39.",
+        "confidence": "high",
+        "reason": "Report documents 3 positive peribronchial nodes (N1) and synoptic classification as N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists MX (distant metastasis not assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph Node Involvement: N1: Ipsilateral Hilar and/or Peribronchial (levels 10-14). Positive 3 / 39.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological Staging (pTNM): pT 3 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AA-3525.a97997e2-b3d7-43bc-a519-2aa0ab3da2ca",
+  "text": "Diagnosis/Diagnoses: Ileocolonic resection specimen including an extended, extensively ulcerated moderately. differentiated adenocarcinoma of the colorectal type localized in the ascending colon with. extensive infiltration of the pericolic fatty tissue and two regional lymph node metastases. Tumor-free large and small bowel resection margins. Tumor-free mesenteric resection margin. Tumor-free appendix. Tumor free omental fat tissue. Small tubular adenoma of the colonic. mucosa with slight dysplasia (synonym: low-grade intra-epithelial neoplasia) additionally. Tumor stage: pT3 pN1 (2/28) pMX; G2, L0, V0 R0.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX; G2, L0, V0 R0.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3 and describes extensive infiltration of the pericolic fatty tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX; G2, L0, V0 R0.",
+        "confidence": "high",
+        "reason": "Report explicitly states pN1 and notes two regional lymph node metastases (2/28), consistent with N1 (1-3 positive nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX; G2, L0, V0 R0.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMX indicating the pathologic M status could not be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX; G2, L0, V0 R0.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX; G2, L0, V0 R0.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX; G2, L0, V0 R0.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX;",
+        "confidence": "high",
+        "reason": "Report explicitly states pathologic stage pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX;",
+        "confidence": "high",
+        "reason": "Report explicitly states pathologic stage pN1 (2/28) and mentions two regional lymph node metastases.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX;",
+        "confidence": "high",
+        "reason": "Report explicitly states pMX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX;",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX;",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Tumor stage: pT3 pN1 (2/28) pMX;",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

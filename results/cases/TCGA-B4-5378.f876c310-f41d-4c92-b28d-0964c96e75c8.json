@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-B4-5378.f876c310-f41d-4c92-b28d-0964c96e75c8",
+  "text": "Cureline. Clinical. Ethnicity. Clinical. Index. Specimen. (mm/dd/yyy. procureme. Site #. (Race). Diagnosis. label. y). nt. Kidney. 1. Male. cancer. Kidney. Male. cancer. Tissue. Anatomica. Tumor. Specimen. Specimen. Number of. Amount/per. Specificati. Container. I Site. Matrix. Format. containers. container. on. Kidney,. Primary. Tumor. Tissue. OCT. block. 1. n/a. n/a. right. Blood. n/a. Normal. Blood. frozen. tube. 1. n/a. n/a. Component. Type of. Histological. of treatment. Grade. Procureme. TNM Stage. TNM Stage. TNM Stage. Treatment. Tumor cell. description. (Chemo /. (source). (N). (M). type. %. nt. (Source). Horm Th. Details). Renal cell. 2. 1. 0. 0. none. n/a. 77. carcinoma. blood draw. n/a. n/a. n/a. n/a. n/a. none. n/a. n/a.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "The sequence '2. 1. 0' appears after 'TNM Stage' and adjacent to the tumor type; interpreted as T=2. Report formatting is unclear, so moderate confidence.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "The middle number in the '2. 1. 0' sequence is interpreted as N=1 under the TNM staging heading; formatting ambiguity reduces confidence.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "The final number in the '2. 1. 0' sequence is interpreted as M=0 under the TNM staging heading; report is poorly formatted, so interpretation is not certain.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "Report is unstructured; the numeric sequence '2 1 0' appears after 'Renal cell' and likely represents T, N, and M but is not explicitly labeled.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "Report is unstructured; the numeric sequence '2 1 0' appears after 'Renal cell' and likely represents T, N, and M but is not explicitly labeled.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "Report is unstructured; the numeric sequence '2 1 0' appears after 'Renal cell' and likely represents T, N, and M but is not explicitly labeled.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "The report lists numeric fields after the histology; interpreted as Grade 2 followed by T=1, N=0, M=0. Formatting is ambiguous so confidence is medium.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "See T_stage reason — the second zero in the sequence corresponds to N=0 in the TNM listing.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Renal cell. 2. 1. 0. 0.",
+        "confidence": "medium",
+        "reason": "See T_stage reason — the final zero in the sequence corresponds to M=0 in the TNM listing.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "The report does not explicitly report a pathologic T stage (e.g., 'T1', 'T2'). Although the text includes numbers ('Renal cell. 2. 1. 0. 0.'), they are not labeled as T and thus cannot be unambiguously mapped to a T category.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "The report does not explicitly report a pathologic N stage (e.g., 'N0', 'N1'). The numeric values present ('Renal cell. 2. 1. 0. 0.') are not labeled as N and cannot be definitively interpreted as an N stage.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "The report does not explicitly report a pathologic M stage (e.g., 'M0', 'M1'). The numeric values present ('Renal cell. 2. 1. 0. 0.') are not labeled as M and cannot be definitively interpreted as an M stage.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

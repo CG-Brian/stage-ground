@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-2H-A9GL.EE6EFEB1-2B64-44A9-9FDF-14EA549040B7",
+  "text": "Coded sample ID: Histologic diagnosis: poor differentiated adenocarcinoma in Barrett-epithelium. Anatomic site with laterality: distal esophagus. Tumor size: diameter 6 cm. Lymph node status: 15 lymph nodes, of which 2 contains tumor. Any comments or amendments: irradical resection.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "Tx",
+        "value_norm": "TX",
+        "evidence": "Tumor size: diameter 6 cm.",
+        "confidence": "low",
+        "reason": "Depth of invasion (submucosa/muscle/adjacent structures) not specified in report; T category cannot be determined from size alone.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph node status: 15 lymph nodes, of which 2 contains tumor.",
+        "confidence": "high",
+        "reason": "Two regional lymph nodes contain tumor, which corresponds to N1 (1-2 positive nodes) in esophageal cancer staging.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report gives tumor size (6 cm) but does not state depth of invasion required to assign a T category",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "15 lymph nodes, of which 2 contains tumor",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "TX",
+        "value_norm": "TX",
+        "evidence": "Tumor size: diameter 6 cm.",
+        "confidence": "medium",
+        "reason": "Report gives tumor size but does not describe depth of invasion into esophageal wall layers, so the primary tumor cannot be pathologically staged (TX).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "15 lymph nodes, of which 2 contains tumor.",
+        "confidence": "high",
+        "reason": "Two regional lymph nodes are positive; per AJCC nodal count for esophageal cancer, 1–2 positive nodes = N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information on distant metastasis is provided in the report, so pathologic M status cannot be determined.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on depth of invasion (T stage); report gives only tumor size: 'Tumor size: diameter 6 cm.'",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "15 lymph nodes, of which 2 contains tumor.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis (M stage) in report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

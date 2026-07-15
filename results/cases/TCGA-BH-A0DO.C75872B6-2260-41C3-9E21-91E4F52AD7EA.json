@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BH-A0DO.C75872B6-2260-41C3-9E21-91E4F52AD7EA",
+  "text": "From. To. P.8/33. RIGHT AXILLA, SENTINEL #1, SENTINEL NODG BIOPSY -. AVILLARY LYMPH NODE. NEGATIVE FOR METASTATIC TUMOR (0/1). FART 2: LYMPH NODE. LEFT AXILLA, SENTINEL #1, SENTINEL NODE BIOPSY -. ONE AXILLARY LYMPH NODE, NEGATIVE FOR METASTATIC TUMOR (0/1). PART 3: LYMPH NODE, LEFT AXILLA, SENTINEL #2, SENTINEL NODE BIOPSY -. ONE AXILLARY LYMPH NODE. NEGATIVE FOR METASTATIC TUMOR (0/1). PART 4: BREAST, LEET, SIMPLE MASTECTOMY. A. INVASIVE DUCTAL CARCINOMA NO SPECIAL TYPE. B. NOTTINGHAM GRADE 3 (TUBULETORMATION: 3, NUCLEAR PLEOMORPHI8M: 3, MITOTIC ACTIVITY: 2; TOTAL. SCORE - a/9). c. THE INVASIVE TUMOR MEASURES APPROXIMATELY 2.0 CM IN LARGEST DIMENSION (FIVE CONTIGUOUS. SECTIONS). D. THE INVASIVE CARCINOMA 18 LOCATED AT THE JUNCTION OF UPPER INNER AND LOWER INNFR. QUADRANTS. E. LYMPHOVASCULAR SPACE INVASION IS IDENTIFIED. F. RESECTION MARGINS ARE NEGATIVE FOR CARCINOMA. G. THE NIPPLE 18 NEGATIVE FOR TUMOR. H. THE SKIN IS NEGATIVE FOR TUMOR. I. CALCIFICATIONS ARE ASSOCIATED WITH INVASIVE CARCINOMA AND BENIGN BREAST PARENCHYMA. J. ATYPICAL DUCTAL HYPERPLASIA. K INTRADUCTAL PAPILLOMA. L. THE NON-NEOPLASTIC BREAST SMOWS DUCTAL EFITHELIAL HYPERPLASIA, ADENOSIS AND FIBROCYSTIC. CHANGES. M. PREVIOUS BIOPSY SITE CHANGES. N. THE INVASIVE TUMOR CELLS ARE POSITIVE FOR ESTROGEN AND PROGESTERONE RECEPTORS AND. NEGATIVE FOR HER-2, AS PER PREVIOUS PATHOLOGY REPORT \". PART 5; BREAST, RIGHL SIMPLI MASTECTOMY -. A. INVASIVE DUCTAL CARCINONA NO SPECIAL TYPE. B. NOT TINGRAM GRADE 2 (TUBULE FORMATION: 2. NUCLEAR PLEOMORPHISM: 2. MITOTIC ACTIVITY: 2; TOTAL. SCORE - 8/9). C. THE INVASIVE TUMOR MFASUBEE. D. E. THE DCIS CONSTITUTES -10% OF THE TOTAL TUMOR MASS AND IS PRESENT ADMIXED WITH THE INVASIVE. DUCTAL CARCINOMA IN SITU (DCIS). CRIBRIFORM AND SOLID TYPES WITH MINIMAL NECROSIS. COMPONENT. F. LYMPHOVASCULAR SPACE INVASIÓN IS IDENTIFIED. G. RESECTION MARGINA ARE NEGATIVE FOR CARCINOMA. H. THE INVASIVE CARCINOMA IS LOCATED AT THE UPPER OUTER QUADRANT. I. THE NIPPLE IS NEGATIVE FOR TUMOR. J. THE SKIN IS NEGATIVE FOR TUMOR. K. ATYPICAL. DUCTAL HYPERPLASIA. L. THE NON-NEOPLASTIC BREAST SHOWS FIBROCYSTIC CHANGES WITH ASSOCIATED. MICROCALCIFICATIONS. M. PREVIOUS BIOPSY SITE CHANGES. N. THE INVASIVE TUMOR CELLS ARE POSITIVE FOR ESTROGEN AND PROGESTERONE RECEPTORS AND. NEGATIVE FOR HER-2, AS PER PREVIOUS PATHOLOGY REPORT. CASE SYNOPSIS: SYNOPTIC -PRIMARY INVASIVE CARCINOMA OF BREAST. LATERAI.ITY: I on. PROCEDURE. Simple mastectoniy. Upper inner quadrant. Lower inner quadrent. SIZE OF TUMOR: Maximum dimension invasive component: 2.0 cm. MULTICENTRICITY/MULTIFOCALITY OF INVASIVE FOCI: TUMOR TYPE (invasive component): Ductal sdenocarcinonia, NOS. NOTTINGHAM SCORE: Nuclear grade: 3. Tubule formation 3. Mitolic activity score. 2. Total Nottingham scure: 8. Nultingham grade (1. 2. 3). 3. ANGIOLYMPHATIC INVASION: DERMAL LYMPHATIC INVASION: CALCIFICATION: Ycs. benign zonas. Yes. malignant zones. SURGICAL MARGINS INVOLVED BY INVASIVE COMPONENT: LYMPM NODES POSITIVE: o. I. YMPH NODES EXAMINED: 2. METHOD(S) OF LYMPN NODE EXAMINATION: HIVE stoin. SKIN INVOLVED (ULCERATION): NON-NEOPLASTIC BREAST TISSUE: ADH, Papilloma, rco. 1 STAGE, PATHOLOGIC: pTic. N STAGE, PATHOLOGIC: M STAGE, PATHOLOGIC: pMX. ESTROGEN RECEPTORS: positive. PROGESTERONE RECEPTORS: positive. HER2/NEU: zoro or 1+.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1c",
+        "value_norm": "T1",
+        "evidence": "SIZE OF TUMOR: Maximum dimension invasive component: 2.0 cm. 1 STAGE, PATHOLOGIC: pTic.",
+        "confidence": "high",
+        "reason": "Maximum invasive tumor dimension 2.0 cm corresponds to pT1c (>1 cm to ≤2 cm); synoptic line lists pTic (interpreted as pT1c).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "ONE AXILLARY LYMPH NODE, NEGATIVE FOR METASTATIC TUMOR (0/1).",
+        "confidence": "high",
+        "reason": "All sentinel nodes reported negative (0/1 each) and synoptic summary indicates 0 positive nodes (2 nodes examined).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "Report explicitly documents pathologic M stage as pMX (metastatic status not assessed/pathologic M unknown).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1c",
+        "value_norm": "T1",
+        "evidence": "THE INVASIVE TUMOR MEASURES APPROXIMATELY 2.0 CM IN LARGEST DIMENSION (FIVE CONTIGUOUS. SECTIONS).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "NEGATIVE FOR METASTATIC TUMOR (0/1)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "THE INVASIVE TUMOR MEASURES APPROXIMATELY 2.0 CM IN LARGEST DIMENSION (FIVE CONTIGUOUS. SECTIONS).",
+        "confidence": "high",
+        "reason": "Maximum invasive tumor dimension is 2.0 cm, which corresponds to pT1 (≤2 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "ONE AXILLARY LYMPH NODE, NEGATIVE FOR METASTATIC TUMOR (0/1).",
+        "confidence": "high",
+        "reason": "All examined sentinel lymph nodes are reported negative (0/1 each; 2 nodes examined overall), consistent with N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "The report explicitly lists pathologic M stage as pMX (distant metastasis not assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "SIZE OF TUMOR: Maximum dimension invasive component: 2.0 cm.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "NEGATIVE FOR METASTATIC TUMOR (0/1)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-D7-5577.c0156b0a-0f9b-48a6-afe3-62e065c6df8e",
+  "text": "Examination: Histopathological examination. collected on: Clinical diagnosis: Adenocarcinoma ventriculi G2, intestinal type, invasive tumour of the gastric body. Examination performed or. Macroscopic description: Sent material consisting of the stomach, having been cut out along the greater curvature, sized 15 x 15.5 cm. with the omentum sized 30 x 14 cm. Ulcerous tumour on the lesser curvature sized 5 x 6 x 1.1 cm. Distance from the proximal end 0.7 cm, from. distal end, 8 cm. Microscopic description: Adenocarcinoma tubulare G2,. Tumour penetrated the full thickness of the stomach wall and perlintestinal fat tissue reaching the. peritoneum membrane. Surgical incision lines off cancer invaded area. Invasio carcinomatosa vassorum. Reactlo lymphocytaria. peritumoralis. Mucosa free of cancer, showing features of chronic immflamation. Omentum sine metastasibus lien. sccessorius. LYMPH NODES: - periorificial: metastases carcinomatosae in lymphonodis (No XII/XXI). Infiltratio carcinomatosa capsulae lymphonodorum et telae adiposae perinodalis. of lesser curvature: metastases carcinomatosae in lymphonodis (No II/II). Infiltratio carcinomatosa capsulae lymphonodorum et telae adiposae perinodalis. - of greater curvature: metastases carcinomatosae in lymphonodis (No II/III). Infiltratio carcinomatosa capsulae lymphonodorum et telae adiposae perinodalis. - peripyloric: metastases carcinomatosae in lymphonodis (No III/VIII). Infiltratio carcinomatosa capsulae lymphonodorum et telae adiposae perinodalis. Examination result: Adenocarcinoma tubulare ventriculi. Metastases carcinomatosae in lymphonodis NO XIX/XXXTV. G2, pT2b, pN3 ty pus intestinalis sec. lauren. METASTATIO LAMPH MODES Validated by: Results of immunohistochemical examination: HER2 protein stained with HercepTest™M by DAKO. Negative reaction in invasive cancerous cells ( Score = 0).",
+  "gold": {
+    "T": "T2",
+    "N": "N3",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2b",
+        "value_norm": "T2",
+        "evidence": "G2, pT2b, pN3 ty pus intestinalis sec. lauren.",
+        "confidence": "medium",
+        "reason": "Report explicitly states pT2b, but microscopic description notes the tumour \"penetrated the full thickness of the stomach wall and perlintestinal fat tissue reaching the. peritoneum membrane,\" which could correspond to a higher T category (T3/T4a). Internal inconsistency lowers confidence.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN3",
+        "value_norm": "N3",
+        "evidence": "G2, pT2b, pN3 ty pus intestinalis sec. lauren.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": "Omentum sine metastasibus lien. sccessorius.",
+        "confidence": "medium",
+        "reason": "No distant metastases are described and the omentum is reported without metastasis, so M0 is inferred; however no explicit pM designation is given and serosal/peritoneal involvement is described, creating some uncertainty.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2b",
+        "value_norm": "T2",
+        "evidence": "pT2b",
+        "confidence": "medium",
+        "reason": "Report explicitly states pT2b, but microscopic description also says the tumour \"penetrated the full thickness of the stomach wall and ... reaching the peritoneum membrane,\" which could indicate a higher T-category (discordant findings).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "pN3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not state distant metastasis (omentrum described as without metastases: \"Omentum sine metastasibus\").",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pT2b",
+        "confidence": "high",
+        "reason": "Report explicitly states pT2b.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "pN3",
+        "confidence": "high",
+        "reason": "Report explicitly states pN3 and describes multiple lymph node metastases.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Omentum sine metastasibus",
+        "confidence": "medium",
+        "reason": "No distant metastases are reported; omentum described as without metastases and metastases are limited to regional lymph nodes (no pM documented).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pT2b",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "pN3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "Report contains no statement of distant metastasis (no pM0/pM1 or M1/M0) and does not describe any non-regional metastatic sites.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

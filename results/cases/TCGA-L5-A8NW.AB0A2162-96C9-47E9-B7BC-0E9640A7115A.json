@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-L5-A8NW.AB0A2162-96C9-47E9-B7BC-0E9640A7115A",
+  "text": "OPER DATE: REQ DOC: PROCEDURE: A. year-old male presented with dysphagia. Distal esophageal adenocarcinoma. Transhiatal esophagectomy. PROCEDURE: 1. \"Thoracic esophagus A 5.0 cm segment of esophagus, 2.5 cm in diameter. At. the distal end of the specimen, there is a 3.0 cm portion of proximal stomach,. 5.5 cm in circumference. Esophagus has been opened to reveal a 3.4 x 3.2 cm. raised, exophytic lesion at the gastroesophageal junction, which occupies 3.2. of a total 5.4 cm circumference. This Lesion protrudes 0.4 cm from the. surrounding mucosa. There are two tan tongues of possible Barrett's mucosa,. 1.6 x 0.7 cm and 0.5 x 0.5 cm. These are at the proximal end of the previously. described Lesion. The remaining esophageal mucosa is wrinkled, gray without. grossly visible lesions. The associated gastric mucosa is rugated tan, without. Lesions. Radial margins inked black. The (esion is 3.0 cm from the proximal. margin of the specimen and 2.5 cm from the distal margin. Serial longitudinal. cuts reveal that the lesion appears to extend into the underlying muscularis. propria. It has firm gray-white cut surfaces. A search through the associated. fibroadipose reveals multiple possible lymph nodes. 1A.-c. Full longitudinal sections of lesion and adjacent possible Barrett's. mucosa. The deepest extension is inked in cassette 1A. 1D.&E. Grossly uninvolved esophageal and gastric mucosa, respectively. 1F.-1. Possible Lymph nodes. 1J. One bisected possible lymph node. 2. Cervical esophagus A 3.8 cm length of esophagus, 2.5 cm in diameter and. closed at one end with a staple line. The associated mucosa has no grossly. visible lesions. One representative cross-section submitted in cassette #2. 3. \"Mediastinal Lymph node\" A 3.5 x 3.0 x 1.2 cm fragment of lobular, yellow. fibroadipose, containing multiple possible lymph nodes. PREVIOUS DIAGNOSIS INQUIRY. REPORT DATE: 4. PATIENT NBR: SEX: M. ADM DATE: BIRTHDATE: OPER DATE: REQ DOC: 3A.&B. One bisected lymph node each. 3c. Three possible lymph nodes. 4. \"Periesophageal lymph node A 2.6 x 2.5 x 1.1 cm fragment of lobular, tan. fibroadipose, containing multiple possible Lymph nodes. 4A. One bisected lymph node. 4B. Possible lymph nodes. 5. \"Gastrohepatic ligament A 5.0 x 3.0 x 1.8 cm fragment of lobular, yellow. fibroadipose, containing two possible lymph nodes. 5A. Possible lymph nodes. 58. Fibroadipose. PROCEDURE: ESOPHAGEAL, CARDIAC AND GASTROESOPHAGEAL JUNCTION CARCINOMA: Type of carcinoma: Adenocarcinoma. If adenocarcinoma, is it arising in: GE junction otherwise not specified. Depth of invasion: Muscularis propria. Number of positive Lymph nodes, the total number sampled is irrelevant: 6/18. Extranodal metastasis: Unknown. Pattern of invasion: Infiltrative. Esophageal and gastric resection margins involved: No. Deep resection margin involved: No. TNM classification: T2 N1 MX. PROCEDURE: 1.&2. Thoracic esophagus, resection: Invasive adenocarcinoma, extending into. muscularis propria. Margins negative. Three of ten lymph nodes surrounding. gastroesophageal junction positive for metastatic adenocarcinoma. See. template. 3. Mediastinal Lymph nodes, biopsy: One of five lymph nodes positive for. metastatic adenocarcinoma. PREVIOUS DIAGNOSIS INQUIRY. REPORT DATE. 5. PATIENT NBR: SEX: M. BIRTHDATE: ADM DATE: OPER DATE: REQ DOC: 4. Paraesophageal lymph nodes, biopsy: Two of three lymph nodes positive for. metastatic adenocarcinoma. 5. Gastrohepatic Ligament, biopsy: Unremarkable fibroadipose tissue, No tymph. nodes. I. the signing staff pathologist, have personal ly. examined and interpreted the slides from this case. Code:",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Depth of invasion: Muscularis propria.",
+        "confidence": "high",
+        "reason": "Invasion into the muscularis propria corresponds to T2 for esophageal cancer.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "medium",
+        "reason": "The report's stated TNM is N1, but the report also documents \"Number of positive Lymph nodes, the total number sampled is irrelevant: 6/18\", which would typically correspond to N2 (3–6 positive nodes) by AJCC staging, creating a discrepancy.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": "The pathologist recorded MX (distant metastasis cannot be assessed) in the TNM classification.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Depth of invasion: Muscularis propria.",
+        "confidence": "high",
+        "reason": "Invasion into the muscularis propria corresponds to T2 for esophageal carcinoma.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Number of positive Lymph nodes, the total number sampled is irrelevant: 6/18.",
+        "confidence": "medium",
+        "reason": "Six positive regional lymph nodes (6) falls in the N2 category (3-6 nodes). Note: the report also lists 'TNM classification: T2 N1 MX', which conflicts with the node count.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": "The report explicitly states MX and extranodal metastasis is listed as unknown; no definitive distant metastasis documented.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM classification: T2 N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

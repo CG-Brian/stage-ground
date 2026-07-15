@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BH-A0HO.C9AD69EB-506A-4442-B1C2-C8F09B519CB2",
+  "text": "FINAL DIAGNOSIS: 1: BREAST, RIGHT, SEGMENTAL MASTECTOMY AT 10 O'CLOCK. PART. A. INVASIVE DUCTAL CARCINOMA, NO SPECIAL TYPE, WITH ABUNDANT CALCIFICATIONS. B. NOTTINGHAM GRADE 2 (TUBULE FORMATION: 2, NUCLEAR PLEOMORPHISM: 2, MITOTIC ACTIVITY: 2;. TOTAL SCORE = 6/9). C. THE INVASIVE TUMOR MEASURES 1.8 CM IN LARGEST DIMENSION. D. DUCTAL CARCINOMA IN SITU, NUCLEAR GRADE 2, CRIBRIFORM TYPE WITH CALCIFICATIONS. E. THE DUCTAL CARCINOMA IN SITU CONSTITUTES 5% OF THE TOTAL TUMOR VOLUME AND IS PRESENT. ADMIXED WITH THE INVASIVE COMPONENT. F. LYMPHOVASCULAR SPACE INVASION IS NOTED. G. RESECTION MARGINS ARE NEGATIVE FOR CARCINOMA. H. INVASIVE CARCINOMA IS 0.1 CM FROM THE NEAREST (ANTERIOR) MARGIN AND IS 0.2 CM FROM THE. POSTERIOR MARGIN (PLEASE SEE PART #2 FOR NEW ANTERIOR MARGIN). I. THE NON-NEOPLASTIC BREAST SHOWS FIBROCYSTIC CHANGES AND COLUMNAR CELL CHANGES. J. PREVIOUS BIOPSY SITE CHANGES. K. THE INVASIVE TUMOR CELLS ARE POSITIVE FOR ESTROGEN RECEPTORS (H SCORE OF 200),. PROGESTERONE RECEPTOR (H SCORE OF 290) AND NEGATIVE FOR HER-2 AS PER PREVIOUS. PART 2: BREAST, RIGHT, NEW ANTERIOR MARGIN, RE-EXCISION -. BENIGN BREAST TISSUE. PART 3: LYMPH NODES, RIGHT AXILLA, SENTINEL #1, EXCISION -. A. METASTATIC CARCINOMA INVOLVING ONE OF TWO LYMPH NODES (1/2). B. THE METASTATIC FOCUS MEASURES 0.1 CM IN LARGEST DIMENSION. C. NO EXTRACAPSULAR EXTENSION IS IDENTIFIED. PART 4: LYMPH NODES, RIGHT AXILLA, SENTINEL #2, EXCISION -. THREF I YMPH NODES, NEGATIVE FOR METASTATIC TUMOR (///). CASE SYNOPSIS: SYNOPTIC - PRIMARY INVASIVE CARCINOMA OF BREAST. LATERALITY: Right. PROCEDURE: Segmental. Upper outer quadrant. SIZE OF TUMOR: Maximum dimension invasive component: 1.8 cm. MULTICENTRICITY/MULTIFOCALITY OF INVASIVE FOCI: TUMOR TYPE (invasive component): Ductal adenocarcinoma, NOS. NOTTINGHAM SCORE: Nuclear grade: 2. Tubule formation: 2. Mitouc acurity -. Total Nottingham score: 6. Nottingham grade (1, 2, 3): 2. ANGIOLYMPHATIC INVASION: DERMAL LYMPHATIC INVASION: Not applicable. CALCIFICATION: Yes, malignant zones. TUMOR TYPE, IN SITU: Cribriform. SURGICAL MARGINS INVOLVED BY INVASIVE COMPONENT: SURG MARGINS INVOLVED BY IN SITU COMPONENT: LYMPH NODES POSITIVE: 1. LYMPH NODES EXAMINED: 5. METHOD(S) OF LYMPH NODE EXAMINATION: H/E stain, Keratin stain. SENTINEL NODE METASTASIS: SIZE OF NODAL METASTASES: Diameter of largest lymph node metastasis: 1 mm. LYMPH NODE METASTASIS(-ES) WITH EXTRACAPSULAR EXTENSION: NON-NEOPLASTIC BREAST TISSUE: FCD. T STAGE, PATHOLOGIC: pT1c. N STAGE, PATHOLOGIC: pNX. M STAGE, PATHOLOGIC: pMX. ESTROGEN RECEPTORS: positive. PROGESTERONE RECEPTORS: positive. HER2/NEU: zero or 1+. Comment: The tumor N stage is at least pN1mi. If a sentinel node is positive, then a final \"N. stage\" can be assigned only after complete lymph node dissection.",
+  "gold": {
+    "T": "T1",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1c",
+        "value_norm": "T1",
+        "evidence": "T STAGE, PATHOLOGIC: pT1c.",
+        "confidence": "high",
+        "reason": "Invasive tumor measures 1.8 cm (fits T1c: >1 cm and ≤2 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": "N STAGE, PATHOLOGIC: pNX.",
+        "confidence": "medium",
+        "reason": "Report documents 1/2 positive sentinel nodes with metastasis measuring 0.1 cm (1 mm) and notes \"The tumor N stage is at least pN1mi,\" but assigns pNX pending completion of lymph node dissection.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "No pathologic assessment of distant metastasis was provided.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1c",
+        "value_norm": "T1",
+        "evidence": "T STAGE, PATHOLOGIC: pT1c.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1mi",
+        "value_norm": "N1",
+        "evidence": "A. METASTATIC CARCINOMA INVOLVING ONE OF TWO LYMPH NODES (1/2). B. THE METASTATIC FOCUS MEASURES 0.1 CM IN LARGEST DIMENSION.",
+        "confidence": "medium",
+        "reason": "A 1 mm nodal metastasis represents a micrometastasis (pN1mi), but the report records pNX and notes final N stage awaits completion of lymph node dissection.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "distant metastasis not assessed (pMX)",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "T STAGE, PATHOLOGIC: pT1c.",
+        "confidence": "high",
+        "reason": "pT1c is a T1 tumor (invasive component measures 1.8 cm, which corresponds to T1c: >1 cm and ≤2 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "N STAGE, PATHOLOGIC: pNX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pNX. Note the report documents 1/2 sentinel nodes positive with a 0.1 cm metastasis (at least pN1mi), but final pathologic N stage was recorded as pNX pending further nodal dissection.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMX and provides no pathologic assessment of distant metastasis.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "T STAGE, PATHOLOGIC: pT1c.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "N STAGE, PATHOLOGIC: pNX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

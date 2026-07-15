@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-B6-A0WX.EE5BB205-D59B-4FEF-8D8F-D5720EDEB075",
+  "text": "Pat. Surgical Pathoro. 1. CLINICAL HISTORY : Left breast mass. Locally advanced left breast Ca. GROSS EXAMINATION: A. \"Breast biopsy\" received and fixed. The specimen consists of a 3.1 x 2.4 x. 1.3 cm unoriented fragment of yellow-tan soft fibroadipose tissue which is. inked blue and sectioned to reveal a 1.5 x 1.0 x 1.0 cm firm white-tan ill-. defined lesion that extends to the inked surgical margin. The remainder of. the tissue consists of adipose tissue. The specimen is entirely submitted as. Block A1-A10. for Dr. ;lides to Dr. DIAGNOSIS: A. \"LEFT BREAST\" (INCISIONAL BIOPSY) : INVASIVE PLEOMORPHIC LOBULAR CARCINOMA. N.S.A.B.P. NUCLEAR GRADE 2 OF 3. N.S.A.B.P. HISTOLOGIC GRADE 3 OF 3. LYMPHATIC/VASCULAR INVASION: ABSENT. IN-SITU CARCINOMA: ABSENT. STATUS OF NON-NEOPLASTIC BREAST TISSUE: NOT APPLICABLE (INCISIONAL. BIOPSY) . SIZE OF BIOPSY: 3.1 x 2.4 X 1.3 CM. (DIFFUSELY INVOLVED BY INVASIVE. CARCINOMA). MICROCALCIFICATIONS: ABSENT. SURGICAL MARGIN STATUS: NOT APPLICABLE (INCISIONAL BIOPSY). ESTROGEN/PROGESTERONE RECEPTOR AND CELL CYCLE ANALYSIS: PENDING. METHODOLOGY: IMMUNOHISTOCHEMISTRY, PARAFFIN BLOCK (A5). I certify that I personally conducted the diagnostic evaluation of the above. specimen (s) and have rendered the above diagnosis (es) . M.D. ADDENDUM 1: Tissue was sent to the. for assay of the estrogen. and. progesterone receptors. The estrogen receptor activity was judged to be. negative with an estimated FMOL value of 0. The progesterone receptor activity. was judged as negative with an estimated FMOL value of 0. Please refer to. for a complete report. I certify that I personally conducted the diagnostic evaluation of the above. specimen (s) and have rendered the above diagnosis (es) . M.D. Page #. ADDENDUM 2: Immunostaining for HER2/neu (c-erbB-2) oncoprotein is performed on recut. sections of block A5. The immunostaining is done using DAKO rabbit anti-human. c-erbB-2 oncoprotein which is an affinity-isolated antibody. product. number. ) The immunostaining is performed after antigen retrieval by. heating the unstained sections at 95 degrees centigrade for 20 minutes in 10. mM citrate buffer, pH 6.0. The primary antibody is used at a dilution of. 1:3000 (manual staining), with an incubation for one hour at 37 degrees. centigrade. The Histostain Plus kit (. is used as the. detection system. Rare tumor cells exhibit barely perceptible, complete. membrane staining, but their number is too few to indicate overexpression of. HER2/neu oncoprotein. The majority of tumor tumor cells have barely. perceptible, focal membrane staining (score = 1+), indicating that the tumor. does NOT overexpress HER2/neu oncoprotein. I certify that I personally conducted the diagnostic evaluation of the above. specimen (s) and have rendered the above diagnosis (es) . M.D., , Ph.D. Pager t. 2 of 2.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pTX",
+        "value_norm": "TX",
+        "evidence": "\"LEFT BREAST\" (INCISIONAL BIOPSY) : INVASIVE PLEOMORPHIC LOBULAR CARCINOMA.",
+        "confidence": "high",
+        "reason": "Only an incisional biopsy was performed (tumor present in biopsy); pathologic T cannot be reliably assigned without a resection specimen despite reported lesion size in the biopsy.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": "LYMPHATIC/VASCULAR INVASION: ABSENT.",
+        "confidence": "high",
+        "reason": "No lymph nodes were submitted or examined in this biopsy specimen; nodal status cannot be pathologically assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "The report contains no information on distant metastasis or metastatic workup.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1c",
+        "value_norm": "T1",
+        "evidence": "sectioned to reveal a 1.5 x 1.0 x 1.0 cm firm white-tan ill-. defined lesion that extends to the inked surgical margin",
+        "confidence": "medium",
+        "reason": "Greatest dimension of invasive tumor measured as 1.5 cm on biopsy (fits T1c >1–2 cm), but staging is based on an incisional biopsy rather than a definitive resection specimen",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "no regional lymph nodes examined or mentioned in the report",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "TX",
+        "value_norm": "TX",
+        "evidence": "and sectioned to reveal a 1.5 x 1.0 x 1.0 cm firm white-tan ill-. defined lesion that extends to the inked surgical margin.",
+        "confidence": "high",
+        "reason": "Specimen is an incisional biopsy; although a lesion measurement is provided, pathologic T requires resection specimen for staging, so pT cannot be assigned.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "\"LEFT BREAST\" (INCISIONAL BIOPSY) : INVASIVE PLEOMORPHIC LOBULAR CARCINOMA.",
+        "confidence": "high",
+        "reason": "No lymph nodes were submitted or reported in this incisional biopsy, so nodal status cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "\"LEFT BREAST\" (INCISIONAL BIOPSY) : INVASIVE PLEOMORPHIC LOBULAR CARCINOMA.",
+        "confidence": "high",
+        "reason": "No information on distant metastasis provided in the pathology report; metastasis cannot be assessed from this biopsy.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "SIZE OF BIOPSY: 3.1 x 2.4 X 1.3 CM. (DIFFUSELY INVOLVED BY INVASIVE. CARCINOMA).",
+        "confidence": "high",
+        "reason": "Only an incisional biopsy is reported (biopsy specimen size given). No pathologic primary tumor (pT) stage or definitive whole-tumor size from a resection specimen is provided.",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No lymph nodes were sampled or nodal status (pN) reported in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No assessment of distant metastasis (pM) is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

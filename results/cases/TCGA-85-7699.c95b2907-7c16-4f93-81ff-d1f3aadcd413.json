@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-85-7699.c95b2907-7c16-4f93-81ff-d1f3aadcd413",
+  "text": "Gross. Microscopic. Diagnosis. Comme. Case ID Description. Description. Details. nts. Lateralit Date of. y. LUNG TISSUE CHECKLIST. Left-upper. Specimen type: Lobectomy. Tumor site: Lung. Tumor size: 3 X 2 X 2 cm. Histologic type: Squamous cell carcinoma. Histologic grade: Poorly differentiated. Tumor extent: Not specified. Other tumor nodules: Not specified. Lymph nodes: Not specified. Lymphatic invasion: Not specified. Venous invasion: Not specified. Margins: Not specified. Evidence of neo-adjuvant treatment: Not. specified. Additional pathologic findings: Not. specified. Comments: None.",
+  "gold": {
+    "T": "T4",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1c",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 3 X 2 X 2 cm.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension 3 cm corresponds to T1c (>2–≤3 cm). No additional extent/pleural invasion information provided.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "pNx",
+        "value_norm": "NX",
+        "evidence": "Lymph nodes: Not specified.",
+        "confidence": "high",
+        "reason": "No lymph node status or sampling reported, so pathologic N cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": "Other tumor nodules: Not specified.",
+        "confidence": "low",
+        "reason": "No information on distant metastasis in the report; absence of noted additional tumor nodules does not confirm absence of distant metastasis.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1c",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 3 X 2 X 2 cm.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention lymph node status",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 3 X 2 X 2 cm.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension is 3 cm, which corresponds to T1 (≤3 cm) for lung cancer.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "Lymph nodes: Not specified.",
+        "confidence": "high",
+        "reason": "No pathologic nodal information provided in the report, so nodal status cannot be determined.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "Tumor size: 3 X 2 X 2 cm.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Lymph nodes: Not specified.",
+        "confidence": "high",
+        "reason": "No lymph node status provided in the report.",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Other tumor nodules: Not specified.",
+        "confidence": "high",
+        "reason": "No information about distant metastasis provided in the report.",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

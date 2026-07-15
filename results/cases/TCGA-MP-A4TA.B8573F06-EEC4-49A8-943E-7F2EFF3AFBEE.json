@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-MP-A4TA.B8573F06-EEC4-49A8-943E-7F2EFF3AFBEE",
+  "text": "TISSUE DESCRIPTION: A1 J1 K1 L1 M1 M2 M3 M4 M5 M6 N1 N2 N3 N4 01 P1 Q1 B1 C1. D1 E1 F1 G1 H1 Il. Right upper lobe lung (205 grams, 2.0 x 2.0 x 0.9 cm), station 2R. (two sets), 4R (six sets), 4L, 7 (three sets), 9, 10R, 11 (two sets). DIAGNOSIS: Lung, right upper lobe, lobectomy: Grade 3 (of 4) adenocarcinoma,. forming a 2.0 x 2.0 x 0.9 cm subpleural mass that puckers, but does. not involve the overlying visceral pleura. The tumor is located 4.2. cm from the bronchial margin. The margins of resection are negative. for neoplasm. Lymph nodes, mediastinal, excision: NO tumor is identified in multiple (6) right upper. paratracheal (station 2R) lymph nodes. NO tumor is identified in multiple (24) right lower. paratracheal (station 4R) lymph nodes. NO tumor is identified in multiple (5) left lower. paratracheal (station 4L) lymph nodes. No tumor is identified in multiple (14) subcarinal. (station 7) Tymph nodes. No tumor is identified in a single (1) pulmonary ligament. (station 9) lymph node. Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (8) intrapulmonary. peribronchial lymph nodes. NO tumor is identified in multiple (2) right hilar. (station 10R) lymph nodes. No tumor is identified in multiple (2) interlobar (2). lymph nodes.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1b",
+        "value_norm": "T1",
+        "evidence": "forming a 2.0 x 2.0 x 0.9 cm subpleural mass that puckers, but does. not involve the overlying visceral pleura.",
+        "confidence": "high",
+        "reason": "Greatest tumor dimension 2.0 cm and no visceral pleural invasion → corresponds to T1b (>1–2 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes, mediastinal, excision: NO tumor is identified in multiple (6) right upper. paratracheal (station 2R) lymph nodes. NO tumor is identified in multiple (24) right lower. paratracheal (station 4R) lymph nodes. NO tumor is identified in multiple (5) left lower. paratracheal (station 4L) lymph nodes. No tumor is identified in multiple (14) subcarinal. (station 7) Tymph nodes. No tumor is identified in a single (1) pulmonary ligament. (station 9) lymph node. Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (8) intrapulmonary. peribronchial lymph nodes. NO tumor is identified in multiple (2) right hilar. (station 10R) lymph nodes. No tumor is identified in multiple (2) interlobar (2). lymph nodes.",
+        "confidence": "high",
+        "reason": "Multiple mediastinal, hilar, and intrapulmonary lymph node stations were sampled and all reported negative for tumor.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are mentioned in the report; no pathologic specimen of distant metastasis was reported, so M status is not directly assessed.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "forming a 2.0 x 2.0 x 0.9 cm subpleural mass that puckers, but does. not involve the overlying visceral pleura.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph nodes, mediastinal, excision: NO tumor is identified in multiple (6) right upper. paratracheal (station 2R) lymph nodes. NO tumor is identified in multiple (24) right lower. paratracheal (station 4R) lymph nodes. NO tumor is identified in multiple (5) left lower. paratracheal (station 4L) lymph nodes. No tumor is identified in multiple (14) subcarinal. (station 7) Tymph nodes. No tumor is identified in a single (1) pulmonary ligament. (station 9) lymph node. Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (8) intrapulmonary. peribronchial lymph nodes. NO tumor is identified in multiple (2) right hilar. (station 10R) lymph nodes. No tumor is identified in multiple (2) interlobar (2). lymph nodes.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "forming a 2.0 x 2.0 x 0.9 cm subpleural mass that puckers, but does. not involve the overlying visceral pleura.",
+        "confidence": "high",
+        "reason": "Largest tumor dimension 2.0 cm (fits T1 category) and no visceral pleural invasion reported.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "NO tumor is identified in multiple (6) right upper. paratracheal (station 2R) lymph nodes. NO tumor is identified in multiple (24) right lower. paratracheal (station 4R) lymph nodes. NO tumor is identified in multiple (5) left lower. paratracheal (station 4L) lymph nodes. No tumor is identified in multiple (14) subcarinal. (station 7) Tymph nodes. No tumor is identified in a single (1) pulmonary ligament. (station 9) lymph node. Lymph nodes, intrapulmonary/hilar, excision: No tumor is identified in multiple (8) intrapulmonary. peribronchial lymph nodes. NO tumor is identified in multiple (2) right hilar. (station 10R) lymph nodes. No tumor is identified in multiple (2) interlobar (2). lymph nodes.",
+        "confidence": "high",
+        "reason": "Multiple sampled lymph node stations are reported negative for tumor, consistent with N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information about distant metastasis in the pathology report; M status cannot be determined from the specimen alone.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "forming a 2.0 x 2.0 x 0.9 cm subpleural mass",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "NO tumor is identified in multiple (24) right lower. paratracheal (station 4R) lymph nodes.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement or assessment of distant metastasis (M category) is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

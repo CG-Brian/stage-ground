@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-L6-A4EQ.E74C0B3F-6261-4C59-8A1F-6DD5975637D2",
+  "text": "Clinical Center. Birth Date: AP Supplemental Report. SUPPLEMENTAL. SUPPLEMENTAL. REASON FOR THE SUPPLEMENTAL REPORT: To clarify the location of the. lesions. Diagnosis remains unchanged. DIAGNOSIS: 1. Lymph node, delphan lymph node, biopsy: Metastatic carcinoma to. lymph node (1/1). 2. Thyroid, total thyroidectomy: Papillary thyroid carcinoma, conventional type,(3.5cm), isthmus. Hurthle cell neoplasm, favor Hurthle cell adenoma. (left lobe). See note: Multinodular goiter. The original report is as follows: DIAGNOSIS: 1. Lymph node, delphan lymph node, biopsy: Metastatic carcinoma to. lymph node (1/1). 2. Thyroid, total thyroidectomy: i,. Papillary thyrold carcinoma, conventional type,(3.5cm), left. lobe. ii. Hurthle cell neoplasm, favor Hurthle cell adenoma. (isthmus). See. note: iii. Multinodular goiter. NOTE: The Hurthle cell neoplasm shows no evidence of fibrous capsule and. capsular or vascular invasion. This lesion stains positive for. thyroglobulin and negative for Calcitonin. Dr. is informed by Dr. of presence of micrometastasis in. lymph node on. Immunoperoxidase and in-situ hybridization tests performed here and used. for diagnosis were developed and their performance characteristics. determined by the Laboratory of Pathology, They have not been. cleared or approved by the U.S. Food and Drug Administration. The FDA. has also determined that such clearance or approval is not necessary. This laboratory is certified under the Clinical Laboratory Improvement. Amendments of 1988 (CLIA) as qualified to perform high complexity. clinical laboratory testing. (Other). Do not file in Medical Record. Clinical Center. Birth Date: Clinical_History:__thyrold. cancer, papillary Specimen Taken For. Protocol: 01 - Yes. PROCEDURE: Pre-Operative Diagnosis: papillary thyroid ca. Post-Operative. Diagnosis: same Operative Findings: isthmus nodule,. left lobe nodule. SPECIMENS SUBMITTED: 1. SERIAL 5 + 3FS, Delphan lymph node (1FS). 2. THYROIDECTOMY, TOTAL. INTRAOPERATIVE CONSULTATION: 1FS: \"Delphan lymph node, rule out metastatic thyroid cancer\". 1FS Diagnosis: Lymph node with fibrotic tissue, no tumor seen. -The frozen section is performed by Dr. and Dr. - Dr. is informed by Dr. of presence of micrometastasis in. lymph node on. GROSS DESCRIPTION: Two specimens are received fresh with the. patient's name, medical record number, and further specified as follows: 1. \"Delphan lymph node, rule out metastatic thyrold cancer\". It. consists of a yellow-tan soft tissue fragment measuring 0.8 x 0.7 x 0.4. cm. Entirely frozen. In Surgical Pathology, the specimen matched the. above description and the specimen is transferred to cassette. 2. \"Total thyroid gland, long stitch right superior, short left. superior\". It is a total thyroidectomy weighing 42.7 grams (post. procurement). Gross photographs are taken. The right lobe measures 3 x. 2.5 x 1.5 cm. The left lobe 6.5 x 3 x 1.5 cm. Isthmus measures 4 x 4 x. 1.5 cm. A solid lesion measuring 3.5 x 3.2 x 2.2 is identified in the. left lobe, while a cystic lesion 3.3 x 2.5 x 2 cm in deflated state is. identified in isthmus. Approximately 1 x 1 cm of tissue is procured for. Dr. from each lesions. Procurement was performed by Dr. in OR and. on. Also 0,5 cm of each tumor and 0.5 x 1 x 1 cm of normal tissue in the. right lobe is also procured for Dr. The right anterior. aspect of the gland (right lobe and isthmus) is inked blue, the left. anterior aspect of the gland (left lobe) is inked red, and posterior. aspect of the gland is inked black. Approximately 0.8 x 0,6 x 0.3 cm of. normal-appearing thyroid tissue from the right lobe is procured In TPPF. for the normal tissue bank by. on. a.m. The remainder of the specimen is placed in formalin and submitted. for Pathology for permanent processing. In Surgical Pathology, the. specimen matched the above description and is entirely submitted. The. external capsule of the gland is grossly uninvolved by aforementioned. two lesions. The superior aspect of left lobe is grossly uninvolved. with a beefy-red cut surface and is submitted in cassettes 2A and 2B. Do not file in Medical Record. Clinical Center. I. Birth Date: ty. from superior. to inferior. The solid lesion in the inferior aspect of. left lobe is yellow-tan and well-circumscribed with multiple focal. punctate hemorrhage and multiple nodular lesion measuring around 0.5 x. 0.6 cm but no necrosis or depressed scar. The solid lesion is submitted. from left upper aspect to left lower aspect in cassette 2C-2J and right. upper to right lower aspect in 2K-2O. The cystic lesion in the isthmus. is gray-tan with a finely papillary and granular appearance and focal. punctate hemorrhage. A calcified spot around 0.8x 0.6x 0.6 cm is. identified in the right middle aspect of the cystic lesion. The isthmus. is submitted from left upper aspect to left lower aspect in 2P-2R and. right upper to right lower in. Pright aspect of isthmus and. left aspect of right lobe from left to right. right lobe from. superior to inferior. 2GG: superior aspect of very right end of right. lobe. 2HH: inferior aspect of the very right end of right lobe. No consultants. #. (Other). Do not file in Medical Record.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Papillary thyroid carcinoma, conventional type,(3.5cm), isthmus.",
+        "confidence": "high",
+        "reason": "Tumor size 3.5 cm fits T2 (>2 cm and ≤4 cm) and report indicates the gland capsule is grossly uninvolved, consistent with intrathyroidal tumor.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1a",
+        "value_norm": "N1",
+        "evidence": "Metastatic carcinoma to. lymph node (1/1).",
+        "confidence": "high",
+        "reason": "Metastatic carcinoma identified in a regional (Delphian/central) lymph node (1/1); central compartment nodal metastasis = N1a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are documented in the pathology report, but absence of mention does not definitively rule out distant disease (pathology report alone cannot fully assess M status).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "A solid lesion measuring 3.5 x 3.2 x 2.2 is identified in the. left lobe",
+        "confidence": "high",
+        "reason": "Tumor size 3.5 cm (between 2 and 4 cm) limited to the thyroid with no extrathyroidal extension described",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1a",
+        "value_norm": "N1",
+        "evidence": "Lymph node, delphan lymph node, biopsy: Metastatic carcinoma to. lymph node (1/1).",
+        "confidence": "high",
+        "reason": "Metastasis in 1 of 1 regional lymph node; Delphian (prelaryngeal) node is a central compartment node (N1a)",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "A solid lesion measuring 3.5 x 3.2 x 2.2 is identified in the. left lobe",
+        "confidence": "high",
+        "reason": "Tumor size ~3.5 cm (greater than 2 cm and ≤4 cm) and the report notes the external capsule is grossly uninvolved, consistent with T2 (limited to thyroid).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Lymph node, delphan lymph node, biopsy: Metastatic carcinoma to. lymph node (1/1).",
+        "confidence": "high",
+        "reason": "Metastatic carcinoma identified in a regional lymph node (1/1), with micrometastasis noted.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis in the pathology report; absence of information does not definitively exclude distant disease.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Papillary thyrold carcinoma, conventional type,(3.5cm), left. lobe. ii. Hurthle cell neoplasm, favor Hurthle cell adenoma. (isthmus). See. note: iii. Multinodular goiter. NOTE: The Hurthle cell neoplasm shows no evidence of fibrous capsule and. capsular or vascular invasion. This lesion stains positive for. thyroglobulin and negative for Calcitonin. ... The external capsule of the gland is grossly uninvolved by aforementioned. two lesions.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Metastatic carcinoma to. lymph node (1/1).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant (non-regional) metastasis or evaluation for distant metastasis in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

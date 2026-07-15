@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AA-3688.311a81e8-9561-46c9-bd1a-d8c7e2a178d8",
+  "text": "Diagnosis: Colon resection material includes a moderately differentiated adenocarcinoma of the colorectal. type, measuring a maximum of 2.5 cm, with infiltration of the pericolic fatty tissue with two. regional lymph node metastases. Tumor-free colon resection margins. Tumor stage: pT3 pN1 (2/13) pM1 (clinically liver metastases); G2, L1, V0, clinically R2.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M1"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3 and describes \"infiltration of the pericolic fatty tissue,\" consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "pN1 (2/13)",
+        "confidence": "high",
+        "reason": "Report explicitly states pN1 with 2 of 13 regional lymph nodes positive.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM1",
+        "value_norm": "M1",
+        "evidence": "pM1 (clinically liver metastases)",
+        "confidence": "medium",
+        "reason": "Report records pM1 and notes clinical liver metastases; appears based on clinical/radiologic evidence rather than documented pathological confirmation.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor stage: pT3 pN1 (2/13) pM1 (clinically liver metastases)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1 (2/13)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M1",
+        "value_norm": "M1",
+        "evidence": "pM1 (clinically liver metastases)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3 and describes infiltration of the pericolic fatty tissue, consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1 (2/13)",
+        "confidence": "high",
+        "reason": "Report documents 2 positive regional lymph nodes out of 13 (pN1).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M1",
+        "value_norm": "M1",
+        "evidence": "pM1 (clinically liver metastases)",
+        "confidence": "high",
+        "reason": "Report explicitly states pM1 and notes clinical liver metastases.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1 (2/13)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M1",
+        "value_norm": "M1",
+        "evidence": "pM1 (clinically liver metastases)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    }
+  }
+}

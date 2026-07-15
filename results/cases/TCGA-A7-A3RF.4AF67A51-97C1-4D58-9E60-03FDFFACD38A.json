@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-A7-A3RF.4AF67A51-97C1-4D58-9E60-03FDFFACD38A",
+  "text": "Final Surgical Pathology Report. Procedure: Diagnosis. A. Left axillary sentinel nodes, excision: 2 lymph nodes negative for. metastatic disease, 0/2. B. Left breast mass, excision: Invasive mucinous carcinoma, Elston SBR. grade 2. Tumor is less than 1 mm from the deep margin and at least. extremely close to the lateral margin. C. Pectoralis fascia, excision: Adipose tissue and skeletal muscle. present. Mucinous carcinoma present in the adipose tissue at the inked. medial margin of resection. Microscopic Description: A. 2 sentinel nodes are present examined in their entirety at multiple. levels. They are both negative for metastatic disease, 0/2. B. This excision discloses invasive mucinous adenocarcinoma. Of note,. it has a higher nuclear grade the usual mucinous carcinoma. Also,. particularly in block #5, there was a suspicion for lymphatic invasion. This is considered not to be the case, however, based on stains for. D240 and CD34. The negative staining for p63 also helps to exclude in. situ tumor. Please see the template below: Invasive Carcinoma: Histologic type: Invasive mucinous carcinoma. Histologic grade: Elston SBR grade 2. Overall grade: Architectural score: 2. Nuclear score: 3. Mitotic score: 1. Greatest dimension (pT): 3.7 cm, pT 2. Specimen margins: Tumor is present less than 1 mm from the. deep margin and at least extremely close to the lateral margin. Vessel invasion: Negative. Calcification: Rare. Description of non-tumorous breast: No significant pathology. Comments: Attached skin negative for tumor. Prognostic markers: Previously performed. C. Microscopic examination performed. Specimen. A. Left axillary sentinel node. B. Left breast mass, long anterior, short superior. C. Pectoralis/posterior, long anterior short superior. Clinical Information. PRE-OP DIAGNOSIS: Left breast cancer. HISTORY: -year-old white female with left mucinous breast cancer. Gross Description. A. Received fresh labeled \"left axillary sentinel node\" are 2 soft tan. gold-pink tissues averaging 1.8 cm in greatest dimension. The. specimens are bisected and entirely submitted independently in. 2. blocks. B. Received fresh for tissue procurement within a. container. labeled \"left breast mass\" is a 7.5 cm (medial to lateral) by 5.0 cm. (superior to inferior) by 4.2 cm (anterior to posterior) soft,. lobulated tan gold-white portion of fibroadipose tissue with 2 sutures. as stated previously. A 2.7 x 1.3 cm wrinkled tan-white portion of. skin is present along the anterior aspect. The margins are inked as. follows: Anterior blue, posterior black, superior green, and inferior. orange. The specimen is sectioned from medial to lateral. There. is. a. well-circumscribed, 3.7 cm (medial to lateral) by 3.2 cm (superior to. inferior) by 2.7 cm (anterior to posterior) rubbery tan white mucinous. tumor mass within the lateral half of the specimen. A portion of tumor. and a portion of normal parenchyma are submitted for tissue procurement. as requested. The tumor focally extends to within less than 0.1 cm of. the inked posterior margin. Several cylindrical tan-white structures. in keeping with those associated with needle core biopsy are present. The remaining cut surfaces consist predominantly of soft, lobulated tan. gold adipose tissue with a scant amount of interspersed delicate. Fan-white fibrous tissue. Summary: 1 - perpendicular sections medial margin, 2 through 9 -. sequential sections, 10 - perpendicular sections lateral margin. Specimen is fixed at. C. Received fresh labeled \"pectoralis fascia posterior\" is a 3.0 cm. (superior to inferior) by 2.5 cm (medial to lateral) by 0.7 cm anterior. to posterior) soft, lobulated tan gold-white portion of fibroadipose. tissue with 2 sutures as stated previously. The margins are inked as. follows: Anterior blue, posterior black, medial green, and lateral. orange. The specimen is sectioned from superior to inferior. The cut. surfaces consist predominantly of soft, lobulated tan gold adipose. tissue with a scant amount of interspersed delicate tan-white fibrous. tissue. No residual mass lesion or abnormality is identified grossly. Summary: 1 - perpendicular sections superior margin, 2 through 4. sequential sections, 5 - perpendicular sections inferior margin. Specimen is fixed at.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Greatest dimension (pT): 3.7 cm, pT 2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "They are both negative for metastatic disease, 0/2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or pathologic assessment of distant organs in the report; M status is not explicitly stated.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Greatest dimension (pT): 3.7 cm, pT 2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "They are both negative for metastatic disease, 0/2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Greatest dimension (pT): 3.7 cm, pT 2.",
+        "confidence": "high",
+        "reason": "Tumor greatest dimension reported as 3.7 cm and explicitly labeled pT2 (fits >2 cm and ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "2 lymph nodes negative for. metastatic disease, 0/2.",
+        "confidence": "high",
+        "reason": "Two sentinel lymph nodes examined and both negative for metastatic disease (0/2).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No statement regarding distant metastasis or evaluation for metastasis in the pathology report; pathologic M status not assessed here.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Greatest dimension (pT): 3.7 cm, pT 2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "A. Left axillary sentinel nodes, excision: 2 lymph nodes negative for. metastatic disease, 0/2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information about distant metastasis or metastatic workup is provided in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

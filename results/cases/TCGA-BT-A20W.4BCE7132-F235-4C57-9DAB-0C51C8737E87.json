@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BT-A20W.4BCE7132-F235-4C57-9DAB-0C51C8737E87",
+  "text": "PATIENT HISTORY: CHIEF COMPLAINT/PRE-OP/POST-OP DIAGNOSIS: Detrusor muscle invasive, high-grade urothelial carcinoma of the urinary. bladder. PROCEDURE: Cystoprostatectomy and construction of a neobladder. SPECIFIC CLINICAL QUESTION: Bladder cancer. OUTSIDE TISSUE DIAGNOSIS: No. PRIOR MALIGNANCY: No. CHEMOTHERAPY: No. ORGAN TRANSPLANT: No. IMMUNOSUPPRESSION: No. OTHER DISEASES: No. FINAL DIAGNOSIS: PART 1: URINARY BLADDER, DISTAL URETERS, PROSTATE, BILATERAL SEMINAL VESICLES, AND BILATERAL DISTAL. VASA DEFERENTIA, RADICAL CYSTOPROSTATECTOMY -. FOR THE BLADDER: A. ULCERATED, INVASIVE UROTHELIAL CARCINOMA, HIGH-GRADE (2004 WHO/ISUP), PRESENT IN THE LEFT. LATERAL URINARY BLADDER WALL (SLIDES 1K, 1L). CARCINOMA INVADES DEEPLY INTO, BUT NOT. THROUGH THE DETRUSOR MUSCLE. CARCINOMA MEASURES APPROXIMATELY 1 CM IN MAXIMUM. DIMENSION IN A HISTOLOGIC SECTION. B. EXTENSIVE, MULTIFOCAL UROTHELIAL CARCINOMA IN-SITU, INVOLVING RIGHT AND LEFT URETERAL. OSTIA AND URETERS, ANTERIOR WALL, AND RIGHT AND LEFT LATERAL WALLS (SLIDES 1E-1G, 11, 1J,. 1M, 10, 1P). C. ADJACENT FOCUS OF PAPILLARY UROTHELIAL CARCINOMA, HIGH-GRADE (2004 WHO/ISUP), INVOLVING. THE POSTERIOR BLADDER WALL (SLIDES 1N, 1P). D. NO ANGIOLYMPHATIC INVASION IS IDENTIFIED. E. NO PERINEURAL INVASION IS IDENTIFIED. F. UROTHELIAL DYSPLASIA CLOSELY APPROACHES THE RIGHT DISTAL URETER RADIAL RESECTION. MARGIN (SLIDE 1E). UROTHELIAL CARCINOMA IN-SITU CLOSELY APPROACHES THE. CYSTOPROSTATECTOMY SPECIMEN LEFT DISTAL URETERAL RADIAL MARGIN; HOWEVER, A SEPARATE. LEFT URETERAL MARGIN IS OBTAINED AND IS FREE OF UROTHELIAL NEOPLASIA (SEE PART 4). ALL. OTHER SURGICAL RESECTION MARGINS ARE FREE OF IN-SITU /INVASIVE UROTHELIAL NEOPLASIA. G. NON-NEOPLASTIC URINARY BLADDER WITH CHRONIC CYSTITIS CYSTICA GLANDULARIS (SLIDE 1P) AND. FOCAL GRANULOMATOUS INFLAMMATION (SLIDE 1K). H. TNM PATHOLOGIC STAGE (UROTHELIAL CARCINOMA): T2b NO MX (See bladder tumor synoptic). FOR THE PROSTATE: A. SINGLE SMALL FOCUS OF PROSTATIC ADENOCARCINOMA. ACINAR TYPE, GLEASON SCORE 3 + 3 = 6,. LIMITED TO THE RIGHT LOBE OF THE PROSTATE GLAND (SLIDE 1R). PROSTATE GLAND SHOWS NO. INVOLVEMENT BY THE UROTHELIAL CARCINOMA. B. MAXIMUM TUMOR DIAMETER OF THE PROSTATIC ADENOCARCINOMA IS 0.7 CM. C. PROSTATIC ADENOCARCINOMA INVOLVES LESS THAN 5% OF THE SAMPLED PROSTATE GLAND. VOLUME. D. PROSTATIC ADENOCARCINOMA IS CONFINED TO THE PROSTATE GLAND, WITHOUT EXTRACAPSULAR. EXTENSION NOR INVOLVEMENT OF THE ADJACENT BLADDER. E. NO PERINEURAL INVASION IS IDENTIFIED. F. NO ANGIOLYMPHATIC INVASION IS IDENTIFIED. G. FOCAL HIGH-GRADE PROSTATIC INTRAEPITHELIAL NEOPLASIA. H. BENIGN SEMINAL VESICLES AND DISTAL VASA DEFERENTIA. I. ALL SURGICAL RESECTION MARGINS ARE FREE OF PROSTATIC NEOPLASIA. J. TNM PATHOLOGIC STAGE (PROSTATIC ADENOCARCINOMA): T2a, NO, MX. K. HISTOLOGIC GRADE: G2. L. NON-NEOPLASTIC PROSTATE WITH NODULAR HYPERPLASIA (See prostate tumor synoptic). PART 2: RIGHT OBTURATOR LYMPH NODE, EXCISION -. ONE BENIGN LYMPH NODE (0/1). NO EVIDENCE OF MALIGNANCY. PART 3: LEFT PELVIC LYMPH NODES, EXCISION -. SIX BENIGN LYMPH NODES (0/6). NO EVIDENCE OF MALIGNANCY. PART 4: LEFT DISTAL URETER, SHAVE MARGIN -. A. COMPLETE CROSS-SECTION OF BENIGN URETER WITH FOCALLY DENUDED MUCOSA. R. NO EVIDENCE OF UROTHELIAL NEOPLASIA. CASE SYNOPSIS: SYNOPTIC DATA - PRIMARY URINARY BLADDER TUMORS. SPECIMEN TYPE: Radical cystoprostatectomy. TUMOR SITE: Left lateral wall, Posterior wall. TUMOR SIZE: Greatest dimension: 1 cm. HISTOLOGIC TYPE: Urothelial (transitional cell) carcinoma. ASSOCIATED EPITHELIAL LESIONS: None identified. HISTOLOGIC GRADE: Urothelial carcinoma - High-grade. TUMOR CONFIGURATION: Papillary, Ulcerated. PATHOLOGIC STAGING (pTNM): pT2b. pNO. Number of nodes examined: 7. Number of nodes involved: 0. pMX. MARGINS: Margins uninvolved by invasive carcinoma. VENOUS/LYMPHATIO (LARGE/SMALL) VESSEL INVASION (V/L): Absent. DIRECT EXTENSION OF INVASIVE TUMOR: None identified. ADDITIONAL PATHOLOGIC FINDINGS: Urothelial dysplasia (low-grade intraurothelial neoplasia). nflammation/regenerative changes. Therapy-related changes. Comment: Extensive urothelial carcinoma in-situ is present throughout the urinary bladder and. ureters. Urothelial dysplasia is close to the right ureteral resection margin. SYNOPTIC DATA - PRIMARY PROSTATE TUMORS. INVASIVE CA IDENTIFIED?: TUMOR HISTOLOGY: Adenocarcinoma NOS. PRIMARY GLEASON GRADE: 3. SECONDARY GLEASON GRADE: 3. GLEASON SUM SCORE: 6. GLEASON 4/5 PERCENTAGE: 0%. WEIGHT OF PROSTATE: 100gm. TUMOR SIZE: Maximum dimension: 0.7 cm. LOBE LATERALITY: Right Lobe. PERCENT OF SPECIMEN INVOLVED BY TUMOR: < 5% of specimen involved by invasive tumor. MULTIFOCAL DISEASE: HIGH GRADE PIN: Yes - 1 or 2 foci away from tumor. EXTRAPROSTATIC EXTENSION: PERINEURAL INVASION: ANGIOLYMPHATIC INVASION: SEMINAL VESICLE INVASION: SURGICAL MARGIN INVOLVEMENT: All surgical margins free of tumor. LYMPH NODES EXAMINED: 7. LYMPH NODES POSITIVE: 0. T STAGE, PATHOLOGIC: pT2a. N STAGE, PATHOLOGIC: pNO. M STAGE, PATHOLOGIC: pMX. HISTOLOGIC GRADE: G2, Moderately differentiated.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2b",
+        "value_norm": "T2",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT2b.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pathologic T stage as pT2b; supported by description that carcinoma invades deeply into, but not through, the detrusor muscle.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "pNO. Number of nodes examined: 7. Number of nodes involved: 0.",
+        "confidence": "high",
+        "reason": "Synoptic staging shows no nodal metastasis and all 7 examined lymph nodes are benign (0/7).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "pMX.",
+        "confidence": "high",
+        "reason": "Report explicitly records metastatic stage as pMX (metastasis not assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2b",
+        "value_norm": "T2",
+        "evidence": "TNM PATHOLOGIC STAGE (UROTHELIAL CARCINOMA): T2b NO MX (See bladder tumor synoptic).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT2b. pNO. Number of nodes examined: 7. Number of nodes involved: 0. pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT2b. pNO. Number of nodes examined: 7. Number of nodes involved: 0. pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "TNM PATHOLOGIC STAGE (UROTHELIAL CARCINOMA): T2b NO MX (See bladder tumor synoptic).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT2b. pNO. Number of nodes examined: 7. Number of nodes involved: 0. pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM PATHOLOGIC STAGE (UROTHELIAL CARCINOMA): T2b NO MX (See bladder tumor synoptic).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT2b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

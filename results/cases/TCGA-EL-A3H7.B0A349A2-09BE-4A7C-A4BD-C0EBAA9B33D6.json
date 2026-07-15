@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-EL-A3H7.B0A349A2-09BE-4A7C-A4BD-C0EBAA9B33D6",
+  "text": "ry Case. gy Report. Pathology,. Sex: F. Case type: Surgical History. Case imported from legacy computer system. The format of this report does not match the original case. For cases prior to. the section \"SPECIMEN\" may have been added. DIAGNOSIS. (A) DELPHIAN LYMPH NODE: METASTATIC PAPILLARY CARCINOMA IN ONE LYMPH NODE. (B). RULE OUT PARATHYROID: Thyroid tissue with chronic inflammation. (c) THYROID: PAPILLARY CARCINOMA OF THYROID WITH EXTRATHYROIDAL INVASION INTO. SOFT TISSUE. TUMOR IS AT CAUTERIZED EDGE. Chronic thyroiditis. (D). NODE ON RECURRENT NERVE: METASTATIC PAPILLARY CARCINOMA IN ONE LYMPH NODE. NO extracapsular extension. PARATHYROID #2: Parathyroid tissue, no tumor. (F). PARATRACHEAL NODES: METASTATIC PAPILLARY CARCINOMA IN 6 OF 7 LYMPH NODES. Entire report and diagnosis completed by: Report released by: GROSS DESCRIPTION. (A) DELPHIAN LYMPH NODE - A single lymph node (0. 4 x 0.4 x 0.3 cm) The. specimen is bisected and entirely submitted in A. (B) RULE OUT PARATHYROID CANCER - A pink-red frag.nent of soft tissue, 0.2. x. 0.1 x 0.1 cm. The specimen is entirely submitted for frozen section in B. FS/DX: THYROID TISSUE. IF ORIGIN IS LYMPH NODE, TISSUE REPRESENTS A. METASTASIS. NO LYMPH NODE STRUCTURE IDENTIFIED. (c) THYROID - A thyroid, 4.0 x 2.5 x 1.5 cm. Two separate nodules are. present within the thyroid. The larger nodule (3.0 x 2.6 x 1.7 cm) is present. in the midportion of the right thyroid. The tumor abuts the thyroid capsule,. but does not grossly invade through the capsule. A small amount of skeletal. muscle is present on the outer surface of the thyroid capsule. The cut. surface of the tumor is tan-brown, homogenous, and nodular. A separate nodule. (0.8 x 0.7 x 0.6 cm) is present in the Tower portion of the left thyroid. The. nodule has a tan, glistening cut surface and is slightly more firm than the. first described nodule. The remainder of the thyroid is unremarkable. SECTION CODE: C1-C6, right lobe of thyroid submitted from superior (c1). to inferior (C6) C7-C10, entire left lobe of thyroid submitted from superior. (C7) to (C10); C11-C14, remainder of right thyroid and nodule submitted from. History Case. Sex: F. Case type: Surgical History. superior (C11) to inferior (C14). A partion of the specimen was submitted to the tumor bank by Dr. (D) NODE ON RECURRENT NERVE - A lymph node, (0.4 x 0.3 x 0.3 cm). The 1ymph. node is bisected and entirely submitted in D. (E) RULE OUT PARATHYROID #2 - A pink fragment of sott tissue, 0.2 x 0.2 x 0.1. cm. one touch prep is performed. The specimen is entirely submitted for. frozen section in E. FS/DX: PARATHYROID TISSUE. PARATRACHEAL NODES - Multiple lympn nodes ranging from 0.3 to 0.6 cm in. greatest dimension. SECTION. CODE: F1-F3, multiple possible Tymph nodes per cassette. SNOMED CODES. M-80503 M-80506 T-86000 T-C4200.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "THYROID: PAPILLARY CARCINOMA OF THYROID WITH EXTRATHYROIDAL INVASION INTO. SOFT TISSUE. TUMOR IS AT CAUTERIZED EDGE. The larger nodule (3.0 x 2.6 x 1.7 cm) is present in the midportion of the right thyroid.",
+        "confidence": "medium",
+        "reason": "Largest tumor measures ~3.0 cm, which by size corresponds to T2 (>2 cm and ≤4 cm). Report also states extrathyroidal invasion into soft tissue, but it is unclear whether this represents microscopic only versus gross extension; under AJCC 8th edition microscopic extrathyroidal extension does not upstage, creating uncertainty.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "N": {
+        "value": "N1a",
+        "value_norm": "N1",
+        "evidence": "(A) DELPHIAN LYMPH NODE: METASTATIC PAPILLARY CARCINOMA IN ONE LYMPH NODE. (D) NODE ON RECURRENT NERVE - A lymph node ... METASTATIC PAPILLARY CARCINOMA IN ONE LYMPH NODE. NO extracapsular extension. (F). PARATRACHEAL NODES: METASTATIC PAPILLARY CARCINOMA IN 6 OF 7 LYMPH NODES.",
+        "confidence": "high",
+        "reason": "Metastatic carcinoma reported in central compartment nodes (Delphian, paratracheal, node on recurrent nerve) consistent with N1a.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases are reported or described in the pathology report; staging assumed M0 in absence of documented distant disease.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3b",
+        "value_norm": "T3",
+        "evidence": "(c) THYROID: PAPILLARY CARCINOMA OF THYROID WITH EXTRATHYROIDAL INVASION INTO. SOFT TISSUE. TUMOR IS AT CAUTERIZED EDGE. The larger nodule (3.0 x 2.6 x 1.7 cm) is present. in the midportion of the right thyroid. The tumor abuts the thyroid capsule,. but does not grossly invade through the capsule.",
+        "confidence": "medium",
+        "reason": "Report documents extrathyroidal invasion into soft tissue and the dominant tumor is ~3.0 cm. AJCC staging places gross invasion of strap muscles/adjacent soft tissue as T3b; wording is somewhat ambiguous (could represent more extensive soft tissue invasion consistent with T4a), so assigned T3b with moderate confidence.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1a",
+        "value_norm": "N1",
+        "evidence": "(A) DELPHIAN LYMPH NODE: METASTATIC PAPILLARY CARCINOMA IN ONE LYMPH NODE. (D). NODE ON RECURRENT NERVE: METASTATIC PAPILLARY CARCINOMA IN ONE LYMPH NODE. (F). PARATRACHEAL NODES: METASTATIC PAPILLARY CARCINOMA IN 6 OF 7 LYMPH NODES.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PAPILLARY CARCINOMA OF THYROID WITH EXTRATHYROIDAL INVASION INTO. SOFT TISSUE.",
+        "confidence": "medium",
+        "reason": "Report explicitly states extrathyroidal invasion into soft tissue, which corresponds to at least T3 (tumor extends beyond thyroid). Tumor size (3.0 cm) alone would be T2 if confined, but reported extrathyroidal extension upstages to T3. Staging edition ambiguity limits confidence.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PARATRACHEAL NODES: METASTATIC PAPILLARY CARCINOMA IN 6 OF 7 LYMPH NODES.",
+        "confidence": "high",
+        "reason": "Multiple metastatic regional (central compartment) lymph nodes reported (also metastatic Delphian and recurrent nerve nodes), indicating nodal metastases (N1).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are mentioned in the pathology report; however, the report does not explicitly address M status, so distant disease cannot be confirmed from this report alone.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PAPILLARY CARCINOMA OF THYROID WITH EXTRATHYROIDAL INVASION INTO. SOFT TISSUE.",
+        "confidence": "medium",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PARATRACHEAL NODES: METASTATIC PAPILLARY CARCINOMA IN 6 OF 7 LYMPH NODES.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or any radiologic/clinical assessment of distant disease in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

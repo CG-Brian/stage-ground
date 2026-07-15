@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AG-A036.882191BC-6882-4B56-B100-5235ECEB6396",
+  "text": "Internal Sample IC. Diagnosis/Diagnoses: Rectal resection specimen with fully developed diverticulosis in the proximal segment and. aboral, ulcerated, moderately differentiated adenocarcinoma extending into the perirectal fat. (G2). Tumor-free oral and aboral margins. The clinically reported infiltration of the posterior bladder wall is not detectable microscopically. in the available material. Accordingly the neoplasia may be classified histologically as category. pT3. A follow-up report will be issued on the histology of lymph nodes dissected out from the. perirectal fatty tissue after clarification with acetone. Follow-up report: Numerous lymph nodes of up to 1.2 cm in size were dissected out from the pericolic fatty tissue. in the vicinity of the tumor after clarification with acetone. Of 30 lymph nodes embedded as samples, 18 exhibited metastatic infiltrates from the previously. diagnosed adenocarcinoma or colon carcinoma. In conclusion or in summary, therefore, a stage of pT3 pN2 (18/30) is obtained.",
+  "gold": {
+    "T": "T3",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Accordingly the neoplasia may be classified histologically as category. pT3.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3; tumor described as \"extending into the perirectal fat,\" consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2",
+        "value_norm": "N2",
+        "evidence": "In conclusion or in summary, therefore, a stage of pT3 pN2 (18/30) is obtained.",
+        "confidence": "high",
+        "reason": "18 of 30 regional lymph nodes contain metastatic infiltrates, which meets criteria for N2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of distant metastasis or pathologic assessment of distant sites in the report; M not assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "may be classified histologically as category. pT3.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Of 30 lymph nodes embedded as samples, 18 exhibited metastatic infiltrates from the previously. diagnosed adenocarcinoma or colon carcinoma.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Accordingly the neoplasia may be classified histologically as category. pT3.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3 and describes tumor extending into the perirectal fat.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Of 30 lymph nodes embedded as samples, 18 exhibited metastatic infiltrates from the previously. diagnosed adenocarcinoma or colon carcinoma.",
+        "confidence": "high",
+        "reason": "18/30 lymph nodes are positive (≥4 positive nodes = pN2); report also summarizes pT3 pN2 (18/30).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of distant metastasis or a pathologic M (pM) assessment in the report; only pT and pN are provided.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2 (18/30)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or M-stage in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

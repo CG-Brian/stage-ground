@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-D5-6538.092bf70b-2120-40ec-a98b-c72795d61660",
+  "text": "page 1 / 2. Examination: Histopathological examination. Material: Total organ resection - colon and caecum. Expected time of examination. Clinical diagnosis: Cancer of the hepatic flexure. Examination performed. Macroscopic description: A 11,2 cm length of large intestine with a fragment of mesentery sized 16 x 9 x 3 cm, an 8 cm section of a and 5.5. cm appendix. Ulcerous tumour sized 5.4 X 6.9 X 1.8 cm in the mucosa. The lesion surrounds 100% of the intestine. circumference, removed 9, 3 cm from the proximal incision, 3.1 cm from the distal incision, and 1.3 cm from the. Bauhin's valve. Microscopic description: Adenocarcinoma tubulopapillare partim mucinosum (G3). Infiltratio carcinomatosa profunda tunicae muscularis. propriae et telae adiposae mesenteril pericolicae. Incision lines are free of neoplastic lesions. Metastases. carcinomatosae in lymphonodis (No X/XIV). Infiltratio carcinomatosa capsulae lymphonodorum et telae adiposae. perinodalis. Emboliae carcinomatosae. Appendix - Appendicitis follicularis. Histopathologic diagnosis: Adenocarcinoma tubulopapillare partim mucinosum coli. Metastases carcinomatosae in lymphonodis (No X/XIV). Tubulopapillar and partially mucinous adenocarcinoma of the colon. Cancer metastases in lymph nodes (No X/XIV). (G3, Dukes C, Astler-Coller C2, pT3, pN2).",
+  "gold": {
+    "T": "T3",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "(G3, Dukes C, Astler-Coller C2, pT3, pN2)",
+        "confidence": "high",
+        "reason": "Pathologic T stage explicitly stated in the report.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2",
+        "value_norm": "N2",
+        "evidence": "(G3, Dukes C, Astler-Coller C2, pT3, pN2)",
+        "confidence": "high",
+        "reason": "Pathologic N stage explicitly stated in the report.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": null,
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or M stage in the report; M stage not stated.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "(G3, Dukes C, Astler-Coller C2, pT3, pN2)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "(G3, Dukes C, Astler-Coller C2, pT3, pN2)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": "Explicitly reported as pT3 in the histopathologic diagnosis.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2",
+        "confidence": "high",
+        "reason": "Explicitly reported as pN2 and metastases in lymph nodes described.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No mention of distant metastasis or pM staging in the report; distant status not documented.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information regarding distant metastasis (M) provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

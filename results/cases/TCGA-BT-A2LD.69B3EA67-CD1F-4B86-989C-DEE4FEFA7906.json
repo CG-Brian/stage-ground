@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BT-A2LD.69B3EA67-CD1F-4B86-989C-DEE4FEFA7906",
+  "text": "FINAL DIAGNOSIS: PART 1: URETER, LEFT DISTAL, BIOPSY -. A. SEGMENT OF URETER LINED BY BENIGN UROTHELIAL MUCOSA. B. NO UROTHELIAL CARCINOMA IN SITU (CIS) NOR INVASIVE UROTHELIAL CARCINOMA IS SEEN. PART 2: URETER, LEFT DISTAL, BIOPSY -. A. SEGMENT OF URETER LINED BY REACTIVE UROTHELIUM. B. NO UROTHELIAL CARCINOMA IN SITU (CIS) NOR INVASIVE UROTHELIAL CARCINOMA IS SEEN. PART 3: URINARY. A. INVASIVE POORLY DIFFERENTIATED UROTHELIAL CARCINOMA (3.2 CM), HIGH GRADE (WHO / ISUP),. WITH BIZARRE PLEOMORPHIC GIANT CELLS. B. THE CARCINOMA INVADES THE DETRUSOR MUSCLE ANO EXTENDS INTO THE ADIPOSE TISSUE. C. SURGICAL MARGINS ARE FREE OF TUMOR. D. FLAT CARCINOMA IN SITU IS IDENTIFIED. E. NO PERINEURAL INVASION is IDENTIFIED. F. ANGIOLYMPHATIC INVASION IS IDENTIFIED. G. PATHOLOGIC STAGE = pT3a N1 MX. H. CYSTITIS CYSTICA AND SQUAMOUS METAPLASIA IDENTIFIED. PART 4: LYMPH NODE, LEFT PELVIC, EXCISION -. METASTATIC CARCINOMA INVOLVING ONE OF FIVE LYMPH NODES (1/5). PART 5: LYMPH NODE, RIGHT PELVIC, EXCISION -. NO CARCINOMA IDENTIFIED IN ELEVEN LYMPH NODES (0/11). CASE SYNOPSIS: SYNOPTIC DATA - PRIMARY URINARY BLADDER TUMORS. SPECIMEN TYPE: Radical cystectomy. TUMOR SITE: Trigone, Other: Left and right ureto-ostia. TUMOR SIZE: Greatest dimension: 3.2 cm. HISTOLOGIC TYPE: Urothelial (transitional cell) carcinoma. ASSOCIATED EPITHELIAL LESIONS: Cannot be determined. HISTOLOGIC GRADE: Urothelial carcinoma - High-grade. TUMOR CONFIGURATION: Solid/nodule, Fiat. PATHOLOGIC STAGING (pTNM): pT3a. pN1. Number of nodes examined: 16. Number of nodes involved: 1. pMX. MARGINS: Margins uninvolved by invasive carcinoma. VENOUS/LYMPHATIC (LARGE/SMALL) VESSEL INVASION (V/L): Present. DIRECT EXTENSION OF INVASIVE TUMOR: Perivesical fat. ADDITIONAL PATHOLOGIC FINDINGS: Urothelial carcinoma in situ.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT3a and describes tumor invading the detrusor muscle and extending into adipose (perivesical) tissue.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "METASTATIC CARCINOMA INVOLVING ONE OF FIVE LYMPH NODES (1/5).",
+        "confidence": "high",
+        "reason": "One regional lymph node was positive for metastatic carcinoma (1/5); synoptic data records pN1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": "Report records pMX (distant metastasis cannot be assessed) and provides no documentation of distant metastatic disease in the specimen.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "G. PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3a and describes invasion into detrusor muscle and extension into adipose (perivesical) tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "G. PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pN1 and documents metastatic carcinoma in 1 of 16 lymph nodes (1/5 positive, 0/11 negative).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "G. PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pMX (no definite assessment of distant metastasis provided).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE = pT3a N1 MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

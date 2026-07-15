@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-V4-A9EK.9495F79F-3227-454F-942C-05CEC78273B5",
+  "text": "Left eye enucleation. Macros copy. The eyeball measures 25 mm in diameter with a segment of optic nerve of 6 mm. At the. section, there is at the postero-lateral part of the eyeball a large pigmented tumor adherent to. the internal face of the sclera, measuring 18 mm main line by 12 mm maximum thickness. Samples have been made for cryopreservation The specimen has been then included entirely. after fixation. Microscopy. The tumor seen laterally at the posterior part of the eye correspond microscopically to a tumor. proliferation of fusiform cells made of medium to large size cells with cytoplasm nearly. always loaded with melanin pigment preventing the visualization of the nucleus which is. therefore difficult to analyze. This tumor proliferation is adherent to the internal part of the. sclera whose internal layers are infiltrated without any extraocular infiltration. In the front, the. tumor infiltrates the posterior part of the ciliary body but stays outside the iris, the irido. corneal angle and the anterior chamber. Behind, it stays distant from the intraocular. emergence of the optic nerve which is free on its entire course ( prelaminar part, optic. foramen, post laminar part, meningeal sheaths and posterior cut end.). Conclusion. Melanoma with fusiform cells measuring 18 by12 mm main lines. The tumor infiltrates in front the posterior part of the ciliary body.Behir the proliferation. stays distant from the intraocular emergence of the optic nerve which is free on its entire. course ( prelaminar part, optic foramen, post laminar part, meningeal sheaths and posterior. cut end.). The tumor proliferation infiltrates the internal layers of the sclera but no extra sclera extension. was found.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3c (estimated)",
+        "value_norm": "T3",
+        "evidence": "measuring 18 mm main line by 12 mm maximum thickness. The tumor infiltrates in front the posterior part of the ciliary body. The tumor proliferation infiltrates the internal layers of the sclera but no extra sclera extension. was found.",
+        "confidence": "medium",
+        "reason": "Based on large size (18 mm basal diameter, 12 mm thickness) and ciliary body involvement without extraocular/extra‑scleral extension. Exact AJCC pT assignment requires the official staging table; this is an estimated mapping to a higher T category (T3) with ciliary body involvement (c).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No lymph nodes were submitted or described in the pathology report, so pathologic nodal status cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No assessment of distant metastasis is provided in the pathology specimen report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "a large pigmented tumor adherent to. the internal face of the sclera, measuring 18 mm main line by 12 mm maximum thickness. This tumor proliferation is adherent to the internal part of the. sclera whose internal layers are infiltrated without any extraocular infiltration.",
+        "confidence": "low",
+        "reason": "Report provides tumor dimensions and local extent but does not provide a TNM (pT) category; accurate T staging requires applying specific AJCC size/extension criteria not stated in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No regional lymph node assessment or mention of nodal status in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention the presence or absence of distant metastasis.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "measuring 18 mm main line by 12 mm maximum thickness. The tumor proliferation is adherent to the internal part of the sclera whose internal layers are infiltrated without any extraocular infiltration. The tumor infiltrates the posterior part of the ciliary body",
+        "confidence": "medium",
+        "reason": "Tumor thickness ~12 mm and largest basal diameter 18 mm indicate a large intraocular tumor with scleral (internal layer) invasion and ciliary body involvement but no extraocular extension; mapped to T3.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No regional lymph nodes sampled or mentioned in the report, so nodal status cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No evaluation or mention of distant metastasis in the pathology report, so metastatic status cannot be assessed.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "measuring 18 mm main line by 12 mm maximum thickness.",
+        "confidence": "medium",
+        "reason": "Tumor largest basal dimension reported as 18 mm with 12 mm thickness and scleral internal layer infiltration but no extra‑scleral extension; size (LBD 18 mm) supports classification as T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of regional lymph nodes or nodal evaluation in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of distant metastasis or systemic staging in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

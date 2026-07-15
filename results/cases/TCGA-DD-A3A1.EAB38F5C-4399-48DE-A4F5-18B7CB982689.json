@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DD-A3A1.EAB38F5C-4399-48DE-A4F5-18B7CB982689",
+  "text": "TISSUE DESCRIPTION: Liver segments IV through VIII (1,900 grams; 22 x 14 x 9 cm), liver segment III (15. grams; 4.5 X 3 X 2.7 cm), and biopsy specimen from the peritoneum (1 X 0.8 x 0.4. cm). A1, B1, B2, B3, B4, C1. DIAGNOSIS: Liver, segments IV through VIII, resection: Grade 2 (of 4) hepatocellular. carcinoma, usual type, forming a multinodular mass, 16 x 15 x 11 cm, with multiple. (5) satellite nodules ranging in size from 0.5 cm to 1.5 cm. The tumor is located in. segments IV through VIII. The hepatic capsule is free of tumor. The surgical. margins are free of tumor, the clearance being approximately 1 mm microscopically. Extensive extratumoral vascular invasion is identified. The tumor is not. encapsulated, infiltration of parenchyma being of the infiltrating type. The non-. neoplastic liver will be assessed on permanent sections and an addendum will be. issued. Liver, segment III, excision: Bile duct hamartoma (1.2 x 1.1 x 1 cm). Peritoneum, biopsy: Inflammatory adhesion, negative for tumor. Specimen photographed in lab. PHOTOGRAPHED IN LAB. ADDENDUM: The non-neoplastic liver shows no features of either primary or chronic liver. disease. Seen with Dr.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "forming a multinodular mass, 16 x 15 x 11 cm, with multiple. (5) satellite nodules ranging in size from 0.5 cm to 1.5 cm. The tumor is located in. segments IV through VIII. The hepatic capsule is free of tumor. The surgical. margins are free of tumor, the clearance being approximately 1 mm microscopically. Extensive extratumoral vascular invasion is identified.",
+        "confidence": "medium",
+        "reason": "Multiple tumors with a dominant lesion 16 cm (>5 cm) meets criteria for T3 (multiple tumors with at least one >5 cm). Vascular invasion is present but the report does not specify involvement of a major branch of the portal/hepatic vein (which could alter staging), so there is some uncertainty.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNx",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No regional lymph nodes are described or reported as examined; nodal status cannot be assessed from the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": "Peritoneum, biopsy: Inflammatory adhesion, negative for tumor.",
+        "confidence": "medium",
+        "reason": "No distant metastasis identified in the submitted peritoneal biopsy and no other metastatic sites reported; however only limited distant sampling was performed, so assessment is not comprehensive.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Grade 2 (of 4) hepatocellular. carcinoma, usual type, forming a multinodular mass, 16 x 15 x 11 cm, with multiple. (5) satellite nodules ranging in size from 0.5 cm to 1.5 cm. Extensive extratumoral vascular invasion is identified.",
+        "confidence": "medium",
+        "reason": "Multiple tumors with the largest >5 cm and vascular invasion consistent with T3; report does not specify involvement of a major portal/hepatic vein to distinguish T3a vs T3b.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "Report does not mention regional lymph node evaluation or status.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Peritoneum, biopsy: Inflammatory adhesion, negative for tumor.",
+        "confidence": "medium",
+        "reason": "Peritoneal biopsy negative and no distant metastases reported in the specimen.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "forming a multinodular mass, 16 x 15 x 11 cm, with multiple. (5) satellite nodules ranging in size from 0.5 cm to 1.5 cm. Extensive extratumoral vascular invasion is identified.",
+        "confidence": "high",
+        "reason": "Multiple tumors with largest dimension >5 cm and presence of extratumoral vascular invasion corresponds to T3 disease.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No lymph nodes or nodal assessment are mentioned in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Peritoneum, biopsy: Inflammatory adhesion, negative for tumor.",
+        "confidence": "medium",
+        "reason": "Peritoneal biopsy showed no tumor and no other distant metastases are reported, but evaluation for distant metastasis is limited to the specimens submitted.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "forming a multinodular mass, 16 x 15 x 11 cm, with multiple. (5) satellite nodules ranging in size from 0.5 cm to 1.5 cm. The tumor is located in. segments IV through VIII. The hepatic capsule is free of tumor. The surgical. margins are free of tumor, the clearance being approximately 1 mm microscopically. Extensive extratumoral vascular invasion is identified.",
+        "confidence": "medium",
+        "reason": "Report documents a large (16 x 15 x 11 cm) multinodular tumor with multiple satellite nodules and extensive vascular invasion, consistent with T3 (multiple tumors with at least one >5 cm and vascular invasion). The report does not explicitly state a TNM T category.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of regional lymph nodes or nodal assessment in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No explicit statement of distant metastatic status. Peritoneal biopsy is reported as \"inflammatory adhesion, negative for tumor,\" but this single negative biopsy is insufficient to assign M0 overall.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

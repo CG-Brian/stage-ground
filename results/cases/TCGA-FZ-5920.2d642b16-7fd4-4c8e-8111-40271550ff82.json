@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-FZ-5920.2d642b16-7fd4-4c8e-8111-40271550ff82",
+  "text": "FINAL DIAGNOSIS;. PART 1: BILE DUCT, MARGIN, EXCISION -. A. INVASIVE MODERATELY TO POORLY DIFFERENTIATED ADENOCARCINOMA (see Part 4 for final margin). B. PANCREATIC INTRAEPITHELIAL NEOPLASIA III (PanIN III). PART 2: DUODENUM AND SMALL BOWEL, WHIPPLE RESECTION -. A. INVASIVE MODERATELY TO POORLY DIFFERENTIATED DUCTAL ADENOCARCINOMA (3.5em), ARISING. IN THE PANCREATIC HEAD WITH INVASION INTO PERIPANCREATIC SOFT TISSUE. B. CARCINOMA IS PRESENT AT THE VASCULAR GROOVE MARGIN. C. CARCINOMA IS PRESENT AT THE RETROPERITONEAL MARGIN. D. BENIGN PACREAS RESECTION MARGIN. E. PERINEURAL AND ANGIOLYMPHATIC INVASION IS IDENTIFIED. F. THREE (3) OF NINE (9) LYMPH NODES, POSITIVE FOR CARCINOMA (3/9). G. PATHOLOGIC STAGE: pT3, N1b, MX (see comment). H. PANCREATIC INTRAEPITHELIAL NEOPLASIA III (PanIN III). I. CHRONIC PANCREATITIS. J. ACUTE AND CHRONIC CHOLECYSTITIS. a. NO STONES IDENTIFIED. PART 3: SMALL BOWEL, RESECTION -. A. SMALL BOWEL WITH NO SIGNIFICANT ABNORMALITY. B. NO TUMOR SEEN,. PART 4: BILE DUCT, \"FINAL MARGIN\", EXCISION- -. BILE DUCT, NEGATIVE FOR CACINOMA. SYNOPTIC DATA - PRIMARY PANCREAS(EXOCRINE) TUMORS. MACROSCOPIC. SPECIMEN TYPE: Pylorus sparing pancreaticoduodenectomy, partial pancreatectomy. TUMOR SITE: Pancreatic head. TUMOR SIZE: Greatest dimension: 3.5 cm. Additional dimensions: 2.6 cm. OTHER ORGANS RESECTED;. Gallbladder. MICROSCOPIC. HISTOLOGIC TYPE: Ductal adenocarcinoma. HISTOLOGIC GRADE: G2. PATHOLOGIC STAGING (pTNM): pT3. pN1b. Number of lymph nodes examined: 9. Number of lymph nodes involved: 3. pMX. MARGINS: Common bile duct margin uninvolved. Pancreatic parenchymal margin uninvolved. Uncinate process/retroperitoneal margin involved. SMV/portal vein notch margin involved. Proximal duodenal/gastric margin uninvolved. Distal duodenal margin uninvolved. VENOUS/LYMPHATIC (LARGE/SMALL VESSEL) INVASION (V/L): Present. PERINEURAL INVASION: Present. ADDITIONAL PATHOLOGIC FINDINGS: Pancreatic intraepithelial neoplasia (highest grade: PanIN III). Chronic pancreatitis.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT3; tumor 3.5 cm with invasion into peripancreatic soft tissue supports T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1b",
+        "value_norm": "N1",
+        "evidence": "pT3. pN1b. Number of lymph nodes examined: 9. Number of lymph nodes involved: 3.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pN1b and documents 3 of 9 lymph nodes positive for carcinoma (3/9).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": "Report documents MX/pMX indicating distant metastasis cannot be assessed pathologically; no distant metastases are reported.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "G. PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1b",
+        "value_norm": "N1",
+        "evidence": "G. PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "G. PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": "The report explicitly lists pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": "Report specifies pN1b (subclassification); mapped to allowed value N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMX indicating metastasis cannot be assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE: pT3, N1b, MX (see comment).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AZ-4615.ee4ea571-2dc8-470a-a442-291c85200546",
+  "text": "FINAL DIAGNOSIS: PART 1: GALLBLADDER, LAPAROSCOPIC CHOLECYSTECTOMY -. A. CHOLELITHIASIS AND CHRONIC CHOLECYSTITIS WITH ASSOCIATED ULCERATION AND INTRAMURA. HISTIOCYTIC INFLAMMATORY INFILTRATE. B. NO EVIDENCE OF MALIGNANCY. PART 2: RIGHT COLON, APPENDIX, AND TERMINAL ILEUM, RIGHT HEMICOLECTOMY -. A. ULCERATED, INVASIVE, MODERATELY TO FOCALLY POORLY DIFFERENTIATED COLONIC. ADENOCARCINOMA, 4 CM, ARISING IN THE CECUM IMMEDIATELY ADJACENT TO THE ILEOCECAL VALVE. CARCINOMA INFILTRATES THROUGH THE MUSCULARIS PROPRIA AND FOCALLY EXTENDS INTO THE. COLONIC AND APPENDICEAL SUBSEROSA TO WITHIN LESS THAN 0.5 CM BEYOND THE BORDER WITH. THE MUSCULARIS PROPRIA (SECTION 2D). CARCINOMA EXTENDS INTO AND OBSTRUCTS THE. APPENDICEAL ORIFICE/LUMEN (SLIDES 2F-2H). B. PRESUMED ANGIOLYMPHATIC INVASION PRESENT (See diagnosis 2G). C. NON-NEOPLASTIC COLON WITH NO SIGNIFICANT HISTOPATHOLOGIC ABNORMALITY. D. BENIGN TERMINAL ILEUM WITH NO SIGNIFICANT HISTOPATHOLOGIC ABNORMALITY. E. PROXIMAL APPENDIX WITH OBSTRUCTION BY CARCINOMA ASSOCIATED WITH A MUCINOUS. CARCINOMA COMPONENT WITHIN THE APPENDICEAL LUMEN, AND ASSOCIATED ACUTE AND. ORGANIZING APPENDICITIS / PERIAPPENDICITIS. F. BENIGN SURGICAL RESECTION MARGINS AND SEROSAL SURFACES. G. METASTATIC ADENOCARCINOMALIS PRESENT IN ONE OF EIGHTEEN (1/18) REGIONAL LYMPH NODES. (SLIDE 2N). METASTATIC FOCUS MEASURES 0.4 CM. NO EXTRACAPSULAR EXTENSION IS IDENTIFIED. H. TNM PATHOLOGIC STAGE: T3alb, N1, MX (See synoptic). CASE SYNOPSIS: SYNOPTIC DATA - PRIMARY COLON, RECTAL, APPENDIX TUMORS. SPECIMEN TYPE: Right hemicólectomy. SPECIMEN LENGTH: 31 cm. TUMUR SITE: Cecum. TUMOR CONFIGURATION: Ulcerating. TUMOR SIZE: Greatest dimension: 4 cm. Additional dimensions: 3 x 3 cm. INTACTNESS OF MESORECTUM: Not applicable. HISTOLOGIC TYPE: Adenocarcinoma. HISTOLOGIC GRADE: High-grade (poorly differentiated to undifferentiated). PATHOLOGIC STAGING (pTNM): pT3a/b. pN1. Number of nodes examined: 18. Number of nodes involved: 1. pMX. Treatment: Untreated. MARGINS: Proximal margin uninvolved by invasive carcinoma. Distal margin uninvolved by invasive carcinoma. Circumferential (radial) margin - Not applicable. Mesenteric margin uninvolved by invasive carcinoma. if all margins uninvolved by invasive carcinoma: distance of invasive carcinoma from. closest margin: 50 mm. Margin: Mesenteric. ANGIOLYMPHATIC INVASION: Present. PERINEURAL INVASION: Absent. TUMOR BORDER CONFIGURATION: Infiltrating. ADDITIONAL TUMOR CHARACTERISTICS: None. ADDITIONAL PATH FINDINGS (check all that apply): Other: Appendiceal obstruction by tumor with acute appendicitis.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a/b",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT3a/b.",
+        "confidence": "high",
+        "reason": "Synoptic/pathologic staging explicitly records pT3a/b; report describes carcinoma infiltrating through the muscularis propria into subserosa.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "METASTATIC ADENOCARCINOMALIS PRESENT IN ONE OF EIGHTEEN (1/18) REGIONAL LYMPH NODES. (SLIDE 2N).",
+        "confidence": "high",
+        "reason": "One of 18 regional lymph nodes is metastatic and synoptic staging lists pN1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "TNM PATHOLOGIC STAGE: T3alb, N1, MX (See synoptic).",
+        "confidence": "high",
+        "reason": "Report documents MX/pMX indicating distant metastasis was not assessed.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGING (pTNM): pT3a/b.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "G. METASTATIC ADENOCARCINOMALIS PRESENT IN ONE OF EIGHTEEN (1/18) REGIONAL LYMPH NODES.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM PATHOLOGIC STAGE: T3alb, N1, MX (See synoptic).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3a/b.",
+        "confidence": "high",
+        "reason": "Synoptic pTNM explicitly reports pT3a/b and the report describes tumor penetrating through muscularis propria into subserosa consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "METASTATIC ADENOCARCINOMALIS PRESENT IN ONE OF EIGHTEEN (1/18) REGIONAL LYMPH NODES. (SLIDE 2N).",
+        "confidence": "high",
+        "reason": "One regional lymph node involved (1/18) corresponds to N1; synoptic also lists pN1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pMX / MX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "TNM PATHOLOGIC STAGE: T3alb, N1, MX (See synoptic).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "TNM PATHOLOGIC STAGE: T3alb, N1, MX (See synoptic).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM PATHOLOGIC STAGE: T3alb, N1, MX (See synoptic).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

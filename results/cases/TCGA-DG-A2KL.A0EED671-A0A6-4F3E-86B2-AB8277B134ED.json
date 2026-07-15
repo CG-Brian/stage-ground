@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-DG-A2KL.A0EED671-A0A6-4F3E-86B2-AB8277B134ED",
+  "text": "Sample Type TUMOUR. Sample Preparation. Fresh Frozen. Site of Primary (Event). Cervical. Site of Tissue. 9:00 position - cervix. Year of Sample Collection. Age at Sample Collection (yrs). Sample Comments. Days to Procedure Date. 0. Days to Diagnosis. 11. Type of Procedure. Surgical resection. Site of Primary (Histology). Cervix. Bilateral Disease. Tumour Size (cm). 5.5. Histology. Squamous cell carcinoma, keratinizing. Grade/Differentiation. Grade I (Well differentiated). Pathological T. T2,NOS. Pathological N. Number of Nodes Sampled. 0. Number of Nodes Positive. 8. Clinical M. MX. Histology Comments. Of note: Spec#4: Rt. posterior vaginal margin, excision: Margin is positive for squamous cell carcinoma, invasive-type.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological T. T2,NOS.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Pathological N. Number of Nodes Sampled. 0. Number of Nodes Positive. 8.",
+        "confidence": "medium",
+        "reason": "No explicit pathological N category given; presence of 8 positive nodes indicates regional nodal metastasis (N1), but 'Number of Nodes Sampled: 0' is internally inconsistent, lowering confidence.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Clinical M. MX.",
+        "confidence": "high",
+        "reason": "Only clinical M status is reported; no pathologic M provided.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological T. T2,NOS.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Pathological N. Number of Nodes Sampled. 0. Number of Nodes Positive. 8.",
+        "confidence": "medium",
+        "reason": "Report documents 8 positive nodes indicating regional nodal metastasis despite a contradictory 'Number of Nodes Sampled. 0' entry; assigned N1 based on positive nodes.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "Clinical M. MX.",
+        "confidence": "high",
+        "reason": "M recorded as MX (cannot assess) in the report",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological T. T2,NOS.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Number of Nodes Sampled. 0. Number of Nodes Positive. 8.",
+        "confidence": "medium",
+        "reason": "Pathological N stage is not explicitly stated. Presence of positive nodes indicates regional nodal metastasis (at least N1), but report lacks detail to distinguish N2/N3 and contains inconsistent sampling counts.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Clinical M. MX.",
+        "confidence": "low",
+        "reason": "No pathologic M provided; only clinical M is reported as MX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Pathological T. T2,NOS.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "Pathological N. Number of Nodes Sampled. 0. Number of Nodes Positive. 8.",
+        "confidence": "medium",
+        "reason": "No explicit pathologic N category is provided. The report includes a 'Pathological N.' header but does not state N0/N1/N2/N3; node counts are contradictory (0 sampled vs 8 positive), so a definitive N category cannot be determined.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Clinical M. MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-CJ-4643.1a9fa2bc-9999-404d-87b0-667935744bce",
+  "text": "DIAGNOSIS. (A) RIGHT KIDNEY AND ADRENAL GLAND: RENAL CELL CARCINOMA, CONVENTIONAL (90% CLEAR CELLS AND 10% EOSINOPHILIC CELLS),. FURHMAN'S NUCLEAR GRADE 3. TUMOR CONFINED TO KIDNEY. TUMOR MEASURES 9.5 CM IN GREATEST DIMENSION. Vascular, ureteral and soft tissue margins of resection free of tumor. Adrenal gland with nodular cortical hyperplasia. GROSS DESCRIPTION. (A). RIGHT KIDNEY AND ADRENAL GLAND - A nephrectomy specimen (22.0 x 13.5 x 6,3 cm) including the right kidney (13.0x 5.5 x. 4.0 cm), a segment of the renal artery, the renal vein, two ureters (7.5 and 12.0 cm in length x approximately 0.4 cm in average. diameter), and the adrenal gland (0.6 x 3.7 x 1.8 cm). There is a 9.5 x 7.2 x 6.0 cm well-circumscribed tumor in the mid portion of the kidney. Centrally, the tumor has a myxoid appearance. with a focus of calcification; the periphery is orange-yellow and slightly friable. There are no definitive areas of hemorrhage or. recrosis. The tumor pushes onto the renal pelvis but does not invade it. There is no extention into the adipose tissue, renal sinus,. unal vein, or Gerota's fascia. The. adjacent kidney parenchyma is unremarkable. The pelvicalyceal system is smooth and devoid of any lesions. One possible hilar. lymph node measures 1.7 x 0.9 x 0.9 cm. Serial cross sections of the adrenal gland show an enlarged cortex measuring 0.5 cm. The remainder of the adrenal gland is. unremarkable. Portions of tumor have been submitted for possible electron microscopy and to the tumor bank. INK CODE: Black - Gerota's fascia and capsule nearest tumor. SECTION CODE: A1, both ureters, renal artery, and renal vein margins, en face; A2, enlarged portion of adrenal gland; A3, kidney,. representative sections; A4-A5, tumor within pelvis; A6-A8, tumor with inked capsule; A9-A10, tumor with adjacent kidney; A11, tumor;. A12, representative sections of Gerota's fascia overlying tumor; A13, one possible lymph node; A14, tumor with sinus;. A15,. tumor. with. pelvis; A16, adrenal gland, representative section. CLINICAL HISTORY. Right renal mass. 1.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2a",
+        "value_norm": "T2",
+        "evidence": "TUMOR CONFINED TO KIDNEY. TUMOR MEASURES 9.5 CM IN GREATEST DIMENSION.",
+        "confidence": "high",
+        "reason": "Tumor is >7 cm but ≤10 cm and confined to the kidney (no extension into perinephric tissues or beyond Gerota's fascia), consistent with pT2a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "There is one possible hilar. lymph node measures 1.7 x 0.9 x 0.9 cm.",
+        "confidence": "low",
+        "reason": "No nodal metastasis is reported, but only a single 'possible' hilar node is mentioned without explicit statement of negative involvement or number of nodes examined, creating uncertainty.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastases are identified or reported in the specimen; pathology report does not evaluate or document distant metastatic disease, so assignment of pM0 is uncertain.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2a",
+        "value_norm": "T2",
+        "evidence": "TUMOR CONFINED TO KIDNEY. TUMOR MEASURES 9.5 CM IN GREATEST DIMENSION.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "lymph node status not reported; one possible hilar lymph node described without mention of involvement",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "TUMOR CONFINED TO KIDNEY. TUMOR MEASURES 9.5 CM IN GREATEST DIMENSION.",
+        "confidence": "high",
+        "reason": "Tumor is 9.5 cm and limited to the kidney, consistent with pathologic T2 (>7 cm and limited to kidney).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "One possible hilar. lymph node measures 1.7 x 0.9 x 0.9 cm.",
+        "confidence": "medium",
+        "reason": "A possible lymph node is mentioned but the report does not state nodal status or presence/absence of metastasis.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "TUMOR CONFINED TO KIDNEY.",
+        "confidence": "medium",
+        "reason": "No distant metastases or metastatic deposits are described in the pathology report; no evidence of metastasis in the specimen.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "TUMOR CONFINED TO KIDNEY. TUMOR MEASURES 9.5 CM IN GREATEST DIMENSION.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No pathologic assessment or statement about lymph node metastasis is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of distant metastases or metastatic deposits in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

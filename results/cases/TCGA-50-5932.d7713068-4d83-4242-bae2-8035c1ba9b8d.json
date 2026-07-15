@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-50-5932.d7713068-4d83-4242-bae2-8035c1ba9b8d",
+  "text": "PRE-OP DIAGNOSIS: Right lung mass. POST-OP DIAGNOSIS: Same. PROCEDURE: Right upper lobectomy, mediastinoscopy, lymph node dissection. FINAL DIAGNOSIS: PART 1: LUNG, RIGHT UPPER LOBE, LOBECTOMY -. A. WELL DIFFERENTIATED ADENOCARCINOMA WITH BRONCHIOALVEOLAR FEATURES (4.2CM; see. comment). B. THE NEOPLASM ABUTS THE VISCERAL PLEURA BUT DOES NOT PENETRATE IT. .(see comment). C. BRONCHIAL, VASCULAR AND PARENCHYMAL MARGINS ARE FREE OF NEOPLASM. D. EMPHYSEMATOUS CHANGES OF THE NON NEOPLASTIC LUNG. E. ONE OF SEVEN PERIHILAR LYMPH NODES WITH METASTATIC ADENOCARCINOMA; NO EXTERNAL NODE. SPREAD IS PRESENT (1/7). F. TNM PATHOLOGIC STAGE: T2; N1; MX. G. HISTOPATHOLOGIC GRADE = G1. PART 2: LYMPH NODES, PERIBRONCHIAL, SITE IS NOT SPECIFIED, EXCISION -. A. FOUR BENIGN LYMPH NODES. B. NEGATIVE FOR NEOPLASIA (0/4). PART 3: LYMPH NODES, PERIAORTIC AND PERIAZYGOS, EXCISION -. A. SEVEN BENIGN LYMPH NODES,. NEGATIVE FOR NEOPLASIA (0/7). COMMENT: Special stains performed on a section of the neoplasm showed neoplastic cells strongly positive for cytokeratin 7 and. negative cytokeratin 20 and thyroid transcription factor(TTF (-) probably due to technical problems). Special stain for. mucin (PAS with and without diastase) were positive for intracellular mucin. The histologic features and the pattern of. immunostaining is compatible with a primary adenocarcinoma (mucinous BAC) of the lung. Elastic stain showed no. invasion of the elastic layer of the visceral pleura. SYNQPTIC - PRIMARY LUNG TUMORS. A. Location: 1. 1. RUL. 3. RLL. 5. LUL. 2. RML. 4. LLL. 6. Bronchus intermedius. B. Procedure: 2. 1. Wedge/Segmental. 3. Bilobectomy. 2. Lobectomy. 4. Pneumonectomy. C. Size of tumor (maximum dimension): 4.2 cm. D. Satellite nodules: 2. 1. yes. 2. No. D1. If yes, Where: #. 1. Same lobe. 2. Psilateral lobes. 3. Central lobe. E. Type: 3. 1. Invasive squamous carcinoma. 11. Fetal type adenocarcinoma. 2. Basaloid squamous carcinoma. 12. Small cell carcinoma. 3. Invasive adenocarcinoma. 13. Carcinoid. 4. Bronchioloalveolar carcinoma, nonmucinous type. 14. Atypical carcinoid. 5. Bronchioloalveolar carcinoma, mucinous type. 15. Sarcoma. 6. Large cell carcinoma. 16. Adenosquamous carcinoma. 7. Clear cell carcinoma. 17. Mixed non-small cell carcinoma, NOS. 8. Giant cell carcinoma. 18. Carcinosarcoma. 9. Sarcomatoid carcinoma. 19. Other. 10. Blastoma. F. Architectural grade: 1. 1. well. 2. moderate. 3. poor/undifferentiated. G. Nuclear grade: 1. 1. Low. 2. Intermediate. 3. High. H. Central VS. peripheral origin: 1. 1. yes. 2. no. I. Visceral pleural invasion through elastica: 2. 1. yes. 2. no. J. Parietal pleural invasion: 2. 1. yes. 2. no. K. Chest wall invasion (into skeletal muscle or soft tissue): 2. 1. yes. 2. no. L. Angiolymphatic invasion: 2. 1. yes. 2.no. M. Necrosis: 1. 1. 50%. 2. >>50%. N. Surgical margins involved: 2. 1. yes. 2. no. O. Inflammatory (desmoplastic) reaction: 1. 1. mild. 2. moderate. 3. severe. P. Hilar lymph node involvement (N1 nodes): 1. 1. yes. 2. no. Q. If hilar lymph nodes involved, number of positive lymph nodes: 1/7. R. Total number of hilar lymph nodes examined: 2. S. Extracapsular spread of hilar lymph node metastases: N/A. 1. yes. 2. no. T. Mediastinal nodes involved: 2. 1. yes. 2.no. 3. not applicable. U. Mediastinal node group(s) involved (N2 nodes): #/#/#/#/#/ #. 1. Level 4R. 4. Level 7R. 7. Level 4L. 10. Level 7L. 2. Level 5R. 5. Level 9R. 8. Level 5L. 11. Level 9L. 3. Level 6R. 6. Level 10R. 9. Level 6L. 12. Level 10L. V. Number of positive mediastinal nodes: NA. W. Total number of mediastinal nodes examined: 7. X. Extracapsular spread of mediastinal lymph node metastases: NA. 1. yes. 2. No. Y. Underlying disease(s): 1/#/#/#. 1. Emphysema. 4. Smokers bronchiolitis. 7. Pneumoconiosis, NOS. 2. Bronchiectasis. 5. Asthma. 8. Chronic interstitial pneumonia. 3. Tumorlets. 6. Parenchymal scar. Z. TNM Stage: T 1. N 1.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists T2 and tumor maximum dimension is 4.2 cm (supports T2). A later template line ('Z. TNM Stage: T 1. N 1.') appears contradictory and likely templating error, but size and the explicit TNM PATHOLOGIC STAGE support T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "E. ONE OF SEVEN PERIHILAR LYMPH NODES WITH METASTATIC ADENOCARCINOMA; NO EXTERNAL NODE. SPREAD IS PRESENT (1/7).",
+        "confidence": "high",
+        "reason": "One positive perihilar (hilar) lymph node (1/7) = N1; report also explicitly lists N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists MX and no distant metastases were assessed or documented in the pathology report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "E. ONE OF SEVEN PERIHILAR LYMPH NODES WITH METASTATIC ADENOCARCINOMA; NO EXTERNAL NODE. SPREAD IS PRESENT (1/7).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": "Tumor measures 4.2 cm (>3 cm and ≤5 cm = T2) and the report explicitly lists T2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": "One of seven perihilar (hilar) lymph nodes is positive (1/7), consistent with N1; report explicitly lists N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": "No assessment of distant metastasis provided in the report; the report explicitly lists MX.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "F. TNM PATHOLOGIC STAGE: T2; N1; MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

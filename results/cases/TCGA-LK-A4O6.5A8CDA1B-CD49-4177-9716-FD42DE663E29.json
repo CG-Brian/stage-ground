@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-LK-A4O6.5A8CDA1B-CD49-4177-9716-FD42DE663E29",
+  "text": "FINAL DIAGNOSIS: Summary Statement. This extrapleural pneumonectomy specimen shows a biphasic mesothelioma diffusely Involving the visceral and parietal. pleural. The histolögy Is predominantly epithelioid, with a minor spindle cell component. The tumor Invades the. diaphragm (non-transmural) and paricardial fat. Isolated tumor nodules within the lung parenchyma, together with the. angiolymphatic Invasion seen in the lung, are best interpreted as metastatic disease. Almost all submitted lymph nodes. are Involved by tumor. Pertinent negatives include the absence of pleural plaques, ferruginous/asbestos bodies. [pT3N1M1 AJCC 7th Ed.). PART 1: LUNG, LEFT LOWER LOBE, WEDGE RESECTION -. MESOTHELIOMA, INVOLVING THE VISCERAL PLEURA. PART 2: PLEURA, PARIETAL, INCISIONAL BIOPSY -. MESOTHELIOMA. PART 3: LYMPH NODE, LEVEL 10, BIOPSY -. MESOTHELIOMA IN SUBCAPSULAR SINUSES. PART 4: LYMPH NODE, LEVEL 11, BIOPSY -. MESOTHELIOMA. PART 5: LYMPH NODE, NEAR INFERIOR PULMONARY VEIN, BIOPSY -. MESOTHELIOMA. PART 6: PERICARDIAL FAT, BIOPSY -. MESOTHELIOMA, FORMING MULTIPLE SMALL FOCI IN ADIPOSE TISSUE. PART 7: DIAPHRAGM FAT, BIOPSY -. MESOTHELIOMA, FORMING ONE SMALL (0.1 CM) IMPLANT IN ADIPOSE TISSUE. PART 8: LUNG, LEFT, EXTRAPLEURAL PNEUMONECTOMY -. A. BIPHASIC MESOTHELIOMA, PREDOMINANTLY EPITHELIOID WITH MINOR SPINDLE CELL COMPONENT,. CIRCUMFERENTALLY AND DIFFUSELY INVOLVING THE VISCERAL AND PARIETAL PLEURA.. a. SURGICAL MARGINS ARE POSITIVE FOR TUMOR AT THE LATERAL PARIETAL AND INFERIOR. PARIETAL PLEURAL MARGINS!. b. BRONCHOVASCULAR MARGINS AR NEGATIVE FOR TUMOR: c. ANGIOLYMPHATIC INVASION is PRESENT. y a. d. PATHOLOGIC STAGE: PT3N1MA (AJCC 7th Ed.). B. METASTATIC MESOTHELIOMA FORMING'ISOLATED PULMONARY NÓDULES: c. FIVE N1 LYMPH NODES WITH METASTATIC MESOTHELIOMA (5/6). o. NO FERRUGINOUSIASBESTOS BODIES IDENTIFIED ON IRON STAINS OF TWO SECTIONS. E. NO PLEURAL PLAQUE IDENTIFIED. F NON-NEOPLASTIC LUNG SHOWING BRONCHIECTASIS AND BRONCHIOLECTASIS WITHOUT INTERSTITIAL. FIBROSIS. PART 9: DIAPHRAGM, RESECTION -. MÉSOTHELIOMA, INFILTRATING SKELETAL MUSCLE (NON-TRANSMURAL). COMMENT: Immunohistochemiéal staining shows tumor cells to be positive for AE1/2, Cam5.2 and focally positive for calretinin,. CK5/6, WT1, D2-40, BerEp4 and CD15. Tumor cells are negative for TAG72, MOC31, monocional CEA, PAX-8, Inhibin, and. TTF-1. Mucin stains-muclcarmine, PASD) are negative. Immunoreactivity for BerEp4 and CD15 is less extensivo than that. for the other mesottiellal markers. The mesothelial markers highlight predominantly the epitheliold component, while the. spindle cell component ruostyl stains with cytokeratin antibodies. A pancytokeratin also stain highilghts the tumar cells. in the level 10 lympri node (Part op: IIA,. CASE SYNOPSIS: SYNOPTIC DATA, PRIMARY MESOTHELIOMA. SPECIMEN: IMA. Pleura. Other; Lung. PROCEDURE: Extrapleural pneumonectomy. SPECIMEN INTEGRITY: Disjupted. SPECIMEN LATERALITI. Left,. TUMOR SITE: Parietal pieura,. 8. Diaphragm. 1. Pericardium. Other Lung. TUMOR FOCALITY: Diffúse. HISTOLOGIC TYPE: Biphasic mesothelloma. TUMOR EXTENSION. Confluent viscéral pleural tumor (including fissure). Into but not thrbugh diaphragm. Lurg parenchyma. Diffúse or multiple foci invading soft tissue of chest wall. Into but not through pericardiura. MARGINS: Margin(s) involved by mesothelioma. Margin(s): Outer soft tissue margin, multifocal. TREATMENT EFFECT: Not-applicable. PATHOLOGIC STAGING (pTNM). pN1. Number examined: 9. Number involved: 8. pM1. Site(s): Lung. ADDITIONAL PATHOLOGIC FINDINGS: None identified. ANCILLARY STUDIES: Immpunohistechemical stain. Histochemical stain(s).",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "[pT3N1M1 AJCC 7th Ed.).",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT3 and describes invasion of diaphragm (non-transmural) and pericardial fat consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "PATHOLOGIC STAGING (pTNM). pN1. Number examined: 9. Number involved: 8.",
+        "confidence": "high",
+        "reason": "Multiple lymph nodes involved by tumor and report assigns pN1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM1",
+        "value_norm": "M1",
+        "evidence": "PATHOLOGIC STAGING (pTNM). pN1. Number examined: 9. Number involved: 8. pM1. Site(s): Lung.",
+        "confidence": "high",
+        "reason": "Report documents isolated pulmonary tumor nodules interpreted as metastatic disease and assigns pM1.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "[pT3N1M1 AJCC 7th Ed.).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "PATHOLOGIC STAGING (pTNM). pN1. Number examined: 9. Number involved: 8.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M1",
+        "value_norm": "M1",
+        "evidence": "pM1. Site(s): Lung.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "The tumor Invades the. diaphragm (non-transmural) and paricardial fat.",
+        "confidence": "high",
+        "reason": "Diaphragmatic (non‑transmural) and pericardial fat invasion corresponds to pT3 per AJCC 7th edition; report also lists pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Almost all submitted lymph nodes. are Involved by tumor.",
+        "confidence": "high",
+        "reason": "Multiple regional lymph nodes involved (report states pN1 and gives numbers of nodes involved).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M1",
+        "value_norm": "M1",
+        "evidence": "Isolated tumor nodules within the lung parenchyma, together with the. angiolymphatic Invasion seen in the lung, are best interpreted as metastatic disease.",
+        "confidence": "high",
+        "reason": "Tumor nodules in the lung interpreted as metastatic disease and report documents pM1 (site: lung).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3N1M1 AJCC 7th Ed.).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1. Number examined: 9. Number involved: 8.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M1",
+        "value_norm": "M1",
+        "evidence": "pM1. Site(s): Lung.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

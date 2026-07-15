@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-B0-4821.7bed3c94-db26-49dd-ab93-65b6643c0643",
+  "text": "FINAL DIAGNOSIS. PART 1: GALLBLADDER, CHOLECYSTECTOMY -. ACUTE AND CHRONIC CALCULOUS CHOLECYSTITIS. NO EVIDENCE OF MALIGNANCY. PART 2: GALLSTONES, REMOVAL -. CHOLELITHIASIS (gross diagnosis). PART 3: LEFT KIDNEY AND LEFT ADRENAL GLAND, RESECTION -. A. RENAL CELL CARCINOMA, CONVENTIONAL TYPE (CLEAR AND GRANULAR CELL FEATURES),. EXTENSIVELY INVOLVING THE LEFT KIDNEY-AND FOCALLY INVOLVING THE RENAL PELVIS (slide 31). B. MAXIMAL TUMOR DIMENSION IS 11 CM. C. PREDOMINANT FUHRMAN NUCLEAR GRADE IS 2/4 WITH FOCAL AREA OF FUHRMAN NUCLEAR GRADE. 3/4 (slide 21), ASSOCIATED WITH FOCAL TUMOR NECROSIS. D. TUMOR IS CONFINED BY CAPSULE, WITH NO CARCINOMATOUS EXTRACAPSULAR EXTENSION. E. OCCLUSIVE CARCINOMATOUS THROMBUS WITHIN LARGE RENAL VEIN (slide 3C). F. URETER, PERIRENAL SOFT TISSUE AND ALL SURGICAL RESECTION MARGINS ARE BENIGN. G. ONE BENIGN ADRENAL GLAND AND ONE (1) BENIGN PERIRENAL HILAR LYMPH NODE. H. NON-NEOPLASTIC KIDNEY WITH ARTERIAL AND ARTERIOLAR SCLEROSIS, CHRONIC INTERSTITIAL. INFLAMMATION AND FOCAL ACUTE TUBULITIS, WITH AGE APPROPRIATE GLOMERULAR AND. TUBULOINTERSTITIAL CHRONICITY CHANGES. I. PATHOLOGIC STAGE: T3b, NX, MX. (See microscopic description). PART 4: SMALL INTESTINE, SEGMENTAL RESECTION. SEGMENT OF BENIGN SMALL INTESTINE WITH FOCAL SURGICAL DEFECT, OTHERWISE, NO SPECIFIC. PATHOLOGIC ABNORMALITY. NO EVIDENCE OF MALIGNANCY. Final Diagnosis. LUNG LEFT UPPER LOBE, FINE NEEDLE ASPIRATION BIOPSY: METASTATIC RENAL CELL CARCINOMA. SEE COMMENT. Comment: The aspirates are pauci-cellular and reveal rare small clusters of malignant epithelial cells in a background of blood. Only rare. reactive bronchial cells and sparse inflammatory cells are present. The tumor cells are large with abundant granular cytoplasm and. well defined cell borders. The nuclei are enlarged and mildly pleomorphic with moderately irregular contours, coarse chromatin. and prominent central nucleoli. The morphologic findings are consistent with a renal cell carcinoma. To confirm the diagnosis and. help exclude a primary lung tumor, we performed a panel of immunohistochemical stains on the cell block material with the. following results: Antibody. Usual reactivity. CD10. Renal cell marker,. Positive. Pan-keratin. Epithelial marker. Positive. CK 7. Epithelial marker. Positive. CK 20. Epithelial marker. Negative. RCC. Renal cell marker. Negative. CD 68. Histiocyte marker. Negative. TTF-1. Pulmonary cell marker. Negative. The immunohistochemical staining pattern supports the morphologic diagnosis. Positive staining for CD10 and pan keratin with. negative staining for CK 20 is consistent with renal cell carcinoma. Although CK7 is often negative in most renal cell. carcinomas,. positive. staining can be seen in up to 1/3 of cases. Similarly, negative staining for RCC is seen in approximately 13% of cases. Negative. staining for CD68 indicated the tumor cells are not reactive pulmonary macrophages which can have similar morphology. in rare cases. Negative staining for TTF-1 also rules against a diagnosis of a primary lung carcinoma. Overall, based on. morphology and immunohistochemical findings the final diagnosis is that of metastatic renal cell carcinoma. have reviewed this case and concur with the diagnosis. LUNG, LEFT, NODULE, FNA: LESS THAN OPTIMAL - SCANT CELLULARITY. NEGATIVE FOR MALIGNANT CELLS. HYPERCELLUALR SPECIMEN WITH REACTIVE EPITHELIAL CELLS AND BLOOD (see comment). Comment: Because of the minute size of the lesion and technical difficulty of this biopsy, a limited sampling was obtained. No. definitive evidence of malignancy identified. Immunohistochemical stains for CD10, RCC and CD68 are non-contributory. Additional studies should be considered if clinically indicated.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T3b",
+        "value_norm": "T3",
+        "evidence": "I. PATHOLOGIC STAGE: T3b, NX, MX. (See microscopic description).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "I. PATHOLOGIC STAGE: T3b, NX, MX. (See microscopic description).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "I. PATHOLOGIC STAGE: T3b, NX, MX. (See microscopic description).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3b",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "medium",
+        "reason": "Report lists MX, but separate lung FNA states \"METASTATIC RENAL CELL CARCINOMA,\" which indicates distant metastasis (M1).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pathologic stage T3b (mapped to allowed value T3). Additional supporting finding: occlusive carcinomatous thrombus within large renal vein (consistent with T3b).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "medium",
+        "reason": "Report explicitly records NX. However the report also notes one benign perirenal hilar lymph node, creating some inconsistency about nodal assessment (hence medium confidence).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "medium",
+        "reason": "Report explicitly records MX. There is, however, a separate FNA diagnosis of metastatic renal cell carcinoma in the left lung, which would support M1 but the pathologic stage line states MX, so MX is extracted (medium confidence due to this discordance).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "PATHOLOGIC STAGE: T3b, NX, MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

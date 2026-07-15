@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-PE-A5DC.8693580D-FCB3-4943-9C2F-5F3DABFB5AF0",
+  "text": "SPECIMEN: Sex: F. Date Collected. Date Received. Clinical History/Diagnosis: Right Breast Cancer. Source of Specimen(s): A: Sentinel Node right axilla. B: right Breast Lumpectomy. C: final inferior Margin. D: right Axillary Contents. Gross Description: Received in four parts. Source of Tissue: 1. Labeled #1, \"sentinel node right axilla\". Touch Prenaration Evaluation: 1TPA-1TPB-METASTATIC CARCINOMA PER. Gross Description: Received fresh for touch preparation evaluation with. patient's name and medical record number labeled \"sentinel node right. axilla\" are two gray-tan blue dye stained lymph nodes, 0.8 and 2.0 cm in. greatest dimension. They are sectioned, touch preparations are made and. representative sections are submitted in two blocks. Designation of Sections: 1A: 1TPA (representative section), 1B: 1TPB. (entire lymph node). Summary of Sections: multiple. Source of Tissue: 2. Labeled #2, \"right breast lumpectomy\". Gross Description: Received fresh with patient name and medical record. number labeled \"right breast lumpectomy\" is a 190 grams, 11.0 x 10.5 x 4.0. cm yellow-tan fragment of breast tissue. There is a short stitch denoting. the superior margin and a long stitch denoting the lateral margin. The. margins are inked in black, the specimen is serially sectioned to reveal. yellow-tan adipose tissue with a moderate amount of dense white-tan. connective tissue. There is a 4.0 x 2.5 x 1.8 cm firm mass having tan. gritty cut surfaces with irregular borders. This grossly appears to come. closest to the inked anterior, posterior and inferior margins. Representative sections are submitted in ten blocks. Designation of Sections: 2A- superior, 2B-2C- inferior, 2D- medial, 2E-. lateral, 2F-2H-anterior, 2I-2J- posterior. Summary of Sections: multiple. Source of Tissue: 3. Labeled #3, \"final inferior margin\". Gross Description: Received fresh with patient name and medical record. number labeled \"final inferior margin\" is a 5.0 x 3.5 x 1.6 cm yellow-tan. focally blue dye stained fragment of breast tissue. There are two sutures. present marking the new margin and this area is inked in black. The. specimen is sectioned to reveal yellow-tan adipose tissue with a moderate. amount of dense white-tan connective tissue. Representative sections are. submitted in four blocks. Designation of Sections: 3A-3D. Summary of Sections: multiple. Source of Tissue: 4. Labeled #4, \"right axillary contents\". Gross Description: Received fresh with patient name and medical record. number labeled \"right axillary contents\" are 15.0 x 12.5 x 2.5 cm of. yellow-tan axillary fat. There are multiple palpable lymph nodes, 0.3 to. 2.5 cm in greatest dimension. The lymph nodes are entirely submitted in. fourteen blocks. Designation of Sections: 4A- one lymph node, 4B- one lymph node, 4C- one. lymph node, 4D- one lymph node, 4E- one lymph node, 4F- one lymph node,. 4G-4I- one lymph node, 4J-4N- multiple single lymph nodes. Summary of Sections: multiple. Final Diagnosis: 1. Sentinel lymph node right axilla, excision: - Metastatic adenocarcinoma in two of two lymph nodes (2/2) with. extracapsular extension. 2. Right breast, lumpectomy: - In situ and invasive pleomorphic lobular carcinoma, grade III (4 cm). extending to less than 0.1 mm of the inferior and posterior margins and. 0.2 cm from the anterior margin. - Other margins negative for tumor. - Previous biopsy site changes. - Extensive angiolymphatic invasion is present. 3. Right breast, final inferior margin, excision: - Residual invasive and in situ carcinoma with angiolymphatic invasion. - New margin negative for tumor. 4. Right axillary contents, regional resection: - Metastatic adenocarcinoma in three of twenty-nine lymph nodes (3/29). with extracapsular extension. - Axillary breast tissue is present. Stage pT2,N2,Mx.",
+  "gold": {
+    "T": "T2",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly lists pT2; tumor described as invasive pleomorphic lobular carcinoma measuring 4 cm, which is consistent with T2 (>2 cm to ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2",
+        "value_norm": "N2",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly lists N2; nodal involvement documented as 2/2 sentinel nodes and 3/29 axillary nodes (total 5 positive nodes) with extracapsular extension, consistent with N2 (4–9 positive axillary lymph nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": "Report explicitly lists Mx, indicating distant metastasis cannot be assessed from the pathological report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "- In situ and invasive pleomorphic lobular carcinoma, grade III (4 cm).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "- Metastatic adenocarcinoma in three of twenty-nine lymph nodes (3/29). with extracapsular extension.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "- In situ and invasive pleomorphic lobular carcinoma, grade III (4 cm).",
+        "confidence": "high",
+        "reason": "Primary tumor size reported as 4 cm, which corresponds to T2 (>2 cm to 5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "- Metastatic adenocarcinoma in two of two lymph nodes (2/2) with. extracapsular extension. - Metastatic adenocarcinoma in three of twenty-nine lymph nodes (3/29). with extracapsular extension.",
+        "confidence": "high",
+        "reason": "Report documents 2 positive sentinel nodes and 3 additional positive axillary nodes (total 5 positive nodes), consistent with N2 (4–9 positive regional lymph nodes).",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": "The report explicitly lists Mx (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Stage pT2,N2,Mx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-B9-7268.288fa268-6372-4f60-9d91-79de9255e20b",
+  "text": "Diagnosis: Kidney, left, partial nephrectomy. Histologic tumor type/subtype: papillary renal cell carcinoma,. type 2. Sarcomatoid features not identified. Histologic grade (if applicable) : Fuhrman nuclear grade 2 (of 4). Tumor size (greatest dimension) : 8.5 cm. Tumor focality: : focal. Extent of tumor invasion (if present specify if macroscopic or. microscopic) : Capsular invasion/perirenal adipose tissue: absent. Gerota' S fascia : absent. Renal sinus : not applicable. Major veins (renal vein or segmental branches, IVC) : not. applicable. Ureter: not applicable. Venous (large vessel) : absent. Lymphatic (small vessel) : absent. Histologic assessment of surgical margins : Renal parenchymal margin (partial nephrectomy only) : negative. Renal capsular margin (partial nephrectomy only) : negative. Paranephric adipose tissue margin (partial nephrectomy only) : negative. Gerota' S fascia (nephrectomy) : not applicable. Renal vein (nephrectomy) : not applicable. Ureter (nephrectomy) : not applicable. Adrenal gland: not submitted. Lymph nodes: none identified. AJCC Staging: pT2 pNx. This staging information is based on information available at. the time of this report, and is subject to change pending. clinical review and additional information. inical History : -year-old male with a left renal mass. Gross Description: Received is one appropriately labeled container, additionally. labeled \"left kidney\" and is a 159.8 gram 8.5 X 7.3 X 5.5 cm. circumscribed soft nodule, partially covered with a. predominantly intact capsule with a 1.3 cm irregular area of. disruption. The exposed parenchymal margin is 5.7 X 5.2 cm and. is inked black. The intact capsule is inked blue. Sectioning. demonstrates a solid soft golden yellow/tan cut surface abutting. blue and black inked capsular and parenchymal margins,. respectively. It also communicates with the orange inked. previously described defect. No cystic component is identified. There is a rim of renal parenchyma along the black inked. surgical margin. There is a small amount of attached perinephric. fat. The renal tissue at the periphery grossly appears. unremarkable. Block Summary: Inking: : capsule/blue, parenchyma/black, defect/yellow. A1 - tumor in relationship to black inked parenchymal margin. A2-A3 - - tumor and overlying capsule. A4 - edge of defect. A5-A6 - - central tumor.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2a",
+        "value_norm": "T2",
+        "evidence": "Tumor size (greatest dimension) : 8.5 cm.",
+        "confidence": "high",
+        "reason": "Tumor measures 8.5 cm which corresponds to T2a (>7 cm and ≤10 cm). Report also lists AJCC Staging: pT2 pNx.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pNx",
+        "value_norm": "NX",
+        "evidence": "Lymph nodes: none identified.",
+        "confidence": "high",
+        "reason": "No lymph nodes were submitted/identified; report explicitly lists pNx.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No mention of distant metastasis or metastatic sites in the pathology report; M category was not assessed pathologically.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "AJCC Staging: pT2 pNx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "Nx",
+        "value_norm": "NX",
+        "evidence": "AJCC Staging: pT2 pNx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "Tumor size (greatest dimension) : 8.5 cm.",
+        "confidence": "high",
+        "reason": "Tumor is 8.5 cm and confined to the kidney with no capsular/perinephric/venous invasion, consistent with T2 (>7 cm, limited to kidney).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "Lymph nodes: none identified.",
+        "confidence": "high",
+        "reason": "No lymph nodes were submitted/identified for pathologic assessment (report also states pNx).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No information on distant metastasis provided in the pathology report; metastasis cannot be assessed from this specimen.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "AJCC Staging: pT2 pNx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "NX",
+        "value_norm": "NX",
+        "evidence": "AJCC Staging: pT2 pNx.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or M stage in the pathology report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

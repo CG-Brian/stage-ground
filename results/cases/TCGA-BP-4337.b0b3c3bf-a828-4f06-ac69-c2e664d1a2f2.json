@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BP-4337.b0b3c3bf-a828-4f06-ac69-c2e664d1a2f2",
+  "text": "Clinical Diagnosis & History: Patient with left renal mass, Status-post left nephrectomy today. Now right renal re-vascularization. Specimens Submitted: 1: SP: Left kidney, adrenal gland, perinephric fat and renal vein thrombus. 2: SP: Para-aortic lymph node. 3: SP: Right renal artery thrombus (. 4: SP: Right renal artery intima. 5: SP: Spleen. DIAGNOSIS: 1). KIDNEY, LEFT, ADRENAL GLAND AND PERINEPHRIC ADIPOSE TISSUE; RADICAL NEPHRECTOMY: - RENAL CELL CARCINOMA, CONVENTIONAL TYPE, NUCLEAR GRADE IV/IV. - THE PATTERN OF GROWTH IS ACINAR. - THE TUMOR GREATEST DIAMETER IS 6,8 CM. - THE TUMOR EXTENDS THROUGH THE RENAL CAPSULE BUT IS CONFINED WITHIN GEROTA'S FASCIA. - INVASION OF THE RENAL VEIN IS PRESENT. - WE ALSO NOTE TUMOR EMBOLI IN SMALL VESSELS. - ALL SURGICAL MARGINS ARE FREE OF TUMOR,. - THE NON-NEOPLASTIC KIDNEY IS UNREMARKABLE. - THE ADRENAL GLAND IS UNREMARKABLE. - NO RENAL HILAR LYMPH NODES IDENTIFIED. 2). LYMPH NODE, PARA-AORTIC; EXCISION: - ONE BENIGN LYMPH NODE. 3). RENAL ARTERY THROMBUS, RIGHT; BIOPSY: - FRESH BLOOD, FIBRIN AND LEUKOCYTES. - NO TUMOR SEEN. 4). RENAL ARTERY INTIMA, RIGHT; BIOPSY: - BENIGN VASCULAR WALL. - NO TUMOR SEEN. 5). SPLEEN; SPLENECTOMY: - BENIGN SPLEEN,. . THREE BENIGN LYMPH NODES (0/3). - NO TUMOR SEEN. Special Studies: Special Stain. Comment. RECUT. Gross Description: 1). The specimen is received fresh, labeled, \"Left kidney, adrenal gland, perinephric fat and renal vein thrombus\". It consists. of a redical nephrectomy specimen composed of a kidney, adrenal gland and perinephric adipose tissue, weighing 330 grams and. measuring. 13.2 x 9.8 X 3.4 cm. The external surface is inked black. The upper half of the kidney is replaced by an ill-defined,. vaguely, lobulated, variegated tumor mass, measuring 6,8 x 5.7 x 3.2 cm, located 1.1 cm from the adrenal gland. The tumor. extends into the renal vein from which the tumor grows distally as an exophytic polypoid mass, measuring 3.6 cm in length. The. tumor also extends into the pelvis. However, grossly ureter margin and vascular margins are free of tumor. The tumor appears. to extend to, but not through, the overlying renal capsule. On cut sections, the tumor is yellow-tan, friable tissue with multiple. cystic degeneration and necrosis. The remaining kidney appears to be unremarkable. The adrenal gland measures 4,2 x 2.0 X. 0.7 cm, and is unremarkable. No lymph nodes are identified in the perinephric adipose tissue, therefore, representative sections. are submitted for histology. Photographs are taken. Small samples are given to TPS. Summary of Sections: M - margin (1-M1 contains the margin of the renal vein that contains the tumor). T - tumor (1-T3 contains the tumor in the renal vein). LT - random sections of the non-tumor kidney. FAT - perinephric adipose tissue. 2). The specimen is received in formalin, labeled, \"Para-aortic lymph node\". It consists of a lymph node, measuring 1.9 x 0,5. x 0.3 cm. Entirely submitted. Summary of Sections: LN - lymph node. 3). The specimen is received in formalin, labeled, \"Right renal artery thrombus\". it consists of multiple fragments of blood. clot, measuring up to 0.6 cm in greatest dimension in aggregate. Entirely submitted. Summary of Sections: U - undesignated. 4). The specimen is received in formalin, labeled, \"Right renal artery intima\". It consists of a single minute piece of pink-tan. soft tissue, measuring 0.1 cm In greatest dimension. Entirely submitted and is dabbed in Mercurochrome. Summary of Sections: U - undesignated. 5). The specimen is received fresh, labeled, \"Spleen \". It consists of a spleen measuring 12.5 x 7.5 x 2.2 cm and weighing. 220 grams. The splenic capsule is purple gray, intact and glistening. Attached to the hilum of the spleen is the fatty tissue,. marked by a clip, where embedded are probable splenic nodes measuring up to 0.2 cm in greatest dimension, The spleen. is. serially sectioned revealing hemorrhagic, glistening slightly granular cut surface without any discrete mass. Random sections of. the specimen are submitted. Summary of Sections: VM - vascular margin. PHM - probable hilar nodes. U - undesignated random section of the capsule with the splenic parenchyma. Summary of Sections: Part. 1: SP: Left kidney, adrenal gland, perinephric fat and renal vain thrombus. Block. Sect. Site. PCs. 1. FAT. 2. 2. LK. 2. 2. 5. 11. T. 13. Part 2: SP: Para-aortic lymph node. Block. Sect. Site. PCs. 1. In. 1. Part 3: SP: Right renal artery thrombus. Block. Sect. Site. PCs. 1. u. 10. Part 4: SP: Right renal artery intima. Block. Sact. Site. PCs. 1. 1. Part 5: SP: Spleen. Block. Sect. Site. PCs. 2. PLN. 2. 5. U. 5. VM. 10.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a",
+        "value_norm": "T3",
+        "evidence": "- THE TUMOR GREATEST DIAMETER IS 6,8 CM. - THE TUMOR EXTENDS THROUGH THE RENAL CAPSULE BUT IS CONFINED WITHIN GEROTA'S FASCIA. - INVASION OF THE RENAL VEIN IS PRESENT.",
+        "confidence": "high",
+        "reason": "Tumor invades renal vein and extends beyond the renal capsule into perinephric tissue but is confined within Gerota's fascia, meeting AJCC criteria for T3a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "THREE BENIGN LYMPH NODES (0/3).",
+        "confidence": "high",
+        "reason": "All examined regional lymph nodes are benign (0/3 positive).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": "SPLEEN; SPLENECTOMY: - BENIGN SPLEEN,.",
+        "confidence": "medium",
+        "reason": "No tumor identified in submitted distant organ (spleen) or other non-regional specimens; distant metastasis not identified in the pathology specimens provided.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "- THE TUMOR EXTENDS THROUGH THE RENAL CAPSULE BUT IS CONFINED WITHIN GEROTA'S FASCIA. - INVASION OF THE RENAL VEIN IS PRESENT.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "THREE BENIGN LYMPH NODES (0/3).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "- THE TUMOR EXTENDS THROUGH THE RENAL CAPSULE BUT IS CONFINED WITHIN GEROTA'S FASCIA.",
+        "confidence": "high",
+        "reason": "Tumor extends through the renal capsule and is confined within Gerota's fascia and there is renal vein invasion; per AJCC rules, perinephric fat invasion or renal vein invasion corresponds to T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "THREE BENIGN LYMPH NODES (0/3).",
+        "confidence": "high",
+        "reason": "All sampled lymph nodes are benign with 0/3 positive nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "- NO TUMOR SEEN.",
+        "confidence": "medium",
+        "reason": "No metastatic tumor identified in the examined specimens (lymph nodes, spleen, arterial thrombus); however distant metastasis cannot be fully excluded without clinical/radiologic correlation.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "INVASION OF THE RENAL VEIN IS PRESENT.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "THREE BENIGN LYMPH NODES (0/3).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "NO TUMOR SEEN.",
+        "confidence": "medium",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    }
+  }
+}

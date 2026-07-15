@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BR-8676.05ae128b-ca52-4fcb-9b6b-af8b4f6f74f0",
+  "text": "Case ID. Gross. Microscopic Description. Diagnosis Details. Description. Stomach with a. Adenocarcinoma of the stomach,. Tumor Features: Ulcerated,. tumor up to 10x12. intestinal type, G-3. Invasion is into. Tumor Extent: Perigastric fat ,. cm in size, with. the perigastric fat. Ten examined. Venous Invasion: Absent,. invasion into the. lymph nodes of the greater and. Margins: Absent, Treatment. perigastric fat. lesser curvatures demonstrated. Effect: Lymph nodes are. metastases. Omentum is of normal. dense hyperemic,. structure. up to 3 cm in size. Omentum is. hyperemic. Comments. Original records read. STOMACH TISSUE CHECKLIST. pN3a. Specimen type: Subtotal gastrectomy. Tumor site: Antrum. Tumor size: 10 X 0 X 12 cm. Tumor features: Ulcerated. Histologic type: Adenocarcinoma, intestinal type. Histologic grade: Poorly differentiated. Tumor extent: Subserosa. Lymph nodes: 10/10 positive for metastasis (Greater. and lesser omentum 10/10). Lymphatic invasion: Not specified. Venous invasion: Absent. Perineural invasion: Not specified. Margins: Uninvolved. Evidence of neo-adjuvant treatment: Not specified. Additional pathologic findings: Not specified. Comments: None.",
+  "gold": {
+    "T": "T3",
+    "N": "N3",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "Tumor extent: Subserosa.",
+        "confidence": "high",
+        "reason": "Invasion limited to subserosa corresponds to pT3 for gastric carcinoma (no serosal or adjacent organ invasion reported).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN3a",
+        "value_norm": "N3",
+        "evidence": "Lymph nodes: 10/10 positive for metastasis (Greater. and lesser omentum 10/10). STOMACH TISSUE CHECKLIST. pN3a.",
+        "confidence": "high",
+        "reason": "Ten positive regional lymph nodes (10) falls in the 7-15 node category = N3a; checklist explicitly notes pN3a.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": "Omentum is of normal. dense hyperemic,. structure. up to 3 cm in size. Omentum is. hyperemic.",
+        "confidence": "medium",
+        "reason": "No distant metastatic deposits reported in the resection specimen or omentum; report does not explicitly state pM but findings are consistent with no pathologic distant metastasis.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor extent: Subserosa.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3a",
+        "value_norm": "N3",
+        "evidence": "Lymph nodes: 10/10 positive for metastasis (Greater. and lesser omentum 10/10).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor extent: Subserosa.",
+        "confidence": "high",
+        "reason": "Subserosal invasion corresponds to T3 (tumor invades subserosa) in gastric cancer staging.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "Lymph nodes: 10/10 positive for metastasis (Greater. and lesser omentum 10/10).",
+        "confidence": "high",
+        "reason": "Ten of ten regional lymph nodes are positive (10 positive nodes); report also states pN3a, which corresponds to N3 (7-15 positive nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "Omentum is of normal.",
+        "confidence": "medium",
+        "reason": "No distant metastases are described in the report; omentum noted as normal and only regional lymph node metastases are documented. pM is not explicitly reported.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Tumor extent: Subserosa.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N3",
+        "value_norm": "N3",
+        "evidence": "Lymph nodes: 10/10 positive for metastasis (Greater. and lesser omentum 10/10).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No mention of distant metastasis or pathologic M stage in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

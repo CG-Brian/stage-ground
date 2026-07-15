@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-55-6975.7c03cf6a-c871-4c53-af4d-cb931f6d8b72",
+  "text": "Not for Permanent Storage in Medical Records / Not Valid for Signing. Result Provider. Report Name. : Surgical Report. SEE REPORT. PROCEDURE DATE: SPECIMEN DESCRIPTION: LEFT LOWER LOBE OF LUNG,. PRE-OPERATIVE DIAGNOSIS: Left lung mass. POST-OPERATIVE DIAGNOSIS: Same, pending pathology. CLINICAL INFORMATION: Left lung mass. INTRAOPERATIVE CONSULTATION: APC DIAGNOSIS: \"Received left lower lobe with a large palpable mass, inked. and sectioned; large necrotic mass grossly involves pleural;. 1. (Cytosmear) nonsmall cell carcinoma, favor squamous,. pending pathology review;. 2. (Frozen section) bronchial margin negative for tumor,' by. GROSS DESCRIPTION: A. The specimen consists of the left lower lobe, measuring 17 X 13 X 9 cm and. weighing 285 grams. The pleural surface is smooth and congested. The medial. aspect reveals a portion of adherent pulmonary tissue (possibly from the left. upper lobe), measuring 4.0 X 2.5 X 1.7 cm. The adherent tissue has a staple. line, measuring 4 cm in length. The specimen is serially sectioned to reveal. a well-circumscribed tan-white mass, measuring 6.5 X 6.0 X 6.0 cm. The mass. is composed of tan-white firm tissue with focal necrosis. The mass is 1 cm. from the bronchial margin. The remaining specimen shows tan-pink spongy. pulmonary parenchyma with focal congestion. No sac-like lesion is. identified. The bronchial and vascular margins are unremarkable. Three hilar. lymph nodes, ranging from 0.6 to 1.0 cm in greatest dimension, are. identified. Sections show moderate anthracosis. Representative sections are. submitted in nine cassettes as follows: cassette 1 - bronchus at the frozen. section piece; cassette 2 - vascular margin; cassette 3 - three hilar lymph. nodes; cassette 4 - adherent portion with staple line; cassettes 5 through 7. mass: cassettes 8 and 9 - lung parenchyma away from the mass. The specimen consists of two pieces of tan-white soft tissue, measuring. 0.8 X 0.5 X 0.2 cm and 1.5 X 0.5 X 0.2 cm. The specimen is submitted intact. in one cassette. Not for Permanent Storage in Medical Records / Not Valid for Signing. MICROSCOPIO DESCRIPTION: Nine slides are examined. The bronchial margin appears on cassette 1 and. does not show any evidence of involvement by tumor. Portions of vascular. margin appear on cassette 2 without evidence of tumor involvement. Three. hilar lymph nodes are present on slide 3. All of them show extensive. replacement by non-oat cell carcinoma. Portions of lung mass are seen on. slides 4 through 7. The tumor demonstrates extensive necrosis on slide 4, and. the remaining pattern is that of a moderately to poorly differentiated. carcinoma with numerous areas showing clear cells along with typical malignant. glands. There is extensive intrapulmonary lymphatic and vascular invasion. Pleural lymphatics on slide 4 are filled with plugs of tumor and both veins. and lymphatics of the interlobular septum show tumor involvement on the same. slide. Extensive involvement of the visceral pleura is also noted on slide. 5. On slide 6, there is a foca area showing dyskeratotic cells consistent. with squamous differentiation. Focal areas of bronchioalveolar. differentiation are noted on slide 6. On slide 7, small areas of vascular. involvement are present with plugs of tumor present in endothelial lined. spaces. On slide 8, which is said to represent lung tissue taken away from. the tumor there appears to be a minute independent focus of poorly. differentiated adenocarcinoma. One slide is examined. A portion of bronchial wall with cartilage is. present. No tumor is seen. This supports the frozen section diagnosis. FINAL DIAGNOSIS: A. 1. HISTOLOGIC TYPE: ADENOCARCINOMA WITH MINOR AREAS OF SQUAMOUS. AND BRONCHIOLOALVEOLAR DIFFERENTIATION. 2. HISTOLOGIC GRADE: GII-III. 3. EXTENT OF INVASION: pT2. 4. MARGINS: VASCULAR AND BRONCHIAL MARGINS CLEAR. 5. BLOOD/LYMPHATIC VESSEL INVASION: PRESENT. 6. REGIONAL LYMPH NODES: METASTATIC CARCINOMA IDENTIFIED IN THREE. OF THREE HILAR LYMPH NODES (PNI). 7. DISTANT METASTASIS: CANNOT EVALUATE. 8. ADDITIONAL PATHOLOGIC FINDINGS: PATCHY COPD. A-MALIGNANT.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "3. EXTENT OF INVASION: pT2.",
+        "confidence": "high",
+        "reason": "Explicitly stated as pT2 in the final diagnosis.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "6. REGIONAL LYMPH NODES: METASTATIC CARCINOMA IDENTIFIED IN THREE. OF THREE HILAR LYMPH NODES (PNI).",
+        "confidence": "high",
+        "reason": "Metastatic carcinoma is identified in hilar lymph nodes; hilar nodes correspond to N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "7. DISTANT METASTASIS: CANNOT EVALUATE.",
+        "confidence": "high",
+        "reason": "Distant metastasis was reported as 'CANNOT EVALUATE', corresponding to MX (cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "3. EXTENT OF INVASION: pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "6. REGIONAL LYMPH NODES: METASTATIC CARCINOMA IDENTIFIED IN THREE. OF THREE HILAR LYMPH NODES (PNI).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": "7. DISTANT METASTASIS: CANNOT EVALUATE.",
+        "confidence": "low",
+        "reason": "report states distant metastasis cannot be evaluated",
+        "grounded": true,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "3. EXTENT OF INVASION: pT2.",
+        "confidence": "high",
+        "reason": "Pathology report explicitly states pT2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "6. REGIONAL LYMPH NODES: METASTATIC CARCINOMA IDENTIFIED IN THREE. OF THREE HILAR LYMPH NODES (PNI).",
+        "confidence": "high",
+        "reason": "Metastatic involvement of hilar lymph nodes corresponds to N1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "7. DISTANT METASTASIS: CANNOT EVALUATE.",
+        "confidence": "high",
+        "reason": "Distant metastasis was not assessed in the report, so staging is MX.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "3. EXTENT OF INVASION: pT2.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "6. REGIONAL LYMPH NODES: METASTATIC CARCINOMA IDENTIFIED IN THREE. OF THREE HILAR LYMPH NODES (PNI).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "7. DISTANT METASTASIS: CANNOT EVALUATE.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BH-A0DL.C96287D0-A60B-4BAA-ABA0-8AD4F48662DB",
+  "text": "P.7/33. FINAL DIAGNOSIS: PART 1: BREAST, LEFT, SEGMENTAL MASTECTOMY -. A. INFILTRATING DUCTAL CARCINOMA (18, 1C, 1E, 1F, and 1GI) WITH METAPLASTIC CARCINOMA. COMPONENT (8QUAMOUS METAPLASIA) AND FOCAL APOCRINE FEATURES (see comment). B. THE TUMOR SIZE IS 2.5 x 1.8 x 1.8 CM. c. NOTTINGHAM SCORE IS 9/9 (TUBULES 3, NUCLEI 3, MITOSES 3). D. LYMPHOVASCULAR PERMEATION IS NOT APPRECIATED. E. DUCTAL CARCINOMA IN SITU. SOLID AND CRIBRIFORM TYPES, NUCLEAR GRADE 3. REPRESENTING. ABOUT LESS THAN 1% OF TUMOR VOLUME. DUCTAL CARCINOMA IN SITU is PRESENT ADMIXED AND. OUTSIDE OF THE INVASIVE TUMOR. F. MARGINS OF RESECTION AREFREE OF TUMOR. G. CHANGES CONSISTENT WITH PREVIOUS CORE BIOPSY, SEE PRIOR. H. FIBROCYSTIC CHANGES WITH DUCT ECTASIA, COLUMNAR CELL CHANGES AND SCLEROSING ADENOSIS. WITH ASSOCIATED MICROCALCIFICATIONS. I. SMALL INTRADUCTAL PAPILLOMA. J. CALCIFIED NODULE WITH PERIDUCTAL INFLAMMATION AND FIBROADENOMATOID NODULE (1J). K. IMMUNOHISTOCHEMICAL STAINING FOR ESTROGEN RECEPTOR, PROGESTERONE RECEPTOR AND HER-. 2/NEU A9 PREVIOUSLY PERFORMED ON. AND WERE REPORTED AS FOLLOWS: ESTROGEN. 0). RECEPTOR - POSITIVE, PROGESTERONE RECEPTOR - NEGATIVE. AND HER-2/NEU - NEGATIVE (SCORE. PART 2: LYMPH NODE, LEFT SENTINEL #1, BIOPSY -. ONE LYMPH NODE, FREE OF TUMOR (0/1). PART 3: LYMPH NODE. LEFT SENTINEL #2, BIOPSY -. ONE LYMPH NODE, FREE OF TUMOR (0/1). PART 4: LYMPH NODE, LEFT SENTINEL #3, BIOPSY -. ONE LYMPH NODE, FREE OF TUMOR (0/1). PART 5: BREAST, LEFT, NEW POSTERIOR MARGIN, EXCISION -. A. NO TUMOR is SEEN. B. FIBROADENOMATOID NODULES WITH ASSOCIATED MICROCALCIFICATIONS. c. FIBROCYSTIC CHANGES WITH DUCTAL EPITHELIAL HYPERPLASIA AND COLUMNAR CELL CHANGES. WITH ASSOCIATED MICROCALCIFICATIONS. D. FOCAL CHRONIC INFLAMMATION WITH GIANT CELL GRANULOMATOUS REACTION. E. MEDIAL CALCIFICATION OF RI mm. CASE SYNOPSIS: SYNOPTIC - PRIMARY INVASIVE CARCINOMA OF BREAST. LATERALITY: I eft. PROCEDURE: Segmental. Not specified. SIZE OF TUMOR: Maxinum dimansion invasive component: 2.5 cm. MULTICENTRICITY/MULTIFOCALITY OF INVASIVE FOCI: TUMOR TYPE (Invasive component): Ductal adenocarcinoma, NOS, Mctaplastic carcinoma. NOTTINGHAM SCORE: Nuclear grade: 3. Tubule formation: 3. Mitotic activity score 3. Total Nottinghem score: 9. Nottingham grade (1.2, 3): 3. ANGIOLYMPHATIC INVASION: DERMAL LYMPHATIC INVASION: Not applicable. CALCIFICATION: Yes, bonign zones. TUMOR TYPE, IN SITU: Cribriform. Solid. DCIS admixed and outside of invesive carcinoma component. Percent of tumor occupled by in situ component 1%. SURGICAL MARGINS INVOLVED BY INVASIVE COMPONENT: SURG MARGINS INVOLVED BY IN SITU COMPONENT: LYMPH NODES POSITIVE: o. 3. LYMPH NODES EXAMINED: METHOD(S) OF LYMPH NODE EXAMINATION: H/E stain. SENTINEL NODE METASTASIS: NON-NEOPLASTIC BREAST TISSUE: Fibroadenoma, FCD. T STAGE, PATHOLOGIC: p12. N STAGE, PATHOLOGIC: pNo. M STAGE, PATHOLOGIC: pMX. ESTROGEN RECEPTORS: positive. PROGESTERONE RECEPTORS: negative. HER2/NEU: zero or 1+.",
+  "gold": {
+    "T": "T2",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "SIZE OF TUMOR: Maxinum dimansion invasive component: 2.5 cm.",
+        "confidence": "high",
+        "reason": "Maximum invasive tumor dimension 2.5 cm, which corresponds to pT2 (>2 cm to ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "PART 2: LYMPH NODE, LEFT SENTINEL #1, BIOPSY -. ONE LYMPH NODE, FREE OF TUMOR (0/1).",
+        "confidence": "high",
+        "reason": "All examined sentinel nodes reported free of tumor (0/1 each; overall 0/3), consistent with pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "Report documents pathologic M stage as pMX (cannot be assessed pathologically).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "SIZE OF TUMOR: Maxinum dimansion invasive component: 2.5 cm.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "N STAGE, PATHOLOGIC: pNo.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "THE TUMOR SIZE IS 2.5 x 1.8 x 1.8 CM.",
+        "confidence": "high",
+        "reason": "Maximum invasive tumor dimension 2.5 cm, which corresponds to T2 (>2 cm to ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "N STAGE, PATHOLOGIC: pNo.",
+        "confidence": "high",
+        "reason": "All sentinel nodes reported free of tumor (0/1 each) and summary indicates pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "Pathologic M stage recorded as pMX (distant metastasis not assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "B. THE TUMOR SIZE IS 2.5 x 1.8 x 1.8 CM.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "PART 2: LYMPH NODE, LEFT SENTINEL #1, BIOPSY -. ONE LYMPH NODE, FREE OF TUMOR (0/1).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

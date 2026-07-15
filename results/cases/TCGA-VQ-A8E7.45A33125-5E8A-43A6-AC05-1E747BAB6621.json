@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-VQ-A8E7.45A33125-5E8A-43A6-AC05-1E747BAB6621",
+  "text": "PRIMARY SITE: Stomach (Gastroesophageal junction). 1 - \"Esophagus + Stomach\": Adenocarcinoma characterized as follows: Histological pattern(s) observed: tubular. Histological grade: II - moderately differentiated. Measure of the longest axis of the tumor: 12.70. Lauren's classification: Ulceration: present. Compromise of: Mucosa. Muscularis mucosae. Submucosa. Muscularis propria. Adjacent adipose tissue. Type of tumor invasion. Spiculated. Inflammatory reaction: Mild. Tumor implantation in peri-visceral adipose tissue: Not detected. Proximal margin: Free of neoplastic involvement. Distal margin: Free of neoplastic involvement. Radial margin: Free of neoplastic involvement. Neural infiltration: Present. Lymphatic vascular invasion: Not detected. Sanguineous vascular invasion: Present. Lymph nodes: Compromised: Compromised/dissected lymph nodes ratio: 1/23. Lymph node conglomerates: Not detected. - Discrimination of lymph nodes: Periesophageal: 0/3. Perigastric: 0/18. Note: the neoplasm is from esophagogastric transition. Intestinal pattern of. Lauren. 2 - \"Distal splenic artery (lymph node) : Absence of neoplasia in the examined materials (0/0). 3 - \"Inferior paraesophageal lymph node\": Absence of neoplasia in the analyzed materials (0/0). 4 - Recurrent lymph node : Adenocarcinoma metastatic to lymph node (1/1). 5 - \"Esophageal margin\": Free of neoplastic involvement. 6 - \"Epiploon\": Free of neoplastic involvement. PATHOLOGICAL STAGING. Topography. Morphology. Stage. Stomach, NOS. Adenocarcinoma. NOS. pT3 pN1.",
+  "gold": {
+    "T": "T3",
+    "N": "N1",
+    "M": "M1"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3",
+        "value_norm": "T3",
+        "evidence": "pT3 pN1",
+        "confidence": "high",
+        "reason": "Pathological staging explicitly states pT3; report describes invasion through muscularis propria into adjacent adipose tissue consistent with T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "Compromised/dissected lymph nodes ratio: 1/23",
+        "confidence": "high",
+        "reason": "One positive regional lymph node (1/23), consistent with pN1 (1-2 regional nodes involved).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No distant metastases reported and pathological staging lists only pT3 pN1 without an M descriptor; no metastatic deposits documented.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3 pN1.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "Compromised/dissected lymph nodes ratio: 1/23.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": "Report explicitly states pathological stage pT3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1",
+        "confidence": "high",
+        "reason": "Report explicitly states pathological stage pN1 and documents 1/23 positive regional lymph nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No pathological M (distant metastasis) category is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "pT3",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of metastatic (M) status in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

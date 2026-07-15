@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BT-A20P.C35A6F61-D5C4-4F8C-B82B-1349E6CDCA43",
+  "text": "PATIENT HISTORY: PRE-OP DIAGNOSIS: Bladder cancer. POST-OP DIAGNOSIS: Same. PROCEDURE: Radical cystectomy, creation of ileal conduit, left nephroureterectomy. FINAL DIAGNOSIS: PART 1: LYMPH NODES, RIGHT PELVIC. EXCISION -. NO EVIDENCE OF MALIGNANCY IN TWO (2) LYMPH NODES EXAMINED. PART 2: LYMPH NODES, LEFT PELVIC, EXCISION -. NO EVIDENCE OF MALIGNANCY IN TWO (2) LYMPH NODES EXAMINED. PART 3: URETER, RIGHT, DISTAL MARGIN -. BENIGN URETER WITH REACTIVE UROTHELIAL CHANGES AND NO EVIDENCE OF NEOPLASIA. PART 4: URINARY BLADDER AND URETHRA, RADICAL CYSTECTOMY -. A. INVASIVE HIGH GRADE UROTHELIAL CARCINOMA, 4.5 CM, (WHO/ISUP) WITH EXTENSIVE NECROSIS. CARCINOMA. EXTENSIVELY INVOLVES THE LEFT BLADDER WALL AND LEFT TRIGONE, WITH ENCASEMENT OF THE DISTAL. LEFT URETER AND PRE-STENOTIC LEFT URETERAL DILATATION. THE CARCINOMA INVADES THE DETRUSOR. MUSCLE AND EXTENDS INTO THE PERIVESICAL FAT. B. INVASIVE UROTHELIAL CARCINOMA is PRESENT IN THE SUBMUCOSAL TISSUE AT THE PERIURETHRAL MARGIN. THE FOCUS OF CARCINOMA AT THIS MARGIN MEASURES APPROXIMATELY 0.7 CM (Slide 4A). ALL OTHER FINAL. SURGICAL MARGINS ARE FREE OF NEOPLASIA. C. FOCAL UROTHELIAL CARCINOMA IN SITU IS IDENTIFIED (Slide 4G). D. NO PERINEURAL INVASION IS IDENTIFIED. E. ANGIOLYMPHATIC INVASION is IDENTIFIED, WITH TUMOR THROMBI PRESENT IN LYMPHATICS AND ALSO IN A. SMALL VEIN (Slides 4C, 4E). F. ION-NEOPLASTIC BLADDER WITH CHRONIC CYSTITIS AND SMALL URACHAL REMNANT IN SLADDER DOME. G. TNM PATHOLOGIC STAGING - T3a NO MX. H. TNM HISTOPATHOLOGIC GRADE - G3 (see microscopic description). PART 5: KIONEY AND URETER, LEFT, NEPHROURETERECTOMY -. A. BENIGN KIDNEY WITH SEVERE CHRONIC PYELONEPHRITIS, ASSOCIATED WITH SEVERE GLOBAL AND. SEGMENTAL GLOMERULOSCLEROSIS CHRONIC VASCULAR AND TUBULOINTERSTITIAL DISEASE, AND. HYDRONEPHROSIS. B. URETER WITH FOCAL UROTHELIAL ATYPIA OF UNDETERMINED SIGNIFICANCE (DYSPLASIA VERSUS SEVERE. REACTIVE ATYPIA; Silde 5B). c. NO INVASIVE CARCINOMA IDENTIFIED. COMMENT: The case was discussed with Dr. SYNOPTIC PRIMARY URINARY BLADDER/URETHRA TUMORS. A. Location of primary tumor: 5.6.8. 1. Dome. 4. Right wail. 2. Anterior wall. 7. Ureter. 5. Left wall. 10. No residual tumor. 3. Posterior wail. 8. Urethra. 6. Trigone. B. Procedure: 2. 9. Multicentric. 1. Partial cystectomy. 2. Total cystectomy. 3. Cystoprostatectomy. 4. Other. C. C1: Size (if multicentric, maximum dimension of the most deeply invasive or largest tumor): 4.5 cm. Tumor configuration: 4. 1. Papiliary. 4. Ulcerated. 2. Solid/nodular. 5. Cystic. 3. Flat. D. Non-invasive neoplastic lesions: 1. Papilloma. 4. Flat CIS. 2. Inverted papilloma. 3. Papiliary TCCa. 5. Other. E. Invasive neoplasia: 1. 1. Urothelial (Transitional celf) carcinoma. 2. Urothelial carcinoma with squamous differentiation 8 Mixed urothelial carcinoma. 7. Small cell/neuroendocrine carcinoma. 4 Squamous carcinoma. 3. Urothellal carcinoma with glandular differentiation 9. Lymphoma/leukemia. 5. Adenocarcinoma. 10. Sarcoma. 6. Sarcmatoid carcinoma. 11. Metastasis/direct extension from a. contiguous primary. F. 12. Other. G. Non-neoplastic Grade: 3-4 (Ash for TCCa grades 1-4)1 3 (WHO for TCCa grades 1-3)/HG (WHO/ISUP (LMP, LG, HG). and other conditions: 2 Nephrogenic metaplasia/ adenoma. 1. Von Brunn's nests, cystitis cystica/glandularis, intestinal metaplasia. 3. Granulomatous cystitis. 4. Interstitial cysträs. 5. Inflammatory pseudotumors. 6. Caruncie. 7. Malakoplakia. 8. Other. H. Margins of resection: 1, Perlurethral. 1. Positive. 2. Negative.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states T3a and the microscopic description notes invasion of detrusor muscle and extension into perivesical fat, consistent with T3a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly lists N0 and lymph node sections state \"NO EVIDENCE OF MALIGNANCY IN TWO (2) LYMPH NODES EXAMINED.\"",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly indicates MX (distant metastasis cannot be assessed); no distant metastases documented in the pathology report.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "NO EVIDENCE OF MALIGNANCY IN TWO (2) LYMPH NODES EXAMINED.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states T3a; mapped to allowed category T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly indicates N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "G. TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly indicates MX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "NO EVIDENCE OF MALIGNANCY IN TWO (2) LYMPH NODES EXAMINED.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "TNM PATHOLOGIC STAGING - T3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

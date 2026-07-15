@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-AN-A0XO.3423E8AE-CE73-4212-BB72-2AF92FD0BC2D",
+  "text": "Sex: Female. Diagnosis: Breast Cancer Histological description: Infiltrative ductal carcinoma. Anatomic Site: Breast Tumor location: Primary. Tissue Specification: Tumor Specimen Matrix: Tissue Specimen Format: OCT. Container: block Type of Procurement: surgery Grade: 2. T Stage: 2 N Stage: 1 M Stage: 0 Treatment: none. Treatment Details: n/a. Normal Sample. Anatomic Site: Blood Sample Type: Normal Type of Procurement: blood draw. Matrix: Blood Specimen Format: frozen Container: tube.",
+  "gold": {
+    "T": "T2",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T Stage: 2",
+        "confidence": "high",
+        "reason": "T stage is explicitly listed as 2 in the report",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "N Stage: 1",
+        "confidence": "high",
+        "reason": "N stage is explicitly listed as 1 in the report",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "M Stage: 0",
+        "confidence": "high",
+        "reason": "M stage is explicitly listed as 0 in the report",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T Stage: 2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "N Stage: 1",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "M Stage: 0",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T Stage: 2",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists 'T Stage: 2'.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "N Stage: 1",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists 'N Stage: 1'.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "M Stage: 0",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists 'M Stage: 0'.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "T Stage: 2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "N Stage: 1",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      },
+      "M": {
+        "value": "M0",
+        "value_norm": "M0",
+        "evidence": "M Stage: 0",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      }
+    }
+  }
+}

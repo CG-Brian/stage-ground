@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-G4-6627.e8744b51-cced-496b-9746-9f06ff93a01e",
+  "text": "SPECIMENS: A. TERMINAL ILEUM AND RIGHT COLON. DIAGNOSIS: A. RIGHT COLON AND TERMINAL ILEUM, RESECTION: - INFILTRATING MODERATELY DIFFERENTIATED COLON. ADENOCARCINOMA (2.2 CM) INVOLVING THE SUBSEROSA. - SIXTEEN BENIGN LYMPH NODES (0/16). SEE TEMPLATE. - SURGICAL MARGINS ARE NOT INVOLVED. - MULTIPLE HYPERPLASTIC POLYPS AND SMALL TUBULAR ADENOMA. COLORECTAL CANCER TEMPLATE. Specimen Type: Right hemicolectomy. Tumor Site: Ascending colon. Tumor Configuration: Ulcerating with indurated edge. Tumor Size: 2.2 cm. Histological Type: Adenocarcinoma. Histological Grade: Moderate-poorly differentiated. Extent of Invasion: Subserosa. Margins: Uninvolved. Distance to Closest Margin: 0.6 cm from radial margin. Angiolymphatic Invasion: Absent. Perineural Invasion: Absent. Additional Findings: Hyperplastic polyps and minute tubular adenoma. Extent of Resection: R0: Complete. Lymph Nodes: Negative: 0/16. Implants: Absent. Pathological Stage: pT3a NO MX. SPECIMEN(S): A. TERMINAL ILEUM AND RIGHT COLON. CLINICAL HISTORY: Not given. GROSS DESCRIPTION: A. TERMINAL ILEUM AND RIGHT COLON. Received fresh and labeled as \"terminal ileum and right colon\". Received is a closed segment of colon. and terminal ileum measuring 26.4 cm in length. There is a constricted portion of the right colon located. at the mid segment. This entire segment is inked blue. The terminal ileum measures approximately 4.6. X 4.1 cm and the right colon measures 22.0 cm in length and 6.0 cm in diameter. There is an ulcerated. tumor mass measuring 2.2 X 2.2 X 0.6 cm which extends through the muscularis propria. The tumor is. situated in the colon and is located 11.0 cm from the proximal margin and 13.0 cm from the distal. colonic margin. There are several polyps present throughout the right colon ranging in size from 0.1 to. 0.7 cm. Sections are taken for tissue procurement and gross photograph was also taken. Representative sections are submitted as follows: A1: shaved sections of proximal margin. A2: shaved sections of distal margin. A3-A11: mass, including deep margin. A12: polyps. A13: normal-appearing colonic mucosa. A14-A17: possible lymph nodes. A18: normal-appearing tissue from ileum.",
+  "gold": {
+    "T": "T3",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT3a",
+        "value_norm": "T3",
+        "evidence": "Pathological Stage: pT3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pT3a; extent of invasion is given as subserosa which corresponds to T3.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "SIXTEEN BENIGN LYMPH NODES (0/16).",
+        "confidence": "high",
+        "reason": "Zero of sixteen regional lymph nodes contain metastasis (0/16), consistent with N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "Pathological Stage: pT3a NO MX.",
+        "confidence": "high",
+        "reason": "Report lists MX (cannot be assessed/unknown) for distant metastasis.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T3a",
+        "value_norm": "T3",
+        "evidence": "Pathological Stage: pT3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: Negative: 0/16.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological Stage: pT3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Extent of Invasion: Subserosa.",
+        "confidence": "high",
+        "reason": "Invasion into the subserosa corresponds to pathologic T3; report also lists pT3a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: Negative: 0/16.",
+        "confidence": "high",
+        "reason": "No metastatic lymph nodes identified (0/16).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological Stage: pT3a NO MX.",
+        "confidence": "high",
+        "reason": "Report explicitly records MX (distant metastasis cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T3",
+        "value_norm": "T3",
+        "evidence": "Pathological Stage: pT3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Lymph Nodes: Negative: 0/16.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "Pathological Stage: pT3a NO MX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

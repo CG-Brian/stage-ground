@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-ZH-A8Y4.8C44AB5C-5F49-4F12-9273-F8AEDD9F0316",
+  "text": "Diagnosis: A: Gallbladder and lymph nodes, removal. - No evidence of malignancy. - Three lymph nodes, negative for metastatic carcinoma (0/3). (see comment). - Chronic cholecystitis with cholelithiasis. B: Liver, segments, 4, 5 and 8, resection. - Moderate to poorly differentiated adenocarcinoma, most. consistent with primary intrahepatic cholangiocarcinoma (see. comment). - Tumor size: 11.5 cm. - Tumor extent: tumor involves hepatic parenchyma. - Margins: - Hepatic parenchymal margin: positive focally (B6). - Portal vein margin: negative; tumor is 0.5 cm from portal vein. margin. - No definitive lymphovascular space invasion identified. - No perineural invasion identified. - Nonneoplastic liver with macrovesicular steatosis involving. approximately 10% of the hepatic parenchyma. - AJCC pathologic stage: pT1 pNO. Comment: Sections of lymph nodes from specimen A show no evidence of. metastatic carcinoma, confirmed by pan-cytokeratin stain. Sections of the liver show a moderately differentiated. adenocarcinoma within a desmoplastic background. The neoplastic. cells exhibit moderate nuclear pleomorphism with easily. identified mitotic figures. Immunohistochemical stains. are performed and show the neoplastic cells to be focally. positive for CK7 and negative for CK20, BerEP4, RCC, PSA, PSAP,. TTF-1 and HepPAR1. These findings support the diagnosis of. intrahepatic cholangiocarcinoma. Dr. has reviewed this case and. agrees with the diagnosis. A CD31 immunohistochemical stain is performed on block B4. No. definitive lymphovascular space invasion is identified. For cases in which immunostains are performed, the following. applies: Appropriate internal and/or external positive and negative. controls have been evaluated. Some of the immunohistochemical. reagents used in this case may be classified as analyte specific. reagents (ASR) . These were developed and have performance. characteristics determined by the. These reagents have not been cleared or approved by the US Food. and Drug Administration (FDA). The FDA has determined that such. clearance or approval is not necessary. These tests are used for. clinical purposes. They should not be regarded as. investigational or for research. This laboratory is certified. under the Clinical Laboratory Improvement Amendments of 1988. (CLIA-88) as qualified to perform high complexity clinical. laboratory testing. Clinical History: -year-old male with cholangiocarcinoma. Gross Description: Specimen A is received in a formalin filled container labeled. with the patient's name and as \"gallbladder and lymph nodes\". Previously opened: no. Measurements: 8.5 X 3.0 X 1.0 cm. External surface: One surface exhibits a dusky pink-purple. smooth glistening intact serosa. The opposite surface exhibits. a roughened adhesed surface consistent with contact with the. hepatic surface. This surface exhibits a 1.2 cm gross dimension. transmural defect. The hepatic surface is inked green. Wall thickness: uniform 0.1 cm. Mucosa: The mucosal surface is dusky hemorrhagic red-brown with. slight granularity. Stones present : No gallstones are identified. Other comments : Three cystic duct lymph node candidates are. identified ranging in size from 0.8 cm up to 1.5 cm in. greatest dimension. The cystic duct margin is inked blue, the. hepatic surface is inked green. Block #: A1 cystic margin and representative sections of the gallbladder. A2 three cystic duct lymph node candidates. Specimen B received in a formalin filled container labeled with. the patient's name and as \"liver segment 4, 5, 8 resection\" is a. 400 g, 14.0 X 11.0 X 4.5 cm liver resectioned specimen. The. resection margin is inked black, the portal vein margin is inked. red. The liver capsule is a dusky red-purple with patchy. areas of tan-pink ulceration up to 1.0 cm in greatest dimension. The capsule has a central area which is tan-pink and lighter in. color than the area surrounding it in the periphery which is a. dusky purple-red. The capsule is centrally firm. Sectioning. exhibits a 11.5 X 6.0 X 4.8 cm tan-white firm mass with ill. defined irregular borders and patchy areas of hemorrhage. The. mass grossly abuts the resection margin, is 0.3 cm from the. capsule, and abuts the portal vein margin. The remainder of the. liver parenchyma is a soft smooth glistening golden-yellow-. orange. Ink: resection margin black, portal vein. margin red. Block Summary: B1 - tumor closest approach to resection margin. B2 - tumor closest approach to portal vein margin. B3 - B4 - representative sections of the tumor and adjacent liver. parenchyma and capsule. B5 - uninvolved liver parenchyma. B6 - additional section of tumor and parenchymal margin.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1",
+        "value_norm": "T1",
+        "evidence": "AJCC pathologic stage: pT1 pNO.",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists AJCC pathologic stage as pT1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "Three lymph nodes, negative for metastatic carcinoma (0/3).",
+        "confidence": "high",
+        "reason": "All examined lymph nodes were negative and the report states pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No distant metastasis (M) category or statement about metastatic disease is provided in the report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "AJCC pathologic stage: pT1 pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Three lymph nodes, negative for metastatic carcinoma (0/3).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "AJCC pathologic stage: pT1 pNO.",
+        "confidence": "high",
+        "reason": "Report explicitly states AJCC pathologic stage pT1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "Three lymph nodes, negative for metastatic carcinoma (0/3).",
+        "confidence": "high",
+        "reason": "Nodes are reported as 0/3 and the report lists pN0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "high",
+        "reason": "No information on distant metastasis or pathologic M-stage is provided in the report, so M status cannot be assessed from this pathology report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "AJCC pathologic stage: pT1 pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "AJCC pathologic stage: pT1 pNO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No mention of distant metastasis or pathologic M stage in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

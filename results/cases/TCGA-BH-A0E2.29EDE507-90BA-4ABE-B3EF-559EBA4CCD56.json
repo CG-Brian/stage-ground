@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-BH-A0E2.29EDE507-90BA-4ABE-B3EF-559EBA4CCD56",
+  "text": "P.25/33. DIAGNOSIS: BREAST, RIGHT, MODIFIED RADICAL MASTECTOMY -. A. INVASIVE DUCTAL CARCINOMA WITH ASSOCIATED CALCIFICATIONS. B. NOTTINGHAM GRADE 3 (TUBULE FORMATION: 3, NUCLEAR PLEOMORPHISM: 3, MITOTIC ACTIVITY: 3; TOTAL. SCORE: 9/9). C. INVASIVE TUMOR MEASURES 2.5 X 2.3 X 2.0 CM. D. DUCTAL CARCINOMA IN SITU (DCIS), NUCLEAR GRADE 3, SOLID, CRIBRIFORM MICROPAPILLARY AND CLEAR. CELL TYPES WITH COMEDONECROSIS AND ASSOCIATED CALCIFICATIONS. E. THE DUCTAL CARCINOMA IN SITU (DCIS) CONSTITUTES 50% OF THE TOTAL TUMOR VOLUME AND IS. PRESENT ADMIXED WITH THE INVASIVE COMPONENT. F. THE DUCTAL CARCINOMA IN SITU (DCIS) IS PRESENT IN 12/22 SLIDES. G. NO LYMPHOVASCULAR SPACE INVASION IS IDENTIFIED. H. RESECTION MARGINS ARE NEGATIVE FOR CARCINOMA. DUCTAL CARCINOMA IN SITU (DCIS) IS 4.0 MM. FROM THE NEAREST ANTERIOR MARGIN, THE INVASIVE CARCINOMA IS GREATER THAN 1.0 CM FROM ALL. MARGINS. I. THE NIPPLE IS INVOLVED BY DUCTAL CARCINOMA IN SITU. J. SKIN IS NEGATIVE FOR TUMOR. K. NON-NEOPLASTIC BREAST: INTRADUCTAL PAPILLOMA AND FIBROCYSTIC CHANGES WITH. FIBROADENOMATOID NODULES,. L. BIOPSY SITE CHANGES WITH FAT NECROSIS. M. METASTATIC CARCINOMA INVOLVING FOUR OF TWENTY-SIX LYMPH NODES (4/26). N. THE LARGEST METASTATIC FOCUS MEASURES 2.0 CM. O. EXTRACAPSULAR EXTENSION IS IDENTIFIED AND MEASURES 1 MM. P. THE INVASIVE TUMOR CELLS TESTED POSITIVE FOR ESTROGEN AND WEAKLY POSITIVE FOR. PROGESTERONE RECEPTORS AND NEGATIVE FOR HER-2, AS PER PREVIOUS PATHOLOGY REPORT. LASE SYNOPSIS: SYNOPTIC - PRIMARY INVASIVE CARCINOMA OF BREAST. LATERALITY: Right. PROCEDURE: Modified radical mastectomy. Lower outer quadrant. SIZE OF TUMOR: MULTICENTRICITY/MULTIFOCALITY OF INVASIVE FOCI: Maximum dimension invasive component: 2 5 cm. TUMOR TYPE (invasive component): NOTTINGHAM SCORE: Ductal adenocarcinoma, NOS. Nuclear grade: 3. Tubule formation: 3. Mitolic activity score: 3. Total Nottingham score: 9. Nottingham grade (1, 2, 3): 3. ANGIOLYMPHATIC INVASION: DERMAL LYMPHATIC INVASION;. Yes, malignant zones. TUMOR TYPE, IN SITU: Cribriform. Solid. Micropapillary. Comedo. DCIS admixed with invasive carcínoma. SURGICAL MARGINS INVOLVED BY INVASIVE COMPONENT: Percent of tumor occupled by in situ component 50 %. SURG MARGINS INVOLVED BY IN SITU COMPONENT: PAGET'S DISEASE OF NIPPLE: Distance of in silu disease to closest margin: 40 mm. LYMPH NODES POSITIVE: 4. LYMPH NODES EXAMINED: 26. METHOD(S) OF LYMPH NODE EXAMINATION: H/E levels. SIZE OF NODAL METASTASES: Diameter of largest lymph nodo metastasis: 20 mm. LYMPH NODE METASTASIS(-ES) WITH EXTRACAPSULAR EXTENSION: SKIN INVOLVED (ULCERATION): NON-NEOPLASTIC BREAST TISSUE: Papillonia, FCD, Other: Fibroadenomatoid nodules. T STAGE, PATHOLOGIC: N STAGE, PATHOLOGIC: pN2a. M STAGE, PATHOLOGIC: pMX. ESTROGEN RECEPTORS: positive. PROGESTÉRONE RECEPTORS: positive. HER2/NEU:",
+  "gold": {
+    "T": "T2",
+    "N": "N2",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "INVASIVE TUMOR MEASURES 2.5 X 2.3 X 2.0 CM.",
+        "confidence": "high",
+        "reason": "Largest invasive dimension 2.5 cm, which falls in pT2 (>2 cm to 5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN2a",
+        "value_norm": "N2",
+        "evidence": "METASTATIC CARCINOMA INVOLVING FOUR OF TWENTY-SIX LYMPH NODES (4/26).",
+        "confidence": "high",
+        "reason": "Four positive axillary lymph nodes (largest metastasis 20 mm), consistent with pN2a (4–9 positive axillary nodes).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "Report explicitly states pMX (distant metastasis cannot be assessed pathologically).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "C. INVASIVE TUMOR MEASURES 2.5 X 2.3 X 2.0 CM.",
+        "confidence": "high",
+        "reason": "maximum invasive dimension 2.5 cm corresponds to T2 (>2 cm to 5 cm)",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2a",
+        "value_norm": "N2",
+        "evidence": "M. METASTATIC CARCINOMA INVOLVING FOUR OF TWENTY-SIX LYMPH NODES (4/26).",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "report explicitly lists pathologic M as pMX (cannot be assessed)",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "INVASIVE TUMOR MEASURES 2.5 X 2.3 X 2.0 CM.",
+        "confidence": "high",
+        "reason": "Maximum invasive tumor dimension 2.5 cm, which corresponds to T2 (>2 cm and ≤5 cm).",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "METASTATIC CARCINOMA INVOLVING FOUR OF TWENTY-SIX LYMPH NODES (4/26).",
+        "confidence": "high",
+        "reason": "Four positive regional lymph nodes corresponds to N2 (4-9 positive axillary nodes); report also lists pN2a.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": "Pathologic M stage recorded as pMX (distant metastasis cannot be assessed pathologically).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "INVASIVE TUMOR MEASURES 2.5 X 2.3 X 2.0 CM.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N2",
+        "value_norm": "N2",
+        "evidence": "pN2a.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "M STAGE, PATHOLOGIC: pMX.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

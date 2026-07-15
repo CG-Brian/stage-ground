@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-44-3398.7dc9c668-3304-47d8-9c33-5b72352672db",
+  "text": "SPECIMEN. A. Lymph node level 10. B. Right lower lobe. C. Lymph node level 7. D. Lymph node level 3. E. Lymph node R4. CLINICAL NOTES. GROSS DESCRIPTION. A. Received in formalin, labeled \"lymph node level 10\". and. consists of multiple pieces of black soft tissue measuring 2 cm in. greatest aggregate dimension. AS-1. B. The specimen is received unfixed labeled \"right lower. lobe\" and consists of a lobe weighing 266 grams and. measuring 16 X 12 X 7 cm. There is a subtotal probable mass. measuring 2.5 X 1.5 X 2 cm. There is a puckered appearance over the. mass. Portions of the specimen are taken for research purposes. Additional sections after fixation. There is a stapled margin on. one. side of the specimen measuring 5 cm in length and there is a. stapled. bronchial margin as well. C. Received in formalin, labeled \"lymph node level 7\" and. consists of multiple pieces of black soft tissue. measuring. 2 cm in greatest aggregate dimension. AS-1. D. Received in formalin, labeled \"lymph node level 3\" and. consists of a piece of white and black and yellow soft. tissue measuring 2.5 x 1.5 X 0.3 cm. AS-1. E. Received in formalin, labeled \"lymph node - R4\" and. consists of multiple pieces of yellow and black soft. tissue. measuring 3 x 3 x 0.5 cm in aggregate. AS-2. MICROSCOPIC DESCRIPTION. A. There is no evidence of malignancy in any of ten lymph node. pieces. B. Tumor type : Non-small cell carcinoma. Tumor grade 3 out of 3. Mitotic Index: 1 mitoses/10 HPF's (1 HPF = 0.19 sq mm). Tumor size: 2.5 cm. Bronchial resection margin: Negative for malignancy. Pulmonary margin of resection Negative for malignancy. Pleura: Negative for malignancy. Vascular invasion: Absent. Attached lymph nodes There is no evidence of malignancy. in. any of 3 lymph nodes. pTNM Stage T1b NO. Non-tumorous lung: Mild to moderate emphysema. C. There's no evidence of malignancy in any of multiple lymph node. pieces. Approximately 12 pieces are present. D. A single lymph node is negative for malignancy. E. There is no evidence of malignancy in any of 16 lymph node. pieces. DIAGNOSIS. A. Lymph node, level 10, biopsy: There is no evidence of. malignancy in any of ten lymph node pieces. B. Lung, right lower lobe, resection: Poorly differentiated. non-small cell carcinoma. DIAGNOSIS. C. Lymph node, level 7, biopsy: There is no evidence of malignancy. in. any of 12 lymph nodes pieces. D. Lymph node, level 3, biopsy: A single lymph node is negative for. malignancy. E. Lymph node, R4, biopsy: There's no evidence of malignancy in any. of 16 lymph nodes pieces.",
+  "gold": {
+    "T": "T1",
+    "N": "N0",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT1b",
+        "value_norm": "T1",
+        "evidence": "pTNM Stage T1b NO.\nTumor size: 2.5 cm.",
+        "confidence": "high",
+        "reason": "Report explicitly states pTNM Stage T1b and documents tumor size 2.5 cm, consistent with T1b.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN0",
+        "value_norm": "N0",
+        "evidence": "pTNM Stage T1b NO.\nThere is no evidence of malignancy in any of ten lymph node. pieces.",
+        "confidence": "high",
+        "reason": "Report explicitly states N0 and multiple lymph node specimens are described as negative for malignancy.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pM0",
+        "value_norm": "M0",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No pathologic M-stage is stated in the report. No distant metastases are mentioned, but pM is not explicitly provided, so M0 is inferred with low confidence.",
+        "grounded": false,
+        "boundary_tag": "correct"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T1b",
+        "value_norm": "T1",
+        "evidence": "pTNM Stage T1b NO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pTNM Stage T1b NO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "report does not mention distant metastasis",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pTNM Stage T1b NO.",
+        "confidence": "high",
+        "reason": "Report explicitly states pTNM Stage T1b; mapped to allowed value T1.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pTNM Stage T1b NO.",
+        "confidence": "high",
+        "reason": "Report explicitly states 'NO' (no regional lymph node metastasis), mapped to N0.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": null,
+        "confidence": "medium",
+        "reason": "No pathologic or clinical M category is reported, so distant metastasis cannot be determined from this report.",
+        "grounded": false,
+        "boundary_tag": "unsupported_error"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T1",
+        "value_norm": "T1",
+        "evidence": "pTNM Stage T1b NO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N0",
+        "value_norm": "N0",
+        "evidence": "pTNM Stage T1b NO.",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "unknown",
+        "value_norm": "unknown",
+        "evidence": null,
+        "confidence": "low",
+        "reason": "No information on distant metastasis (M stage) in the report.",
+        "grounded": false,
+        "boundary_tag": "source_boundary_abstention"
+      }
+    }
+  }
+}

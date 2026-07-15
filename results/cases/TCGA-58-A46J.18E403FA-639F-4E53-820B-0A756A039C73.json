@@ -1,0 +1,127 @@
+{
+  "patient_id": "TCGA-58-A46J.18E403FA-639F-4E53-820B-0A756A039C73",
+  "text": "Pathology Report-Summary: Material: lung, left: 20.0 X 18.0 X 11.0 cm. tumor in lower lobe: 9.0 X 7.0 X 6.5 cm. Diagnosis: Squamous Cell Carcinoma, (NOS). Infiltration of pleura visceralis. pT2, pN1 (3/57), pMx, G3.",
+  "gold": {
+    "T": "T2",
+    "N": "N1",
+    "M": "M0"
+  },
+  "predictions": {
+    "A": {
+      "T": {
+        "value": "pT2",
+        "value_norm": "T2",
+        "evidence": "pT2",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists pT2 and provides tumor size (9.0 X 7.0 X 6.5 cm) consistent with the documented pathologic T category.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "pN1",
+        "value_norm": "N1",
+        "evidence": "pN1 (3/57)",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists pN1 and documents 3 positive nodes out of 57 examined.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "pMx",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": "Pathology report explicitly lists pMx (metastatic status cannot be assessed).",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "B": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pT2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1 (3/57)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "Mx",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "C": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pT2",
+        "confidence": "high",
+        "reason": "Report explicitly lists pathologic stage pT2.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1 (3/57)",
+        "confidence": "high",
+        "reason": "Report explicitly lists pathologic nodal stage pN1 with 3/57 positive nodes.",
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": "Report explicitly lists pMx indicating metastatic status cannot be assessed pathologically.",
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    },
+    "D": {
+      "T": {
+        "value": "T2",
+        "value_norm": "T2",
+        "evidence": "pT2",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "N": {
+        "value": "N1",
+        "value_norm": "N1",
+        "evidence": "pN1 (3/57)",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "correct"
+      },
+      "M": {
+        "value": "MX",
+        "value_norm": "MX",
+        "evidence": "pMx",
+        "confidence": "high",
+        "reason": null,
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
+      }
+    }
+  }
+}

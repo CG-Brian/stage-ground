@@ -14,8 +14,8 @@
         "evidence": "Decalcified sections show invasion of cortical and medullary bone by squamous cell carcinoma.",
         "confidence": "high",
         "reason": "Invasion of cortical and medullary bone of the mandible meets AJCC 6th edition criteria for T4a (moderately advanced local disease).",
-        "grounded": false,
-        "boundary_tag": "unsupported_error"
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
       },
       "N": {
         "value": "pN1",
@@ -43,8 +43,8 @@
         "evidence": "Decalcified sections show invasion of cortical and medullary bone by squamous cell carcinoma.",
         "confidence": "high",
         "reason": "Tumor invades cortical and medullary mandibular bone (mandible involvement), which upstages beyond size-based T3 to T4a; tumor greatest dimension 4.5 cm (would be T3) but bone invasion qualifies as T4a.",
-        "grounded": false,
-        "boundary_tag": "unsupported_error"
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
       },
       "N": {
         "value": "N1",
@@ -61,8 +61,8 @@
         "evidence": "pMX: Distant metastasis cannot be assessed.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
-        "boundary_tag": "unsupported_error"
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
       }
     },
     "C": {
@@ -72,8 +72,8 @@
         "evidence": "Decalcified sections show invasion of cortical and medullary bone by squamous cell carcinoma.",
         "confidence": "high",
         "reason": "Pathology shows tumor invasion of cortical and medullary bone; bone invasion in oral cavity classifies as T4 (overriding size-based T3 for 4.5 cm).",
-        "grounded": false,
-        "boundary_tag": "unsupported_error"
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
       },
       "N": {
         "value": "N1",

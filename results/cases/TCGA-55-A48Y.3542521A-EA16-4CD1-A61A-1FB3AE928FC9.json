@@ -81,7 +81,7 @@
         "evidence": "Total number of lymph nodes containing metastatic carcinoma: Zero. (0/1); seven lymph nodes received with all specimen parts (0/7).",
         "confidence": "high",
         "reason": "No lymph nodes contain metastatic carcinoma; report also states stage pT2b N0.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

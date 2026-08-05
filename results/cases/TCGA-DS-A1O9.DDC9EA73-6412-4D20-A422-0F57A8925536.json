@@ -23,7 +23,7 @@
         "evidence": "Approximately 15 pericolonic lymph nodes, negative for malignancy (0/15).",
         "confidence": "high",
         "reason": "Multiple regional lymph node groups were examined (pericolonic, cecal, pelvic, periurethral) and reported negative for malignancy.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {
@@ -72,7 +72,7 @@
         "evidence": "Carcinoma invades through serosal surface in fundic region of uterus with extension into bowel wall (in region of terminal ileum), with invasion through muscularis propria of terminal ileum and vermiform appendix.",
         "confidence": "high",
         "reason": "Tumor invades through uterine serosa into adjacent bowel with invasion through the muscularis propria, consistent with extension into adjacent organs (T4).",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -81,7 +81,7 @@
         "evidence": "Approximately 15 pericolonic lymph nodes, negative for malignancy (0/15).",
         "confidence": "high",
         "reason": "Multiple regional lymph nodes sampled (pericolonic, pelvic, cecal, etc.) are reported negative for malignancy.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

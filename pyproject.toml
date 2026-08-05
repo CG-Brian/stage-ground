@@ -17,6 +17,7 @@ dependencies = [
 demo = ["streamlit>=1.35"]
 serve = ["fastapi>=0.110", "uvicorn[standard]>=0.29"]
 dev = ["pytest>=8.0", "ruff>=0.5"]
+arm-e = ["torch>=2.3", "transformers>=4.40"]  # Arm E: Tatonetti/Kefeli supervised reference (HF inference only, no training)
 
 [build-system]
 requires = ["hatchling"]

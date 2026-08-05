@@ -23,7 +23,7 @@
         "evidence": "free lymph nodes (p N 0)",
         "confidence": "high",
         "reason": "Report explicitly states 'p N 0' (free lymph nodes); normalized to 'pN0'.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

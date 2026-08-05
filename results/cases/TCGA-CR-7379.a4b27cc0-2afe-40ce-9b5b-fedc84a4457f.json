@@ -81,7 +81,7 @@
         "evidence": "TWO LYMPH NODES INVOLVED BY SQUAMOUS CELL CARCINOMA.",
         "confidence": "high",
         "reason": "Two lymph nodes are reported involved and the report explicitly lists pN2.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

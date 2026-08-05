@@ -110,7 +110,7 @@
         "evidence": "Multiple (4) left axillary sentinel lymph nodes without blue dye are negative for metastatic carcinoma [AJCC pNO (i-). (sn)].",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

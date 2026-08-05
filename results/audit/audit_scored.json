@@ -1,0 +1,202 @@
+[
+  {
+    "case_id": "case_01",
+    "arm": "A",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "report_gold_discordance",
+    "agree": false,
+    "caveat": null
+  },
+  {
+    "case_id": "case_02",
+    "arm": "B",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_03",
+    "arm": "C",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_04",
+    "arm": "C",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "unsupported_error",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_05",
+    "arm": "B",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_06",
+    "arm": "A",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "unsupported_error",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_07",
+    "arm": "A",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "unsupported_error",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_08",
+    "arm": "D",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_09",
+    "arm": "C",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": "OCR-corrupted source text; flag as data-quality edge case."
+  },
+  {
+    "case_id": "case_10",
+    "arm": "B",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_11",
+    "arm": "B",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": "Report truncated at 6000 chars for the audit sheet; judged on visible text only."
+  },
+  {
+    "case_id": "case_12",
+    "arm": "B",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_13",
+    "arm": "C",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_14",
+    "arm": "C",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "unsupported_error",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_15",
+    "arm": "A",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_16",
+    "arm": "D",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_17",
+    "arm": "D",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_18",
+    "arm": "C",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_19",
+    "arm": "A",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_20",
+    "arm": "D",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_21",
+    "arm": "A",
+    "pipeline_tag": "source_boundary_abstention",
+    "judge_tag": "source_boundary_abstention",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_22",
+    "arm": "B",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "report_gold_discordance",
+    "agree": false,
+    "caveat": null
+  },
+  {
+    "case_id": "case_23",
+    "arm": "C",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "unsupported_error",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_24",
+    "arm": "A",
+    "pipeline_tag": "report_gold_discordance",
+    "judge_tag": "report_gold_discordance",
+    "agree": true,
+    "caveat": null
+  },
+  {
+    "case_id": "case_25",
+    "arm": "C",
+    "pipeline_tag": "unsupported_error",
+    "judge_tag": "unsupported_error",
+    "agree": true,
+    "caveat": null
+  }
+]

@@ -52,7 +52,7 @@
         "evidence": "19 mesenteric lymph nodes are negative for metastatic carcinoma (0/19) (pNO) .",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

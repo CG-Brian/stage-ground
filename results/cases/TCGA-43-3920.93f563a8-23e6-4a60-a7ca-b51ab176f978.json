@@ -23,7 +23,7 @@
         "evidence": "Regional lymph nodes (pN) : Negative as described in other specimens. (pN0).",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

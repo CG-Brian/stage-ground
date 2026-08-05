@@ -23,7 +23,7 @@
         "evidence": "Pathological N. N1.\nNumber of Nodes Sampled. 1. Number of Nodes Positive. 23.",
         "confidence": "medium",
         "reason": "Pathological N is explicitly given as N1, but the reported node counts are contradictory (sampled 1 vs positive 23), reducing confidence.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

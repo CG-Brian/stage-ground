@@ -90,26 +90,26 @@ decomposing *which* kind of constraint reduces *which* kind of failure. Numbers 
 | Metric | A | B | C | D |
 | ------ | --- | --- | --- | --- |
 | Format compliance (allowed-value rate) ↑ | .21 | .88 | **1.00** | **1.00** |
-| Evidence-grounding rate ↑ | .69 | .99 | .70 | **1.00** |
-| Unsupported-assertion rate ↓ | .32 | **.005** | .30 | **.00** |
+| Evidence-grounding rate ↑ | .69 | **1.00** | .70 | **1.00** |
+| Unsupported-assertion rate ↓ | .31 | **.00** | .30 | **.00** |
 | Abstention rate | .00 | .51 | .01 | .47 |
 | Track C source-boundary success ↑ | .07 | **.53** | .01 | .47 |
-| Unsupported errors (count) | 34 | 1 | **56** | 0 |
+| Unsupported errors (count) | 33 | 0 | **56** | 0 |
 
 Three findings, each a decomposed lever:
 
 - **C (allowed-values only) breaks the intuition that "just give it a schema" makes it
   safe.** C maximizes *format* compliance (1.00) but its groundedness is no better than
-  free-form — in fact its unsupported errors *rise to 56 (vs A's 34)*. Forced to emit an
+  free-form — in fact its unsupported errors *rise to 56 (vs A's 33)*. Forced to emit an
   allowed value with no permission to abstain, the model hedges with **`MX`** (all 56 are
   `MX`; 52 have no M descriptor anywhere in the report). Constraining the value set alone
   produces *confident* unsupported assertions.
 - **B (few-shot) teaches a safety behavior, not just accuracy.** A single abstention
-  example induced strong abstention: unsupported-assertion collapses to .005 and
-  groundedness rises to .99. Few-shot abstention *unexpectedly matched or exceeded*
-  rule-guided prompting on M-stage source-boundary success (.53 vs D's .47), suggesting
-  even one abstention example can strongly shape behavior. (B is less conservative than D,
-  which may favor it under the success definition — stated as suggestive, not decisive.)
+  example induced strong abstention: unsupported-assertion drops to 0 and groundedness
+  reaches 1.00. Few-shot abstention *unexpectedly matched or exceeded* rule-guided
+  prompting on M-stage source-boundary success (.53 vs D's .47), suggesting even one
+  abstention example can strongly shape behavior. (B is less conservative than D, which
+  may favor it under the success definition — stated as suggestive, not decisive.)
 - **D (explicit rules) is the most conservative and safest:** zero unsupported errors,
   100% evidence-grounding, but the highest abstention — trading some gold accuracy for it.
 
@@ -123,8 +123,8 @@ Every gold-mismatch tagged by *why* it disagrees (M-stage, n=200):
 
 | arm | correct | boundary abstention ✓ | over-abstention | unsupported error ✗ | discordance | **success rate** |
 | --- | ------- | --------------------- | --------------- | ------------------- | ----------- | ---------------- |
-| A   | 52      | 10                    | 0               | 34                  | 104         | 0.07             |
-| B   | 10      | 101                   | 1               | 1                   | 87          | **0.53**         |
+| A   | 52      | 10                    | 0               | 33                  | 105         | 0.07             |
+| B   | 10      | 101                   | 1               | 0                   | 88          | **0.53**         |
 | C   | 33      | 2                     | 0               | 56                  | 109         | 0.01             |
 | D   | 7       | 91                    | 2               | 0                   | 100         | 0.47             |
 
@@ -133,9 +133,30 @@ source-boundary success; an asserted wrong value is an `unsupported_error`. The 
 `discordance` counts (text supports a value the registry contradicts) flag likely
 out-of-document registry labels — the most clinically interesting review candidates.
 
-**Audit.** An independent check of D's M-stage source-boundary abstentions found **87 / 91
-(96%)** occur in reports with **no explicit M token at all**, confirming the Track-C labels
-reflect genuine source-boundary violations rather than parsing artifacts.
+### Manual audit (Milestone 1a)
+
+Automated Track-C tags rest on `grounded()`, a verbatim-substring proxy — worth checking
+against independent judgment before trusting the numbers above. A **stratified, blinded
+25-case audit** (arm and existing tag hidden; report text, gold value, predicted value, and
+submitted evidence shown) was scored by an independent LLM judge (Claude — a different model
+family than the GPT extraction models) against a 4-question rubric (does the report support
+gold? support the prediction? does the submitted evidence support it? is an explicit M token
+present?), reconstructing each case's expected tag from the answers.
+
+- **Design:** 9 `source_boundary_abstention` / 8 `unsupported_error` / 8 `report_gold_discordance`,
+  arm-balanced within availability constraints. Reproduce: `scripts/05_audit_sample.py` builds
+  the blinded sheet; `scripts/06_audit_score.py` scores it against `results/audit/judgments.json`.
+- **Result:** **23 / 25 (92%) agreement.** `source_boundary_abstention` and
+  `report_gold_discordance` were **100%** (9/9, 8/8) — the Track-C *tagging logic* was correct
+  on every sampled case. All disagreement was concentrated in `unsupported_error` (6/8, 75%).
+- **Root cause, not noise.** Both disagreements traced to the *same* mechanism: TCGA reports are
+  OCR'd PDFs where line-wraps insert a stray period mid-phrase (`"under. investigation"`,
+  `"cannot be. assessed."`). The model's evidence was semantically and substantively correct —
+  it quoted the right passage — but the strict verbatim-substring check failed on the punctuation
+  noise, mislabeling a grounded prediction as unsupported. **Fixed:** `grounded()` now strips
+  periods/commas before matching (`src/stageground/evaluation/normalize.py`); all metrics above
+  reflect the fix (`results/audit/` has the pre-fix sampling, judgments, and scoring for
+  reproducibility). A larger reviewer study (N=100, per the original design) remains future work.
 
 ### Track A — accuracy stays roughly flat, except by design on M
 

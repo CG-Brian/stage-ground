@@ -72,7 +72,7 @@
         "evidence": "The nodule is located in the right lobe and measures 4.1 cm x 3.2 cm x 1.0 cm and it is in contact with the capsule, displays firm cut surfaces, and is not encapsulated.",
         "confidence": "medium",
         "reason": "Maximum tumor diameter >4.0 cm (4.1 cm) consistent with T3 (AJCC 8th ed. T3a = >4 cm limited to thyroid). Report also notes invasion of perithyroidal tissue (microscopic extrathyroidal extension) which is described but does not clearly indicate gross ETE; therefore T3 is assigned.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {

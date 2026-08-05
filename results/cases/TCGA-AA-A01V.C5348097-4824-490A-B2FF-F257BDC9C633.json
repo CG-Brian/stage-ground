@@ -14,7 +14,7 @@
         "evidence": "Based on the sections under investigation, the tumor spread of the cecal carcinoma corresponds to a tumor stage of p. T 2, p N 0, M X, R 0.",
         "confidence": "high",
         "reason": "The report explicitly states 'p. T 2'.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -23,7 +23,7 @@
         "evidence": "Based on the sections under investigation, the tumor spread of the cecal carcinoma corresponds to a tumor stage of p. T 2, p N 0, M X, R 0.",
         "confidence": "high",
         "reason": "The report explicitly states 'p N 0'.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {
@@ -32,8 +32,8 @@
         "evidence": "Based on the sections under investigation, the tumor spread of the cecal carcinoma corresponds to a tumor stage of p. T 2, p N 0, M X, R 0.",
         "confidence": "high",
         "reason": "The report explicitly states 'M X' (metastasis cannot be assessed).",
-        "grounded": false,
-        "boundary_tag": "unsupported_error"
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
       }
     },
     "B": {

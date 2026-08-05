@@ -52,7 +52,7 @@
         "evidence": "One of five peribronchial lymph nodes positive for metastatic adenocarcinoma, measuring 0.4 cm with no extracapsular extension.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

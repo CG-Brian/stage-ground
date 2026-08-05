@@ -1,0 +1,152 @@
+[
+  {
+    "case_id": "case_01",
+    "arm": "A",
+    "patient_id": "TCGA-AA-A01V.C5348097-4824-490A-B2FF-F257BDC9C633",
+    "pipeline_tag": "unsupported_error"
+  },
+  {
+    "case_id": "case_02",
+    "arm": "B",
+    "patient_id": "TCGA-05-4432.f99933b1-6f7b-4e5e-87a4-4f902d031c76",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_03",
+    "arm": "C",
+    "patient_id": "TCGA-L5-A4OJ.D7476885-7FC7-4EB0-B7AD-E348B5CC171B",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_04",
+    "arm": "C",
+    "patient_id": "TCGA-D8-A1JL.156DF753-DB3A-4934-9618-1E18CE46C845",
+    "pipeline_tag": "unsupported_error"
+  },
+  {
+    "case_id": "case_05",
+    "arm": "B",
+    "patient_id": "TCGA-86-8279.e7e4b4fd-f47d-4aab-826c-0ef1f620a739",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_06",
+    "arm": "A",
+    "patient_id": "TCGA-E5-A4U1.0010AA87-DA61-42F2-8A3D-49DCDDB7484C",
+    "pipeline_tag": "unsupported_error"
+  },
+  {
+    "case_id": "case_07",
+    "arm": "A",
+    "patient_id": "TCGA-85-8666.c9ec1868-c91e-4778-8411-fd8ad272e453",
+    "pipeline_tag": "unsupported_error"
+  },
+  {
+    "case_id": "case_08",
+    "arm": "D",
+    "patient_id": "TCGA-BH-A18Q.BB4C7377-F10C-48D2-A8AA-6D5B43FEB108",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_09",
+    "arm": "C",
+    "patient_id": "TCGA-CI-6619.9060bc33-42b3-4ee3-8137-9fe5913c480d",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_10",
+    "arm": "B",
+    "patient_id": "TCGA-67-3773.e5b82f07-698e-4dff-9d33-748790e40811",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_11",
+    "arm": "B",
+    "patient_id": "TCGA-R2-A69V.13EE4EE8-9C51-4EBC-9562-7233A148810B",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_12",
+    "arm": "B",
+    "patient_id": "TCGA-KO-8416.a1c0eb6f-5aba-4b11-8303-434e976e89d6",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_13",
+    "arm": "C",
+    "patient_id": "TCGA-XF-AAN0.0F0F3285-4798-4D8F-95D3-20AB4F0ED269",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_14",
+    "arm": "C",
+    "patient_id": "TCGA-VQ-A8E7.45A33125-5E8A-43A6-AC05-1E747BAB6621",
+    "pipeline_tag": "unsupported_error"
+  },
+  {
+    "case_id": "case_15",
+    "arm": "A",
+    "patient_id": "TCGA-AA-3939.4a1c0305-9b03-4b34-8f88-b535db869f12",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_16",
+    "arm": "D",
+    "patient_id": "TCGA-05-4432.f99933b1-6f7b-4e5e-87a4-4f902d031c76",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_17",
+    "arm": "D",
+    "patient_id": "TCGA-BT-A20W.4BCE7132-F235-4C57-9DAB-0C51C8737E87",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_18",
+    "arm": "C",
+    "patient_id": "TCGA-BA-A6DD.454AB9AE-BA5A-4A07-9839-2A692455A044",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_19",
+    "arm": "A",
+    "patient_id": "TCGA-43-3920.93f563a8-23e6-4a60-a7ca-b51ab176f978",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_20",
+    "arm": "D",
+    "patient_id": "TCGA-BR-8676.05ae128b-ca52-4fcb-9b6b-af8b4f6f74f0",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_21",
+    "arm": "A",
+    "patient_id": "TCGA-D5-6538.092bf70b-2120-40ec-a98b-c72795d61660",
+    "pipeline_tag": "source_boundary_abstention"
+  },
+  {
+    "case_id": "case_22",
+    "arm": "B",
+    "patient_id": "TCGA-CQ-A4C7.DD00F089-12E7-4029-A849-4003E3628D4A",
+    "pipeline_tag": "unsupported_error"
+  },
+  {
+    "case_id": "case_23",
+    "arm": "C",
+    "patient_id": "TCGA-A7-A3RF.4AF67A51-97C1-4D58-9E60-03FDFFACD38A",
+    "pipeline_tag": "unsupported_error"
+  },
+  {
+    "case_id": "case_24",
+    "arm": "A",
+    "patient_id": "TCGA-AA-3846.5096c73e-2a6b-4302-b397-e6b2161c081c",
+    "pipeline_tag": "report_gold_discordance"
+  },
+  {
+    "case_id": "case_25",
+    "arm": "C",
+    "patient_id": "TCGA-MP-A4TA.B8573F06-EEC4-49A8-943E-7F2EFF3AFBEE",
+    "pipeline_tag": "unsupported_error"
+  }
+]

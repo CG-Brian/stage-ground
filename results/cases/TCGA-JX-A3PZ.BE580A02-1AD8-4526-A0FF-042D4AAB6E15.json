@@ -52,7 +52,7 @@
         "evidence": "No tumor is identified in the 22 regional lymph nodes examined, including two parametrial.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

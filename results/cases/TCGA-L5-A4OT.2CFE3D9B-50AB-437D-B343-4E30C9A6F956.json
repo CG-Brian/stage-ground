@@ -14,7 +14,7 @@
         "evidence": "The neoplasm invades through the entire esophageal wall and into the adjacent adventitia.",
         "confidence": "high",
         "reason": "Depth of invasion to adventitia corresponds to T3 for esophageal carcinoma.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -72,7 +72,7 @@
         "evidence": "Tumor invades to a maximal depth of 2 cm, invading through the muscularis and into the adventitia; possibly to the deep resection margin at multiple areas.",
         "confidence": "high",
         "reason": "Invasion into the adventitia corresponds to T3 for esophageal cancer.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {

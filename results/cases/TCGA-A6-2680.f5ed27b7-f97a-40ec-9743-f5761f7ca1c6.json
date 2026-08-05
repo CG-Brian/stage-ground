@@ -14,7 +14,7 @@
         "evidence": "Primary tumor (pT3) : carcinoma invades through the muscularis propria into the subserosa.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -72,7 +72,7 @@
         "evidence": "Primary tumor (pT3) : carcinoma invades through the muscularis propria into the subserosa.",
         "confidence": "high",
         "reason": "Pathology report explicitly states pT3 with description of invasion through muscularis propria into subserosa.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -101,7 +101,7 @@
         "evidence": "Primary tumor (pT3) : carcinoma invades through the muscularis propria into the subserosa.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {

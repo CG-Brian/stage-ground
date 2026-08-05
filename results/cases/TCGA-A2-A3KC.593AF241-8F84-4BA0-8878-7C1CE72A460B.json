@@ -14,7 +14,7 @@
         "evidence": "THE LARGEST FOCUS OF INVASIVE TUMOR MEASURES 3.5 CM IN GREATEST DIMENSION AND IS LOCATED IN THE 12 O'CLOCK PORTION OF THE BREAST.",
         "confidence": "high",
         "reason": "Largest invasive focus is 3.5 cm ( >2 cm and ≤5 cm ), which corresponds to pT2.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -72,7 +72,7 @@
         "evidence": "THE LARGEST FOCUS OF INVASIVE TUMOR MEASURES 3.5 CM IN GREATEST DIMENSION AND IS LOCATED IN THE 12 O'CLOCK PORTION OF THE BREAST.",
         "confidence": "high",
         "reason": "Largest invasive focus measures 3.5 cm, which corresponds to T2 (>2 cm to ≤5 cm).",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {

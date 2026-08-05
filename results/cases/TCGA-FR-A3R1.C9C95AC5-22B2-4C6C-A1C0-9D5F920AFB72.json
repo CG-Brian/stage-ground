@@ -52,7 +52,7 @@
         "evidence": "All are negative for metastatic melanoma.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "M": {

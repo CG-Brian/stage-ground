@@ -14,7 +14,7 @@
         "evidence": "Left kidney, nephrectomy: - Papillary renal cell carcinoma, type 2, (7.5 cm); definitive extrarenal extension not seen. - Vascular and ureteral margins with no tumor seen. (pT2NOMx).",
         "confidence": "high",
         "reason": "Tumor measures 7.5 cm and definitive extrarenal extension not seen; report explicitly lists pT2.",
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -43,7 +43,7 @@
         "evidence": "Papillary renal cell carcinoma, type 2, (7.5 cm); definitive extrarenal extension not seen.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {
@@ -101,7 +101,7 @@
         "evidence": "Papillary renal cell carcinoma, type 2, (7.5 cm); definitive extrarenal extension not seen.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
+        "grounded": true,
         "boundary_tag": "correct"
       },
       "N": {

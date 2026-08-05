@@ -52,8 +52,8 @@
         "evidence": "METASTATIC SQUAMOUS CARCINOMA IN 2 OF 4 SUBMAXILLARY LYMPH NODES WITH EXTRANODAL EXTENSION.",
         "confidence": "high",
         "reason": null,
-        "grounded": false,
-        "boundary_tag": "unsupported_error"
+        "grounded": true,
+        "boundary_tag": "report_gold_discordance"
       },
       "M": {
         "value": "unknown",

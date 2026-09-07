@@ -1,13 +1,15 @@
 """Spec item 12: unit tests for the evidence_span_found /
 evidence_semantically_supports_prediction split.
 
-Case 5 (correct-but-irrelevant-evidence must not count toward
-semantic-supported accuracy) is finished in test_metrics.py once the renamed
-metrics land, since it needs metrics.compute_all_metrics to demonstrate the
-"must not count" part -- this file only asserts the record-level fields.
+See also tests/test_metrics.py::test_span_grounded_vs_semantic_supported_accuracy_diverge
+for Case 5's full "must not count toward semantic-supported accuracy" claim.
 """
 
 from stageground.evaluation.records import build_record
+from stageground.evaluation.metrics import (
+    semantic_supported_accuracy_over_evaluable,
+    span_grounded_accuracy_over_evaluable,
+)
 
 
 def _rec(prediction_value, evidence, report_text, ground_truth="M1"):
@@ -49,3 +51,17 @@ def test_case4_abstention_has_none_for_both_fields():
     )
     assert rec.evidence_span_found is None
     assert rec.evidence_semantically_supports_prediction is None
+
+
+def test_case5_correct_but_irrelevant_evidence_excluded_from_semantic_accuracy():
+    # Correct prediction (M1 == gold M1), evidence IS present in the report
+    # (span found), but is irrelevant to the M-stage claim -- must count
+    # toward span-grounded accuracy but NOT semantic-supported accuracy.
+    rec = _rec(
+        "M1", "Nodes: 2 of 14 involved",
+        "Nodes: 2 of 14 involved. Distant metastasis: M1.",
+    )
+    assert rec.evidence_span_found is True
+    assert rec.evidence_semantically_supports_prediction is False
+    assert span_grounded_accuracy_over_evaluable([rec]) == 1.0
+    assert semantic_supported_accuracy_over_evaluable([rec]) == 0.0

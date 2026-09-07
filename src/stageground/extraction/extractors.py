@@ -7,36 +7,21 @@ from dataclasses import dataclass
 
 from pydantic import ValidationError
 
-from stageground.config import ExperimentArm
+from stageground.config import ARM_CONFIGS, ModelConfig
 from stageground.extraction.llm_client import complete_json
-from stageground.extraction.prompts import (
-    build_allowed_values_prompt,
-    build_constrained_unknown_prompt,
-    build_few_shot_prompt,
-    build_schema_guided_prompt,
-    build_zero_shot_prompt,
-)
 from stageground.extraction.schemas import RawExtraction
 
-
-ARMS = {
-    "A": build_zero_shot_prompt,      # zero-shot free-form
-    "B": build_few_shot_prompt,       # few-shot (examples, no rules)
-    "C": build_allowed_values_prompt, # allowed-values only
-    "D": build_schema_guided_prompt,  # schema-guided (values + evidence + abstain)
-}
-
-# New ablation arm keys (spec: A_zero_shot/B_few_shot/C_constrained/
-# C_plus_unknown/D_grounded), added alongside the legacy letter keys above so
-# existing scripts (`scripts/02_run_extraction.py --arm A`) keep working
-# unmodified. C/D map to the SAME prompt builders as their legacy letters --
-# only C_plus_unknown is a genuinely new prompt.
+# ARMS is DERIVED from ARM_CONFIGS -- not a second, separately-maintained
+# mapping. Adding or changing an arm's prompt only requires editing
+# `ARM_CONFIGS` in config.py; nothing here needs to change in step.
+# Includes both the new ablation arm keys (ExperimentArm.value strings) and
+# each arm's legacy letter key where one exists, so
+# `scripts/02_run_extraction.py --arm A` keeps working unmodified.
+ARMS = {arm.value: cfg.prompt_builder for arm, cfg in ARM_CONFIGS.items()}
 ARMS.update({
-    ExperimentArm.ZERO_SHOT.value: build_zero_shot_prompt,
-    ExperimentArm.FEW_SHOT.value: build_few_shot_prompt,
-    ExperimentArm.CONSTRAINED.value: build_allowed_values_prompt,
-    ExperimentArm.CONSTRAINED_UNKNOWN.value: build_constrained_unknown_prompt,
-    ExperimentArm.GROUNDED.value: build_schema_guided_prompt,
+    cfg.legacy_key: cfg.prompt_builder
+    for cfg in ARM_CONFIGS.values()
+    if cfg.legacy_key is not None
 })
 
 
@@ -47,9 +32,26 @@ class Result:
     invalid: bool
 
 
-def run_one(arm: str, report_text: str) -> Result:
+def run_one(arm: str, report_text: str, *, model_config: ModelConfig | None = None) -> Result:
+    """Run one arm's prompt against the LLM. When `model_config` is given
+    (the normal path from `stageground.evaluate.run_evaluation`), its
+    model/temperature/max_tokens/retries/response_format are passed through
+    explicitly to `complete_json`, which is what actually reaches the API
+    request -- an experiment's recorded config, not a module-level
+    environment variable, decides what gets sent. `model_config=None` is the
+    legacy path for standalone/ad-hoc callers with no `ExperimentConfig`."""
     system, user = ARMS[arm](report_text)
-    raw = complete_json(system, user)
+    if model_config is None:
+        raw = complete_json(system, user)
+    else:
+        raw = complete_json(
+            system, user,
+            model=model_config.model,
+            temperature=model_config.temperature,
+            max_tokens=model_config.max_tokens,
+            retries=model_config.retries,
+            response_format=model_config.response_format,
+        )
     try:
         ext = RawExtraction.model_validate_json(raw)  # shape only
         return Result(ext, raw, invalid=False)

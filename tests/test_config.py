@@ -1,4 +1,6 @@
 from stageground.config import ARM_CONFIGS, ExperimentArm, ExperimentConfig, ModelConfig
+from stageground.extraction.extractors import ARMS
+from stageground.extraction.llm_client import resolve_effective_model_config
 
 
 def test_arm_enum_has_five_members_with_spec_values():
@@ -60,3 +62,49 @@ def test_experiment_config_roundtrip():
 
     restored = ExperimentConfig.from_dict(d)
     assert restored == cfg
+
+
+def test_model_config_defaults_include_provider_and_response_format():
+    cfg = ModelConfig(model="gpt-4o")
+    assert cfg.provider == "openai"
+    assert cfg.response_format == "json_object"
+
+
+# --- ARM_CONFIGS as the single source of prompt dispatch ---
+
+def test_every_arm_config_has_a_callable_prompt_builder():
+    for arm, cfg in ARM_CONFIGS.items():
+        system, user = cfg.prompt_builder("Sample pathology report text.")
+        assert isinstance(system, str) and system
+        assert isinstance(user, str) and user
+
+
+def test_extractors_arms_derived_from_arm_configs_exactly():
+    # 5 new keys + 4 legacy letter keys (C_plus_unknown has no legacy key) = 9
+    assert len(ARMS) == 9
+    for arm, cfg in ARM_CONFIGS.items():
+        assert ARMS[arm.value] is cfg.prompt_builder  # same object -> no drift possible
+        if cfg.legacy_key is not None:
+            assert ARMS[cfg.legacy_key] is cfg.prompt_builder
+
+
+# --- resolve_effective_model_config ---
+
+def test_reasoning_model_temperature_is_normalized():
+    requested = ModelConfig(model="gpt-5-mini", temperature=0.7)
+    effective = resolve_effective_model_config(requested)
+    assert effective.temperature is None
+    assert effective.model == "gpt-5-mini"
+    assert requested.temperature == 0.7  # input untouched
+
+
+def test_non_reasoning_model_temperature_is_unchanged():
+    requested = ModelConfig(model="gpt-4o", temperature=0.7)
+    effective = resolve_effective_model_config(requested)
+    assert effective.temperature == 0.7
+
+
+def test_reasoning_model_default_temperature_is_left_alone():
+    requested = ModelConfig(model="o1-mini", temperature=None)
+    effective = resolve_effective_model_config(requested)
+    assert effective.temperature is None

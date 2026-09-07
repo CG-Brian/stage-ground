@@ -1,18 +1,54 @@
-"""OpenAI wrapper: call + retry, returns RAW json string (parsing done in extractors)."""
+"""OpenAI wrapper: call + retry, returns RAW json string (parsing done in extractors).
+
+`complete_json`'s `model`/`temperature`/`max_tokens`/`retries`/`response_format`
+parameters are what an `ExperimentConfig.model` (see `stageground.config`)
+ultimately controls -- an experiment's recorded `ModelConfig` must be the
+thing that actually reaches this call, not a module-level environment
+default, or `config.json` could describe a run that never happened
+(spec: "config.json says model A but the actual API call uses model B" must
+not be possible). `DEFAULT_MODEL`/keyword defaults below exist ONLY for
+legacy/standalone callers that don't have an `ExperimentConfig` at all.
+"""
 
 from __future__ import annotations
 
 import os
+import re
 import time
+from dataclasses import replace
 
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from stageground.config import ModelConfig
+
 load_dotenv()
 
-MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o")
+DEFAULT_MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o")
 
 _client: OpenAI | None = None
+
+# OpenAI's o-series/gpt-5 "reasoning" models reject any explicit temperature
+# other than the provider default (1) -- a request with temperature=0, for
+# example, is rejected outright rather than silently clamped.
+_REASONING_MODEL_RE = re.compile(r"^(o[1-9](-mini)?|gpt-5)", re.IGNORECASE)
+
+
+def is_reasoning_model(model: str) -> bool:
+    return bool(_REASONING_MODEL_RE.match(model))
+
+
+def resolve_effective_model_config(model_config: ModelConfig) -> ModelConfig:
+    """Resolve exactly what will be sent to the provider, normalizing known
+    incompatible combinations up front rather than sending a request the API
+    would reject. Never mutates `model_config`; returns a new `ModelConfig`.
+    Callers (e.g. `stageground.evaluate.run_evaluation`) must record BOTH the
+    originally-requested config and this resolved one, so nothing is silently
+    substituted after the fact."""
+    temperature = model_config.temperature
+    if is_reasoning_model(model_config.model) and temperature not in (None, 1.0):
+        temperature = None  # fall back to the provider default
+    return replace(model_config, temperature=temperature)
 
 
 def _get_client() -> OpenAI:
@@ -26,20 +62,35 @@ def _get_client() -> OpenAI:
     return _client
 
 
-def complete_json(system:str, user:str, *, retries: int = 3) -> str:
-    """Return the model's raw response text (expected to be JSON). Retries on transient errors."""
+def complete_json(
+    system: str,
+    user: str,
+    *,
+    model: str = DEFAULT_MODEL,
+    temperature: float | None = None,
+    max_tokens: int | None = None,
+    retries: int = 3,
+    response_format: str = "json_object",
+) -> str:
+    """Return the model's raw response text (expected to be JSON). Retries on
+    transient errors. `model`/`temperature`/`max_tokens`/`retries` default to
+    legacy environment-derived behavior only when the caller passes none of
+    them explicitly -- an explicit `ModelConfig` (via `run_one`) always wins."""
     for attempt in range(retries):
         try:
-            resp = _get_client().chat.completions.create(
-                model=MODEL,
-                # NOTE: gpt-5/o-series models only allow the default temperature (1);
-                # they reject temperature=0. Left at default for cross-model compatibility.
-                response_format={"type": "json_object"},
-                messages=[
+            kwargs: dict = {
+                "model": model,
+                "response_format": {"type": response_format},
+                "messages": [
                     {"role": "system", "content": system},
                     {"role": "user", "content": user},
                 ],
-            )
+            }
+            if temperature is not None:
+                kwargs["temperature"] = temperature
+            if max_tokens is not None:
+                kwargs["max_tokens"] = max_tokens
+            resp = _get_client().chat.completions.create(**kwargs)
             return resp.choices[0].message.content or ""
         except Exception:
             if attempt == retries - 1:

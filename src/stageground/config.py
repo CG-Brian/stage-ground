@@ -17,6 +17,17 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 from enum import Enum
+from typing import Callable
+
+from stageground.extraction.prompts import (
+    build_allowed_values_prompt,
+    build_constrained_unknown_prompt,
+    build_few_shot_prompt,
+    build_schema_guided_prompt,
+    build_zero_shot_prompt,
+)
+
+PromptBuilder = Callable[[str], tuple[str, str]]
 
 
 class ExperimentArm(str, Enum):
@@ -31,6 +42,7 @@ class ExperimentArm(str, Enum):
 class ArmConfig:
     arm: ExperimentArm
     legacy_key: str | None  # old letter key in extractors.ARMS, or None if new
+    prompt_builder: PromptBuilder  # the ONE place arm -> prompt dispatch is defined
     allow_unknown: bool  # is "unknown" a sanctioned output for this arm?
     requires_evidence: bool  # must non-unknown predictions carry an evidence span?
     encourages_unknown: bool  # does the prompt tell the model to prefer unknown over guessing?
@@ -43,6 +55,7 @@ ARM_CONFIGS: dict[ExperimentArm, ArmConfig] = {
     ExperimentArm.ZERO_SHOT: ArmConfig(
         arm=ExperimentArm.ZERO_SHOT,
         legacy_key="A",
+        prompt_builder=build_zero_shot_prompt,
         allow_unknown=True,
         requires_evidence=False,
         encourages_unknown=False,
@@ -52,6 +65,7 @@ ARM_CONFIGS: dict[ExperimentArm, ArmConfig] = {
     ExperimentArm.FEW_SHOT: ArmConfig(
         arm=ExperimentArm.FEW_SHOT,
         legacy_key="B",
+        prompt_builder=build_few_shot_prompt,
         allow_unknown=True,
         requires_evidence=False,
         encourages_unknown=False,
@@ -61,6 +75,7 @@ ARM_CONFIGS: dict[ExperimentArm, ArmConfig] = {
     ExperimentArm.CONSTRAINED: ArmConfig(
         arm=ExperimentArm.CONSTRAINED,
         legacy_key="C",
+        prompt_builder=build_allowed_values_prompt,
         allow_unknown=True,
         requires_evidence=False,
         encourages_unknown=False,
@@ -73,6 +88,7 @@ ARM_CONFIGS: dict[ExperimentArm, ArmConfig] = {
     ExperimentArm.CONSTRAINED_UNKNOWN: ArmConfig(
         arm=ExperimentArm.CONSTRAINED_UNKNOWN,
         legacy_key=None,
+        prompt_builder=build_constrained_unknown_prompt,
         allow_unknown=True,
         requires_evidence=False,
         encourages_unknown=True,
@@ -86,6 +102,7 @@ ARM_CONFIGS: dict[ExperimentArm, ArmConfig] = {
     ExperimentArm.GROUNDED: ArmConfig(
         arm=ExperimentArm.GROUNDED,
         legacy_key="D",
+        prompt_builder=build_schema_guided_prompt,
         allow_unknown=True,
         requires_evidence=True,
         encourages_unknown=True,
@@ -101,9 +118,11 @@ ARM_CONFIGS: dict[ExperimentArm, ArmConfig] = {
 @dataclass(frozen=True)
 class ModelConfig:
     model: str
+    provider: str = "openai"  # provenance only; llm_client.py is OpenAI-specific
     temperature: float | None = None  # None = provider default; see llm_client.py
     max_tokens: int | None = None
     retries: int = 3
+    response_format: str = "json_object"
 
 
 @dataclass(frozen=True)

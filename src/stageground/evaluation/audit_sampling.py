@@ -42,7 +42,7 @@ def classify_arm_pattern(
     return BOTH_ABSTAIN
 
 
-def _group_by_case(records: list[PredictionRecord]) -> dict[str, dict[str, PredictionRecord]]:
+def group_by_case(records: list[PredictionRecord]) -> dict[str, dict[str, PredictionRecord]]:
     by_case: dict[str, dict[str, PredictionRecord]] = defaultdict(dict)
     for r in records:
         by_case[r.case_id][r.arm] = r
@@ -82,7 +82,7 @@ def _sample_m(
     if quota <= 0:
         return [], {"priority_tier_selected": 0, "semantic_balance_tier_selected": 0, "random_fill_selected": 0}
 
-    by_case = _group_by_case(m_records)
+    by_case = group_by_case(m_records)
     priority_pool = [
         r for r in m_records
         if r.arm == priority_arm

@@ -20,7 +20,8 @@ def test_correct_and_supported():
     assert rec.prediction == "T3"
     assert rec.correct is True
     assert rec.abstained is False
-    assert rec.supported is True
+    assert rec.evidence_span_found is True
+    assert rec.evidence_semantically_supports_prediction is True
     assert rec.errors == []
 
 
@@ -42,7 +43,7 @@ def test_no_ground_truth_not_evaluable():
     assert rec.correct is None
 
 
-def test_abstained_supported_is_none():
+def test_abstained_grounding_fields_are_none():
     rec = build_record(
         case_id="c4", arm="D_grounded", target="M", ground_truth="M0",
         raw_output={"value": "unknown", "evidence": None, "confidence": "low",
@@ -50,7 +51,8 @@ def test_abstained_supported_is_none():
         report_text="no staging descriptors at all",
     )
     assert rec.abstained is True
-    assert rec.supported is None
+    assert rec.evidence_span_found is None
+    assert rec.evidence_semantically_supports_prediction is None
     assert rec.correct is False  # 'unknown' != 'M0'
 
 
@@ -65,7 +67,8 @@ def test_malformed_output_defaults_to_invalid_not_silently_abstained():
     assert rec.abstained is False
     assert rec.errors == ["invalid_schema_output"]
     assert rec.correct is False
-    assert rec.supported is False
+    assert rec.evidence_span_found is False
+    assert rec.evidence_semantically_supports_prediction is False
 
 
 def test_raw_model_output_preserved_verbatim():
@@ -108,6 +111,48 @@ def test_prediction_record_is_a_dataclass_with_expected_fields():
     )
     assert isinstance(rec, PredictionRecord)
     for field in ("case_id", "arm", "target", "ground_truth", "prediction",
-                  "evidence", "correct", "abstained", "supported", "errors",
+                  "evidence", "correct", "abstained", "evidence_span_found",
+                  "evidence_semantically_supports_prediction", "errors",
                   "raw_model_output"):
         assert hasattr(rec, field)
+
+
+def test_from_dict_loads_legacy_supported_field():
+    # Shape of a PredictionRecord JSONL line written BEFORE the span/semantic
+    # split (spec item 7): has 'supported', no 'evidence_span_found' or
+    # 'evidence_semantically_supports_prediction'.
+    legacy = {
+        "case_id": "old1", "arm": "D_grounded", "target": "T",
+        "ground_truth": "T3", "prediction": "T3", "evidence": "pT3",
+        "correct": True, "abstained": False, "supported": True,
+        "errors": [], "raw_model_output": {},
+    }
+    rec = PredictionRecord.from_dict(legacy)
+    assert rec.evidence_span_found is True
+    assert rec.evidence_semantically_supports_prediction is None  # unknown, not False
+    assert not hasattr(rec, "supported")
+
+
+def test_from_dict_loads_current_schema_unchanged():
+    current = {
+        "case_id": "new1", "arm": "D_grounded", "target": "T",
+        "ground_truth": "T3", "prediction": "T3", "evidence": "pT3",
+        "correct": True, "abstained": False,
+        "evidence_span_found": True, "evidence_semantically_supports_prediction": True,
+        "errors": [], "raw_model_output": {},
+    }
+    rec = PredictionRecord.from_dict(current)
+    assert rec.evidence_span_found is True
+    assert rec.evidence_semantically_supports_prediction is True
+
+
+def test_from_dict_does_not_mutate_input_dict():
+    legacy = {
+        "case_id": "old2", "arm": "D_grounded", "target": "T",
+        "ground_truth": "T3", "prediction": "T3", "evidence": "pT3",
+        "correct": True, "abstained": False, "supported": True,
+        "errors": [], "raw_model_output": {},
+    }
+    original = dict(legacy)
+    PredictionRecord.from_dict(legacy)
+    assert legacy == original

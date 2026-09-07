@@ -113,6 +113,27 @@ varies between arms is the constraint being tested.
 
 ### Metrics
 
+**StageGround distinguishes output validity, evidence-span grounding,
+semantic support, and abstention rather than treating them as equivalent
+notions of reliability.** Concretely, every non-abstained prediction carries
+TWO separate grounding fields on its `PredictionRecord`, never one ambiguous
+flag:
+
+- **`evidence_span_found`** — a syntactic fact: does the model's `evidence`
+  string literally appear (verbatim, OCR-noise-tolerant) in the source
+  report? This is exactly the v0 pilot's validated, 92%-agreement-audited
+  `grounded()` check — unchanged, not redefined.
+- **`evidence_semantically_supports_prediction`** — does that evidence
+  actually say what was predicted? This is currently an **automated
+  heuristic** (a regex check for a stage token inside the evidence string,
+  e.g. does "M1 metastatic disease" contain something that canonicalizes to
+  `M1`) and is explicitly **not** equivalent to human semantic judgment.
+  Fabricated evidence can't semantically support anything, so this field is
+  always `False` whenever `evidence_span_found` is `False` — it's never
+  computed independently. Treat `semantic_*` metrics below as provisional
+  until corroborated by the manual audit tooling (see below). Both fields
+  are `None` for abstained predictions.
+
 Every metric (defined once in
 [`src/stageground/evaluation/metrics.py`](src/stageground/evaluation/metrics.py))
 is scoped to **evaluable cases** — reports where ground truth exists for that
@@ -125,19 +146,22 @@ denominator is zero (e.g. an all-abstained sample), so they never crash a run.
 | `accuracy` | correct predictions / evaluable cases |
 | `abstention_rate` | `unknown` predictions / evaluable cases |
 | `coverage` | `1 - abstention_rate` |
-| `unsupported_rate_over_evaluable` | unsupported predictions / all evaluable cases |
-| `unsupported_rate_over_asserted` | unsupported predictions / non-abstained (evaluable) predictions |
-| `supported_accuracy_over_evaluable` | correct **and** supported / all evaluable cases |
-| `supported_accuracy_over_asserted` | correct **and** supported / non-abstained (evaluable) predictions |
-| `allowed_value_compliance` | fraction whose *raw*, pre-canonicalization value is already an exact allowed-domain token (format compliance, independent of correctness) |
+| `span_unsupported_rate_over_evaluable` / `_over_asserted` | non-abstained predictions with no evidence span found / evaluable cases (or / non-abstained predictions) |
+| `semantic_unsupported_rate_over_evaluable` / `_over_asserted` | non-abstained predictions where the span is absent OR the evidence doesn't semantically support the prediction (heuristic) / evaluable (or asserted) cases |
+| `span_grounded_accuracy_over_evaluable` / `_over_asserted` | correct **and** evidence-span-found / evaluable (or asserted) cases — span-only, does not require the evidence to actually say what was predicted |
+| `semantic_supported_accuracy_over_evaluable` / `_over_asserted` | correct **and** span-found **and** semantically-supports (heuristic) / evaluable (or asserted) cases — the closest automated proxy to "true grounding" this project computes, still not a substitute for manual audit |
+| `allowed_value_compliance` | fraction whose *raw*, pre-canonicalization value is already an exact allowed-domain token (format compliance, independent of correctness or grounding) |
 | `evidence_span_found_rate` | fraction of non-abstained predictions whose evidence is a verbatim (OCR-noise-tolerant) substring of the report |
-| `evidence_semantic_support_rate` | fraction of non-abstained predictions whose evidence additionally contains a stage token matching the prediction (a weaker, separate heuristic — see module docstring; never folded into `supported`) |
+| `evidence_semantic_support_rate` | fraction of non-abstained predictions whose evidence semantically supports the prediction (heuristic proxy) |
 
-A prediction is **`supported`** iff it is non-abstained, has a non-null
-evidence field, and that evidence is verbatim-grounded in the report text —
-the same definition the v0 pilot's 92%-agreement-audited `grounded()` check
-uses (unchanged, not redefined). Each incorrect/problematic prediction is also
-tagged with zero or more **error taxonomy** flags (`hallucinated_stage`,
+`unsupported_rate_over_evaluable`/`_over_asserted` and
+`supported_accuracy_over_evaluable`/`_over_asserted` still exist as
+**deprecated aliases** of the `span_*` metrics above (their original
+semantics were always span-only, despite the ambiguous name) — new code
+should call the `span_*` names directly.
+
+Each incorrect/problematic prediction is also tagged with zero or more
+**error taxonomy** flags (`hallucinated_stage`,
 `wrong_stage_with_supporting_evidence`, `evidence_span_not_found`,
 `evidence_does_not_support_prediction`, `missed_explicit_stage`,
 `over_abstention`, `invalid_normalization`, `invalid_schema_output`) by
@@ -187,17 +211,27 @@ results/<experiment_id>/
   error_breakdown.json    # per-arm, per-target error-taxonomy counts
   bootstrap.json          # paired-bootstrap arm comparisons (see below)
   tables/                 # overall/T/N/M comparison tables, .csv + .md
-  figures/                # fig1 (accuracy vs unsupported), fig2 (coverage vs supported accuracy), fig3 (error breakdown)
+  figures/                # fig1a (accuracy vs span-unsupported, diagnostic),
+                          # fig1b (accuracy vs semantic-unsupported, headline),
+                          # fig2 (coverage vs semantic-supported accuracy), fig3 (error breakdown)
 ```
+
+`config.json` records both the **requested** model config (`model`, exactly
+as passed via `--model`/`--temperature`/etc.) and the **effective** one
+(`effective_model`, what was actually sent to the provider after
+normalization — e.g. an OpenAI reasoning model like `gpt-5-mini` silently
+rejects any non-default temperature, so `resolve_effective_model_config`
+drops it to `null` and records that explicitly rather than sending a request
+that would fail or, worse, silently diverging from what `config.json` claims).
 
 **Bootstrap comparisons.** `bootstrap.json` reports paired-bootstrap (same
 reports across arms, not independent resampling) diff + 95% CI + empirical
 two-sided p-value for `D_grounded vs C_constrained`, `C_plus_unknown vs
 C_constrained`, and `D_grounded vs C_plus_unknown`, on `accuracy`,
-`supported_accuracy_over_evaluable`, `unsupported_rate_over_evaluable`,
-`abstention_rate`, and `coverage` — both pooled ("overall") and per T/N/M
-target. A comparison is silently omitted (not an error) if one of its two arms
-wasn't included in `--arms`.
+`semantic_supported_accuracy_over_evaluable`, `span_unsupported_rate_over_evaluable`,
+`semantic_unsupported_rate_over_evaluable`, `abstention_rate`, and `coverage`
+— both pooled ("overall") and per T/N/M target. A comparison is silently
+omitted (not an error) if one of its two arms wasn't included in `--arms`.
 
 ### Reproducing analysis
 
@@ -236,11 +270,23 @@ from stageground.evaluation.audit import build_audit_sheet, write_audit_jsonl, s
 
 rows = build_audit_sheet(records, texts, n=75, seed=42)
 write_audit_jsonl(rows, "results/<experiment_id>/audit_sheet.jsonl")
-# ... a reviewer fills in human_supported / human_evidence_correct /
-#     human_prediction_correct / human_error_type / reviewer_notes, resaves ...
+# each row carries automated_evidence_span_found + automated_semantic_support
+# (the heuristic) alongside blank human_supported / human_evidence_correct /
+# human_prediction_correct / human_error_type / reviewer_notes for a reviewer
+# to fill in and resave ...
 report = score_audit(read_audit_jsonl("results/<experiment_id>/audit_sheet.jsonl"))
 # {'n_scored_supported': ..., 'percent_agreement_supported': ..., 'cohens_kappa_supported': ..., ...}
+# NOTE: the 'supported' comparison pairs human_supported against
+# automated_evidence_span_found (span-only) -- this is the closest existing
+# human-facing field, though its name doesn't yet distinguish span vs
+# semantic judgment; a future pass should split it into
+# human_evidence_span_found / human_semantic_support to match the schema.
 ```
+
+This manual audit is exactly the mechanism that should be used to validate
+(or correct) `semantic_supported_accuracy`/`semantic_unsupported_rate` before
+treating them as a settled result — the automated heuristic is a starting
+point for triage, not a substitute for review.
 
 ### Scope note
 

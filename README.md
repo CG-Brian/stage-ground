@@ -71,6 +71,187 @@ tests/             unit tests (canonicalize, schema, evidence_grounded)
 notebooks/         exploration + error analysis
 ```
 
+## Ablation study (A / B / C / C+ / D)
+
+The pilot above (Arms A–D, n=200) established that allowed-value constraints alone
+do not improve grounding. The **ablation study** isolates *which* individual
+intervention is responsible: is it the allowed-value list, the permission to
+abstain, or the mandatory evidence span?
+
+**Research question.** Does structured output improve *actual source grounding*,
+or does it only improve *apparent extraction accuracy*? A pilot finding is that
+allowed-value-constrained output (`C_constrained`) can reach very high apparent
+accuracy while still producing many unsupported predictions — and that explicit
+abstention and evidence binding are what actually reduce unsupported predictions,
+not the value constraint itself.
+
+### Experimental arms
+
+The v0 pilot's Arm D bundled "allowed values + explicit unknown + mandatory
+evidence" together, making it impossible to tell which piece did the work. The
+ablation splits that into five arms, defined once in
+[`src/stageground/config.py`](src/stageground/config.py) (`ExperimentArm` +
+`ARM_CONFIGS`) so prompt text, evidence requirements, and evaluation logic all
+read from the same source instead of branching on arm-name string literals:
+
+| Arm | Allowed values | Evidence required | `unknown` encouraged |
+| --- | :-: | :-: | :-: |
+| `A_zero_shot` | – | – | – |
+| `B_few_shot` | – | – | – (one worked abstention example, no rule) |
+| `C_constrained` | ✓ | – | – |
+| `C_plus_unknown` | ✓ | – | ✓ |
+| `D_grounded` | ✓ | ✓ (every non-unknown prediction) | ✓ |
+
+`C_constrained` and `D_grounded` reuse the v0 pilot's Arm C and Arm D prompts
+unchanged (`stageground.extraction.prompts.build_allowed_values_prompt` /
+`build_schema_guided_prompt`); `C_plus_unknown` is new
+(`build_constrained_unknown_prompt`) and isolates "permission to abstain" from
+"mandatory evidence." All other model settings (model, temperature, retries,
+JSON output shape) are held constant across arms and recorded in every
+experiment's `config.json` (`ModelConfig` in `config.py`) — the only thing that
+varies between arms is the constraint being tested.
+
+### Metrics
+
+Every metric (defined once in
+[`src/stageground/evaluation/metrics.py`](src/stageground/evaluation/metrics.py))
+is scoped to **evaluable cases** — reports where ground truth exists for that
+target (T/N/M) — so every number in a comparison table shares the same
+denominator population. All metrics return `NaN` rather than raising when a
+denominator is zero (e.g. an all-abstained sample), so they never crash a run.
+
+| Metric | Definition |
+| --- | --- |
+| `accuracy` | correct predictions / evaluable cases |
+| `abstention_rate` | `unknown` predictions / evaluable cases |
+| `coverage` | `1 - abstention_rate` |
+| `unsupported_rate_over_evaluable` | unsupported predictions / all evaluable cases |
+| `unsupported_rate_over_asserted` | unsupported predictions / non-abstained (evaluable) predictions |
+| `supported_accuracy_over_evaluable` | correct **and** supported / all evaluable cases |
+| `supported_accuracy_over_asserted` | correct **and** supported / non-abstained (evaluable) predictions |
+| `allowed_value_compliance` | fraction whose *raw*, pre-canonicalization value is already an exact allowed-domain token (format compliance, independent of correctness) |
+| `evidence_span_found_rate` | fraction of non-abstained predictions whose evidence is a verbatim (OCR-noise-tolerant) substring of the report |
+| `evidence_semantic_support_rate` | fraction of non-abstained predictions whose evidence additionally contains a stage token matching the prediction (a weaker, separate heuristic — see module docstring; never folded into `supported`) |
+
+A prediction is **`supported`** iff it is non-abstained, has a non-null
+evidence field, and that evidence is verbatim-grounded in the report text —
+the same definition the v0 pilot's 92%-agreement-audited `grounded()` check
+uses (unchanged, not redefined). Each incorrect/problematic prediction is also
+tagged with zero or more **error taxonomy** flags (`hallucinated_stage`,
+`wrong_stage_with_supporting_evidence`, `evidence_span_not_found`,
+`evidence_does_not_support_prediction`, `missed_explicit_stage`,
+`over_abstention`, `invalid_normalization`, `invalid_schema_output`) by
+[`error_taxonomy.py`](src/stageground/evaluation/error_taxonomy.py) — multiple
+flags can and do coexist on one prediction.
+
+### Running an experiment
+
+```bash
+uv sync --extra dev            # + matplotlib, for tables/figures
+uv sync --extra serve  # not required for evaluate.py; only if also running the API
+
+# 200-case pilot
+uv run python -m stageground.evaluate \
+  --arms A_zero_shot C_constrained C_plus_unknown D_grounded \
+  --sample-size 200 --seed 42 --model gpt-4o
+
+# 1,000-case experiment
+uv run python -m stageground.evaluate \
+  --arms C_constrained C_plus_unknown D_grounded \
+  --sample-size 1000 --seed 42 --model gpt-4o
+
+# 2,000+ / full available dataset (sample-size >= pool size returns everything)
+uv run python -m stageground.evaluate \
+  --arms C_constrained C_plus_unknown D_grounded \
+  --sample-size 100000 --seed 42 --model gpt-4o
+```
+
+`--sample-size` is never hardcoded in the evaluation logic — it's always a
+required CLI argument, plumbed straight into
+`stageground.evaluation.sampling.stratified_sample`, which deterministically
+(same `df`, `n`, `seed` → identical sample) and proportionally stratifies on
+the T/N/M gold-*availability* pattern. `--pool all-three` (default) restricts
+to reports with all of T/N/M gold, matching `scripts/01b_sample_eval.py`'s
+pilot behavior; `--pool any` uses reports with at least one target's gold.
+
+Each run writes a self-contained, timestamped
+`results/<experiment_id>/` directory — it never touches or overwrites the v0
+pilot's `results/cases/`, `results/metrics/`, or `results/audit/`:
+
+```
+results/<experiment_id>/
+  config.json             # arms, model, temperature, seed, sample size, sampling summary, timestamp
+  predictions.jsonl       # one PredictionRecord per (case, arm, target); raw model output preserved
+  metrics.json            # per-arm metrics, pooled across T/N/M
+  metrics_by_target.json  # per-arm metrics, split by T/N/M
+  error_breakdown.json    # per-arm, per-target error-taxonomy counts
+  bootstrap.json          # paired-bootstrap arm comparisons (see below)
+  tables/                 # overall/T/N/M comparison tables, .csv + .md
+  figures/                # fig1 (accuracy vs unsupported), fig2 (coverage vs supported accuracy), fig3 (error breakdown)
+```
+
+**Bootstrap comparisons.** `bootstrap.json` reports paired-bootstrap (same
+reports across arms, not independent resampling) diff + 95% CI + empirical
+two-sided p-value for `D_grounded vs C_constrained`, `C_plus_unknown vs
+C_constrained`, and `D_grounded vs C_plus_unknown`, on `accuracy`,
+`supported_accuracy_over_evaluable`, `unsupported_rate_over_evaluable`,
+`abstention_rate`, and `coverage` — both pooled ("overall") and per T/N/M
+target. A comparison is silently omitted (not an error) if one of its two arms
+wasn't included in `--arms`.
+
+### Reproducing analysis
+
+Tables and figures are generated automatically by `evaluate.py`, but can also
+be regenerated standalone from an existing `predictions.jsonl` (e.g. after
+manually editing/re-running only part of a pipeline):
+
+```python
+from stageground.evaluation.records import from_jsonl
+from stageground.evaluation.tables import write_tables
+from stageground.evaluation.plots import plot_error_breakdown
+
+records = from_jsonl("results/<experiment_id>/predictions.jsonl")
+write_tables(records, "results/<experiment_id>")
+plot_error_breakdown(records, "results/<experiment_id>/figures/fig3_M.png", target="M")
+```
+
+### M-stage analysis
+
+M-stage shows the largest accuracy/grounding tradeoff (lowest coverage,
+M0-dominated, often needs imaging the report doesn't contain — DESIGN §3.3).
+[`mstage_analysis.py`](src/stageground/evaluation/mstage_analysis.py)
+regex-classifies each M-target report into `explicit_m_token`,
+`metastatic_described_no_token`, `no_m_evidence`, or `ambiguous_insufficient`,
+and `build_mstage_annotation_sheet(...)` produces a reproducible sheet with
+blank `human_category`/`notes` fields for manual review — this is
+intentionally a heuristic-plus-audit-trail, not a trained classifier.
+
+### Manual audit (50–100 cases)
+
+[`audit.py`](src/stageground/evaluation/audit.py) extends the v0 pilot's
+one-off 25-case Track-C audit into a repeatable tool:
+
+```python
+from stageground.evaluation.audit import build_audit_sheet, write_audit_jsonl, score_audit, read_audit_jsonl
+
+rows = build_audit_sheet(records, texts, n=75, seed=42)
+write_audit_jsonl(rows, "results/<experiment_id>/audit_sheet.jsonl")
+# ... a reviewer fills in human_supported / human_evidence_correct /
+#     human_prediction_correct / human_error_type / reviewer_notes, resaves ...
+report = score_audit(read_audit_jsonl("results/<experiment_id>/audit_sheet.jsonl"))
+# {'n_scored_supported': ..., 'percent_agreement_supported': ..., 'cohens_kappa_supported': ..., ...}
+```
+
+### Scope note
+
+`scripts/01-06` and the existing `results/cases/`, `results/metrics/`,
+`results/audit/` (and the results table below) are the v0 pilot and are
+unchanged by the ablation study — they remain independently reproducible. The
+ablation pipeline (`stageground.evaluate`, `stageground.config`, and
+`stageground.evaluation.{metrics,records,error_taxonomy,sampling,bootstrap,
+mstage_analysis,audit,tables,plots}`) is a separate, additive experiment track
+built for the A/B/C/C+/D comparison above.
+
 ## Results
 
 A **constraint ladder** of four prompting arms, same model, same JSON output shape,

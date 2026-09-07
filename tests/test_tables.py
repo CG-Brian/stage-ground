@@ -1,4 +1,3 @@
-from pathlib import Path
 
 from stageground.evaluation import metrics
 from stageground.evaluation.records import build_record

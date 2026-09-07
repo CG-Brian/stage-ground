@@ -16,7 +16,8 @@ dependencies = [
 [project.optional-dependencies]
 demo = ["streamlit>=1.35"]
 serve = ["fastapi>=0.110", "uvicorn[standard]>=0.29"]
-dev = ["pytest>=8.0", "ruff>=0.5"]
+analysis = ["matplotlib>=3.8"]  # research figures (stageground.evaluation.plots)
+dev = ["pytest>=8.0", "ruff>=0.5", "matplotlib>=3.8"]
 arm-e = ["torch>=2.3", "transformers>=4.40"]  # Arm E: Tatonetti/Kefeli supervised reference (HF inference only, no training)
 
 [build-system]

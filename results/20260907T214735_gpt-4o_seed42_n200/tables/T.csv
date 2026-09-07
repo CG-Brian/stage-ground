@@ -1,0 +1,5 @@
+arm,n_evaluable,accuracy,semantic_supported_accuracy,span_unsupported_rate,semantic_unsupported_rate,abstention_rate,coverage
+A_zero_shot,200,0.78,0.32,0.12,0.605,0.055,0.945
+C_constrained,200,0.79,0.425,0.095,0.525,0.035,0.965
+C_plus_unknown,200,0.795,0.385,0.105,0.53,0.065,0.935
+D_grounded,200,0.795,0.46,0.06,0.465,0.045,0.955

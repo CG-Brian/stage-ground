@@ -1,11 +1,16 @@
+import json
+
+import pandas as pd
+
 from stageground.evaluation.audit import (
     _report_excerpt,
     build_audit_sheet,
     build_reviewer_and_key,
+    main,
     score_audit,
     write_audit_bundle,
 )
-from stageground.evaluation.records import PredictionRecord
+from stageground.evaluation.records import PredictionRecord, to_jsonl
 
 GROUNDING_BLIND_FIELDS = {
     "audit_id", "target", "report_excerpt", "report_truncated",
@@ -193,3 +198,46 @@ def test_legacy_build_audit_sheet_and_score_audit_unaffected():
     rows[0]["human_prediction_correct"] = True
     result = score_audit(rows)
     assert result["percent_agreement_supported"] == 1.0
+
+
+# --- CLI smoke test ---
+
+def test_cli_build_then_score(tmp_path):
+    records = _pool()
+    predictions_dir = tmp_path / "exp_001"
+    predictions_dir.mkdir()
+    predictions_path = predictions_dir / "predictions.jsonl"
+    to_jsonl(records, predictions_path)
+
+    dataset_df = pd.DataFrame([
+        {"patient_filename": case_id, "text": text} for case_id, text in _texts(records).items()
+    ])
+    dataset_path = tmp_path / "dataset.parquet"
+    dataset_df.to_parquet(dataset_path, index=False)
+
+    output_dir = tmp_path / "audit" / "audit_001"
+    main([
+        "build",
+        "--predictions", str(predictions_path),
+        "--dataset", str(dataset_path),
+        "--target-count", "T=2", "M=3",
+        "--seed", "1",
+        "--output", str(output_dir),
+    ])
+
+    assert (output_dir / "reviewer.jsonl").exists()
+    assert (output_dir / "key.jsonl").exists()
+    assert (output_dir / "INSTRUCTIONS.md").exists()
+    config = json.loads((output_dir / "config.json").read_text())
+    for key in (
+        "seed", "target_counts", "mode", "source_experiment_id",
+        "source_prediction_file", "timestamp", "achieved_composition",
+    ):
+        assert key in config
+    assert config["source_experiment_id"] == "exp_001"
+
+    # score an entirely unfilled bundle -- must not crash, everything NaN/0
+    main(["score", "--audit-dir", str(output_dir)])
+    scored = json.loads((output_dir / "scored.json").read_text())
+    assert scored["agreement"]["overall"]["evidence_span_found"]["n"] == 0
+    assert scored["source_sufficiency"]["overall"]["n_reviewed"] > 0

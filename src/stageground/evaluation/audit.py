@@ -21,12 +21,21 @@ Two audit builders coexist:
 
 from __future__ import annotations
 
+import argparse
 import json
 import random
+from datetime import datetime, timezone
 from pathlib import Path
 
+import pandas as pd
+
 from stageground.evaluation.audit_sampling import classify_arm_pattern, group_by_case, stratified_audit_sample
-from stageground.evaluation.records import PredictionRecord
+from stageground.evaluation.audit_scoring import (
+    analyze_m0_prior_prediction,
+    analyze_source_sufficiency,
+    score_reviewed_audit,
+)
+from stageground.evaluation.records import PredictionRecord, from_jsonl
 
 MAX_EXCERPT_CHARS = 4000
 
@@ -401,3 +410,93 @@ def write_audit_bundle(reviewer_rows: list[dict], key_rows: list[dict], config: 
     write_audit_jsonl(key_rows, outdir / "key.jsonl")
     (outdir / "config.json").write_text(json.dumps(config, indent=2))
     (outdir / "INSTRUCTIONS.md").write_text(_render_instructions(config.get("mode", "grounding-blind")))
+
+
+# ============================================================================
+# CLI: `python -m stageground.evaluation.audit build|score ...` (spec §17)
+# ============================================================================
+
+
+def _parse_target_counts(pairs: list[str]) -> dict[str, int]:
+    result = {}
+    for pair in pairs:
+        key, _, value = pair.partition("=")
+        result[key] = int(value)
+    return result
+
+
+def _cmd_build(args: argparse.Namespace) -> None:
+    records = from_jsonl(args.predictions)
+    dataset_df = pd.read_parquet(args.dataset)
+    texts = dict(zip(dataset_df["patient_filename"], dataset_df["text"]))
+    target_counts = _parse_target_counts(args.target_count)
+
+    reviewer_rows, key_rows, sampling_report = build_reviewer_and_key(
+        records, texts, target_counts=target_counts, seed=args.seed, mode=args.mode,
+        m_priority_arm=args.m_priority_arm, m_comparison_arm=args.m_comparison_arm,
+        m_priority_fraction=args.m_priority_fraction,
+        m_semantic_balance_fraction=args.m_semantic_balance_fraction,
+    )
+
+    predictions_path = Path(args.predictions)
+    config = {
+        "seed": args.seed,
+        "target_counts": target_counts,
+        "mode": args.mode,
+        "m_priority_arm": args.m_priority_arm,
+        "m_comparison_arm": args.m_comparison_arm,
+        "m_priority_fraction": args.m_priority_fraction,
+        "m_semantic_balance_fraction": args.m_semantic_balance_fraction,
+        "source_experiment_id": predictions_path.parent.name,
+        "source_prediction_file": str(predictions_path),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "achieved_composition": sampling_report,
+    }
+
+    write_audit_bundle(reviewer_rows, key_rows, config, args.output)
+    print(f"wrote audit bundle ({len(reviewer_rows)} rows) -> {args.output}")
+
+
+def _cmd_score(args: argparse.Namespace) -> None:
+    audit_dir = Path(args.audit_dir)
+    reviewer_rows = read_audit_jsonl(audit_dir / "reviewer.jsonl")
+    key_rows = read_audit_jsonl(audit_dir / "key.jsonl")
+
+    scored = {
+        "agreement": score_reviewed_audit(reviewer_rows, key_rows),
+        "source_sufficiency": analyze_source_sufficiency(reviewer_rows, key_rows),
+        "m0_prior_prediction": analyze_m0_prior_prediction(reviewer_rows, key_rows),
+    }
+    (audit_dir / "scored.json").write_text(json.dumps(scored, indent=2))
+    print(json.dumps(scored, indent=2))
+    print(f"\nwrote {audit_dir / 'scored.json'}")
+
+
+def main(argv: list[str] | None = None) -> None:
+    ap = argparse.ArgumentParser(description=__doc__)
+    sub = ap.add_subparsers(dest="command", required=True)
+
+    build_ap = sub.add_parser("build", help="Build a blinded reviewer/key audit bundle")
+    build_ap.add_argument("--predictions", required=True, help="path to a predictions.jsonl from stageground.evaluate")
+    build_ap.add_argument("--dataset", required=True, help="path to the dataset parquet (for full report text)")
+    build_ap.add_argument("--target-count", nargs="+", required=True, metavar="TARGET=COUNT",
+                           help="e.g. --target-count T=20 N=20 M=40")
+    build_ap.add_argument("--seed", type=int, required=True)
+    build_ap.add_argument("--mode", choices=AUDIT_MODES, default="grounding-blind")
+    build_ap.add_argument("--m-priority-arm", default="C_constrained")
+    build_ap.add_argument("--m-comparison-arm", default="D_grounded")
+    build_ap.add_argument("--m-priority-fraction", type=float, default=0.5)
+    build_ap.add_argument("--m-semantic-balance-fraction", type=float, default=0.3)
+    build_ap.add_argument("--output", required=True)
+    build_ap.set_defaults(func=_cmd_build)
+
+    score_ap = sub.add_parser("score", help="Score a completed audit bundle")
+    score_ap.add_argument("--audit-dir", required=True)
+    score_ap.set_defaults(func=_cmd_score)
+
+    args = ap.parse_args(argv)
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()

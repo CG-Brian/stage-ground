@@ -9,16 +9,24 @@ figures -> bootstrap comparisons -> results/<experiment_id>/. The one place
 that touches the LLM is the `runner` parameter of `run_evaluation` (defaults
 to `stageground.extraction.extractors.run_one`); tests substitute a
 deterministic fake so the whole pipeline is exercised with no API calls.
+
+`config.model` (an `ExperimentConfig`'s `ModelConfig`) is what actually
+reaches every extraction call -- see `resolve_effective_model_config` below
+and `stageground.extraction.llm_client`/`extractors.run_one`. Both the
+as-requested and as-resolved ("effective") model configuration are recorded
+in `config.json`, so a run's config file can never silently diverge from
+what was actually sent to the provider.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
-import re
 from collections import Counter
+from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
+import re
 from typing import Callable
 
 import pandas as pd
@@ -27,16 +35,20 @@ from stageground.config import ExperimentArm, ExperimentConfig, ModelConfig
 from stageground.evaluation.bootstrap import paired_bootstrap_compare
 from stageground.evaluation.metrics import compute_all_metrics
 from stageground.evaluation.plots import (
-    plot_accuracy_vs_unsupported,
-    plot_coverage_vs_supported_accuracy,
+    plot_accuracy_vs_semantic_unsupported,
+    plot_accuracy_vs_span_unsupported,
+    plot_coverage_vs_semantic_supported_accuracy,
     plot_error_breakdown,
 )
 from stageground.evaluation.records import PredictionRecord, build_record, to_jsonl
 from stageground.evaluation.sampling import stratified_sample
 from stageground.evaluation.tables import build_comparison_table, write_tables
 from stageground.extraction.extractors import Result, run_one
+from stageground.extraction.llm_client import resolve_effective_model_config
 
 TARGETS = ("T", "N", "M")
+
+Runner = Callable[..., Result]  # (arm: str, report_text: str, *, model_config: ModelConfig | None) -> Result
 
 # Fixed comparisons spec §7 asks for; skipped (not crashed on) if either arm
 # wasn't included in the run.
@@ -48,8 +60,9 @@ BOOTSTRAP_COMPARISONS = [
 
 BOOTSTRAP_METRICS = [
     "accuracy",
-    "supported_accuracy_over_evaluable",
-    "unsupported_rate_over_evaluable",
+    "semantic_supported_accuracy_over_evaluable",
+    "span_unsupported_rate_over_evaluable",
+    "semantic_unsupported_rate_over_evaluable",
     "abstention_rate",
     "coverage",
 ]
@@ -69,10 +82,16 @@ def _per_case_value(rec: PredictionRecord, metric_name: str) -> float | None:
         return 1.0 if rec.abstained else 0.0
     if metric_name == "coverage":
         return 0.0 if rec.abstained else 1.0
-    if metric_name == "unsupported_rate_over_evaluable":
-        return 1.0 if rec.supported is False else 0.0
-    if metric_name == "supported_accuracy_over_evaluable":
-        return 1.0 if (rec.correct and rec.supported) else 0.0
+    if metric_name == "span_unsupported_rate_over_evaluable":
+        return 1.0 if rec.evidence_span_found is False else 0.0
+    if metric_name == "semantic_unsupported_rate_over_evaluable":
+        return 1.0 if (
+            rec.evidence_span_found is False or rec.evidence_semantically_supports_prediction is False
+        ) else 0.0
+    if metric_name == "semantic_supported_accuracy_over_evaluable":
+        return 1.0 if (
+            rec.correct and rec.evidence_span_found and rec.evidence_semantically_supports_prediction
+        ) else 0.0
     raise ValueError(f"unknown bootstrap metric: {metric_name}")
 
 
@@ -118,12 +137,29 @@ def run_evaluation(
     dataset_df: pd.DataFrame,
     *,
     output_root: str | Path = "results",
-    runner: Callable[[str, str], Result] = run_one,
+    runner: Runner = run_one,
     gold_cols: tuple[str, str, str] = ("gold_T", "gold_N", "gold_M"),
 ) -> Path:
     """Run one experiment: sample, extract (via `runner`), score, and write
     the standardized results/<experiment_id>/ layout (spec §8). Returns the
-    output directory."""
+    output directory.
+
+    `config.model` is resolved to an "effective" configuration up front
+    (`resolve_effective_model_config`) -- e.g. normalizing an explicit
+    temperature that a reasoning model would reject -- and that resolved
+    config, not `config.model` directly, is what's passed to every `runner`
+    call. Both are recorded in config.json (`model` = as requested,
+    `effective_model` = as actually used) so nothing is silently substituted.
+    """
+    effective_model = resolve_effective_model_config(config.model)
+    if effective_model != config.model:
+        print(
+            f"NOTE: normalized model config for '{config.model.model}' "
+            f"(requested temperature={config.model.temperature!r} -> "
+            f"effective temperature={effective_model.temperature!r}); "
+            "both are recorded in config.json."
+        )
+
     sample_df, sampling_summary = stratified_sample(
         dataset_df, n=config.sample_size, seed=config.seed, gold_cols=gold_cols
     )
@@ -137,7 +173,7 @@ def run_evaluation(
             gold[target] = None if pd.isna(v) else v
 
         for arm in config.arms:
-            result = runner(arm.value, row.text)
+            result = runner(arm.value, row.text, model_config=effective_model)
             for target in TARGETS:
                 if result.invalid or result.extraction is None:
                     rec = build_record(
@@ -162,6 +198,7 @@ def run_evaluation(
     outdir.mkdir(parents=True, exist_ok=True)
 
     config_payload = config.to_dict()
+    config_payload["effective_model"] = asdict(effective_model)
     config_payload["sampling"] = sampling_summary.to_dict()
     (outdir / "config.json").write_text(json.dumps(config_payload, indent=2))
 
@@ -201,8 +238,11 @@ def run_evaluation(
     overall_table = build_comparison_table(all_records, target=None)
     figures_dir = outdir / "figures"
     figures_dir.mkdir(parents=True, exist_ok=True)
-    plot_accuracy_vs_unsupported(overall_table, figures_dir / "fig1_accuracy_vs_unsupported.png")
-    plot_coverage_vs_supported_accuracy(overall_table, figures_dir / "fig2_coverage_vs_supported_accuracy.png")
+    plot_accuracy_vs_span_unsupported(overall_table, figures_dir / "fig1a_accuracy_vs_span_unsupported.png")
+    plot_accuracy_vs_semantic_unsupported(overall_table, figures_dir / "fig1b_accuracy_vs_semantic_unsupported.png")
+    plot_coverage_vs_semantic_supported_accuracy(
+        overall_table, figures_dir / "fig2_coverage_vs_semantic_supported_accuracy.png"
+    )
     plot_error_breakdown(all_records, figures_dir / "fig3_error_breakdown_overall.png")
 
     m_evaluable = sum(1 for r in all_records if r.target == "M" and r.ground_truth is not None)
@@ -227,7 +267,11 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--sample-size", type=int, required=True)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--model", required=True)
+    ap.add_argument("--provider", default="openai")
     ap.add_argument("--temperature", type=float, default=None)
+    ap.add_argument("--max-tokens", type=int, default=None)
+    ap.add_argument("--retries", type=int, default=3)
+    ap.add_argument("--response-format", default="json_object")
     ap.add_argument("--dataset", default="data/processed/dataset.parquet")
     ap.add_argument("--pool", choices=["all-three", "any"], default="all-three",
                      help="'all-three' = rows with T,N,M gold all present; 'any' = at least one")
@@ -249,7 +293,14 @@ def main(argv: list[str] | None = None) -> None:
         arms=[ExperimentArm(a) for a in args.arms],
         sample_size=args.sample_size,
         seed=args.seed,
-        model=ModelConfig(model=args.model, temperature=args.temperature),
+        model=ModelConfig(
+            model=args.model,
+            provider=args.provider,
+            temperature=args.temperature,
+            max_tokens=args.max_tokens,
+            retries=args.retries,
+            response_format=args.response_format,
+        ),
         prompt_version="v1",
         schema_version="v1",
         timestamp=timestamp,

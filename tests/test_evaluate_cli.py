@@ -16,9 +16,11 @@ _TOKEN = {
 }
 
 
-def fake_runner(arm: str, text: str) -> Result:
+def fake_runner(arm: str, text: str, *, model_config=None) -> Result:
     """Deterministic, offline stand-in for extractors.run_one: no LLM call.
-    Extracts a stage token from the text via regex if present, else abstains."""
+    Extracts a stage token from the text via regex if present, else abstains.
+    Accepts (and ignores) model_config for interface compatibility with the
+    real run_one, which run_evaluation always calls with model_config set."""
     fields = {}
     for target, pattern in _TOKEN.items():
         match = pattern.search(text)
@@ -88,8 +90,9 @@ def test_run_evaluation_produces_expected_files(tmp_path):
 
     assert (outdir / "tables" / "overall.csv").exists()
     assert (outdir / "tables" / "T.csv").exists()
-    assert (outdir / "figures" / "fig1_accuracy_vs_unsupported.png").exists()
-    assert (outdir / "figures" / "fig2_coverage_vs_supported_accuracy.png").exists()
+    assert (outdir / "figures" / "fig1a_accuracy_vs_span_unsupported.png").exists()
+    assert (outdir / "figures" / "fig1b_accuracy_vs_semantic_unsupported.png").exists()
+    assert (outdir / "figures" / "fig2_coverage_vs_semantic_supported_accuracy.png").exists()
     assert (outdir / "figures" / "fig3_error_breakdown_overall.png").exists()
 
 
@@ -117,6 +120,9 @@ def test_config_json_roundtrips_through_experiment_config(tmp_path):
     assert restored == config
     assert "sampling" in payload
     assert payload["sampling"]["n_sampled"] == 5
+    assert "effective_model" in payload
+    # "fake-model" isn't an OpenAI reasoning model -> no normalization needed
+    assert payload["effective_model"] == payload["model"]
 
 
 def test_metrics_json_has_one_entry_per_arm(tmp_path):
@@ -142,6 +148,47 @@ def test_bootstrap_json_skips_missing_arms_without_crashing(tmp_path):
 
     bootstrap = json.loads((outdir / "bootstrap.json").read_text())
     assert bootstrap["overall"]["accuracy"] == []  # no fixed-comparison arms present
+
+
+def test_effective_model_config_is_passed_to_runner(tmp_path):
+    from stageground.extraction.llm_client import resolve_effective_model_config
+
+    received = []
+
+    def spy_runner(arm, text, *, model_config=None):
+        received.append(model_config)
+        return fake_runner(arm, text, model_config=model_config)
+
+    df = _synthetic_dataset(10)
+    arms = [ExperimentArm.CONSTRAINED]
+    config = _config(tmp_path, arms, sample_size=3)
+
+    run_evaluation(config, df, output_root=tmp_path / "results", runner=spy_runner)
+
+    expected = resolve_effective_model_config(config.model)
+    assert len(received) == 3  # one call per sampled case (one arm)
+    assert all(mc == expected for mc in received)
+
+
+def test_config_json_records_both_requested_and_effective_model(tmp_path):
+    df = _synthetic_dataset(10)
+    config = ExperimentConfig(
+        experiment_id="reasoning_test",
+        arms=[ExperimentArm.CONSTRAINED],
+        sample_size=3,
+        seed=1,
+        model=ModelConfig(model="gpt-5-mini", temperature=0.7),
+        prompt_version="v1",
+        schema_version="v1",
+        timestamp="2026-09-07T00:00:00+00:00",
+    )
+
+    outdir = run_evaluation(config, df, output_root=tmp_path / "results", runner=fake_runner)
+
+    payload = json.loads((outdir / "config.json").read_text())
+    assert payload["model"]["temperature"] == 0.7  # requested, preserved verbatim
+    assert payload["effective_model"]["temperature"] is None  # normalized: gpt-5 rejects non-default
+    assert payload["effective_model"]["model"] == "gpt-5-mini"
 
 
 def test_does_not_write_into_real_results_directory(tmp_path):

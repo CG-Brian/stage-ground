@@ -260,33 +260,123 @@ and `build_mstage_annotation_sheet(...)` produces a reproducible sheet with
 blank `human_category`/`notes` fields for manual review — this is
 intentionally a heuristic-plus-audit-trail, not a trained classifier.
 
-### Manual audit (50–100 cases)
+### Manual audit — quick single-file (legacy)
 
-[`audit.py`](src/stageground/evaluation/audit.py) extends the v0 pilot's
-one-off 25-case Track-C audit into a repeatable tool:
+The original single-file audit tool still exists for quick, small,
+non-blinded checks:
 
 ```python
 from stageground.evaluation.audit import build_audit_sheet, write_audit_jsonl, score_audit, read_audit_jsonl
 
 rows = build_audit_sheet(records, texts, n=75, seed=42)
 write_audit_jsonl(rows, "results/<experiment_id>/audit_sheet.jsonl")
-# each row carries automated_evidence_span_found + automated_semantic_support
-# (the heuristic) alongside blank human_supported / human_evidence_correct /
-# human_prediction_correct / human_error_type / reviewer_notes for a reviewer
-# to fill in and resave ...
 report = score_audit(read_audit_jsonl("results/<experiment_id>/audit_sheet.jsonl"))
-# {'n_scored_supported': ..., 'percent_agreement_supported': ..., 'cohens_kappa_supported': ..., ...}
-# NOTE: the 'supported' comparison pairs human_supported against
-# automated_evidence_span_found (span-only) -- this is the closest existing
-# human-facing field, though its name doesn't yet distinguish span vs
-# semantic judgment; a future pass should split it into
-# human_evidence_span_found / human_semantic_support to match the schema.
 ```
 
-This manual audit is exactly the mechanism that should be used to validate
-(or correct) `semantic_supported_accuracy`/`semantic_unsupported_rate` before
-treating them as a settled result — the automated heuristic is a starting
-point for triage, not a substitute for review.
+This path shows the reviewer the arm and the automated judgment in the same
+row (no blinding) and uses a single ambiguous `human_supported` field. It's
+kept only for backward compatibility with any audit files already generated
+this way — **use the blinded workflow below for all new audits**, especially
+anything meant to validate `semantic_supported_accuracy` / M-stage findings.
+
+### Blinded, stratified human audit (recommended)
+
+[`audit.py`](src/stageground/evaluation/audit.py)'s `build`/`score` CLI
+produces a **blinded** reviewer/key bundle instead of one flat file, with
+explicit fields separating span-grounding, semantic support, correctness,
+and source sufficiency — this is the mechanism that should be used to
+validate (or correct) `semantic_supported_accuracy` / `semantic_unsupported_rate`
+before treating them as settled results. **The automated heuristic is a
+starting point for triage, not a substitute for review** — nothing in this
+repo fabricates or simulates a human label; a real reviewer must fill in the
+`human_*` fields.
+
+**Generate the recommended 80-case audit** (T=20, N=20, M=40) from an
+existing experiment's predictions:
+
+```bash
+uv run python -m stageground.evaluation.audit build \
+  --predictions results/<experiment_id>/predictions.jsonl \
+  --dataset data/processed/dataset.parquet \
+  --target-count T=20 N=20 M=40 \
+  --seed 42 \
+  --mode grounding-blind \
+  --output audit/audit_001
+```
+
+This writes:
+
+```
+audit/audit_001/
+  reviewer.jsonl      # what the reviewer sees and fills in -- see below
+  key.jsonl           # hidden audit_id -> case_id/arm/ground_truth/automated-judgment mapping
+  config.json         # seed, target_counts, M-oversampling params, source experiment, timestamp
+  INSTRUCTIONS.md      # field definitions + worked examples, generated for this bundle's mode
+```
+
+**Blinding.** `reviewer.jsonl` never contains `arm`, `case_id`, or any
+`automated_*` field — the reviewer judges each row independently, with no
+signal about which experimental arm produced it or what the pipeline already
+concluded. In the default `grounding-blind` mode, `ground_truth` is also
+omitted entirely (not shown as `null` — the key is absent), so span/semantic/
+source-sufficiency judgments aren't anchored by knowing the right answer;
+`--mode with-gold` includes `ground_truth` for a pass focused on
+`human_prediction_correct`. Only `key.jsonl` (which the reviewer never needs
+to open) can map an `audit_id` back to a real case.
+
+**Reviewer fields** (per row — see `INSTRUCTIONS.md` for full definitions and
+worked examples): `human_evidence_span_found`, `human_semantic_support`,
+`human_prediction_correct`, `human_source_has_explicit_stage`,
+`human_source_has_inferential_evidence`, `human_source_sufficient_for_stage`,
+`human_confidence` (`high`/`medium`/`low`), `human_error_type`,
+`reviewer_notes`. For abstained (`unknown`) predictions, the evidence-related
+fields are left `null` (there's no evidence to judge) but the
+source-sufficiency fields should still be completed — that's precisely the
+question of whether abstaining was the right call.
+
+**M-stage oversampling.** Within the M quota, sampling isn't uniform random:
+it preferentially selects cases where `C_constrained` asserts a value and
+`D_grounded` abstains on the *same report* (`--m-priority-arm`/
+`--m-comparison-arm`, default `C_constrained`/`D_grounded`) — these are the
+most diagnostic cases for testing whether `C_constrained`'s higher M accuracy
+reflects genuine textual evidence or dataset priors (M0 is the dominant gold
+value). The remaining quota ensures both `automated_semantic_support` classes
+(`True` and `False`) are represented, then fills randomly — so the sample is
+never just machine-flagged failures. The achieved tier composition is
+recorded in `config.json`'s `achieved_composition`.
+
+**Reproducibility.** The same `(predictions, dataset, target_counts, seed,
+mode, M-oversampling params)` always produces the identical sample and
+`audit_id` assignment — `config.json` records every one of these inputs plus
+`source_experiment_id`/`source_prediction_file`/`timestamp`.
+
+**Score a completed audit** (after a human has filled in `reviewer.jsonl`
+and saved it back to the same path):
+
+```bash
+uv run python -m stageground.evaluation.audit score --audit-dir audit/audit_001
+```
+
+This joins `reviewer.jsonl` + `key.jsonl` on `audit_id` (the only unblinding
+step, and it happens automatically — the reviewer never touches `key.jsonl`)
+and writes `audit/audit_001/scored.json` with three sections:
+
+- **`agreement`** — overall + per-target (T/N/M) percent agreement, Cohen's
+  kappa, and a full confusion matrix (automated=predicted, human=reference)
+  with precision/recall/specificity, for both `evidence_span_found` and
+  `semantic_support`. This is where you find out whether the regex heuristic
+  systematically under-detects semantic support, and whether M behaves worse
+  than T/N.
+- **`source_sufficiency`** — % source-sufficient / explicit-stage /
+  inferential-evidence per target, plus an M-only breakdown by
+  `arm_pattern` (e.g. `priority_predicts_comparison_abstains` vs
+  `both_predict`).
+- **`m0_prior_prediction`** — among `C_constrained`'s M0 predictions:
+  accuracy, source-sufficiency rate, semantic-support rate, and
+  explicit-M-token rate. Field names are deliberately neutral (not
+  "prior_guessing_rate") — whether high M0 accuracy reflects genuine
+  extraction or dataset priors is an interpretation for a human reading these
+  numbers to draw, not a conclusion this repo asserts automatically.
 
 ### Scope note
 

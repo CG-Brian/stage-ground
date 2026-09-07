@@ -52,4 +52,46 @@ def grounded(evidence, text: str) -> bool:
     OCR line-wrap noise (see _normalize_for_match)."""
     if evidence is None:
         return False
-    return _normalize_for_match(str(evidence)) in _normalize_for_match(text)
+    normalized = _normalize_for_match(str(evidence))
+    if not normalized:
+        return False  # empty/whitespace-only evidence conveys no basis
+    return normalized in _normalize_for_match(text)
+
+
+# Stage token as it may appear in report/evidence text, e.g. 'pT3a', 'MX', 'N0'.
+# Generalizes stageground.evaluation.source_boundary's gold-only token regex to
+# any canonical value, so it can check whether a *predicted* value (not just
+# gold) is textually supported -- used by the error taxonomy and by the
+# evidence_semantic_support_rate metric.
+_STAGE_TOKEN_RE = {
+    "T": re.compile(r"\bp?T[0-4X][A-Za-z0-9]*", re.IGNORECASE),
+    "N": re.compile(r"\bp?N[0-3X][A-Za-z0-9]*", re.IGNORECASE),
+    "M": re.compile(r"\bp?M[01X][A-Za-z0-9]*", re.IGNORECASE),
+}
+
+
+def value_supported_by_text(value: str, text: str | None) -> bool:
+    """True iff some stage token in `text` canonicalizes to `value`.
+
+    This is a syntactic proxy (regex token match), not true semantic
+    understanding -- e.g. narrative prose implying a stage without an
+    explicit token will not be detected. Used for:
+      - checking whether an abstained-on ground truth was explicitly
+        findable in the report (over_abstention / missed_explicit_stage), and
+      - checking whether a prediction's *evidence span* actually contains a
+        token supporting that prediction (evidence_does_not_support_prediction),
+        i.e. `value_supported_by_text(prediction, evidence)`.
+    Returns False for 'unknown' / 'INVALID' values or missing text, never raises.
+    """
+    if not text or value in ("unknown", "INVALID"):
+        return False
+    pattern = _STAGE_TOKEN_RE.get(value[0])
+    if pattern is None:
+        return False
+    for tok in pattern.findall(text):
+        try:
+            if canonicalize(tok) == value:
+                return True
+        except ValueError:
+            continue
+    return False

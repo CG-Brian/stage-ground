@@ -7,9 +7,11 @@ from dataclasses import dataclass
 
 from pydantic import ValidationError
 
+from stageground.config import ExperimentArm
 from stageground.extraction.llm_client import complete_json
 from stageground.extraction.prompts import (
     build_allowed_values_prompt,
+    build_constrained_unknown_prompt,
     build_few_shot_prompt,
     build_schema_guided_prompt,
     build_zero_shot_prompt,
@@ -23,6 +25,19 @@ ARMS = {
     "C": build_allowed_values_prompt, # allowed-values only
     "D": build_schema_guided_prompt,  # schema-guided (values + evidence + abstain)
 }
+
+# New ablation arm keys (spec: A_zero_shot/B_few_shot/C_constrained/
+# C_plus_unknown/D_grounded), added alongside the legacy letter keys above so
+# existing scripts (`scripts/02_run_extraction.py --arm A`) keep working
+# unmodified. C/D map to the SAME prompt builders as their legacy letters --
+# only C_plus_unknown is a genuinely new prompt.
+ARMS.update({
+    ExperimentArm.ZERO_SHOT.value: build_zero_shot_prompt,
+    ExperimentArm.FEW_SHOT.value: build_few_shot_prompt,
+    ExperimentArm.CONSTRAINED.value: build_allowed_values_prompt,
+    ExperimentArm.CONSTRAINED_UNKNOWN.value: build_constrained_unknown_prompt,
+    ExperimentArm.GROUNDED.value: build_schema_guided_prompt,
+})
 
 
 @dataclass

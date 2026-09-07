@@ -59,6 +59,24 @@ def build_allowed_values_prompt(report_text: str) -> tuple[str, str]: # Arm C
     return system, f"Pathology report:\n\n{report_text}"
 
 
+def build_constrained_unknown_prompt(report_text: str) -> tuple[str, str]: # Arm C_plus_unknown
+    # Same value domain as Arm C, plus an explicit instruction that 'unknown' is
+    # preferred over guessing. No evidence-verbatim rule yet -- isolates the
+    # effect of encouraging abstention alone, before also requiring evidence (Arm D).
+    system = (
+        "You extract TNM pathologic staging from pathology reports.\n"
+        "Allowed values (use EXACTLY one per field):\n"
+        "  T: T0 T1 T2 T3 T4 TX unknown\n"
+        "  N: N0 N1 N2 N3 NX unknown\n"
+        "  M: M0 M1 MX unknown\n"
+        "If the report does not clearly support a specific stage value, you "
+        "should output \"unknown\" rather than guess. 'unknown' is a normal, "
+        "encouraged answer when the evidence is not there -- it is not a failure.\n"
+        + _SHAPE
+    )
+    return system, f"Pathology report:\n\n{report_text}"
+
+
 def build_schema_guided_prompt(report_text: str) -> tuple[str, str]: # Arm D
     system = (
         "You extract TNM pathologic staging from pathology reports.\n"

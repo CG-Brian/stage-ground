@@ -114,6 +114,25 @@ def test_key_preserves_mapping_to_real_case_arm():
     assert {k["audit_id"] for k in key} == {r["audit_id"] for r in reviewer}
 
 
+def test_arm_pattern_is_target_aware_regardless_of_input_order():
+    # Regression: arm_pattern used to be computed via a case_id-only grouping,
+    # so a case with records for MULTIPLE targets (T and M here) could have
+    # its M-row arm_pattern silently contaminated by the T-row's abstention
+    # status, depending on which target's record appeared last in `records`.
+    # Same case_id, same two arms, OPPOSITE abstention pattern on T vs M.
+    shared_case = "shared_case_1"
+    t_c = _rec(shared_case, "C_constrained", "T", abstained=True, gt="T2", pred="T2")
+    t_d = _rec(shared_case, "D_grounded", "T", abstained=False, gt="T2", pred="T2")
+    m_c = _rec(shared_case, "C_constrained", "M", abstained=False)
+    m_d = _rec(shared_case, "D_grounded", "M", abstained=True)
+
+    for records in ([t_c, t_d, m_c, m_d], [m_c, m_d, t_c, t_d], [t_c, m_c, t_d, m_d]):
+        texts = {shared_case: "Report text " + "x" * 10}
+        _, key, _ = build_reviewer_and_key(records, texts, target_counts={"M": 1}, seed=1)
+        m_key_row = next(k for k in key if k["target"] == "M" and k["arm"] == "C_constrained")
+        assert m_key_row["arm_pattern"] == "priority_predicts_comparison_abstains", records
+
+
 # --- reproducibility ---
 
 def test_build_reviewer_and_key_is_reproducible():
@@ -144,12 +163,22 @@ def test_long_report_windows_around_evidence():
     assert len(excerpt) < len(text)
 
 
-def test_long_report_no_evidence_falls_back_to_head():
+def test_long_report_no_evidence_shows_full_text():
+    # No evidence to window around (abstained / evidence absent) -- the
+    # reviewer needs the WHOLE report for the source-sufficiency judgment,
+    # so this must NOT truncate to the head, especially for M-stage/abstained
+    # cases where there's no evidence by construction.
     text = "y" * 9000
     excerpt, truncated = _report_excerpt(text, None, max_chars=4000)
-    assert truncated is True
-    assert excerpt.startswith("y" * 100)
-    assert len(excerpt) < len(text)
+    assert truncated is False
+    assert excerpt == text
+
+
+def test_long_report_evidence_not_locatable_shows_full_text():
+    text = "y" * 9000
+    excerpt, truncated = _report_excerpt(text, "phrase not present anywhere", max_chars=4000)
+    assert truncated is False
+    assert excerpt == text
 
 
 # --- abstention handling ---

@@ -5,6 +5,7 @@ from stageground.evaluation.audit_sampling import (
     PRIORITY_ABSTAINS_COMPARISON_PREDICTS,
     PRIORITY_PREDICTS_COMPARISON_ABSTAINS,
     classify_arm_pattern,
+    group_by_case,
     stratified_audit_sample,
 )
 from stageground.evaluation.records import PredictionRecord
@@ -51,6 +52,45 @@ def test_both_abstain():
 def test_pattern_unknown_when_arm_missing():
     case = {"C_constrained": _rec("c1", "C_constrained", "M", abstained=False)}
     assert classify_arm_pattern(case, priority_arm="C_constrained", comparison_arm="D_grounded") == PATTERN_UNKNOWN
+
+
+# --- group_by_case is target-aware (regression: it used to key by case_id
+# alone, letting one target's record silently overwrite another's for the
+# same arm, so the result depended on input list order) ---
+
+def test_group_by_case_keys_by_case_id_and_target():
+    t_rec = _rec("c1", "C_constrained", "T", abstained=True)
+    m_rec = _rec("c1", "C_constrained", "M", abstained=False)
+    grouped = group_by_case([t_rec, m_rec])
+    assert grouped[("c1", "T")]["C_constrained"] is t_rec
+    assert grouped[("c1", "M")]["C_constrained"] is m_rec
+
+
+def test_classify_arm_pattern_not_contaminated_by_other_targets_regardless_of_order():
+    # Same case_id, same two arms, but T and M have OPPOSITE abstention
+    # patterns -- if grouping ever collapses across targets, whichever
+    # target's record was inserted last would silently win.
+    t_c = _rec("c1", "C_constrained", "T", abstained=True)    # T: C abstains
+    t_d = _rec("c1", "D_grounded", "T", abstained=False)      # T: D predicts
+    m_c = _rec("c1", "C_constrained", "M", abstained=False)   # M: C predicts
+    m_d = _rec("c1", "D_grounded", "M", abstained=True)       # M: D abstains
+
+    orderings = [
+        [t_c, t_d, m_c, m_d],
+        [m_c, m_d, t_c, t_d],
+        [t_c, m_c, t_d, m_d],
+        [m_d, t_d, m_c, t_c],
+    ]
+    for records in orderings:
+        grouped = group_by_case(records)
+        m_pattern = classify_arm_pattern(
+            grouped[("c1", "M")], priority_arm="C_constrained", comparison_arm="D_grounded"
+        )
+        t_pattern = classify_arm_pattern(
+            grouped[("c1", "T")], priority_arm="C_constrained", comparison_arm="D_grounded"
+        )
+        assert m_pattern == PRIORITY_PREDICTS_COMPARISON_ABSTAINS, records
+        assert t_pattern == PRIORITY_ABSTAINS_COMPARISON_PREDICTS, records
 
 
 # --- stratified_audit_sample ---

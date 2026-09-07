@@ -42,10 +42,18 @@ def classify_arm_pattern(
     return BOTH_ABSTAIN
 
 
-def group_by_case(records: list[PredictionRecord]) -> dict[str, dict[str, PredictionRecord]]:
-    by_case: dict[str, dict[str, PredictionRecord]] = defaultdict(dict)
+def group_by_case(records: list[PredictionRecord]) -> dict[tuple[str, str], dict[str, PredictionRecord]]:
+    """Groups records by `(case_id, target) -> {arm: record}`.
+
+    Keyed by `(case_id, target)`, NOT `case_id` alone: a single case_id has
+    one PredictionRecord per (arm, target) pair (e.g. T/N/M), so grouping by
+    case_id alone would let one target's record silently overwrite another's
+    for the same arm -- which record "wins" would then depend on the input
+    list's iteration order, corrupting `classify_arm_pattern` for callers
+    that pass in a multi-target record list."""
+    by_case: dict[tuple[str, str], dict[str, PredictionRecord]] = defaultdict(dict)
     for r in records:
-        by_case[r.case_id][r.arm] = r
+        by_case[(r.case_id, r.target)][r.arm] = r
     return by_case
 
 
@@ -86,7 +94,7 @@ def _sample_m(
     priority_pool = [
         r for r in m_records
         if r.arm == priority_arm
-        and classify_arm_pattern(by_case[r.case_id], priority_arm=priority_arm, comparison_arm=comparison_arm)
+        and classify_arm_pattern(by_case[(r.case_id, r.target)], priority_arm=priority_arm, comparison_arm=comparison_arm)
         == PRIORITY_PREDICTS_COMPARISON_ABSTAINS
     ]
     priority_take = math.ceil(quota * priority_fraction)

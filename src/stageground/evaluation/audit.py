@@ -198,9 +198,12 @@ def _report_excerpt(
       `window` characters of context on each side of the evidence occurrence
       (`truncated=True`) -- a case-insensitive substring search, since this
       is display windowing, not the OCR-noise-tolerant grounding check.
-    - Otherwise (abstained / no evidence / evidence not locatable): fall back
-      to the first `max_chars` characters (`truncated=True`), a deterministic,
-      documented strategy rather than silently guessing.
+    - Otherwise (abstained prediction / no evidence / evidence not locatable):
+      show the FULL report, untruncated. There's no evidence position to
+      window around, and truncating to the head would risk hiding exactly
+      the content a reviewer needs for the source-sufficiency judgment
+      (`human_source_sufficient_for_stage` etc.) -- most consequential for
+      M-stage/abstained cases, which have no evidence by construction.
     """
     if len(text) <= max_chars:
         return text, False
@@ -214,7 +217,7 @@ def _report_excerpt(
             suffix = "\n..." if end < len(text) else ""
             return prefix + text[start:end] + suffix, True
 
-    return text[:max_chars] + "\n\n[... truncated for audit sheet length ...]", True
+    return text, False
 
 
 def build_reviewer_and_key(
@@ -292,7 +295,7 @@ def build_reviewer_and_key(
         reviewer_rows.append(reviewer_row)
 
         arm_pattern = (
-            classify_arm_pattern(by_case.get(rec.case_id, {}), priority_arm=m_priority_arm, comparison_arm=m_comparison_arm)
+            classify_arm_pattern(by_case.get((rec.case_id, rec.target), {}), priority_arm=m_priority_arm, comparison_arm=m_comparison_arm)
             if rec.target == "M" else None
         )
         key_rows.append({

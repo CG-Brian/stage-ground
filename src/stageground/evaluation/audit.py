@@ -21,8 +21,9 @@ def build_audit_sheet(
     records: list[PredictionRecord], texts: dict[str, str], *, n: int, seed: int
 ) -> list[dict]:
     """Deterministic (seeded) sample of `min(n, len(records))` rows. Each row
-    carries the automated judgment (`automated_supported`, `automated_errors`)
-    plus blank human_* fields for a reviewer to fill in and re-save."""
+    carries the automated judgments (`automated_evidence_span_found`,
+    `automated_semantic_support`, `automated_errors`) plus blank human_*
+    fields for a reviewer to fill in and re-save."""
     k = min(n, len(records))
     rng = random.Random(seed)
     indices = sorted(rng.sample(range(len(records)), k))
@@ -43,7 +44,8 @@ def build_audit_sheet(
             "ground_truth": rec.ground_truth,
             "prediction": rec.prediction,
             "evidence": rec.evidence,
-            "automated_supported": rec.supported,
+            "automated_evidence_span_found": rec.evidence_span_found,
+            "automated_semantic_support": rec.evidence_semantically_supports_prediction,
             "automated_errors": list(rec.errors),
             "human_supported": None,
             "human_evidence_correct": None,
@@ -120,9 +122,16 @@ def score_audit(rows: list[dict]) -> dict:
     kappa for two judgment types: 'supported' and 'prediction_correct'
     (derived automatically as `prediction == ground_truth`). Rows with an
     unfilled human field for a given comparison are simply excluded from that
-    comparison's `n_scored`, never causing a crash."""
+    comparison's `n_scored`, never causing a crash.
+
+    NOTE: the 'supported' comparison pairs `human_supported` against
+    `automated_evidence_span_found` (span-only), not the semantic-support
+    field -- `human_supported`'s own name is ambiguous about which notion of
+    grounding the reviewer judged and is a candidate for a future rename to
+    e.g. `human_evidence_span_found` / `human_semantic_support`, out of
+    scope for this pass."""
     supported_autos, supported_humans = _paired_bool_labels(
-        rows, automated_key=lambda r: r.get("automated_supported"), human_key="human_supported"
+        rows, automated_key=lambda r: r.get("automated_evidence_span_found"), human_key="human_supported"
     )
     correct_autos, correct_humans = _paired_bool_labels(
         rows,

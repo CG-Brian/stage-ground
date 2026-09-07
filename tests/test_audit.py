@@ -48,7 +48,8 @@ def test_audit_rows_have_blank_human_fields():
         assert row["human_prediction_correct"] is None
         assert row["human_error_type"] == ""
         assert row["reviewer_notes"] == ""
-        assert "automated_supported" in row
+        assert "automated_evidence_span_found" in row
+        assert "automated_semantic_support" in row
         assert "automated_errors" in row
 
 
@@ -66,7 +67,7 @@ def test_jsonl_roundtrip():
 def test_score_audit_no_human_labels_filled():
     rows = [
         {"case_id": "c1", "prediction": "T1", "ground_truth": "T1",
-         "automated_supported": True, "human_supported": None,
+         "automated_evidence_span_found": True, "human_supported": None,
          "human_prediction_correct": None},
     ]
     result = score_audit(rows)
@@ -77,16 +78,16 @@ def test_score_audit_no_human_labels_filled():
 def test_score_audit_perfect_agreement_with_variance():
     rows = [
         {"case_id": "c1", "prediction": "T1", "ground_truth": "T1",
-         "automated_supported": True, "human_supported": True,
+         "automated_evidence_span_found": True, "human_supported": True,
          "human_prediction_correct": True},
         {"case_id": "c2", "prediction": "T2", "ground_truth": "T3",
-         "automated_supported": False, "human_supported": False,
+         "automated_evidence_span_found": False, "human_supported": False,
          "human_prediction_correct": False},
         {"case_id": "c3", "prediction": "T1", "ground_truth": "T1",
-         "automated_supported": True, "human_supported": True,
+         "automated_evidence_span_found": True, "human_supported": True,
          "human_prediction_correct": True},
         {"case_id": "c4", "prediction": "T2", "ground_truth": "T3",
-         "automated_supported": False, "human_supported": False,
+         "automated_evidence_span_found": False, "human_supported": False,
          "human_prediction_correct": False},
     ]
     result = score_audit(rows)
@@ -98,13 +99,13 @@ def test_score_audit_perfect_agreement_with_variance():
 def test_score_audit_one_disagreement():
     rows = [
         {"case_id": "c1", "prediction": "T1", "ground_truth": "T1",
-         "automated_supported": True, "human_supported": True,
+         "automated_evidence_span_found": True, "human_supported": True,
          "human_prediction_correct": None},
         {"case_id": "c2", "prediction": "T2", "ground_truth": "T3",
-         "automated_supported": False, "human_supported": False,
+         "automated_evidence_span_found": False, "human_supported": False,
          "human_prediction_correct": None},
         {"case_id": "c3", "prediction": "T1", "ground_truth": "T1",
-         "automated_supported": True, "human_supported": False,  # disagreement
+         "automated_evidence_span_found": True, "human_supported": False,  # disagreement
          "human_prediction_correct": None},
     ]
     result = score_audit(rows)
@@ -117,7 +118,7 @@ def test_score_audit_degenerate_constant_labels_kappa_none():
     # but percent agreement is still meaningful (100%)
     rows = [
         {"case_id": f"c{i}", "prediction": "T1", "ground_truth": "T1",
-         "automated_supported": True, "human_supported": True,
+         "automated_evidence_span_found": True, "human_supported": True,
          "human_prediction_correct": None}
         for i in range(5)
     ]

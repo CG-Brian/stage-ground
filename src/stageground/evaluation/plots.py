@@ -45,23 +45,36 @@ def _annotated_scatter(df: pd.DataFrame, *, x: str, y: str, xlabel: str, ylabel:
     plt.close(fig)
 
 
-def plot_accuracy_vs_unsupported(table_by_arm: pd.DataFrame, outpath: str | Path) -> None:
-    """Scatter, one point per arm: x=unsupported_rate, y=accuracy. Visualizes
-    how apparently high accuracy can coexist with poor grounding (spec §10 Fig 1)."""
+def plot_accuracy_vs_span_unsupported(table_by_arm: pd.DataFrame, outpath: str | Path) -> None:
+    """Scatter, one point per arm: x=span_unsupported_rate, y=accuracy. A
+    secondary/diagnostic figure -- prefer `plot_accuracy_vs_semantic_unsupported`
+    as the main grounding figure (spec §13)."""
     _annotated_scatter(
-        table_by_arm, x="unsupported_rate", y="accuracy",
-        xlabel="Unsupported Rate", ylabel="Accuracy",
-        title="Accuracy vs Unsupported Rate", outpath=outpath,
+        table_by_arm, x="span_unsupported_rate", y="accuracy",
+        xlabel="Span Unsupported Rate", ylabel="Accuracy",
+        title="Accuracy vs Span Unsupported Rate", outpath=outpath,
     )
 
 
-def plot_coverage_vs_supported_accuracy(table_by_arm: pd.DataFrame, outpath: str | Path) -> None:
-    """Scatter, one point per arm: x=coverage, y=supported_accuracy. Makes the
-    abstention tradeoff visible (spec §10 Fig 2)."""
+def plot_accuracy_vs_semantic_unsupported(table_by_arm: pd.DataFrame, outpath: str | Path) -> None:
+    """Scatter, one point per arm: x=semantic_unsupported_rate, y=accuracy.
+    The MAIN grounding figure per spec §13: visualizes how apparently high
+    accuracy can coexist with poor (semantic) grounding. semantic_unsupported_rate
+    is still an automated heuristic -- see `metrics.py` module docstring."""
     _annotated_scatter(
-        table_by_arm, x="coverage", y="supported_accuracy",
-        xlabel="Coverage", ylabel="Supported Accuracy",
-        title="Coverage vs Supported Accuracy", outpath=outpath,
+        table_by_arm, x="semantic_unsupported_rate", y="accuracy",
+        xlabel="Semantic Unsupported Rate (heuristic)", ylabel="Accuracy",
+        title="Accuracy vs Semantic Unsupported Rate (heuristic)", outpath=outpath,
+    )
+
+
+def plot_coverage_vs_semantic_supported_accuracy(table_by_arm: pd.DataFrame, outpath: str | Path) -> None:
+    """Scatter, one point per arm: x=coverage, y=semantic_supported_accuracy.
+    Makes the abstention tradeoff visible (spec §10 Fig 2)."""
+    _annotated_scatter(
+        table_by_arm, x="coverage", y="semantic_supported_accuracy",
+        xlabel="Coverage", ylabel="Semantic Supported Accuracy (heuristic)",
+        title="Coverage vs Semantic Supported Accuracy (heuristic)", outpath=outpath,
     )
 
 

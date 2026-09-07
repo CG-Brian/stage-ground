@@ -49,7 +49,8 @@ def test_annotation_sheet_has_required_fields():
     row = rows[0]
     for key in (
         "case_id", "arm", "report_excerpt", "automated_category",
-        "prediction", "ground_truth", "supported", "human_category", "notes",
+        "prediction", "ground_truth", "evidence_span_found",
+        "evidence_semantically_supports_prediction", "human_category", "notes",
     ):
         assert key in row
     assert row["automated_category"] == M_CATEGORY_EXPLICIT_TOKEN

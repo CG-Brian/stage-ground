@@ -16,12 +16,29 @@ from stageground.evaluation.records import PredictionRecord
 
 TARGETS = ("T", "N", "M")
 
+# Precise (snake_case) column name -> human-readable Markdown header. CSV
+# output always keeps the precise names (spec §9/§13: readable labels in
+# Markdown/figures, precise internal metric names everywhere else).
+PRETTY_LABELS = {
+    "arm": "Arm",
+    "n_evaluable": "N (evaluable)",
+    "accuracy": "Accuracy",
+    "semantic_supported_accuracy": "Semantic Supported Accuracy",
+    "span_unsupported_rate": "Span Unsupported Rate",
+    "semantic_unsupported_rate": "Semantic Unsupported Rate",
+    "abstention_rate": "Abstention",
+    "coverage": "Coverage",
+}
+
 
 def build_comparison_table(records: list[PredictionRecord], *, target: str | None = None) -> pd.DataFrame:
     """One row per arm present in `records`. `target=None` pools across all
     targets present; otherwise filters to `record.target == target`. Always
     includes `n_evaluable` alongside every metric so the sample size backing
-    each number is explicit (spec §9)."""
+    each number is explicit (spec §9). `semantic_supported_accuracy` is
+    reported as the headline grounding-accuracy column per spec §13 -- it is
+    still an automated heuristic (see `metrics.py` module docstring), not
+    confirmed semantic judgment."""
     arms = sorted({r.arm for r in records})
     rows = []
     for arm in arms:
@@ -31,20 +48,22 @@ def build_comparison_table(records: list[PredictionRecord], *, target: str | Non
             "arm": arm,
             "n_evaluable": m["n_evaluable"],
             "accuracy": m["accuracy"],
-            "supported_accuracy": m["supported_accuracy_over_evaluable"],
-            "unsupported_rate": m["unsupported_rate_over_evaluable"],
+            "semantic_supported_accuracy": m["semantic_supported_accuracy_over_evaluable"],
+            "span_unsupported_rate": m["span_unsupported_rate_over_evaluable"],
+            "semantic_unsupported_rate": m["semantic_unsupported_rate_over_evaluable"],
             "abstention_rate": m["abstention_rate"],
             "coverage": m["coverage"],
         })
     return pd.DataFrame(rows, columns=[
-        "arm", "n_evaluable", "accuracy", "supported_accuracy",
-        "unsupported_rate", "abstention_rate", "coverage",
+        "arm", "n_evaluable", "accuracy", "semantic_supported_accuracy",
+        "span_unsupported_rate", "semantic_unsupported_rate", "abstention_rate", "coverage",
     ])
 
 
 def _to_markdown(df: pd.DataFrame) -> str:
     cols = list(df.columns)
-    lines = ["| " + " | ".join(cols) + " |", "| " + " | ".join("---" for _ in cols) + " |"]
+    headers = [PRETTY_LABELS.get(c, c) for c in cols]
+    lines = ["| " + " | ".join(headers) + " |", "| " + " | ".join("---" for _ in cols) + " |"]
     for _, row in df.iterrows():
         cells = []
         for c in cols:

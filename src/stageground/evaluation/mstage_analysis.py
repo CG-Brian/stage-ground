@@ -94,7 +94,8 @@ def build_mstage_annotation_sheet(
             "automated_category": classify_m_evidence(text),
             "prediction": rec.prediction,
             "ground_truth": rec.ground_truth,
-            "supported": rec.supported,
+            "evidence_span_found": rec.evidence_span_found,
+            "evidence_semantically_supports_prediction": rec.evidence_semantically_supports_prediction,
             "human_category": "",
             "notes": "",
         })

@@ -35,11 +35,11 @@ def test_build_comparison_table_per_arm_values():
 
     assert by_arm.loc["X", "n_evaluable"] == 4
     assert by_arm.loc["X", "accuracy"] == 0.5
-    assert by_arm.loc["X", "supported_accuracy"] == 0.25
+    assert by_arm.loc["X", "semantic_supported_accuracy"] == 0.25
 
     assert by_arm.loc["Y", "n_evaluable"] == 2
     assert by_arm.loc["Y", "accuracy"] == 1.0
-    assert by_arm.loc["Y", "supported_accuracy"] == 1.0
+    assert by_arm.loc["Y", "semantic_supported_accuracy"] == 1.0
 
 
 def test_build_comparison_table_target_none_matches_pooled_metrics():

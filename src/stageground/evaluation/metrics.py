@@ -56,6 +56,17 @@ def accuracy(records: list[PredictionRecord]) -> float:
     return sum(1 for r in ev if r.correct) / len(ev)
 
 
+def accuracy_over_asserted(records: list[PredictionRecord]) -> float:
+    """correct predictions / non-abstained (evaluable) predictions -- isolates
+    whether an arm's apparent reliability comes from being MORE ACCURATE when
+    it does assert, versus simply abstaining more often (which raises
+    `accuracy` less directly but doesn't change this denominator's population)."""
+    asserted = _asserted(records)
+    if not asserted:
+        return NAN
+    return sum(1 for r in asserted if r.correct) / len(asserted)
+
+
 def abstention_rate(records: list[PredictionRecord]) -> float:
     """unknown predictions / evaluable cases"""
     ev = _evaluable(records)
@@ -232,6 +243,7 @@ def compute_all_metrics(records: list[PredictionRecord], *, target: str | None =
         "n_evaluable": len(ev),
         "n_asserted": len(asserted),
         "accuracy": accuracy(subset),
+        "accuracy_over_asserted": accuracy_over_asserted(subset),
         "abstention_rate": abstention_rate(subset),
         "coverage": coverage(subset),
         "span_unsupported_rate_over_evaluable": span_unsupported_rate_over_evaluable(subset),

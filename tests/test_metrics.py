@@ -37,6 +37,14 @@ def test_all_unknown():
     assert _isnan(metrics.semantic_supported_accuracy_over_asserted(recs))
 
 
+def test_accuracy_over_asserted_nan_when_all_abstained():
+    recs = [
+        _rec("c1", "T2", None, None, "no descriptor"),
+        _rec("c2", "T3", None, None, "no descriptor"),
+    ]
+    assert _isnan(metrics.accuracy_over_asserted(recs))
+
+
 def test_no_abstentions_full_coverage():
     recs = [
         _rec("c1", "T2", "T2", "T2 present", "Report: T2 present."),
@@ -108,6 +116,7 @@ def test_mixed_scenario_all_metrics():
     assert all_metrics["n_total"] == 5
     assert all_metrics["n_evaluable"] == 4
     assert all_metrics["n_asserted"] == 3
+    assert all_metrics["accuracy_over_asserted"] == pytest.approx(2 / 3)
 
     assert all_metrics["accuracy"] == pytest.approx(2 / 4)
     assert all_metrics["abstention_rate"] == pytest.approx(1 / 4)

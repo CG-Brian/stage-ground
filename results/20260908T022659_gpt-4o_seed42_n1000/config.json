@@ -1,0 +1,39 @@
+{
+  "experiment_id": "20260908T022659_gpt-4o_seed42_n1000",
+  "arms": [
+    "A_zero_shot",
+    "C_constrained",
+    "C_plus_unknown",
+    "D_grounded"
+  ],
+  "sample_size": 1000,
+  "seed": 42,
+  "model": {
+    "model": "gpt-4o",
+    "provider": "openai",
+    "temperature": null,
+    "max_tokens": null,
+    "retries": 3,
+    "response_format": "json_object"
+  },
+  "prompt_version": "v1",
+  "schema_version": "v1",
+  "timestamp": "2026-09-08T13:09:26.102234+00:00",
+  "effective_model": {
+    "model": "gpt-4o",
+    "provider": "openai",
+    "temperature": null,
+    "max_tokens": null,
+    "retries": 3,
+    "response_format": "json_object"
+  },
+  "sampling": {
+    "total_reports": 3907,
+    "n_sampled": 1000,
+    "n_with_T": 1000,
+    "n_with_N": 1000,
+    "n_with_M": 1000,
+    "n_with_all_TNM": 1000,
+    "seed": 42
+  }
+}

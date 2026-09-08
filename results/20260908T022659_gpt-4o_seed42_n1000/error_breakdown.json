@@ -1,0 +1,85 @@
+{
+  "A_zero_shot": {
+    "T": {
+      "evidence_does_not_support_prediction": 371,
+      "invalid_normalization": 24,
+      "wrong_stage_with_supporting_evidence": 125,
+      "evidence_span_not_found": 113,
+      "hallucinated_stage": 20
+    },
+    "N": {
+      "evidence_does_not_support_prediction": 308,
+      "invalid_normalization": 29,
+      "wrong_stage_with_supporting_evidence": 85,
+      "evidence_span_not_found": 226,
+      "hallucinated_stage": 25
+    },
+    "M": {
+      "invalid_normalization": 153,
+      "wrong_stage_with_supporting_evidence": 199,
+      "evidence_span_not_found": 372,
+      "hallucinated_stage": 78,
+      "evidence_does_not_support_prediction": 187
+    }
+  },
+  "C_constrained": {
+    "T": {
+      "evidence_does_not_support_prediction": 357,
+      "evidence_span_not_found": 96,
+      "hallucinated_stage": 31,
+      "wrong_stage_with_supporting_evidence": 148
+    },
+    "N": {
+      "evidence_does_not_support_prediction": 347,
+      "evidence_span_not_found": 187,
+      "wrong_stage_with_supporting_evidence": 96,
+      "hallucinated_stage": 21
+    },
+    "M": {
+      "evidence_span_not_found": 287,
+      "wrong_stage_with_supporting_evidence": 223,
+      "evidence_does_not_support_prediction": 276,
+      "hallucinated_stage": 43
+    }
+  },
+  "C_plus_unknown": {
+    "T": {
+      "evidence_does_not_support_prediction": 356,
+      "evidence_span_not_found": 121,
+      "wrong_stage_with_supporting_evidence": 128,
+      "hallucinated_stage": 33
+    },
+    "N": {
+      "evidence_does_not_support_prediction": 301,
+      "evidence_span_not_found": 213,
+      "wrong_stage_with_supporting_evidence": 72,
+      "hallucinated_stage": 21
+    },
+    "M": {
+      "evidence_span_not_found": 161,
+      "hallucinated_stage": 29,
+      "evidence_does_not_support_prediction": 167,
+      "wrong_stage_with_supporting_evidence": 145
+    }
+  },
+  "D_grounded": {
+    "T": {
+      "evidence_does_not_support_prediction": 335,
+      "wrong_stage_with_supporting_evidence": 147,
+      "evidence_span_not_found": 57,
+      "hallucinated_stage": 17
+    },
+    "N": {
+      "evidence_does_not_support_prediction": 353,
+      "evidence_span_not_found": 152,
+      "wrong_stage_with_supporting_evidence": 89,
+      "hallucinated_stage": 17
+    },
+    "M": {
+      "wrong_stage_with_supporting_evidence": 217,
+      "evidence_does_not_support_prediction": 227,
+      "evidence_span_not_found": 89,
+      "hallucinated_stage": 36
+    }
+  }
+}

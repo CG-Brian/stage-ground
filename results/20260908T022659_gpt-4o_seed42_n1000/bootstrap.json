@@ -1,0 +1,922 @@
+{
+  "overall": {
+    "accuracy": [
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.07899999999999996,
+        "ci_low": -0.09099999999999997,
+        "ci_high": -0.06733333333333336,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.07266666666666666,
+        "ci_low": -0.08399999999999996,
+        "ci_high": -0.06166666666666665,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.006333333333333302,
+        "ci_low": -0.015666666666666607,
+        "ci_high": 0.002666666666666595,
+        "p_value": 0.186,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      }
+    ],
+    "semantic_supported_accuracy_over_evaluable": [
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.01366666666666666,
+        "ci_low": 0.003999999999999948,
+        "ci_high": 0.023333333333333317,
+        "p_value": 0.0028,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.02266666666666667,
+        "ci_low": -0.03300000000000003,
+        "ci_high": -0.012333333333333307,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.03633333333333333,
+        "ci_low": 0.02533333333333332,
+        "ci_high": 0.04700000000000004,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      }
+    ],
+    "span_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.09066666666666667,
+        "ci_low": -0.10566666666666667,
+        "ci_high": -0.076,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.024999999999999994,
+        "ci_low": -0.040666666666666657,
+        "ci_high": -0.009000000000000008,
+        "p_value": 0.0008,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.06566666666666668,
+        "ci_low": -0.07933333333333334,
+        "ci_high": -0.05199999999999999,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      }
+    ],
+    "semantic_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.1123333333333334,
+        "ci_low": -0.1276666666666667,
+        "ci_high": -0.09733333333333338,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.07700000000000007,
+        "ci_low": -0.09299999999999997,
+        "ci_high": -0.06166666666666665,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.03533333333333333,
+        "ci_low": -0.04966666666666664,
+        "ci_high": -0.02133333333333337,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      }
+    ],
+    "abstention_rate": [
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.092,
+        "ci_low": 0.081,
+        "ci_high": 0.10333333333333333,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": 0.11733333333333335,
+        "ci_low": 0.10533333333333335,
+        "ci_high": 0.12933333333333336,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.025333333333333347,
+        "ci_low": -0.03533333333333333,
+        "ci_high": -0.015333333333333338,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      }
+    ],
+    "coverage": [
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.09199999999999997,
+        "ci_low": -0.10333333333333339,
+        "ci_high": -0.08100000000000007,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.11733333333333329,
+        "ci_low": -0.1293333333333333,
+        "ci_high": -0.10533333333333339,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.02533333333333332,
+        "ci_low": 0.01533333333333331,
+        "ci_high": 0.03533333333333333,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 3000
+      }
+    ]
+  },
+  "T": {
+    "accuracy": [
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.006000000000000005,
+        "ci_low": -0.02100000000000002,
+        "ci_high": 0.010000000000000009,
+        "p_value": 0.4904,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.0040000000000000036,
+        "ci_low": -0.020000000000000018,
+        "ci_high": 0.01100000000000001,
+        "p_value": 0.658,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.0020000000000000018,
+        "ci_low": -0.018999999999999906,
+        "ci_high": 0.014000000000000012,
+        "p_value": 0.8836,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "semantic_supported_accuracy_over_evaluable": [
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.03400000000000003,
+        "ci_low": 0.018000000000000016,
+        "ci_high": 0.051000000000000045,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.05099999999999999,
+        "ci_low": -0.07100000000000001,
+        "ci_high": -0.03199999999999997,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.08500000000000002,
+        "ci_low": 0.065,
+        "ci_high": 0.10500000000000004,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "span_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.039,
+        "ci_low": -0.059000000000000004,
+        "ci_high": -0.018000000000000002,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": 0.024999999999999994,
+        "ci_low": 0.0020000000000000018,
+        "ci_high": 0.049,
+        "p_value": 0.0384,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.064,
+        "ci_low": -0.08400000000000002,
+        "ci_high": -0.044,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "semantic_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.061,
+        "ci_low": -0.07999999999999996,
+        "ci_high": -0.04199999999999998,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": 0.023999999999999966,
+        "ci_low": 0.0010000000000000009,
+        "ci_high": 0.046999999999999986,
+        "p_value": 0.0456,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.08499999999999996,
+        "ci_low": -0.10699999999999998,
+        "ci_high": -0.063,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "abstention_rate": [
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.021,
+        "ci_low": 0.011,
+        "ci_high": 0.031000000000000003,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": 0.021999999999999995,
+        "ci_low": 0.012,
+        "ci_high": 0.032,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.000999999999999994,
+        "ci_low": -0.009999999999999995,
+        "ci_high": 0.008,
+        "p_value": 0.9088,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "coverage": [
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.02100000000000002,
+        "ci_low": -0.031000000000000028,
+        "ci_high": -0.01100000000000001,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.02200000000000002,
+        "ci_low": -0.03200000000000003,
+        "ci_high": -0.01200000000000001,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.0010000000000000009,
+        "ci_low": -0.008000000000000007,
+        "ci_high": 0.010000000000000009,
+        "p_value": 0.9088,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ]
+  },
+  "N": {
+    "accuracy": [
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.0050000000000000044,
+        "ci_low": -0.015000000000000013,
+        "ci_high": 0.0050000000000000044,
+        "p_value": 0.3784,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.014000000000000012,
+        "ci_low": -0.02400000000000002,
+        "ci_high": -0.0030000000000000027,
+        "p_value": 0.012,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.009000000000000008,
+        "ci_low": -0.0020000000000000018,
+        "ci_high": 0.019000000000000017,
+        "p_value": 0.1136,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "semantic_supported_accuracy_over_evaluable": [
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.0040000000000000036,
+        "ci_low": -0.019000000000000017,
+        "ci_high": 0.026000000000000023,
+        "p_value": 0.7736,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.01200000000000001,
+        "ci_low": -0.03500000000000003,
+        "ci_high": 0.01200000000000001,
+        "p_value": 0.3468,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.016000000000000014,
+        "ci_low": -0.009999999999999953,
+        "ci_high": 0.040000000000000036,
+        "p_value": 0.2328,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "span_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.035,
+        "ci_low": -0.06,
+        "ci_high": -0.010000000000000009,
+        "p_value": 0.0068,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": 0.025999999999999995,
+        "ci_low": 0.0010000000000000009,
+        "ci_high": 0.05299999999999999,
+        "p_value": 0.044,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.061,
+        "ci_low": -0.08700000000000002,
+        "ci_high": -0.035,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "semantic_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.029000000000000026,
+        "ci_low": -0.05300000000000005,
+        "ci_high": -0.0040000000000000036,
+        "p_value": 0.0256,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.020000000000000018,
+        "ci_low": -0.04600000000000004,
+        "ci_high": 0.006000000000000005,
+        "p_value": 0.1488,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.009000000000000008,
+        "ci_low": -0.03500000000000003,
+        "ci_high": 0.018000000000000016,
+        "p_value": 0.5508,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "abstention_rate": [
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.016,
+        "ci_low": 0.008,
+        "ci_high": 0.025,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": 0.038000000000000006,
+        "ci_low": 0.025999999999999995,
+        "ci_high": 0.05199999999999999,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.022000000000000006,
+        "ci_low": -0.033,
+        "ci_high": -0.011999999999999997,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "coverage": [
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.016000000000000014,
+        "ci_low": -0.02499999999999991,
+        "ci_high": -0.008000000000000007,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.03799999999999992,
+        "ci_low": -0.051999999999999935,
+        "ci_high": -0.025999999999999912,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.02199999999999991,
+        "ci_low": 0.01200000000000001,
+        "ci_high": 0.03299999999999992,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ]
+  },
+  "M": {
+    "accuracy": [
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.22599999999999998,
+        "ci_low": -0.254,
+        "ci_high": -0.2,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.19999999999999996,
+        "ci_low": -0.22699999999999998,
+        "ci_high": -0.17400000000000004,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "accuracy",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.026000000000000023,
+        "ci_low": -0.04500000000000004,
+        "ci_high": -0.007000000000000006,
+        "p_value": 0.0076,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "semantic_supported_accuracy_over_evaluable": [
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.0030000000000000027,
+        "ci_low": -0.002999999999999999,
+        "ci_high": 0.009000000000000001,
+        "p_value": 0.4092,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.0049999999999999975,
+        "ci_low": -0.011999999999999999,
+        "ci_high": 0.0010000000000000009,
+        "p_value": 0.1676,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_supported_accuracy_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.008,
+        "ci_low": 0.0020000000000000018,
+        "ci_high": 0.014999999999999996,
+        "p_value": 0.0112,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "span_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.19799999999999998,
+        "ci_low": -0.22799999999999998,
+        "ci_high": -0.168,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.12599999999999997,
+        "ci_low": -0.156,
+        "ci_high": -0.096,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "span_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.07200000000000001,
+        "ci_low": -0.09599999999999999,
+        "ci_high": -0.047000000000000014,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "semantic_unsupported_rate_over_evaluable": [
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.24699999999999994,
+        "ci_low": -0.27799999999999997,
+        "ci_high": -0.21800000000000003,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.23499999999999993,
+        "ci_low": -0.26499999999999996,
+        "ci_high": -0.20600000000000002,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "semantic_unsupported_rate_over_evaluable",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.01200000000000001,
+        "ci_low": -0.03700000000000003,
+        "ci_high": 0.013000000000000012,
+        "p_value": 0.366,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "abstention_rate": [
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": 0.239,
+        "ci_low": 0.21099999999999997,
+        "ci_high": 0.268,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": 0.29200000000000004,
+        "ci_low": 0.262,
+        "ci_high": 0.32199999999999995,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "abstention_rate",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": -0.05300000000000005,
+        "ci_low": -0.07999999999999996,
+        "ci_high": -0.027000000000000024,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ],
+    "coverage": [
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_constrained",
+        "diff": -0.239,
+        "ci_low": -0.268,
+        "ci_high": -0.21099999999999997,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "C_plus_unknown",
+        "arm_b": "C_constrained",
+        "diff": -0.292,
+        "ci_low": -0.322,
+        "ci_high": -0.262,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      },
+      {
+        "metric_name": "coverage",
+        "arm_a": "D_grounded",
+        "arm_b": "C_plus_unknown",
+        "diff": 0.05299999999999999,
+        "ci_low": 0.02699999999999997,
+        "ci_high": 0.07900000000000001,
+        "p_value": 0.0,
+        "n_boot": 5000,
+        "seed": 42,
+        "n_paired_cases": 1000
+      }
+    ]
+  }
+}

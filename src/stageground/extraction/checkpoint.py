@@ -21,17 +21,21 @@ from __future__ import annotations
 
 import json
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Callable
 
 import pandas as pd
+from openai import RateLimitError
 
 from stageground.config import ModelConfig
 from stageground.extraction.extractors import Result, run_one
 from stageground.extraction.schemas import RawExtraction
 
 Runner = Callable[..., Result]
+
+_RATE_LIMITED = object()  # sentinel: retry-later, never checkpointed as a final result
 
 
 def serialize_result(case_id: str, arm: str, result: Result) -> dict:
@@ -74,51 +78,77 @@ def run_extraction_with_checkpoint(
     max_workers: int = 10,
     runner: Runner = run_one,
     progress_every: int = 50,
+    max_rounds: int = 20,
+    round_sleep_seconds: float = 20.0,
 ) -> dict[tuple[str, str], Result]:
     """Extracts `{(case_id, arm): Result}` for every case in `sample_df` x
     `arms`. Resumes from `checkpoint_path` if it already has rows; appends
     each freshly-computed row as soon as it completes (thread-safe), so an
-    interruption at any point leaves a valid, resumable checkpoint. A
-    persistent failure from `runner` (e.g. the API retry budget exhausted)
-    is caught and recorded as an invalid result rather than crashing the
-    whole run -- one bad case must not take down the other 999."""
+    interruption at any point leaves a valid, resumable checkpoint.
+
+    Runs in bounded ROUNDS: a request that fails with a rate-limit error
+    (HTTP 429) even after the runner's own internal retries is NOT
+    checkpointed as a final result -- it's skipped and retried in the next
+    round, after `round_sleep_seconds`. This matters because OpenAI's
+    tokens-per-minute limit is an infrastructure throttle, not a property of
+    that particular case; permanently recording it as `invalid` would
+    silently corrupt the experiment's real invalid/error rate. A genuine,
+    non-rate-limit failure (e.g. persistent malformed output) IS recorded as
+    invalid immediately, since retrying won't fix it. Rounds stop early once
+    nothing is rate-limited; `max_rounds` bounds the total wait if the
+    account's rate limit never clears.
+    """
     cache = load_checkpoint(checkpoint_path)
-    todo = [
+    all_pairs = [
         (row.patient_filename, arm, row.text)
         for row in sample_df.itertuples()
         for arm in arms
-        if (row.patient_filename, arm) not in cache
     ]
-    print(f"[extraction] {len(cache)} already checkpointed, {len(todo)} remaining")
-    if not todo:
-        return cache
+    print(f"[extraction] {len(cache)}/{len(all_pairs)} already checkpointed")
 
     checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
     write_lock = threading.Lock()
-    n_invalid = 0
 
-    def _work(case_id: str, arm: str, text: str) -> tuple[str, str, Result]:
+    def _work(case_id: str, arm: str, text: str):
         try:
             result = runner(arm, text, model_config=model_config)
-        except Exception as exc:  # persistent failure after the runner's own internal retries
-            result = Result(extraction=None, raw=f"ERROR: {exc!r}", invalid=True)
+        except RateLimitError:
+            return case_id, arm, _RATE_LIMITED
+        except Exception as exc:  # persistent, non-rate-limit failure
+            return case_id, arm, Result(extraction=None, raw=f"ERROR: {exc!r}", invalid=True)
         return case_id, arm, result
 
-    done = 0
-    with ThreadPoolExecutor(max_workers=max_workers) as pool:
-        futures = [pool.submit(_work, case_id, arm, text) for case_id, arm, text in todo]
-        with checkpoint_path.open("a") as f:
-            for future in as_completed(futures):
-                case_id, arm, result = future.result()
-                cache[(case_id, arm)] = result
-                if result.invalid:
-                    n_invalid += 1
-                with write_lock:
-                    f.write(json.dumps(serialize_result(case_id, arm, result), ensure_ascii=False) + "\n")
-                    f.flush()
-                done += 1
-                if progress_every and (done % progress_every == 0 or done == len(todo)):
-                    print(f"[extraction] {done}/{len(todo)} done ({n_invalid} invalid so far)")
+    for round_num in range(1, max_rounds + 1):
+        todo = [(cid, arm, text) for cid, arm, text in all_pairs if (cid, arm) not in cache]
+        if not todo:
+            break
+
+        print(f"[extraction] round {round_num}: {len(todo)} remaining (max_workers={max_workers})")
+        n_invalid = 0
+        n_rate_limited = 0
+        done = 0
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = [pool.submit(_work, case_id, arm, text) for case_id, arm, text in todo]
+            with checkpoint_path.open("a") as f:
+                for future in as_completed(futures):
+                    case_id, arm, result = future.result()
+                    if result is _RATE_LIMITED:
+                        n_rate_limited += 1
+                        continue
+                    cache[(case_id, arm)] = result
+                    if result.invalid:
+                        n_invalid += 1
+                    with write_lock:
+                        f.write(json.dumps(serialize_result(case_id, arm, result), ensure_ascii=False) + "\n")
+                        f.flush()
+                    done += 1
+                    if progress_every and (done % progress_every == 0 or done == len(todo)):
+                        print(f"[extraction] {done}/{len(todo)} done this round ({n_invalid} invalid, {n_rate_limited} rate-limited so far)")
+
+        if n_rate_limited == 0:
+            break
+        print(f"[extraction] {n_rate_limited} rate-limited this round; sleeping {round_sleep_seconds}s before retrying")
+        time.sleep(round_sleep_seconds)
 
     return cache
 

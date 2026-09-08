@@ -1,9 +1,12 @@
 import json
 
+import httpx
 import pandas as pd
 import pytest
+from openai import RateLimitError
 
 from stageground.config import ModelConfig
+from stageground.extraction import checkpoint as checkpoint_module
 from stageground.extraction.checkpoint import (
     CheckpointedRunner,
     build_text_keyed_cache,
@@ -14,6 +17,12 @@ from stageground.extraction.checkpoint import (
 )
 from stageground.extraction.extractors import Result
 from stageground.extraction.schemas import RawExtraction, RawField
+
+
+def _fake_rate_limit_error():
+    request = httpx.Request("POST", "https://api.openai.com/v1/chat/completions")
+    response = httpx.Response(status_code=429, request=request)
+    return RateLimitError("rate limited", response=response, body=None)
 
 
 def _sample_df(n=5):
@@ -171,3 +180,82 @@ def test_checkpoint_file_is_valid_jsonl_after_run(tmp_path):
     for line in checkpoint_path.read_text().strip().splitlines():
         row = json.loads(line)
         assert set(row.keys()) == {"case_id", "arm", "invalid", "raw", "extraction"}
+
+
+# --- rate-limit round-retry behavior ---
+
+def test_rate_limited_case_is_retried_in_a_later_round_not_marked_invalid(tmp_path, monkeypatch):
+    monkeypatch.setattr(checkpoint_module.time, "sleep", lambda s: None)
+    df = _sample_df(1)
+    checkpoint_path = tmp_path / "checkpoint.jsonl"
+    attempts = {"n": 0}
+
+    def flaky_then_success(arm, text, *, model_config=None):
+        attempts["n"] += 1
+        if attempts["n"] == 1:
+            raise _fake_rate_limit_error()
+        return Result(extraction=_fake_extraction(), raw="{}", invalid=False)
+
+    cache = run_extraction_with_checkpoint(
+        df, ["A_zero_shot"], model_config=MODEL_CONFIG,
+        checkpoint_path=checkpoint_path, max_workers=1, runner=flaky_then_success,
+    )
+    assert attempts["n"] == 2  # first attempt rate-limited, second succeeded
+    result = cache[("case0", "A_zero_shot")]
+    assert result.invalid is False  # NOT permanently marked invalid by the rate limit
+
+
+def test_rate_limited_case_is_never_written_to_checkpoint_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(checkpoint_module.time, "sleep", lambda s: None)
+    df = _sample_df(1)
+    checkpoint_path = tmp_path / "checkpoint.jsonl"
+    attempts = {"n": 0}
+
+    def flaky_then_success(arm, text, *, model_config=None):
+        attempts["n"] += 1
+        if attempts["n"] == 1:
+            raise _fake_rate_limit_error()
+        return Result(extraction=_fake_extraction(), raw="{}", invalid=False)
+
+    run_extraction_with_checkpoint(
+        df, ["A_zero_shot"], model_config=MODEL_CONFIG,
+        checkpoint_path=checkpoint_path, max_workers=1, runner=flaky_then_success,
+    )
+    lines = checkpoint_path.read_text().strip().splitlines()
+    assert len(lines) == 1  # only the eventual success was ever written, not the 429
+
+
+def test_permanent_rate_limiting_stops_after_max_rounds_without_hanging(tmp_path, monkeypatch):
+    monkeypatch.setattr(checkpoint_module.time, "sleep", lambda s: None)
+    df = _sample_df(1)
+    checkpoint_path = tmp_path / "checkpoint.jsonl"
+
+    def always_rate_limited(arm, text, *, model_config=None):
+        raise _fake_rate_limit_error()
+
+    cache = run_extraction_with_checkpoint(
+        df, ["A_zero_shot"], model_config=MODEL_CONFIG,
+        checkpoint_path=checkpoint_path, max_workers=1, runner=always_rate_limited,
+        max_rounds=3,
+    )
+    assert cache == {}  # never succeeded, nothing cached, but returned instead of hanging
+    assert checkpoint_path.read_text().strip() == ""  # nothing ever written
+
+
+def test_genuine_non_rate_limit_failure_still_recorded_immediately(tmp_path, monkeypatch):
+    monkeypatch.setattr(checkpoint_module.time, "sleep", lambda s: None)
+    df = _sample_df(1)
+    checkpoint_path = tmp_path / "checkpoint.jsonl"
+    attempts = {"n": 0}
+
+    def always_generic_error(arm, text, *, model_config=None):
+        attempts["n"] += 1
+        raise RuntimeError("persistent non-rate-limit failure")
+
+    cache = run_extraction_with_checkpoint(
+        df, ["A_zero_shot"], model_config=MODEL_CONFIG,
+        checkpoint_path=checkpoint_path, max_workers=1, runner=always_generic_error,
+        max_rounds=5,
+    )
+    assert attempts["n"] == 1  # recorded immediately, NOT retried across rounds like a rate limit
+    assert cache[("case0", "A_zero_shot")].invalid is True

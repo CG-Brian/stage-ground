@@ -18,7 +18,7 @@ import time
 from dataclasses import replace
 
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import OpenAI, RateLimitError
 
 from stageground.config import ModelConfig
 
@@ -75,7 +75,15 @@ def complete_json(
     """Return the model's raw response text (expected to be JSON). Retries on
     transient errors. `model`/`temperature`/`max_tokens`/`retries` default to
     legacy environment-derived behavior only when the caller passes none of
-    them explicitly -- an explicit `ModelConfig` (via `run_one`) always wins."""
+    them explicitly -- an explicit `ModelConfig` (via `run_one`) always wins.
+
+    Rate-limit errors (HTTP 429) get a much longer, dedicated backoff than
+    other transient errors: OpenAI's tokens-per-minute limits reset on a
+    ~60s window, so the previous flat `2**attempt` backoff (max ~4s) could
+    exhaust `retries` entirely without ever waiting long enough for the
+    window to clear -- which would silently mislabel a rate-limit throttle
+    as a genuine model/parse failure to every caller of this function.
+    """
     for attempt in range(retries):
         try:
             kwargs: dict = {
@@ -92,6 +100,10 @@ def complete_json(
                 kwargs["max_tokens"] = max_tokens
             resp = _get_client().chat.completions.create(**kwargs)
             return resp.choices[0].message.content or ""
+        except RateLimitError:
+            if attempt == retries - 1:
+                raise
+            time.sleep(min(60, 15 * (attempt + 1)))
         except Exception:
             if attempt == retries - 1:
                 raise

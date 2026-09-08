@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f6;
+  --surface: #ffffff;
+  --foreground: #1a1a18;
+  --muted: #6b6862;
+  --muted-2: #8a8780;
+  --border: #e4e1d8;
+  --border-strong: #d1cdc0;
+
+  --accent: #b4432a;
+  --accent-foreground: #ffffff;
+  --accent-soft: #f4e3dd;
+
+  --arm-a: #8b8880;
+  --arm-c: #3b6ea5;
+  --arm-cplus: #c68a1f;
+  --arm-d: #b4432a;
+
+  --good: #3f6b4a;
+  --bad: #a13d3d;
+
+  --font-serif: var(--font-source-serif);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jbmono);
+}
+
+:root[data-theme="dark"] {
+  --background: #161512;
+  --surface: #1e1d19;
+  --foreground: #eeece5;
+  --muted: #a8a49a;
+  --muted-2: #8a877e;
+  --border: #34322b;
+  --border-strong: #45423a;
+
+  --accent: #e0714e;
+  --accent-foreground: #161512;
+  --accent-soft: #3a241d;
+
+  --arm-a: #9d998f;
+  --arm-c: #6ea1d8;
+  --arm-cplus: #e0aa4c;
+  --arm-d: #e0714e;
+
+  --good: #6fae7c;
+  --bad: #d98686;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #161512;
+    --surface: #1e1d19;
+    --foreground: #eeece5;
+    --muted: #a8a49a;
+    --muted-2: #8a877e;
+    --border: #34322b;
+    --border-strong: #45423a;
+
+    --accent: #e0714e;
+    --accent-foreground: #161512;
+    --accent-soft: #3a241d;
+
+    --arm-a: #9d998f;
+    --arm-c: #6ea1d8;
+    --arm-cplus: #e0aa4c;
+    --arm-d: #e0714e;
+
+    --good: #6fae7c;
+    --bad: #d98686;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-arm-a: var(--arm-a);
+  --color-arm-c: var(--arm-c);
+  --color-arm-cplus: var(--arm-cplus);
+  --color-arm-d: var(--arm-d);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+.font-mono-data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

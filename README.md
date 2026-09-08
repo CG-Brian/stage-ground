@@ -44,21 +44,32 @@ uv run python scripts/03_score.py            # Track A + B -> results/metrics/*.
 uv run python scripts/04_export_cases.py     # Track C + per-case JSON -> results/cases/*.json
 ```
 
-## Clinical review app (extension)
+## Research landing page (web/)
 
-Two servers: the FastAPI serving layer and the Next.js review UI.
+`web/` hosts a static Next.js research landing page presenting StageGround's
+1,000-case ablation results (source-grounded evaluation, not a TNM staging
+product) for a recruiter/researcher audience. It has no backend and no live
+LLM calls — every number is exported at data-prep time from the committed
+result artifacts under `results/20260908T022659_gpt-4o_seed42_n1000/`.
 
 ```bash
-# terminal 1 — API (reads results/cases + results/metrics; POST /extract hits the LLM)
-uv sync --extra serve
-uv run uvicorn stageground.api.app:app --reload    # http://localhost:8000/docs
+# regenerate the frontend's data (only needed after a new experiment run)
+uv run python scripts/export_frontend_data.py
+uv run python scripts/export_case_examples.py
 
-# terminal 2 — review UI (fetches from the API above)
-cd web && npm install && npm run dev               # http://localhost:3000
+cd web
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-The UI reads only the `/case/{id}` + `/cases` contract, so the API and UI stay decoupled.
-Point the UI at another API with `API_URL=... npm run dev`.
+Data provenance: `web/src/data/stageground.ts` documents the source result
+file for every metric it exposes; nothing displayed is hand-typed.
+
+A separate FastAPI serving layer exists at `src/stageground/api/` (reads
+`results/cases` + `results/metrics`, a v0-pilot artifact layout) for an
+earlier planned case-by-case review UI. It is currently unwired to any
+frontend and unrelated to the landing page above.
 
 ## Layout
 

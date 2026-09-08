@@ -1,0 +1,241 @@
+{
+  "cases": [
+    {
+      "id": "case-00",
+      "category": "correct_grounded",
+      "caseId": "TCGA-AZ-5407.6c27f8b9-9e3c-4665-a176-a4679eed1fa9",
+      "arm": "D_grounded",
+      "target": "T",
+      "groundTruth": "T1",
+      "prediction": "T1",
+      "evidence": "PATHOLOGIC STAGE; T1 NO MX",
+      "reportExcerpt": "PATIENT HISTORY: Colon mass. PRE-OP DIAGNOSIS: Colon mass. POST-OP DIAGNOSIS: Same. PROCEDURE: Laparoscopic colectomy attempted, open right colectomy done. FINAL DIAGNOSIS: SEGMENT OF TERMINAL ILEUM AND RIGHT HEMICOLECTOMY. A. INVASIVE WELL-DIFFERENTIATED COLON ADENOCARCINOMA. a. 0.9 CM INVASIVE TUMOR INTO SUB-MUCOSA. b. INVASIVE CARCINOMA ARISING IN A 2.5 CM GREATEST DIMENSION TUBULOVILLOUS ADENOMA. WITH SERRATED FEATURES. B. ADDITIONAL NON-INVASIVE ADENOMAS: 2 TUBULOVILLOUS ADENOMAS (2.9 CM AND 1.5 CM) AND. 1. TUBULAR ADENOMA (1.0 CM). c. RESECTION MARGINS ARE FREE OF CARCINOMA AND ADENOMA. D. NO ANGIOLYMPHATIC INVASION IS SEEN. E. SIXTEEN BENIGN LYMPH NODES (0/16). F. PATHOLOGIC STAGE; T1 NO MX. G. TERMINAL ILEUM WITH NO SIGNIFICANT PATHOLOGIC CHANGE. H. APPENDIX WITH TUBULAR CARCINOID TUMOR. a. TUBULAR CARCINOID ARISES IN THE APPENDIX TIP. b. TUBULAR CARCINOID MEASURES 3MM. c. (see comment). COMMENT: Immunohistochemical stains were performed on the appendix (slide C). Appendix tumor cells are weakly positive for. glucagon and positive for CDX2, mCEA, pancytokeratin, and synaptophysin. It is negative for estrogen receptor,. progesterone receptor, chromogranin, and p53. These findings are compatible with a tubular carcinoid. CASE SYNOPSIS: SYNOPTIC DATA - PRIMARY COLON, RECTAL, APPENDIX TUMORS. SPECIMEN TYPE: Right hemicolectomy. SPECIMEN LENGTH: 22.5 cm. TUMOR SITE: Cecum. TUMOR CONFIGURATION: Arising in a polyp. TUMOR SIZE: Greatest dimension: 0,9 cm. INTACTNESS OF MESORECTUM: Not applicable. HISTOLOGIC TYPE: Adenocarcinoma. HISTOLOGIC GRADE: Low-grade (well to moderately differentiated). PATHOLOGIC STAGING (pTNM): pT1. pNO. Number of nodes examined: 16. Number of nodes involved: 0. pMX. MARGINS: Proximal margin uninvolved by invasive carcinoma. Distal margin uninvolved by invasive carcinoma. Circumferential (radial) margin - Not applicable. ANGIOLYMPHATIC INVASION: Absent. PERINEURAL INVASION: Absent. TUMOR BORDER CONFIGURATION: Pushing. TUMORAL LYMPHOCYTIC RESPONSE: None. ADDITIONAL PATHOLOGIC FINDINGS: Adenoma(s). Other polyps (type(s)):2 tubulovillous adenomas, 1 tubular adenoma. SPECIAL PROCEDURES: Microdissection Genotyping. Interpretation. Molecular Anatomic Pathology testing for Microsatellite Instability: A. No microsatellite instability detected (Microsatellite stable). B. Immunohistochemistry for the hMLH1, hMSH2 and hMSH6 showed preserved gene expression. Note: The specimen was analyzed by PCR for microsatellite instability because the patient met one or more of the recently. recommended criteria for testing (1). The five recommended dinucleotide and mononucleotide polymorphisms were utilized to. assess for microsatellite instability (MSI). ZERO of five markers showed evidence of microsatellite instability. Additionally, the immunohistochemistry for hMLH1, hMSH2 and hMSH6 demonstrated preserved nuclear staining in the neoplastic. enithelium as compared to the positive lintest.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": true,
+      "correct": true,
+      "abstained": false,
+      "errors": []
+    },
+    {
+      "id": "case-01",
+      "category": "correct_grounded",
+      "caseId": "TCGA-A8-A08T.5780D50C-5BF0-4392-BC9B-894D1369866A",
+      "arm": "D_grounded",
+      "target": "N",
+      "groundTruth": "N1",
+      "prediction": "N1",
+      "evidence": "pT2(mult)N1aL1VOM1RO",
+      "reportExcerpt": "Diagnosis: ). Two foci of a moderately differentiated invasive ductal carcinoma. (tumor diameters: 3 cm and 2 cm) with focal intraductal components and. circumscribed angioinvasion. No infiltration or ulceration of the skin. Tumor classification: NOS, G II, pT2(mult)N1aL1VOM1RO.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": true,
+      "correct": true,
+      "abstained": false,
+      "errors": []
+    },
+    {
+      "id": "case-02",
+      "category": "correct_grounded",
+      "caseId": "TCGA-FZ-5923.c21958e8-38cc-4d5f-a1a3-a1e068fde5d9",
+      "arm": "D_grounded",
+      "target": "M",
+      "groundTruth": "M1",
+      "prediction": "M1",
+      "evidence": "PATHOLOGIC STAGE; pT3, N1, M1",
+      "reportExcerpt": "FINAL DIAGNOSIS: PART 1: PANCREAS, UNCINATE, BIOPSY -. ADENOCARCINOMA (see comment). PART 2: GALLBLADDER, CHOLECYSTECTOMY -. CHRONIC CHOLECYSTITIS. PART 3: GASTRODUODENAL LYMPH NODE, EXCISION -. ONE (1) BENIGN LYMPH NODE. PART 4: PANCREAS, HEAD, BIOPSY -. ADENOCARCINOMA (see comment). PART 5: STOMACH, DUODENUM, PANCREAS, BILE DUCT, WHIPPLE RESECTION -. A. INVASIVE WELL DIFFERENTIATED ADENOCARCINOMA OF THE HEAD OF THE PANCREAS (3.8 CM). B. THE CARCINOMA INVADES BEYOND THE PANCREAS TO INVOLVE THE PERIPANCREATIC SOFT TISSUE AND. DUODENUM. C. METASTATIC ADENOCARCINOMAI IS PRESENT IN ONE OF THIRTEEN (1/13) PERIPANCREATIC LYMPH NODES. D. PROXIMAL GASTRIC, DISTAL DUODENAL, BILE DUCT, PANCREATIC, RETROPERITONEAL AND VASCULAR. GROOVE MARGINS ARE NEGATIVE FOR TUMOR. E. PANCREATIC INTRAEPITHELIAL NEOPLASIA, GRADE 3 (PANIN-3). F. PATHOLOGIC STAGE; pT3, N1, M1 (SEE,PART 6). PART 6: TRANSVERSE MESOCOLON, EXCISION -. A. METASTATIC ADENOCARCINOMA INVOLVING FIBROADIPOSE TISSUE. B. ONE (1) BENIGN LYMPH NODE. PART 7: TRANSVERSE MESOCOLON, LYMPH NODE, EXCISION -. ONE (1) BENIGN LYMPH NODE. COMMENT: The biopsies of the pancreas are diagnostic of adenocarcinoma in comparison to the main resection specimen which. shows a well-differentiated adenocarcinoma with features similar to those seen in the biopsies. SYNOPTIC DATA - PRIMARY PANCREAS(EXOCRINE) TUMORS. MACROSCOPIC. SPECIMEN TYPE: Pancreaticoduodenectomy (Whipple resection), partial pancreatectomy. TUMOR SITE: Pancreatic head. TUMOR SIZE: Greatest dimension: 3.8 cm. Additional dimensions: 3.2 x 2.5 cm. OTHER ORGANS RESECTED: Gallbladder. MICROSCOPIC. HISTOLOGIC TYPE: Ductal adenocarcinoma. HISTOLOGIC GRADE: G1. PATHOLOGIC STAGING (pTNM): pN1a. Number of lymph nodes examined: 13. Number of lymph nodes involved: 1. pM1. Site(s): transverse mesocolon (part 6). MARGINS: Common bile duct margin uninvolved. Pancreatic parenchymal margin uninvolved. Uncinate process/retroperitoneal margin uninvolved. SMV/portal vein notch margin uninvolved. Proximal duodenal/gastric margin uninvolved. Distal duodenal margin uninvolved. Distance of invasive carcinoma from closest margin: 2 mm. Margin: vascular groove. VENOUSILYMPHATIC (LARGE/SMALL VESSEL) INVASION (V/L): Present. PERINEURAL INVASION: Present. ADDITIONAL PATHOLOGIC FINDINGS: Pancreatic intraepithelial neoplasia (highest grade: PanIN 3).",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": true,
+      "correct": true,
+      "abstained": false,
+      "errors": []
+    },
+    {
+      "id": "case-03",
+      "category": "correct_unsupported",
+      "caseId": "TCGA-DJ-A2PV.C1CBFF56-4A0E-4A36-AAA2-2A316C62E00E",
+      "arm": "D_grounded",
+      "target": "T",
+      "groundTruth": "T2",
+      "prediction": "T2",
+      "evidence": "Tumor Size: Greatest diameter is 3.4 cm.",
+      "reportExcerpt": "Clinical Diagnosis & History: year old female with 1.5 cm left thyroid nodule likely PTC by FNA. Specimens Submitted: 1: To rule out left lower parathyroid (fs). 2: Tissue near left recurrent laryngeal nerve (fs). 3: Thyroid, total thyroidectomy. 4: Pretracheal lymph node. 5: Delphian tissue. 6: Left paratracheal node. 7: Left paratracheal tissue. DIAGNOSIS: 1. \"? left lower parathyroid\", biopsy (fs): - Benign parathyroid gland. 2. \"Tissue near left recurrent laryngeal nerve\", excision (fs): - One benign lymph node (0/1). 3. Thyroid, total thyroidectomy: Tumor Type: Papillary carcinoma, classical type. Histologic Grade: Well differentiated. Mitotic Activity: Not identified. Tumor Necrosis: Not identified. Other Tumor Features: Calcification of non-psammoma type. Tumor Location: Left lobe. Tumor Size: Greatest diameter is 3.4 cm. Tumor Encapsulation: Completely surrounded. Capsular Invasion: Focal invasion. Blood Vessel Invasion: Not identified. Extrathyroid Extension: Not identified. Surgical Margins: Free of tumor. Tumor Is less than 1 mm from the inked margin. Tumor Multicentricity: Microscopic foci present. One papillary microcarcinoma is identifed in right lobe, measuring 1.8 mm in greatest dimension. Non-Neoplastic Thyrold: Exhibits nodular hyperplasia. Parathyroid Glands: Not identified. Lymph Nodes: One benign lymph node is present. 4. Pretracheal lymph node, excision: - One benign lymph node (0/1). 5. Delphian tissue, excision: - One benign lymph node (0/1). - Fragment of benign thyroid tissue. 6. Left paratracheal node, excision: - One benign lymph node (0/1). 7. Left paratracheal tissu, excision: - Two benign lymph nodes (0/2). ) ATTEST THATTHE ABOVE DIAGNOSIS IS BASEDUPON MY PERSONALEXAMINATION OF THE SLIDES (AND/OR OTHER MATERIAL), AND THAT THAVE. REVIEWED AND APPROVED THIS REPORT. Gross Description: 1. The specimen is received fresh for frozen section consultation, labeled \"To rule out left lower parathyroid\" and consists of a. nodule measuring 0.3 x 0.3 x 0.2 cm. Entirely submitted for frozen section. Summary of sections: FSC - frozen section control. 2. The specimen is received fresh for frozen section consultation, labeled \"tissue near left recurrent laryngeal nerve\" and consists. of an irregular piece of soft tissue measuring 0,4 x 0.2 x 0.2 cm. Entirely submitted for frozen section\n...",
+      "excerptTruncated": true,
+      "evidenceSpanFound": true,
+      "semanticSupport": false,
+      "correct": true,
+      "abstained": false,
+      "errors": [
+        "evidence_does_not_support_prediction"
+      ]
+    },
+    {
+      "id": "case-04",
+      "category": "correct_unsupported",
+      "caseId": "TCGA-DJ-A2PV.C1CBFF56-4A0E-4A36-AAA2-2A316C62E00E",
+      "arm": "D_grounded",
+      "target": "N",
+      "groundTruth": "N0",
+      "prediction": "N0",
+      "evidence": "Lymph Nodes: One benign lymph node is present.",
+      "reportExcerpt": "Clinical Diagnosis & History: year old female with 1.5 cm left thyroid nodule likely PTC by FNA. Specimens Submitted: 1: To rule out left lower parathyroid (fs). 2: Tissue near left recurrent laryngeal nerve (fs). 3: Thyroid, total thyroidectomy. 4: Pretracheal lymph node. 5: Delphian tissue. 6: Left paratracheal node. 7: Left paratracheal tissue. DIAGNOSIS: 1. \"? left lower parathyroid\", biopsy (fs): - Benign parathyroid gland. 2. \"Tissue near left recurrent laryngeal nerve\", excision (fs): - One benign lymph node (0/1). 3. Thyroid, total thyroidectomy: Tumor Type: Papillary carcinoma, classical type. Histologic Grade: Well differentiated. Mitotic Activity: Not identified. Tumor Necrosis: Not identified. Other Tumor Features: Calcification of non-psammoma type. Tumor Location: Left lobe. Tumor Size: Greatest diameter is 3.4 cm. Tumor Encapsulation: Completely surrounded. Capsular Invasion: Focal invasion. Blood Vessel Invasion: Not identified. Extrathyroid Extension: Not identified. Surgical Margins: Free of tumor. Tumor Is less than 1 mm from the inked margin. Tumor Multicentricity: Microscopic foci present. One papillary microcarcinoma is identifed in right lobe, measuring 1.8 mm in greatest dimension. Non-Neoplastic Thyrold: Exhibits nodular hyperplasia. Parathyroid Glands: Not identified. Lymph Nodes: One benign lymph node is present. 4. Pretracheal lymph node, excision: - One benign lymph node (0/1). 5. Delphian tissue, excision: - One benign lymph node (0/1). - Fragment of benign thyroid tissue. 6. Left paratracheal node, excision: - One benign lymph node (0/1). 7. Left paratracheal tissu, excision: - Two benign lymph nodes (0/2). ) ATTEST THATTHE ABOVE DIAGNOSIS IS BASEDUPON MY PERSONALEXAMINATION OF THE SLIDES (AND/OR OTHER MATERIAL), AND THAT THAVE. REVIEWED AND APPROVED THIS REPORT. Gross Description: 1. The specimen is received fresh for frozen section consultation, labeled \"To rule out left lower parathyroid\" and consists of a. nodule measuring 0.3 x 0.3 x 0.2 cm. Entirely submitted for frozen section. Summary of sections: FSC - frozen section control. 2. The specimen is received fresh for frozen section consultation, labeled \"tissue near left recurrent laryngeal nerve\" and consists. of an irregular piece of soft tissue measuring 0,4 x 0.2 x 0.2 cm. Entirely submitted for frozen section. Summary of sections: FSC - frozen section control. 3). The specimen is received fresh, labeled \"Total thyroid\" and consists of a thyroid weighing 27.5 9. The right lobe measures 4.3. x 2.5 x 1.5 cm, the left lobe measures 4.5 x 3.5 x 2.5 cm and the isthmus measures 2.5 x 1,6 x 0.5 cm. The external surface is. covered by a thin fibrous capsule. The posterior surface of the specimen is inked black, and the anterior is inked blue. Sectioning reveals cystic, papilliferous, well-circumscribed, focally calcified, brown-\n...",
+      "excerptTruncated": true,
+      "evidenceSpanFound": true,
+      "semanticSupport": false,
+      "correct": true,
+      "abstained": false,
+      "errors": [
+        "evidence_does_not_support_prediction"
+      ]
+    },
+    {
+      "id": "case-05",
+      "category": "correct_unsupported",
+      "caseId": "TCGA-A8-A08T.5780D50C-5BF0-4392-BC9B-894D1369866A",
+      "arm": "D_grounded",
+      "target": "M",
+      "groundTruth": "M1",
+      "prediction": "M1",
+      "evidence": "pT2(mult)N1aL1VOM1RO",
+      "reportExcerpt": "Diagnosis: ). Two foci of a moderately differentiated invasive ductal carcinoma. (tumor diameters: 3 cm and 2 cm) with focal intraductal components and. circumscribed angioinvasion. No infiltration or ulceration of the skin. Tumor classification: NOS, G II, pT2(mult)N1aL1VOM1RO.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": false,
+      "correct": true,
+      "abstained": false,
+      "errors": [
+        "evidence_does_not_support_prediction"
+      ]
+    },
+    {
+      "id": "case-06",
+      "category": "wrong_grounded",
+      "caseId": "TCGA-AZ-5407.6c27f8b9-9e3c-4665-a176-a4679eed1fa9",
+      "arm": "D_grounded",
+      "target": "M",
+      "groundTruth": "M0",
+      "prediction": "MX",
+      "evidence": "PATHOLOGIC STAGE; T1 NO MX",
+      "reportExcerpt": "PATIENT HISTORY: Colon mass. PRE-OP DIAGNOSIS: Colon mass. POST-OP DIAGNOSIS: Same. PROCEDURE: Laparoscopic colectomy attempted, open right colectomy done. FINAL DIAGNOSIS: SEGMENT OF TERMINAL ILEUM AND RIGHT HEMICOLECTOMY. A. INVASIVE WELL-DIFFERENTIATED COLON ADENOCARCINOMA. a. 0.9 CM INVASIVE TUMOR INTO SUB-MUCOSA. b. INVASIVE CARCINOMA ARISING IN A 2.5 CM GREATEST DIMENSION TUBULOVILLOUS ADENOMA. WITH SERRATED FEATURES. B. ADDITIONAL NON-INVASIVE ADENOMAS: 2 TUBULOVILLOUS ADENOMAS (2.9 CM AND 1.5 CM) AND. 1. TUBULAR ADENOMA (1.0 CM). c. RESECTION MARGINS ARE FREE OF CARCINOMA AND ADENOMA. D. NO ANGIOLYMPHATIC INVASION IS SEEN. E. SIXTEEN BENIGN LYMPH NODES (0/16). F. PATHOLOGIC STAGE; T1 NO MX. G. TERMINAL ILEUM WITH NO SIGNIFICANT PATHOLOGIC CHANGE. H. APPENDIX WITH TUBULAR CARCINOID TUMOR. a. TUBULAR CARCINOID ARISES IN THE APPENDIX TIP. b. TUBULAR CARCINOID MEASURES 3MM. c. (see comment). COMMENT: Immunohistochemical stains were performed on the appendix (slide C). Appendix tumor cells are weakly positive for. glucagon and positive for CDX2, mCEA, pancytokeratin, and synaptophysin. It is negative for estrogen receptor,. progesterone receptor, chromogranin, and p53. These findings are compatible with a tubular carcinoid. CASE SYNOPSIS: SYNOPTIC DATA - PRIMARY COLON, RECTAL, APPENDIX TUMORS. SPECIMEN TYPE: Right hemicolectomy. SPECIMEN LENGTH: 22.5 cm. TUMOR SITE: Cecum. TUMOR CONFIGURATION: Arising in a polyp. TUMOR SIZE: Greatest dimension: 0,9 cm. INTACTNESS OF MESORECTUM: Not applicable. HISTOLOGIC TYPE: Adenocarcinoma. HISTOLOGIC GRADE: Low-grade (well to moderately differentiated). PATHOLOGIC STAGING (pTNM): pT1. pNO. Number of nodes examined: 16. Number of nodes involved: 0. pMX. MARGINS: Proximal margin uninvolved by invasive carcinoma. Distal margin uninvolved by invasive carcinoma. Circumferential (radial) margin - Not applicable. ANGIOLYMPHATIC INVASION: Absent. PERINEURAL INVASION: Absent. TUMOR BORDER CONFIGURATION: Pushing. TUMORAL LYMPHOCYTIC RESPONSE: None. ADDITIONAL PATHOLOGIC FINDINGS: Adenoma(s). Other polyps (type(s)):2 tubulovillous adenomas, 1 tubular adenoma. SPECIAL PROCEDURES: Microdissection Genotyping. Interpretation. Molecular Anatomic Pathology testing for Microsatellite Instability: A. No microsatellite instability detected (Microsatellite stable). B. Immunohistochemistry for the hMLH1, hMSH2 and hMSH6 showed preserved gene expression. Note: The specimen was analyzed by PCR for microsatellite instability because the patient met one or more of the recently. recommended criteria for testing (1). The five recommended dinucleotide and mononucleotide polymorphisms were utilized to. assess for microsatellite instability (MSI). ZERO of five markers showed evidence of microsatellite instability. Additionally, the immunohistochemistry for hMLH1, hMSH2 and hMSH6 demonstrated preserved nuclear staining in the neoplastic. enithelium as compared to the positive lintest.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": true,
+      "correct": false,
+      "abstained": false,
+      "errors": [
+        "wrong_stage_with_supporting_evidence"
+      ]
+    },
+    {
+      "id": "case-07",
+      "category": "wrong_grounded",
+      "caseId": "TCGA-B0-4837.5ccc5a6d-f54f-4a78-a7b6-d0a05c46c623",
+      "arm": "D_grounded",
+      "target": "N",
+      "groundTruth": "N0",
+      "prediction": "NX",
+      "evidence": "TNM STAGE: p T1b Nx MX",
+      "reportExcerpt": "FINAL DIAGNOSIS: KIDNEY, LEFT, RADICAL NEPHRECTOMY: A. RENAL CELL CARCINOMA, CONVENTIONAL (CLEAR) CELL TYPE. B. FUHRMAN'S NUCLEAR GRADE IS III OF IV. C. THE GREATEST DIAMETER OF THE NEOPLASM IS 6.0 CM. D. THE NEOPLASM IS CONFINED WITHIN THE RENAL CAPSULE. E. NO INVASION OF THE RENAL VEIN IS IDENTIFIED. F. NO EVIDENCE OF ANGIOLYMPHATIC INVASION IS IDENTIFIED. G. ALL SURGICAL MARGINS ARE FREE OF THE NEOPLASM. H. THE NON-NEOPLASTIC KIDNEY REVEALS. CHRONIC INFLAMMATION, ARTERIAL SCLEROSIS AND. FOCAL HYALINIZATION OF GLOMERULI. I. THE ADRENAL GLAND IS NOT SUBMITTED. J. TNM STAGE: p T1b Nx MX.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": true,
+      "correct": false,
+      "abstained": false,
+      "errors": [
+        "wrong_stage_with_supporting_evidence"
+      ]
+    },
+    {
+      "id": "case-08",
+      "category": "abstained",
+      "caseId": "TCGA-DJ-A2PV.C1CBFF56-4A0E-4A36-AAA2-2A316C62E00E",
+      "arm": "D_grounded",
+      "target": "M",
+      "groundTruth": "M0",
+      "prediction": "unknown",
+      "evidence": null,
+      "reportExcerpt": "Clinical Diagnosis & History: year old female with 1.5 cm left thyroid nodule likely PTC by FNA. Specimens Submitted: 1: To rule out left lower parathyroid (fs). 2: Tissue near left recurrent laryngeal nerve (fs). 3: Thyroid, total thyroidectomy. 4: Pretracheal lymph node. 5: Delphian tissue. 6: Left paratracheal node. 7: Left paratracheal tissue. DIAGNOSIS: 1. \"? left lower parathyroid\", biopsy (fs): - Benign parathyroid gland. 2. \"Tissue near left recurrent laryngeal nerve\", excision (fs): - One benign lymph node (0/1). 3. Thyroid, total thyroidectomy: Tumor Type: Papillary carcinoma, classical type. Histologic Grade: Well differentiated. Mitotic Activity: Not identified. Tumor Necrosis: Not identified. Other Tumor Features: Calcification of non-psammoma type. Tumor Location: Left lobe. Tumor Size: Greatest diameter is 3.4 cm. Tumor Encapsulation: Completely surrounded. Capsular Invasion: Focal invasion. Blood Vessel Invasion: Not identified. Extrathyroid Extension: Not identified. Surgical Margins: Free of tumor. Tumor Is less than 1 mm from the inked margin. Tumor Multicentricity: Microscopic foci present. One papillary microcarcinoma is identifed in right lobe, measuring 1.8 mm in greatest dimension. Non-Neoplastic Thyrold: Exhibits nodular hyperplasia. Parathyroid Glands: Not identified. Lymph Nodes: One benign lymph node is present. 4. Pretracheal lymph node, excision: - One benign lymph node (0/1). 5. Delphian tissue, excision: - One benign lymph node (0/1). - Fragment of benign thyroid tissue. 6. Left paratracheal node, excision: - One benign lymph node (0/1). 7. Left paratracheal tissu, excision: - Two benign lymph nodes (0/2). ) ATTEST THATTHE ABOVE DIAGNOSIS IS BASEDUPON MY PERSONALEXAMINATION OF THE SLIDES (AND/OR OTHER MATERIAL), AND THAT THAVE. REVIEWED AND APPROVED THIS REPORT. Gross Description: 1. The specimen is received fresh for frozen section consultation, labeled \"To rule out left lower parathyroid\" and consists of a. nodule measuring 0.3 x 0.3 x 0.2 cm. Entirely submitted for frozen section. Summary of sections: FSC - frozen section control. 2. The specimen is received fresh for frozen section consultation, labeled \"tissue near left recurrent laryngeal nerve\" and consists. of an irregular piece of soft tissue measuring 0,4 x 0.2 x 0.2 cm. Entirely submitted for frozen section. Summary of sections: FSC - frozen section control. 3). The specimen is received fresh, labeled \"Total thyroid\" and consists of a thyroid weighing 27.5 9. The right lobe measures 4.3. x 2.5 x 1.5 cm, the left lobe measures 4.5 x 3.5 x 2.5 cm and the isthmus measures 2.5 x 1,6 x 0.5 cm. The external surface is. covered by a thin fibrous capsule. The posterior surface of the specimen is inked black, and the anterior is inked blue. Sectioning reveals cystic, papilliferous, well-circumscribed, focally calcified, brown-tan nodule measuring 3.4 x 3.0 x 1.7 cm in the. left lobe. The nodule is abutting both the anterior and posterior capsule. The remaining thyroid parenchyma is red tan and beefy. Representative sections of the specimen are submitted for TPS, and a photograph has been taken. The remaining tissue is. serially sectioned and entirely submitted. Summary of sections: N nodule. RL right lobe. LL left lobe. IS - isthmus. 4. The specimen is received in formalin labeled \"pre tracheal lymph node\" is a 1.5 x 1.0 x 0.4 cm fibroadipose soft tissue fragment. with an embedded lymph node measuring 0.8 cm in greatest dimension. The specimen is submitted in toto. Summary of sections: LN-lymph node. 5. The specimen is received in formalin labeled \"Delphian tissue\" is a 2.0 x 1.5 x 0.4 cm tan-pink soft tissue fragment. Specimen. is submitted in toto. Summary of sections: U-undesignated. 6. The specimen is received in formalin labeled \"left paratracheal node\" is a 0,4 x 0.3 x 0.3 cm lymph node. The specimen is. submitted in toto. Summary of sections: LN-lymph node. 7. Desmin is received fresh labeled \"left para tracheal tissue\" is a 2.0 x 1.0 x 2.0 cm adipose tissue fragment with an embedded. lymph node measuring 0.4 cm in greatest dimension. The specimen is submitted in toto. Summary of sections: LN-lymph node. Summary of Sections: Part 1: To rule out left lower parathyroid (fs). Block. Sect. Site. PCs. 1. fsc. 1. Part 2: Tissue near left recurrent laryngeal nerve (fs). Block. Sect. Site. PCs. 1. fsc. Part 3; Thyroid, total thyroidectomy. Block. Sect. Site. PCs. 2. IS. 4. 5. LL. 9. 18. N. 33. 7. RL. 13. Part 4: Pretracheal lymph node. Block. Sect, Site. PCs. 1. In. 1. Part 5: Delphian tissue. Block. Sect. Site. PCs. 1. 1. Part 6: Left paratracheal node. Block. Sect. Site. PCs. 1. LN. 1. Part 7: Left paratracheal tissue. Block. Sect. Site. PCs. 1. LN. 1. Intraoperative Consultation: Note: The diagnoses given in this section pertain only to the tissue sample examined at the time of the intraoperative consultation. 1. FROZEN SECTION DIAGNOSIS: To rule out left lower parathyroid (fs): Benign parathyrold tissue. PERMANENT DIAGNOSIS: same. 2. FROZEN SECTION DIAGNOSIS: Tissue near left recurrent laryngeal nerve (fs): Benign lymph node. PERMANENT DIAGNOSIS: same.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": null,
+      "semanticSupport": null,
+      "correct": false,
+      "abstained": true,
+      "errors": []
+    },
+    {
+      "id": "case-09",
+      "category": "abstained",
+      "caseId": "TCGA-AA-A02F.F260851E-018C-4F5E-8CB4-7D85F391A41B",
+      "arm": "D_grounded",
+      "target": "T",
+      "groundTruth": "T3",
+      "prediction": "unknown",
+      "evidence": null,
+      "reportExcerpt": "Diagnosis: The material in I is a partial resection of small intestine with reactive lesions,. The material in II is a preparation of the rectosigmoid colon (in clinical terms attributable. to the rectum or the sigmoid colon) with a poorly differentiated carcinoma in the area of the. rectosigmoid junction (G3), with infiltration of blood and lymph vessels (L1, V1) and a. lymph node metastasis (pN1). Locally, the lesion was completely removed. The distance from the mesorectal fascia was at least 1 cm. The overall clinical findings and the topography should serve to determine whether this is a. rectal carcinoma in the narrower sense of the term or a carcinoma of the sigmoid colon.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": null,
+      "semanticSupport": null,
+      "correct": false,
+      "abstained": true,
+      "errors": []
+    },
+    {
+      "id": "case-10",
+      "category": "m0_unsupported",
+      "caseId": "TCGA-AN-A03X.1F6200B4-B53B-4E9F-B01B-12D2C0D4270E",
+      "arm": "D_grounded",
+      "target": "M",
+      "groundTruth": "M0",
+      "prediction": "M0",
+      "evidence": "M Stage: 0",
+      "reportExcerpt": "Sex: Female. Diagnosis: Breast Cancer Histological description: Infiltrative ductal carcinoma. Anatomic Site: Left Breast Tumor location: Primary. Tissue Specification: Tumor Specimen Matrix: Tissue Specimen Format: Frozen. Container: cryomold Type of Procurement: Radical mastectomy Grade: 1. T Stage: 2 N Stage: 0 M Stage: 0 Treatment: none. Treatment Details: n/a. Normal Sample. Anatomic Site: Blood Sample Type: Normal Type of Procurement: blood draw. Matrix: Blood Specimen Format: frozen Container: tube.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": false,
+      "correct": true,
+      "abstained": false,
+      "errors": [
+        "evidence_does_not_support_prediction"
+      ]
+    },
+    {
+      "id": "case-11",
+      "category": "m0_unsupported",
+      "caseId": "TCGA-EA-A4BA.E9335EB7-5DF6-4C05-AC5C-FEEC629ED84E",
+      "arm": "D_grounded",
+      "target": "M",
+      "groundTruth": "M0",
+      "prediction": "M0",
+      "evidence": "Omentum is of normal structure",
+      "reportExcerpt": "Gross Description: Uterus with cervix, upper third of vagina, adnexa uterine, fatty tissue and omentum. The whole area of exocervix and endocervix is replaced by the tumor up to 6.5x4x1.5 cm in size. Endometrium is of normal structure. Ovaries and Fallopian tubes are hyperemic. Fatty tissue fragments. are with dense hyperemic lymph nodes up to 1.5 cm in its diameter. Microscopic Description: Adenocarcinoma of the endocervix with spread on the exocervix, G-2. Tumor. size is 6.5x4x1.5 cm. Vagina is of normal structure. Endometrium is hypo-plastic with reactive metaplasia. of superficial epithelium. Leiomyoma of the uterus. Ovaries and Fallopian tubes are of normal structure. Four examined lymph nodes from the left side and six lymph nodes from the right side demonstrated. reactive changes. Omentum is of normal structure. Diagnosis Details: Tumor Features: Indeterminate, Tumor Extent: Lesion greater than 4.0cm, Venous. Invasion: Absent, Margins: Absent, Treatment Effect: Comments: Formatted Path Reports: CERVIX TISSUE CHECKLIST. Specimen type: Simple hysterectomy. Tumor site: Cervix. Tumor size: 4 X 1.5 X 6.5 cm. Histologic type: Adenocarcinoma. Histologic grade: Moderately differentiated. Tumor extent: Lesion greater than 4.0 cm. Lymph nodes: 0/10 positive for metastasis (Pelvic lymph nodes 0/10). Lymphatic invasion: Not specified. Venous invasion: Absent. Margins: Uninvolved. Evidence of neo-adjuvant treatment: Not specified. Additional pathologic findings: Not specified. Comments: None.",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": false,
+      "correct": true,
+      "abstained": false,
+      "errors": [
+        "evidence_does_not_support_prediction"
+      ]
+    },
+    {
+      "id": "case-12",
+      "category": "m0_unsupported",
+      "caseId": "TCGA-DD-AADA.624DA15E-ADC6-4F09-9DCB-3B4C42F3B453",
+      "arm": "D_grounded",
+      "target": "M",
+      "groundTruth": "M0",
+      "prediction": "M0",
+      "evidence": "Extent: Confined to the hepatic parenchyme.",
+      "reportExcerpt": "CLINICAL DIAGNOSIS: HCC. Specimen : liver. Gross Photo : GROSS: Specimen status: Fresh. Operation: Laparoscopic wedge resection. Cholecystectomy. Organ: Liver (7.0 X 4.5 X 3.5 cm, 37.0 gm). Gallbladder (11.0 cm in length, 5.0 cm in diameter). Lesion: Solid mass of hepatic parenchyme. Size: 4.0 X 3.0 X 3.0 cm. Cut surface: Well-demarcated, yellowish tan, solid and firm mass. Gross type: Multinodular confluent. Extent: Confined to the hepatic parenchyme. Resection margin: Not involved, grossly (safety margin: 0.5 cm). Remaining parenchyme: Unremarkable. [Gallbladder]. Serosal surface: Yellowish green and smooth. Mucosal surface: Greenish yellow and velvety. Wall: 0.2 cm in thickness. Stone: Single, friable and black (3.0 X 2.5 X 1.5 cm). Representative sections are submitted. Gross photo: Present. Blocks. T1-4, tumor mass of liver X 4. RM, tumor with resection margin X 1. L, nontumorous liver parenchyme X 1. GB, gallbladder X 1. MICROSCOPIC: Tumor type: Hepatocellular carcinoma. Edmondson-steiner grade. The worst differentiation III. The major differentiation III. Histologic type: Trabecular, nesting. Cell type: Hepatic. Fatty change: Yes. Fibrous capsule formation: Yes. Capsular infiltration: Yes. Septum formation: Yes. Surgical resection margin invasion: Yes. Serosal invasion: Yes. Portal vein invasion: Yes. Vascular invasion: Yes. Bile duct invasion: No. Remaining liver parenchyme: Chronic hepatitis, HBV associated. NOT reported. Gross: cervix, smear, inflammation. Cervix, smear, suggestive of, bacterial vaginosis. Large intestine, ascending colon, scopic, tubular adenoma, high grade, dysplasia. Large intestine, transverse colon, scopic, tubular adenoma, low grade, dysplasia. Large intestine, transverse colon, scopic, chronic colitis. Large intestine, splenic flexure, scopic, tubular adenoma, low grade, dysplasia. liver,resection,hepatocellular carcinoma. T56000, P17, M81703. gallbladder,ectomy,chronic cholecystitis,cholelithiasis. T57000, P10, M43005, M30011. DIAGNOSIS: Liver, segment 5, laparoscopic wedge resection: Hepatocellular carcinoma. Galllbladder, cholecystectomy: Chronic cholecystitis. Cholelithiasis. Suggestion :",
+      "excerptTruncated": false,
+      "evidenceSpanFound": true,
+      "semanticSupport": false,
+      "correct": true,
+      "abstained": false,
+      "errors": [
+        "evidence_does_not_support_prediction"
+      ]
+    }
+  ]
+}

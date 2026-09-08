@@ -51,6 +51,18 @@ def resolve_effective_model_config(model_config: ModelConfig) -> ModelConfig:
     return replace(model_config, temperature=temperature)
 
 
+# Without an explicit timeout, a request whose underlying TCP connection
+# dies silently (e.g. the machine sleeps mid-request during a long unattended
+# run) hangs forever rather than raising -- which, under a ThreadPoolExecutor
+# with a small worker count, can permanently occupy every worker and stall
+# the entire extraction with no error, no retry, and no progress. Discovered
+# during the 1000-case run: the process survived a laptop sleep/wake cycle
+# but every in-flight request never returned, silently halting all progress
+# for hours while still showing as "running." 120s is generous for a normal
+# chat completion but still bounded.
+REQUEST_TIMEOUT_SECONDS = 120.0
+
+
 def _get_client() -> OpenAI:
     """Lazily construct the client on first real use, not at import time --
     modules that only need e.g. `run_one`'s type/dict shape (evaluation code,
@@ -58,7 +70,7 @@ def _get_client() -> OpenAI:
     OPENAI_API_KEY set."""
     global _client
     if _client is None:
-        _client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        _client = OpenAI(api_key=os.environ["OPENAI_API_KEY"], timeout=REQUEST_TIMEOUT_SECONDS)
     return _client
 
 

@@ -57,6 +57,7 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--output-root", default="results")
     ap.add_argument("--checkpoint", default=None, help="path to the resumable extraction checkpoint jsonl")
     ap.add_argument("--max-workers", type=int, default=10)
+    ap.add_argument("--n-boot", type=int, default=2000, help="bootstrap replicates for paired arm comparisons")
     ap.add_argument("--dry-run", action="store_true", help="print the preflight summary and exit, no API calls")
     args = ap.parse_args(argv)
 
@@ -142,7 +143,7 @@ def main(argv: list[str] | None = None) -> None:
         timestamp=timestamp,
     )
 
-    outdir = run_evaluation(config, pool_df, output_root=args.output_root, runner=runner)
+    outdir = run_evaluation(config, pool_df, output_root=args.output_root, runner=runner, n_boot=args.n_boot)
     print(f"\nwrote experiment results -> {outdir}")
 
 

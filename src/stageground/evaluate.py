@@ -110,7 +110,7 @@ def _per_case_values(
 
 
 def _build_bootstrap_json(
-    records: list[PredictionRecord], arms_present: set[ExperimentArm], seed: int
+    records: list[PredictionRecord], arms_present: set[ExperimentArm], seed: int, *, n_boot: int = 2000
 ) -> dict:
     result: dict = {}
     for scope in (None, "T", "N", "M"):
@@ -125,7 +125,7 @@ def _build_bootstrap_json(
                 values_b = _per_case_values(records, arm_b.value, scope, metric_name)
                 cmp = paired_bootstrap_compare(
                     values_a, values_b, metric_name=metric_name,
-                    arm_a=arm_a.value, arm_b=arm_b.value, seed=seed,
+                    arm_a=arm_a.value, arm_b=arm_b.value, seed=seed, n_boot=n_boot,
                 )
                 comparisons.append(cmp.to_dict())
             result[scope_key][metric_name] = comparisons
@@ -139,6 +139,7 @@ def run_evaluation(
     output_root: str | Path = "results",
     runner: Runner = run_one,
     gold_cols: tuple[str, str, str] = ("gold_T", "gold_N", "gold_M"),
+    n_boot: int = 2000,
 ) -> Path:
     """Run one experiment: sample, extract (via `runner`), score, and write
     the standardized results/<experiment_id>/ layout (spec §8). Returns the
@@ -230,7 +231,7 @@ def run_evaluation(
             error_breakdown[arm.value][target] = dict(counts)
     (outdir / "error_breakdown.json").write_text(json.dumps(error_breakdown, indent=2))
 
-    bootstrap_json = _build_bootstrap_json(all_records, set(config.arms), config.seed)
+    bootstrap_json = _build_bootstrap_json(all_records, set(config.arms), config.seed, n_boot=n_boot)
     (outdir / "bootstrap.json").write_text(json.dumps(bootstrap_json, indent=2))
 
     write_tables(all_records, outdir)
@@ -277,6 +278,7 @@ def main(argv: list[str] | None = None) -> None:
                      help="'all-three' = rows with T,N,M gold all present; 'any' = at least one")
     ap.add_argument("--experiment-id", default=None)
     ap.add_argument("--output-root", default="results")
+    ap.add_argument("--n-boot", type=int, default=2000, help="bootstrap replicates for paired arm comparisons")
     args = ap.parse_args(argv)
 
     df = pd.read_parquet(args.dataset)
@@ -306,7 +308,7 @@ def main(argv: list[str] | None = None) -> None:
         timestamp=timestamp,
     )
 
-    outdir = run_evaluation(config, df, output_root=args.output_root)
+    outdir = run_evaluation(config, df, output_root=args.output_root, n_boot=args.n_boot)
     print(f"wrote experiment results -> {outdir}")
 
 

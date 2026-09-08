@@ -33,6 +33,27 @@ _client: OpenAI | None = None
 # example, is rejected outright rather than silently clamped.
 _REASONING_MODEL_RE = re.compile(r"^(o[1-9](-mini)?|gpt-5)", re.IGNORECASE)
 
+# OpenAI surfaces BOTH a transient tokens-per-minute throttle AND a permanent
+# "this account has no billing credit left" condition as the same HTTP 429 /
+# openai.RateLimitError. They must not be handled the same way: a TPM
+# throttle clears on its own in under a minute and is worth a patient retry;
+# an exhausted credit balance will NEVER succeed no matter how long or how
+# many times it's retried. Discovered the hard way during the 1000-case run:
+# treating both as "wait and retry" turned a real, permanent, user-actionable
+# blocker (add credits at platform.openai.com/settings/organization/billing)
+# into a silent, indefinite retry loop that looked exactly like a hang.
+_PERMANENT_QUOTA_ERROR_CODES = {"insufficient_quota", "credit_balance_exhausted"}
+
+
+class QuotaExhaustedError(RuntimeError):
+    """Raised instead of retrying when a RateLimitError's `.code` indicates
+    permanent account-level quota/credit exhaustion, not a transient
+    tokens-per-minute throttle. Not recoverable by retrying or waiting."""
+
+
+def _is_permanent_quota_error(exc: RateLimitError) -> bool:
+    return getattr(exc, "code", None) in _PERMANENT_QUOTA_ERROR_CODES
+
 
 def is_reasoning_model(model: str) -> bool:
     return bool(_REASONING_MODEL_RE.match(model))
@@ -112,7 +133,13 @@ def complete_json(
                 kwargs["max_tokens"] = max_tokens
             resp = _get_client().chat.completions.create(**kwargs)
             return resp.choices[0].message.content or ""
-        except RateLimitError:
+        except RateLimitError as exc:
+            if _is_permanent_quota_error(exc):
+                raise QuotaExhaustedError(
+                    f"OpenAI account has no usable quota/credit left (code={exc.code!r}): {exc}. "
+                    "This will not resolve by retrying -- add credits at "
+                    "https://platform.openai.com/settings/organization/billing, then resume."
+                ) from exc
             if attempt == retries - 1:
                 raise
             time.sleep(min(60, 15 * (attempt + 1)))

@@ -16,6 +16,7 @@ from stageground.extraction.checkpoint import (
     serialize_result,
 )
 from stageground.extraction.extractors import Result
+from stageground.extraction.llm_client import QuotaExhaustedError
 from stageground.extraction.schemas import RawExtraction, RawField
 
 
@@ -259,3 +260,25 @@ def test_genuine_non_rate_limit_failure_still_recorded_immediately(tmp_path, mon
     )
     assert attempts["n"] == 1  # recorded immediately, NOT retried across rounds like a rate limit
     assert cache[("case0", "A_zero_shot")].invalid is True
+
+
+def test_quota_exhausted_aborts_entire_run_instead_of_retrying_like_a_rate_limit(tmp_path, monkeypatch):
+    monkeypatch.setattr(checkpoint_module.time, "sleep", lambda s: None)
+    df = _sample_df(1)
+    checkpoint_path = tmp_path / "checkpoint.jsonl"
+    attempts = {"n": 0}
+
+    def always_quota_exhausted(arm, text, *, model_config=None):
+        attempts["n"] += 1
+        raise QuotaExhaustedError("account has no credits left")
+
+    with pytest.raises(QuotaExhaustedError, match="no credits left"):
+        run_extraction_with_checkpoint(
+            df, ["A_zero_shot"], model_config=MODEL_CONFIG,
+            checkpoint_path=checkpoint_path, max_workers=1, runner=always_quota_exhausted,
+            max_rounds=5,
+        )
+    # must abort on first occurrence, not retry across rounds the way a transient
+    # rate limit would -- a permanent quota condition never clears on its own.
+    assert attempts["n"] == 1
+    assert checkpoint_path.read_text().strip() == ""  # nothing written; nothing corrupted

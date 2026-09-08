@@ -31,6 +31,7 @@ from openai import RateLimitError
 
 from stageground.config import ModelConfig
 from stageground.extraction.extractors import Result, run_one
+from stageground.extraction.llm_client import QuotaExhaustedError
 from stageground.extraction.schemas import RawExtraction
 
 Runner = Callable[..., Result]
@@ -112,6 +113,8 @@ def run_extraction_with_checkpoint(
     def _work(case_id: str, arm: str, text: str):
         try:
             result = runner(arm, text, model_config=model_config)
+        except QuotaExhaustedError:
+            raise  # permanent, account-level -- must abort the whole run, not just this case
         except RateLimitError:
             return case_id, arm, _RATE_LIMITED
         except Exception as exc:  # persistent, non-rate-limit failure

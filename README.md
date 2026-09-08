@@ -124,15 +124,47 @@ flag:
   report? This is exactly the v0 pilot's validated, 92%-agreement-audited
   `grounded()` check — unchanged, not redefined.
 - **`evidence_semantically_supports_prediction`** — does that evidence
-  actually say what was predicted? This is currently an **automated
-  heuristic** (a regex check for a stage token inside the evidence string,
-  e.g. does "M1 metastatic disease" contain something that canonicalizes to
-  `M1`) and is explicitly **not** equivalent to human semantic judgment.
-  Fabricated evidence can't semantically support anything, so this field is
-  always `False` whenever `evidence_span_found` is `False` — it's never
-  computed independently. Treat `semantic_*` metrics below as provisional
-  until corroborated by the manual audit tooling (see below). Both fields
-  are `None` for abstained predictions.
+  actually say what was predicted? This is a **conservative, rule-based
+  heuristic** ([`semantic_support.py`](src/stageground/evaluation/semantic_support.py)),
+  explicitly **not** equivalent to human semantic judgment and **not** a
+  clinical staging engine — it never independently assigns a TNM stage from
+  the report text; it only asks whether the model's *own offered evidence*
+  plausibly supports the model's *own prediction*. Fabricated evidence can't
+  semantically support anything, so this field is always `False` whenever
+  `evidence_span_found` is `False` — it's never computed independently. Both
+  fields are `None` for abstained predictions.
+
+  **Recognized evidence categories** (see the module docstring for full
+  rationale): an explicit stage token (`T2`, `pN1`, `M0`, unchanged from the
+  original heuristic and still the primary signal for every target);
+  regional-lymph-node status (negative counts/phrasing support `N0`,
+  positive support `N1` — `N2`/`N3` still require an explicit token, since
+  node-count-to-stage cutoffs are cancer-type-dependent); local-invasion
+  language for T ("invades muscularis propria", "extrathyroidal extension",
+  etc. — validates the `T2`/`T3`/`T4` group generically, never a specific
+  value, and never validates `T0`/`T1`); tumor-size mentions (recognized as
+  a category, but never independently justify a specific T value — no
+  "size > X → T2" rule, for the same cancer-type-dependence reason);
+  distant-metastasis positive/negative phrasing for M. Regional-node
+  evidence is structurally never consulted for M-target predictions, so
+  "metastatic carcinoma in a regional lymph node" can never be mistaken for
+  `M1` support.
+
+  **Validated against the blinded 80-case audit** (`audit/audit_001`,
+  `scripts/rescore_audit_semantic_support.py`): the earlier
+  literal-token-only version had precision 1.0 but recall ~0.53 overall,
+  driven by N-stage (~0.29) and T-stage (~0.56); the current heuristic
+  raises overall recall to ~0.71 (N to ~0.64, T to ~0.69) while precision
+  and specificity remain exactly 1.0 at every target — zero new false
+  positives introduced. M-stage (already ~0.88 recall) is unchanged.
+  **Caveat:** every row in the current `audit/audit_001` run is marked
+  `[MODEL-ASSISTED PROVISIONAL]` in `reviewer_notes` — it was not an
+  independent human pass in the strict sense the audit tooling is designed
+  for, so these numbers are directional, not final validation. Treat
+  `semantic_*` metrics below as a heuristic, provisionally-audit-corroborated
+  signal, not a settled ground truth — an independent human re-review of
+  `audit/audit_001` (or a fresh audit) is the natural next step before
+  treating this heuristic as fully validated.
 
 Every metric (defined once in
 [`src/stageground/evaluation/metrics.py`](src/stageground/evaluation/metrics.py))

@@ -17,8 +17,10 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
+import json
 from pathlib import Path
 
+from stageground.evaluation.metrics import compute_all_metrics
 from stageground.evaluation.records import PredictionRecord, from_jsonl
 from stageground.evaluation.semantic_support import evidence_semantically_supports_prediction
 from stageground.evaluation.tables import build_comparison_table
@@ -75,10 +77,36 @@ def _comparison_table_text(before: list[PredictionRecord], after: list[Predictio
     return "\n".join(lines)
 
 
+def write_rescored_metrics_json(records: list[PredictionRecord], outdir: Path) -> None:
+    """Writes metrics_rescored.json / metrics_by_target_rescored.json in the
+    SAME shape as stageground.evaluate.run_evaluation's metrics.json /
+    metrics_by_target.json, computed from the RESCORED records -- so a
+    pilot-vs-main comparison against a later experiment (which always uses
+    whatever heuristic is current) compares like with like, instead of
+    conflating a heuristic change with a sample-size effect."""
+    arms = sorted({r.arm for r in records})
+    metrics_json = {
+        arm: compute_all_metrics([r for r in records if r.arm == arm], target=None) for arm in arms
+    }
+    metrics_by_target_json = {
+        arm: {
+            target: compute_all_metrics([r for r in records if r.arm == arm], target=target)
+            for target in ("T", "N", "M")
+        }
+        for arm in arms
+    }
+    (outdir / "metrics_rescored.json").write_text(json.dumps(metrics_json, indent=2))
+    (outdir / "metrics_by_target_rescored.json").write_text(json.dumps(metrics_by_target_json, indent=2))
+    print(f"wrote {outdir / 'metrics_rescored.json'} and metrics_by_target_rescored.json")
+
+
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--predictions", required=True)
     ap.add_argument("--output", default=None, help="optional path to write the comparison as Markdown")
+    ap.add_argument("--emit-metrics-json", action="store_true",
+                     help="also write metrics_rescored.json/metrics_by_target_rescored.json "
+                          "next to --predictions, for a fair pilot-vs-main comparison")
     args = ap.parse_args(argv)
 
     before = from_jsonl(args.predictions)
@@ -90,6 +118,9 @@ def main(argv: list[str] | None = None) -> None:
     if args.output:
         Path(args.output).write_text(report)
         print(f"\nwrote {args.output}")
+
+    if args.emit_metrics_json:
+        write_rescored_metrics_json(after, Path(args.predictions).parent)
 
 
 if __name__ == "__main__":

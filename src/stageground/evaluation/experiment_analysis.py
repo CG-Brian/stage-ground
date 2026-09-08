@@ -20,6 +20,18 @@ from stageground.evaluation.records import PredictionRecord
 
 TARGETS = ("T", "N", "M")
 
+ERROR_CATEGORIES = (
+    "hallucinated_stage",
+    "wrong_stage_with_supporting_evidence",
+    "evidence_span_not_found",
+    "evidence_does_not_support_prediction",
+    "missed_explicit_stage",
+    "over_abstention",
+    "invalid_normalization",
+    "invalid_schema_output",
+    "other",
+)
+
 
 def m0_prediction_analysis(records: list[PredictionRecord]) -> pd.DataFrame:
     """Per arm, among M-target predictions of `"M0"`: count, accuracy (over
@@ -116,3 +128,40 @@ def coverage_vs_accuracy_table(records: list[PredictionRecord], *, target: str |
     return pd.DataFrame(rows, columns=[
         "arm", "coverage", "accuracy_over_asserted", "semantic_supported_accuracy_over_asserted",
     ])
+
+
+def error_taxonomy_rates(records: list[PredictionRecord], *, target: str | None = None) -> pd.DataFrame:
+    """Error-taxonomy counts AND rates by arm (and target, unless pooled).
+    Denominator is `n_evaluable` for that (arm, target) slice -- the same
+    population every other metric in this project is scoped to -- NOT
+    `n_total`, so a category's rate is directly comparable to `accuracy`,
+    `coverage`, etc.
+
+    Flags are NOT mutually exclusive (see `error_taxonomy.classify_errors`
+    docstring): a single record can carry multiple flags (e.g.
+    `evidence_span_not_found` + `hallucinated_stage`), so rows in this table
+    do NOT sum to 100% of evaluable cases, and a record with zero flags
+    (fully correct + supported) contributes to none of them. `over_abstention`
+    and `missed_explicit_stage` fire together by design (see that module's
+    docstring) -- this is intentional overlap, not double-counting a bug.
+    """
+    subset = records if target is None else [r for r in records if r.target == target]
+    arms = sorted({r.arm for r in subset})
+    rows = []
+    for arm in arms:
+        arm_records = [r for r in subset if r.arm == arm]
+        n_evaluable = sum(1 for r in arm_records if r.ground_truth is not None)
+        counts: Counter = Counter()
+        for r in arm_records:
+            if r.ground_truth is not None:
+                counts.update(r.errors)
+        for category in ERROR_CATEGORIES:
+            count = counts.get(category, 0)
+            rows.append({
+                "arm": arm,
+                "error_category": category,
+                "count": count,
+                "n_evaluable": n_evaluable,
+                "rate_over_evaluable": (count / n_evaluable) if n_evaluable else float("nan"),
+            })
+    return pd.DataFrame(rows, columns=["arm", "error_category", "count", "n_evaluable", "rate_over_evaluable"])

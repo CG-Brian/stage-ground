@@ -4,6 +4,7 @@ import pytest
 
 from stageground.evaluation.experiment_analysis import (
     coverage_vs_accuracy_table,
+    error_taxonomy_rates,
     gold_label_distribution,
     m0_prediction_analysis,
     predicted_label_distribution,
@@ -117,3 +118,28 @@ def test_coverage_vs_accuracy_table_overall_pools_targets():
     df = coverage_vs_accuracy_table(records, target=None).set_index("arm")
     assert df.loc["X", "coverage"] == 1.0  # neither abstains
     assert df.loc["X", "accuracy_over_asserted"] == pytest.approx(0.5)  # 1 of 2 correct
+
+
+# --- error_taxonomy_rates ---
+
+def test_error_taxonomy_rates_counts_and_denominators():
+    records = [
+        _rec("c1", "X", "T", "T2", "T2", "T2", "Tumor classified as T2."),  # correct+grounded -> no errors
+        _rec("c2", "X", "T", "T3", "T1", "widespread invasion",  # wrong, fabricated evidence
+             "Tumor classified as T1."),
+        _rec("c3", "X", "T", "T2", None, None, "Report mentions pT2 elsewhere in text."),  # abstains, gold findable
+    ]
+    df = error_taxonomy_rates(records, target="T").set_index("error_category")
+    assert df.loc["evidence_span_not_found", "count"] == 1
+    assert df.loc["evidence_span_not_found", "n_evaluable"] == 3
+    assert df.loc["evidence_span_not_found", "rate_over_evaluable"] == pytest.approx(1 / 3)
+    assert df.loc["hallucinated_stage", "count"] == 1
+    assert df.loc["over_abstention", "count"] == 1
+    assert df.loc["missed_explicit_stage", "count"] == 1
+    assert df.loc["wrong_stage_with_supporting_evidence", "count"] == 0
+
+
+def test_error_taxonomy_rates_no_crash_on_empty_records():
+    df = error_taxonomy_rates([], target="M")
+    assert list(df.columns) == ["arm", "error_category", "count", "n_evaluable", "rate_over_evaluable"]
+    assert df.empty

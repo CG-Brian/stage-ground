@@ -8,6 +8,7 @@ def test_correct_and_supported_has_no_errors():
     errors = classify_errors(
         ground_truth="T3",
         prediction="T3",
+        target="T",
         evidence="pT3 invades pericolic fat",
         report_text=REPORT_NO_M,
         raw_value="T3",
@@ -20,6 +21,7 @@ def test_invalid_schema_output():
     errors = classify_errors(
         ground_truth="T3",
         prediction="unknown",
+        target="T",
         evidence=None,
         report_text=REPORT_NO_M,
         raw_value=None,
@@ -32,6 +34,7 @@ def test_invalid_normalization():
     errors = classify_errors(
         ground_truth="T3",
         prediction="INVALID",
+        target="T",
         evidence="garbage",
         report_text=REPORT_NO_M,
         raw_value="T9",
@@ -44,6 +47,7 @@ def test_over_abstention_and_missed_explicit_stage_when_text_has_token():
     errors = classify_errors(
         ground_truth="M1",
         prediction="unknown",
+        target="M",
         evidence=None,
         report_text=REPORT_WITH_M1,
         raw_value=None,
@@ -58,6 +62,7 @@ def test_abstention_with_no_textual_basis_is_not_flagged():
     errors = classify_errors(
         ground_truth="M0",
         prediction="unknown",
+        target="M",
         evidence=None,
         report_text=REPORT_NO_M,
         raw_value=None,
@@ -70,6 +75,7 @@ def test_abstention_with_no_ground_truth_is_not_flagged():
     errors = classify_errors(
         ground_truth=None,
         prediction="unknown",
+        target="T",
         evidence=None,
         report_text=REPORT_NO_M,
         raw_value=None,
@@ -82,6 +88,7 @@ def test_evidence_span_not_found_when_evidence_missing():
     errors = classify_errors(
         ground_truth="T3",
         prediction="T3",
+        target="T",
         evidence=None,
         report_text=REPORT_NO_M,
         raw_value="T3",
@@ -96,6 +103,7 @@ def test_hallucinated_stage_when_wrong_and_no_evidence():
     errors = classify_errors(
         ground_truth="M0",
         prediction="M1",
+        target="M",
         evidence="widespread metastatic deposits",  # not present in report_text
         report_text=REPORT_NO_M,
         raw_value="M1",
@@ -110,6 +118,7 @@ def test_wrong_stage_with_supporting_evidence():
     errors = classify_errors(
         ground_truth="M0",
         prediction="M1",
+        target="M",
         evidence="pM1",
         report_text=REPORT_WITH_M1,
         raw_value="M1",
@@ -124,7 +133,8 @@ def test_evidence_does_not_support_prediction():
     errors = classify_errors(
         ground_truth="T3",
         prediction="T3",
-        evidence="Nodes 0/12",  # grounded in report, but no T3 token in it
+        target="T",
+        evidence="Nodes 0/12",  # grounded in report, but no T-relevant support in it
         report_text=REPORT_NO_M,
         raw_value="T3",
         schema_valid=True,
@@ -136,6 +146,7 @@ def test_prediction_correct_but_unsupported_edge_case():
     errors = classify_errors(
         ground_truth="M0",
         prediction="M0",
+        target="M",
         evidence=None,
         report_text=REPORT_NO_M,
         raw_value="M0",

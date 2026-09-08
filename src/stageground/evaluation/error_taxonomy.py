@@ -9,9 +9,9 @@ forces a case into exactly one category. Categories:
   evidence_span_not_found            no evidence given, or it isn't a verbatim
                                       (OCR-noise-tolerant) substring of the report
   evidence_does_not_support_prediction  evidence span IS in the report, but it
-                                      doesn't contain a token supporting the
-                                      predicted value (syntactic proxy, see
-                                      stageground.evaluation.normalize.value_supported_by_text)
+                                      doesn't semantically support the
+                                      predicted value (target-aware heuristic,
+                                      see stageground.evaluation.semantic_support)
   missed_explicit_stage              abstained, but an explicit stage token for
                                       the gold value was present in the report
   over_abstention                    same underlying condition as
@@ -36,12 +36,14 @@ forces a case into exactly one category. Categories:
 from __future__ import annotations
 
 from stageground.evaluation.normalize import grounded, value_supported_by_text
+from stageground.evaluation.semantic_support import evidence_semantically_supports_prediction
 
 
 def classify_errors(
     *,
     ground_truth: str | None,
     prediction: str,
+    target: str,
     evidence: str | None,
     report_text: str,
     raw_value: object,
@@ -50,10 +52,12 @@ def classify_errors(
     """Classify one (target) prediction into zero or more taxonomy flags.
 
     `prediction` and `ground_truth` are already normalized/canonicalized
-    ("T3" / "unknown" / "INVALID"), never raw model strings. `raw_value` is
-    only used for documentation/debugging context by callers; it does not
-    affect classification (the normalized `prediction` already encodes
-    whether normalization failed via "INVALID").
+    ("T3" / "unknown" / "INVALID"), never raw model strings. `target` is
+    "T"/"N"/"M" -- needed because `evidence_does_not_support_prediction` uses
+    the target-aware semantic-support heuristic, not a target-agnostic one.
+    `raw_value` is only used for documentation/debugging context by callers;
+    it does not affect classification (the normalized `prediction` already
+    encodes whether normalization failed via "INVALID").
     """
     if not schema_valid:
         return ["invalid_schema_output"]
@@ -73,7 +77,7 @@ def classify_errors(
     span_found = evidence is not None and grounded(evidence, report_text)
     if not span_found:
         flags.append("evidence_span_not_found")
-    elif not value_supported_by_text(prediction, evidence):
+    elif not evidence_semantically_supports_prediction(prediction, evidence, target):
         flags.append("evidence_does_not_support_prediction")
 
     if ground_truth is not None and prediction != ground_truth:

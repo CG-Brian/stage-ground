@@ -13,10 +13,11 @@ Grounding is deliberately split into two fields, not one ambiguous flag:
   - `evidence_span_found`: does the evidence string literally (verbatim,
     OCR-noise-tolerant) appear in the report? A syntactic fact.
   - `evidence_semantically_supports_prediction`: does that evidence actually
-    say what was predicted? An automated *heuristic* proxy (regex stage-token
-    match), NOT equivalent to human semantic judgment -- see
-    `stageground.evaluation.metrics` module docstring and the manual audit
-    tooling in `stageground.evaluation.audit`.
+    say what was predicted? An automated, target-aware, conservative
+    *heuristic* proxy (see `stageground.evaluation.semantic_support`), NOT
+    equivalent to human semantic judgment -- see that module's docstring,
+    `stageground.evaluation.metrics`, and the manual audit tooling in
+    `stageground.evaluation.audit`.
 Fabricated (ungrounded) evidence cannot semantically support anything, so
 `evidence_semantically_supports_prediction` is forced `False` whenever
 `evidence_span_found` is `False` -- it is never computed independently of
@@ -30,7 +31,8 @@ from dataclasses import asdict, dataclass, field, fields
 from pathlib import Path
 
 from stageground.evaluation.error_taxonomy import classify_errors
-from stageground.evaluation.normalize import grounded, norm_pred, value_supported_by_text
+from stageground.evaluation.normalize import grounded, norm_pred
+from stageground.evaluation.semantic_support import evidence_semantically_supports_prediction as _semantic_support
 
 
 @dataclass
@@ -108,12 +110,13 @@ def build_record(
     else:
         evidence_span_found = bool(evidence is not None and grounded(evidence, report_text))
         evidence_semantically_supports_prediction = (
-            bool(value_supported_by_text(prediction, evidence)) if evidence_span_found else False
+            _semantic_support(prediction, evidence, target) if evidence_span_found else False
         )
 
     errors = classify_errors(
         ground_truth=ground_truth,
         prediction=prediction,
+        target=target,
         evidence=evidence,
         report_text=report_text,
         raw_value=raw_value,

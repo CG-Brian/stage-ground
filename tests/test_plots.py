@@ -5,6 +5,8 @@ from stageground.evaluation.plots import (
     plot_accuracy_vs_span_unsupported,
     plot_coverage_vs_semantic_supported_accuracy,
     plot_error_breakdown,
+    plot_m_accuracy_vs_semantic_supported,
+    plot_semantic_unsupported_by_target,
 )
 from stageground.evaluation.records import build_record
 
@@ -67,5 +69,39 @@ def test_plot_error_breakdown_filters_by_target(tmp_path):
     ]
     outpath = tmp_path / "fig3_m.png"
     plot_error_breakdown(records, outpath, target="M")
+    assert outpath.exists()
+    assert outpath.stat().st_size > 0
+
+
+def _multi_target_records():
+    records = []
+    for target, gt, pred, evidence, text in [
+        ("T", "T2", "T2", "T2", "Tumor classified as T2."),
+        ("N", "N0", "N0", "0/7 lymph nodes positive.", "0/7 lymph nodes positive."),
+        ("M", "M0", "M0", None, "no M descriptor here"),
+    ]:
+        records.append(build_record(
+            case_id=f"c_{target}", arm="C_constrained", target=target, ground_truth=gt,
+            raw_output={"value": pred, "evidence": evidence, "confidence": "high", "reason": None},
+            report_text=text,
+        ))
+        records.append(build_record(
+            case_id=f"c_{target}_2", arm="D_grounded", target=target, ground_truth=gt,
+            raw_output={"value": pred, "evidence": evidence, "confidence": "high", "reason": None},
+            report_text=text,
+        ))
+    return records
+
+
+def test_plot_semantic_unsupported_by_target_writes_file(tmp_path):
+    outpath = tmp_path / "fig3_semantic_by_target.png"
+    plot_semantic_unsupported_by_target(_multi_target_records(), outpath)
+    assert outpath.exists()
+    assert outpath.stat().st_size > 0
+
+
+def test_plot_m_accuracy_vs_semantic_supported_writes_file(tmp_path):
+    outpath = tmp_path / "fig4_m_accuracy_vs_semantic.png"
+    plot_m_accuracy_vs_semantic_supported(_multi_target_records(), outpath)
     assert outpath.exists()
     assert outpath.stat().st_size > 0

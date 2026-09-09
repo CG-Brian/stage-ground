@@ -20,7 +20,7 @@ export function Sandbox() {
   const { selectedCaseId, setSelectedCaseId } = useSandbox();
   const [category, setCategory] = useState<SandboxCategory | "all">("all");
   const [target, setTarget] = useState<"all" | "T" | "N" | "M">("all");
-  const [mode, setMode] = useState<Mode>("single");
+  const [mode, setMode] = useState<Mode>("compare");
   const [activeArm, setActiveArm] = useState<ArmId>("D_grounded");
 
   const filteredCases = useMemo(
@@ -85,7 +85,7 @@ export function Sandbox() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-5 lg:h-[480px]">
+          <div className="grid lg:grid-cols-2 gap-5 lg:h-[600px]">
             <ReportPanel
               sandboxCase={sandboxCase}
               highlightEvidence={

@@ -10,9 +10,12 @@ export function Hero() {
         <p className="font-mono-data text-[11px] tracking-wider uppercase text-accent mb-3">
           Evaluation sandbox · not a clinical product
         </p>
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground max-w-2xl text-balance">
-          Source-grounded TNM evaluation sandbox
+        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-foreground text-balance">
+          StageGround
         </h1>
+        <p className="mt-1.5 text-lg sm:text-xl font-medium text-muted">
+          Source-grounded TNM evaluation sandbox
+        </p>
         <p className="mt-3 max-w-2xl text-sm sm:text-base text-muted leading-relaxed">
           Compare how structured outputs, abstention, and evidence binding
           change the behavior of the same LLM on pathology reports.{" "}

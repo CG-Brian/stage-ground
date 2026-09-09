@@ -1,33 +1,28 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { SandboxProvider } from "@/components/sandbox/sandbox-context";
 import { Hero } from "@/components/sections/Hero";
-import { CoreProblem } from "@/components/sections/CoreProblem";
-import { WhatWeMeasure } from "@/components/sections/WhatWeMeasure";
-import { InterventionLadder } from "@/components/sections/InterventionLadder";
-import { MainResults } from "@/components/sections/MainResults";
-import { EvidenceBinding } from "@/components/sections/EvidenceBinding";
+import { SandboxSection } from "@/components/sections/SandboxSection";
+import { WhyThisMatters } from "@/components/sections/WhyThisMatters";
 import { M0Paradox } from "@/components/sections/M0Paradox";
-import { CaseExplorerSection } from "@/components/sections/CaseExplorerSection";
-import { TNMDifferences } from "@/components/sections/TNMDifferences";
+import { AggregateResults } from "@/components/sections/AggregateResults";
+import { InterventionLadder } from "@/components/sections/InterventionLadder";
 import { Methodology } from "@/components/sections/Methodology";
 
 export default function Home() {
   return (
-    <>
+    <SandboxProvider>
       <Nav />
       <main>
         <Hero />
-        <CoreProblem />
-        <WhatWeMeasure />
-        <InterventionLadder />
-        <MainResults />
-        <EvidenceBinding />
+        <SandboxSection />
+        <WhyThisMatters />
         <M0Paradox />
-        <CaseExplorerSection />
-        <TNMDifferences />
+        <AggregateResults />
+        <InterventionLadder />
         <Methodology />
       </main>
       <Footer />
-    </>
+    </SandboxProvider>
   );
 }

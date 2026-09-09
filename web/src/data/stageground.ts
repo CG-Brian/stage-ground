@@ -41,6 +41,16 @@ export const ARM_NAME: Record<ArmId, string> = {
   D_grounded: "Grounded",
 };
 
+/** One-line subtitle for each arm's tab in the sandbox -- makes the ablation
+ * (what changed relative to the previous rung) visible without a separate
+ * educational section. */
+export const ARM_SUBTITLE: Record<ArmId, string> = {
+  A_zero_shot: "Zero-shot",
+  C_constrained: "+ structured output",
+  C_plus_unknown: "+ abstention",
+  D_grounded: "+ evidence binding",
+};
+
 export const ARM_COLOR_VAR: Record<ArmId, string> = {
   A_zero_shot: "var(--arm-a)",
   C_constrained: "var(--arm-c)",
@@ -123,37 +133,10 @@ interface StagegroundData {
   };
 }
 
-export type CaseCategory =
-  | "correct_grounded"
-  | "correct_unsupported"
-  | "wrong_grounded"
-  | "abstained"
-  | "m0_unsupported";
-
-export interface CaseExample {
-  id: string;
-  category: CaseCategory;
-  caseId: string;
-  arm: ArmId;
-  target: "T" | "N" | "M";
-  groundTruth: string | null;
-  prediction: string;
-  evidence: string | null;
-  reportExcerpt: string;
-  excerptTruncated: boolean;
-  evidenceSpanFound: boolean | null;
-  semanticSupport: boolean | null;
-  correct: boolean;
-  abstained: boolean;
-  errors: string[];
-}
-
 export const data = rawData as StagegroundData;
-export const caseExamples = (rawCases as { cases: CaseExample[] }).cases;
-
 export const armById = (id: ArmId) => data.arms.find((a) => a.id === id)!;
 
-/** Convenience: overall metrics for all 4 arms, in canonical A/C/C+/D order. */
+/** Overall metrics for all 4 arms, in canonical A/C/C+/D order. */
 export const overallByArmOrder = ARM_ORDER.map(
   (id) => data.arms.find((a) => a.id === id)!
 );
@@ -163,23 +146,84 @@ export function targetByArmOrder(target: "T" | "N" | "M") {
   return ARM_ORDER.map((id) => rows.find((r) => r.id === id)!);
 }
 
-export const CASE_CATEGORY_LABEL: Record<CaseCategory, string> = {
+// --- Sandbox case data --------------------------------------------------
+
+export type SandboxCategory =
+  | "correct_grounded"
+  | "correct_unsupported"
+  | "wrong_grounded"
+  | "abstained"
+  | "m0_unsupported"
+  | "span_not_supporting";
+
+export interface PredictionView {
+  prediction: string;
+  evidence: string | null;
+  correct: boolean;
+  abstained: boolean;
+  evidenceSpanFound: boolean | null;
+  semanticSupport: boolean | null;
+}
+
+export interface SandboxCase {
+  id: string;
+  displayId: string;
+  caseId: string;
+  target: "T" | "N" | "M";
+  gold: string | null;
+  report: string;
+  categories: SandboxCategory[];
+  arms: Record<ArmId, PredictionView>;
+}
+
+interface CaseExamplesFile {
+  cases: SandboxCase[];
+  defaultCaseId: string;
+}
+
+const caseExamplesFile = rawCases as CaseExamplesFile;
+export const sandboxCases: SandboxCase[] = caseExamplesFile.cases;
+export const DEFAULT_SANDBOX_CASE_ID = caseExamplesFile.defaultCaseId;
+
+export const sandboxCaseById = (id: string) =>
+  sandboxCases.find((c) => c.id === id);
+
+export const CATEGORY_LABEL: Record<SandboxCategory, string> = {
   correct_grounded: "Correct + grounded",
   correct_unsupported: "Correct + unsupported",
   wrong_grounded: "Wrong + grounded",
   abstained: "Abstained",
-  m0_unsupported: "M0: correct, unsupported",
+  m0_unsupported: "M0: correct but unsupported",
+  span_not_supporting: "Evidence exists but doesn't support label",
 };
 
-export const CASE_CATEGORY_BLURB: Record<CaseCategory, string> = {
-  correct_grounded:
-    "The predicted label matches gold, and the model's cited evidence both appears in the report and actually implies that label.",
-  correct_unsupported:
-    "The predicted label matches gold, but the model's own cited evidence doesn't actually justify it.",
-  wrong_grounded:
-    "The model cited real, on-point evidence — but the predicted label still doesn't match gold.",
-  abstained:
-    "The model declined to assert a label rather than guess without support.",
-  m0_unsupported:
-    "An M0 prediction that is technically correct against gold, but not backed by evidence that specifically implies M0.",
-};
+export const CATEGORY_ORDER: SandboxCategory[] = [
+  "correct_grounded",
+  "correct_unsupported",
+  "wrong_grounded",
+  "abstained",
+  "m0_unsupported",
+  "span_not_supporting",
+];
+
+// --- Inline metric definitions (used in the sandbox, not a standalone
+// marketing section) -----------------------------------------------------
+
+export const METRIC_HELP = {
+  labelMatch: {
+    title: "Label match",
+    body: "Did the model's predicted TNM value equal the gold (registry) label for this target?",
+  },
+  spanGrounding: {
+    title: "Span grounding",
+    body: "Does the model's cited evidence appear verbatim (OCR-noise-tolerant) in the source report? A syntactic check only -- it says nothing about whether the text actually supports the prediction.",
+  },
+  semanticSupport: {
+    title: "Semantic support",
+    body: "Does that evidence actually justify the predicted label? Scored by a conservative, rule-based heuristic -- not a clinical adjudicator. Always false when the span itself isn't found.",
+  },
+  abstention: {
+    title: "Abstention",
+    body: "Did the model decline to assert a label (\"unknown\") instead of guessing without support?",
+  },
+} as const;

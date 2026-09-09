@@ -1,29 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const jbMono = JetBrains_Mono({
-  variable: "--font-jbmono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "StageGround — Source-grounded evaluation of clinical LLM extraction",
+  title: "StageGround — source-grounded TNM evaluation sandbox",
   description:
-    "StageGround evaluates whether LLM-generated TNM cancer staging labels are actually supported by the source pathology report, rather than merely matching a gold label.",
+    "Compare how structured outputs, abstention, and evidence binding change the behavior of the same LLM on pathology reports. Correct predictions are not necessarily grounded predictions.",
 };
 
 export default function RootLayout({
@@ -32,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${sourceSerif.variable} ${jbMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}

@@ -9,31 +9,33 @@ export function Card({
 }) {
   return (
     <As
-      className={`rounded-xl border border-border bg-surface p-6 ${className}`}
+      className={`rounded-md border border-border bg-surface p-5 ${className}`}
     >
       {children}
     </As>
   );
 }
 
-export function Pill({
+export function Tag({
   children,
   tone = "neutral",
 }: {
   children: React.ReactNode;
-  tone?: "neutral" | "good" | "bad" | "accent";
+  tone?: "neutral" | "good" | "bad" | "warn" | "accent";
 }) {
   const toneClass = {
-    neutral: "bg-black/5 dark:bg-white/10 text-muted border-border",
-    good: "text-good border-good/30 bg-good/10",
-    bad: "text-bad border-bad/30 bg-bad/10",
-    accent: "text-accent border-accent/30 bg-accent-soft",
+    neutral: "bg-surface-2 text-muted border-border",
+    good: "text-good border-good/25 bg-good-soft",
+    bad: "text-bad border-bad/25 bg-bad-soft",
+    warn: "text-warn border-warn/25 bg-warn-soft",
+    accent: "text-accent border-accent/25 bg-accent-soft",
   }[tone];
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium font-mono-data ${toneClass}`}
+      className={`inline-flex items-center gap-1.5 rounded border px-2 py-0.5 text-xs font-medium font-mono-data ${toneClass}`}
     >
       {children}
     </span>
   );
 }
+

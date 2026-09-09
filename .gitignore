@@ -8,6 +8,10 @@ data/processed/*
 results/predictions/*
 !results/predictions/.gitkeep
 
+# resumable-run scratch state and run logs -- regenerable, not a result artifact
+results/_checkpoints/
+logs/
+
 # secrets
 .env
 
@@ -29,3 +33,6 @@ web/next-env.d.ts
 
 # editor / OS
 .DS_Store
+
+# coding-agent scaffolding (dev-environment config, not part of the research)
+.claude/

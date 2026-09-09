@@ -1,0 +1,33 @@
+{
+  "seed": 42,
+  "target_counts": {
+    "T": 20,
+    "N": 20,
+    "M": 40
+  },
+  "mode": "grounding-blind",
+  "m_priority_arm": "C_constrained",
+  "m_comparison_arm": "D_grounded",
+  "m_priority_fraction": 0.5,
+  "m_semantic_balance_fraction": 0.3,
+  "source_experiment_id": "20260907T214735_gpt-4o_seed42_n200",
+  "source_prediction_file": "results/20260907T214735_gpt-4o_seed42_n200/predictions.jsonl",
+  "timestamp": "2026-09-08T00:02:10.449211+00:00",
+  "achieved_composition": {
+    "T": {
+      "requested": 20,
+      "selected": 20
+    },
+    "N": {
+      "requested": 20,
+      "selected": 20
+    },
+    "M": {
+      "requested": 40,
+      "selected": 40,
+      "priority_tier_selected": 20,
+      "semantic_balance_tier_selected": 12,
+      "random_fill_selected": 8
+    }
+  }
+}

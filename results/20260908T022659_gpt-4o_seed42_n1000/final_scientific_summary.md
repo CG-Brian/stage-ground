@@ -79,7 +79,7 @@ Gold M is 94.7% M0 / 5.3% M1 in this eligible pool (`extra_analysis/gold_label_d
 - Evidence-binding (D vs C+) produces a real, statistically significant improvement in semantic-supported accuracy and semantic-unsupported rate, *without* trading away coverage relative to C+ — this is not just "D abstains more."
 - The C→C+ abstention-only change is a mixed intervention: it lowers the unsupported rate among asserted answers but also lowers accuracy and (overall) semantic-supported accuracy; it is not a free win.
 - The T/N/M pattern is not homogeneous: M drives essentially all of the cross-arm accuracy differences, while T and N accuracy are largely arm-invariant.
-- M-stage near-ceiling accuracy across all four arms is not accompanied by meaningful source support under this heuristic, and gold M0 prevalence (94.7%) is high enough that base-rate prediction alone would produce similar accuracy — this is a genuine reliability caveat about M-stage evaluation in this dataset, not an artifact of one arm's prompt.
+- M0 predictions have near-ceiling label accuracy across all four arms (overall M-stage accuracy is not near ceiling — see §8), and that near-ceiling M0 accuracy is not accompanied by meaningful source support under this heuristic. Gold M0 prevalence (94.7%) is high enough that base-rate prediction alone would produce similarly high M0 accuracy — this is a genuine reliability caveat about M-stage evaluation in this dataset, not an artifact of one arm's prompt.
 
 ## 11. What is NOT justified by this run
 

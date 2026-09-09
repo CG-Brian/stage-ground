@@ -1,0 +1,185 @@
+{
+  "agreement": {
+    "overall": {
+      "evidence_span_found": {
+        "n": 74,
+        "percent_agreement": 0.972972972972973,
+        "cohens_kappa": 0.9425911559348332,
+        "tp": 45,
+        "fp": 0,
+        "tn": 27,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.9574468085106383,
+        "specificity": 1.0
+      },
+      "semantic_support": {
+        "n": 74,
+        "percent_agreement": 0.7567567567567568,
+        "cohens_kappa": 0.5194805194805194,
+        "tp": 20,
+        "fp": 0,
+        "tn": 36,
+        "fn": 18,
+        "precision": 1.0,
+        "recall": 0.5263157894736842,
+        "specificity": 1.0
+      }
+    },
+    "T": {
+      "evidence_span_found": {
+        "n": 20,
+        "percent_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "tp": 19,
+        "fp": 0,
+        "tn": 1,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0
+      },
+      "semantic_support": {
+        "n": 20,
+        "percent_agreement": 0.65,
+        "cohens_kappa": 0.339622641509434,
+        "tp": 9,
+        "fp": 0,
+        "tn": 4,
+        "fn": 7,
+        "precision": 1.0,
+        "recall": 0.5625,
+        "specificity": 1.0
+      }
+    },
+    "N": {
+      "evidence_span_found": {
+        "n": 18,
+        "percent_agreement": 0.9444444444444444,
+        "cohens_kappa": 0.8235294117647058,
+        "tp": 14,
+        "fp": 0,
+        "tn": 3,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9333333333333333,
+        "specificity": 1.0
+      },
+      "semantic_support": {
+        "n": 18,
+        "percent_agreement": 0.4444444444444444,
+        "cohens_kappa": 0.15094339622641517,
+        "tp": 4,
+        "fp": 0,
+        "tn": 4,
+        "fn": 10,
+        "precision": 1.0,
+        "recall": 0.2857142857142857,
+        "specificity": 1.0
+      }
+    },
+    "M": {
+      "evidence_span_found": {
+        "n": 36,
+        "percent_agreement": 0.9722222222222222,
+        "cohens_kappa": 0.9387755102040817,
+        "tp": 12,
+        "fp": 0,
+        "tn": 23,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9230769230769231,
+        "specificity": 1.0
+      },
+      "semantic_support": {
+        "n": 36,
+        "percent_agreement": 0.9722222222222222,
+        "cohens_kappa": 0.9158878504672897,
+        "tp": 7,
+        "fp": 0,
+        "tn": 28,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.875,
+        "specificity": 1.0
+      }
+    }
+  },
+  "source_sufficiency": {
+    "overall": {
+      "n_reviewed": 80,
+      "pct_source_sufficient": 0.5875,
+      "n_source_sufficient_scored": 80,
+      "pct_explicit_stage": 0.4375,
+      "n_explicit_stage_scored": 80,
+      "pct_inferential_evidence": 0.475,
+      "n_inferential_evidence_scored": 80
+    },
+    "T": {
+      "n_reviewed": 20,
+      "pct_source_sufficient": 1.0,
+      "n_source_sufficient_scored": 20,
+      "pct_explicit_stage": 0.75,
+      "n_explicit_stage_scored": 20,
+      "pct_inferential_evidence": 1.0,
+      "n_inferential_evidence_scored": 20
+    },
+    "N": {
+      "n_reviewed": 20,
+      "pct_source_sufficient": 0.85,
+      "n_source_sufficient_scored": 20,
+      "pct_explicit_stage": 0.5,
+      "n_explicit_stage_scored": 20,
+      "pct_inferential_evidence": 0.8,
+      "n_inferential_evidence_scored": 20
+    },
+    "M": {
+      "n_reviewed": 40,
+      "pct_source_sufficient": 0.25,
+      "n_source_sufficient_scored": 40,
+      "pct_explicit_stage": 0.25,
+      "n_explicit_stage_scored": 40,
+      "pct_inferential_evidence": 0.05,
+      "n_inferential_evidence_scored": 40
+    },
+    "M_by_arm_pattern": {
+      "both_abstain": {
+        "n_reviewed": 5,
+        "pct_source_sufficient": 0.0,
+        "n_source_sufficient_scored": 5,
+        "pct_explicit_stage": 0.0,
+        "n_explicit_stage_scored": 5,
+        "pct_inferential_evidence": 0.0,
+        "n_inferential_evidence_scored": 5
+      },
+      "both_predict": {
+        "n_reviewed": 13,
+        "pct_source_sufficient": 0.6923076923076923,
+        "n_source_sufficient_scored": 13,
+        "pct_explicit_stage": 0.6923076923076923,
+        "n_explicit_stage_scored": 13,
+        "pct_inferential_evidence": 0.07692307692307693,
+        "n_inferential_evidence_scored": 13
+      },
+      "priority_predicts_comparison_abstains": {
+        "n_reviewed": 22,
+        "pct_source_sufficient": 0.045454545454545456,
+        "n_source_sufficient_scored": 22,
+        "pct_explicit_stage": 0.045454545454545456,
+        "n_explicit_stage_scored": 22,
+        "pct_inferential_evidence": 0.045454545454545456,
+        "n_inferential_evidence_scored": 22
+      }
+    }
+  },
+  "m0_prior_prediction": {
+    "n": 21,
+    "accuracy": 0.9523809523809523,
+    "pct_source_sufficient": 0.0,
+    "n_source_sufficient_scored": 21,
+    "pct_semantic_support": 0.0,
+    "n_semantic_support_scored": 21,
+    "pct_explicit_m_token_present": 0.0,
+    "n_explicit_m_token_scored": 21
+  }
+}

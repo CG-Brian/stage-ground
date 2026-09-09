@@ -1,3 +1,8 @@
+> **Archived development handoff note**, written mid-project (2026-08-05) to
+> preserve local git/session state across a machine reset. It references
+> test counts, git state, and a `web/` gitlink issue that are all long since
+> resolved. Not current documentation — see the [README](../../README.md).
+
 # StageGround Context
 
 Last updated: 2026-08-05

@@ -1,3 +1,10 @@
+> **Historical design document.** This is the original project plan, written
+> before the ablation study existed. It describes a five-arm design
+> (A/B/C/D/E), a Streamlit demo, and an "Arm E" that isn't how the project
+> ended up using an external classifier (see `external_baselines/bbten/`
+> instead). Kept for the record, not as current documentation — for what
+> actually shipped, start at the [README](../../README.md), then
+> [`docs/methods.md`](../methods.md).
 
 # StageGround
 

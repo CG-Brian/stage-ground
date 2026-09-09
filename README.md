@@ -41,7 +41,7 @@ Full definitions and denominators: [`docs/evaluation.md`](docs/evaluation.md).
 
 ## Data
 
-9,523 TCGA pathology reports (public, MIT-licensed corpus originally assembled by the [Tatonetti lab](https://github.com/tatonetti-lab/tnm-stage-classifier)), joined to GDC clinical metadata for T/N/M gold labels. Label coverage falls off target by target — T 73.1%, N 59.6%, M 48.4%, all three together 41.0% (3,907 reports) — and that drop isn't noise; M in particular often depends on imaging a pathology report doesn't contain. The main study samples 1,000 of those 3,907 fully-labeled reports. Details: [`docs/methods.md`](docs/methods.md).
+9,523 public TCGA pathology reports, distributed via the [Tatonetti lab](https://github.com/tatonetti-lab/tnm-stage-classifier)'s MIT-licensed repository, joined to GDC clinical metadata for T/N/M gold labels. Label coverage falls off target by target — T 73.1%, N 59.6%, M 48.4%, all three together 41.0% (3,907 reports) — and that drop isn't noise; M in particular often depends on imaging a pathology report doesn't contain. The main study samples 1,000 of those 3,907 fully-labeled reports. Details: [`docs/methods.md`](docs/methods.md).
 
 ## Experimental design
 
@@ -54,7 +54,7 @@ Four prompting strategies, same model, same 1,000 reports, same targets. Only th
 | C+ — Constrained + unknown | Adds explicit permission to abstain |
 | D — Grounded | Adds mandatory evidence binding |
 
-Read A → C → C+ → D as one progressive intervention rather than four unrelated prompts: C adds structure to A, C+ adds permission to abstain on top of C, D adds a requirement — every asserted label must come with a verbatim quote from the report — on top of C+. It's a paired design: every arm sees the identical 1,000 cases, so a difference between arms is attributable to the prompting change, not to which reports happened to get sampled.
+Read A → C → C+ → D as one progressive intervention rather than four unrelated prompts: C adds structure to A, C+ adds permission to abstain on top of C, D adds a requirement — every asserted label must come with a verbatim quote from the report — on top of C+. It's a paired design: every arm sees the identical 1,000 cases, so comparisons isolate the prompting intervention from case-sampling differences.
 
 ## Main findings
 

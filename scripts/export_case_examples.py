@@ -5,12 +5,18 @@ FOUR arms' predictions on the SAME report -- the shape the sandbox's
 single-arm tabs and compare-all table both need to show how one report is
 handled differently by each prompting strategy.
 
+Selection is deterministic: fixed category quotas (below), stable sort order
+before any tie-breaking, and one hand-identified default case (documented at
+DEFAULT_CASE_ID). Re-running this script against the same predictions.jsonl
+always produces the same case-examples.json.
+
 TCGA pathology reports are public, de-identified research data (patient
 identifiers are TCGA barcodes, not names/MRNs) -- confirmed with the user
 before this script was first written. `_scrub` below is a defensive,
 best-effort regex pass over every exported report text regardless, since a
 "basic safety scrub" on exported examples is required independent of that
-confirmation.
+confirmation. The barcode is kept in `caseId` for provenance but the UI
+label is the sequential, human-readable `displayId` / `title`.
 
     uv run python scripts/export_case_examples.py
 
@@ -50,6 +56,32 @@ _PII_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
+# Priority order used to pick ONE title for a case that matches several
+# category tags -- most narratively specific / rare pattern wins, so e.g. a
+# case that happens to be both "correct_grounded" and "evidence_binding_change"
+# is titled for the more distinctive ablation story, not the generic one.
+TITLE_PRIORITY = [
+    "c_asserts_d_abstains",
+    "evidence_binding_change",
+    "m0_unsupported",
+    "wrong_grounded",
+    "span_not_supporting",
+    "correct_unsupported",
+    "abstained",
+    "correct_grounded",
+]
+
+TITLE_BY_CATEGORY = {
+    "c_asserts_d_abstains": "Constrained asserts, grounded abstains",
+    "evidence_binding_change": "Evidence binding changes behavior",
+    "m0_unsupported": "M0 base-rate pattern",
+    "wrong_grounded": "Grounded but incorrect",
+    "span_not_supporting": "Real span, unsupported claim",
+    "correct_unsupported": "Correct but unsupported",
+    "abstained": "Abstains rather than guess",
+    "correct_grounded": "Correct and grounded",
+}
+
 
 def _scrub(text: str) -> str:
     return _PII_PATTERNS.sub("[redacted]", text)
@@ -77,7 +109,32 @@ def _category_tags(arms: dict[str, PredictionRecord], target: str, gold: str | N
             and not r.evidence_semantically_supports_prediction
         ):
             tags.add("m0_unsupported")
+
+    c, d = arms["C_constrained"], arms["D_grounded"]
+    cplus = arms["C_plus_unknown"]
+    # F: mandatory evidence binding (C+ -> D) visibly changes behavior on
+    # this exact report -- abstention flips, or (when both assert) semantic
+    # support or the predicted value itself differs.
+    if d.abstained != cplus.abstained:
+        tags.add("evidence_binding_change")
+    elif not cplus.abstained and not d.abstained and (
+        d.evidence_semantically_supports_prediction != cplus.evidence_semantically_supports_prediction
+        or d.prediction != cplus.prediction
+    ):
+        tags.add("evidence_binding_change")
+    # G: the accuracy/grounding/coverage tradeoff -- C_constrained asserts a
+    # label while D_grounded abstains on the identical report.
+    if not c.abstained and d.abstained:
+        tags.add("c_asserts_d_abstains")
+
     return sorted(tags)
+
+
+def _title_for(tags: list[str]) -> str:
+    for category in TITLE_PRIORITY:
+        if category in tags:
+            return TITLE_BY_CATEGORY[category]
+    return "Ablation example"  # unreachable given _category_tags always tags something evaluable
 
 
 def _prediction_view(r: PredictionRecord) -> dict:
@@ -112,13 +169,17 @@ def main() -> None:
         for key, arms in complete.items()
     }
 
+    # Quotas sum with the default case and typical de-dupe overlap to land
+    # in the spec's target range of ~12-16 curated cases.
     quotas = {
-        "correct_grounded": 3,
-        "correct_unsupported": 3,
-        "wrong_grounded": 3,
-        "abstained": 2,
-        "m0_unsupported": 3,
-        "span_not_supporting": 2,
+        "correct_grounded": 2,
+        "correct_unsupported": 2,
+        "wrong_grounded": 2,
+        "abstained": 1,
+        "m0_unsupported": 2,
+        "span_not_supporting": 1,
+        "evidence_binding_change": 2,
+        "c_asserts_d_abstains": 2,
     }
     chosen_keys: list[tuple[str, str]] = [(DEFAULT_CASE_ID, DEFAULT_TARGET)]
     seen_targets_per_category: dict[str, set[str]] = defaultdict(set)
@@ -151,14 +212,16 @@ def main() -> None:
         arms = complete[key]
         gold = next(iter(arms.values())).ground_truth
         report = _scrub(text_by_case[case_id])
+        tags = tagged[key]
         cases.append({
             "id": f"case-{i:02d}",
-            "displayId": f"Case {i + 1:03d}",
+            "displayId": f"Case {i + 1:02d}",
+            "title": _title_for(tags),
             "caseId": case_id,
             "target": target,
             "gold": gold,
             "report": report,
-            "categories": tagged[key],
+            "categories": tags,
             "arms": {arm: _prediction_view(arms[arm]) for arm in ARMS},
         })
 
@@ -168,7 +231,7 @@ def main() -> None:
     OUT_PATH.write_text(json.dumps({"cases": cases, "defaultCaseId": default_case_id}, indent=2))
     print(f"wrote {len(cases)} cases -> {OUT_PATH}")
     for c in cases:
-        print(f"  [{c['id']}] {c['target']} gold={c['gold']} categories={c['categories']}")
+        print(f"  [{c['displayId']}] {c['title']!r} target={c['target']} gold={c['gold']} categories={c['categories']}")
 
 
 if __name__ == "__main__":

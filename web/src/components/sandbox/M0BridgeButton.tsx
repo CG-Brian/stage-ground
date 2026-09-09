@@ -11,7 +11,7 @@ export function M0BridgeButton() {
       onClick={() => focusCase(DEFAULT_SANDBOX_CASE_ID)}
       className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-accent rounded"
     >
-      View an M0 failure case in the sandbox →
+      View a real M0 example →
     </button>
   );
 }

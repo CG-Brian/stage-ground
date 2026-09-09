@@ -17,8 +17,9 @@ export function Hero() {
           Source-grounded TNM evaluation sandbox
         </p>
         <p className="mt-3 max-w-2xl text-sm sm:text-base text-muted leading-relaxed">
-          Compare how structured outputs, abstention, and evidence binding
-          change the behavior of the same LLM on pathology reports.{" "}
+          Replay real predictions from a 1,000-case clinical LLM experiment
+          and compare how structured output, abstention, and evidence
+          binding change model behavior.{" "}
           <span className="text-foreground font-medium">
             Correct predictions are not necessarily grounded predictions.
           </span>

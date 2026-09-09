@@ -88,8 +88,7 @@ export function ExampleSelector({
         >
           {cases.map((c) => (
             <option key={c.id} value={c.id}>
-              {c.displayId} · {c.target} · gold {c.gold} ·{" "}
-              {c.categories.map((cat) => CATEGORY_LABEL[cat]).join(", ")}
+              {c.displayId} · {c.title} ({c.target}, gold {c.gold})
             </option>
           ))}
         </select>

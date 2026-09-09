@@ -154,8 +154,20 @@ export type SandboxCategory =
   | "wrong_grounded"
   | "abstained"
   | "m0_unsupported"
-  | "span_not_supporting";
+  | "span_not_supporting"
+  | "evidence_binding_change"
+  | "c_asserts_d_abstains";
 
+/**
+ * Every field here comes directly from a committed `PredictionRecord`
+ * (`results/20260908T022659_gpt-4o_seed42_n1000/predictions.jsonl`) with no
+ * re-derivation: `evidenceSpanFound`/`semanticSupport` are `null` exactly
+ * when the backend recorded them as `None` (abstained predictions only --
+ * see `stageground.evaluation.records` docstring), and `correct` is the
+ * backend's own `prediction == ground_truth` comparison (still meaningful
+ * when abstained: "unknown" never equals a real TNM value, so an abstained
+ * prediction is simply `correct: false`, not undefined).
+ */
 export interface PredictionView {
   prediction: string;
   evidence: string | null;
@@ -167,7 +179,14 @@ export interface PredictionView {
 
 export interface SandboxCase {
   id: string;
+  /** Sequential, human-readable label ("Case 01") -- never the raw TCGA
+   * barcode, which stays in `caseId` for provenance only. */
   displayId: string;
+  /** Short, scientifically-neutral, category-derived title, e.g.
+   * "M0 base-rate pattern" -- see scripts/export_case_examples.py's
+   * TITLE_PRIORITY for the deterministic selection rule when a case
+   * matches more than one category. */
+  title: string;
   caseId: string;
   target: "T" | "N" | "M";
   gold: string | null;
@@ -195,6 +214,8 @@ export const CATEGORY_LABEL: Record<SandboxCategory, string> = {
   abstained: "Abstained",
   m0_unsupported: "M0: correct but unsupported",
   span_not_supporting: "Evidence exists but doesn't support label",
+  evidence_binding_change: "Evidence binding changes behavior",
+  c_asserts_d_abstains: "C asserts, D abstains",
 };
 
 export const CATEGORY_ORDER: SandboxCategory[] = [
@@ -204,6 +225,8 @@ export const CATEGORY_ORDER: SandboxCategory[] = [
   "abstained",
   "m0_unsupported",
   "span_not_supporting",
+  "evidence_binding_change",
+  "c_asserts_d_abstains",
 ];
 
 // --- Inline metric definitions (used in the sandbox, not a standalone

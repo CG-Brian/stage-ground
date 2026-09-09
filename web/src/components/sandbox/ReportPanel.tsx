@@ -37,8 +37,14 @@ export function ReportPanel({
   return (
     <div className="flex flex-col h-full min-h-0">
       <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span className="font-mono-data text-xs text-muted-2">
+        <span
+          className="font-mono-data text-xs text-muted-2"
+          title={`Source case: ${sandboxCase.caseId}`}
+        >
           {sandboxCase.displayId}
+        </span>
+        <span className="text-sm font-medium text-foreground">
+          {sandboxCase.title}
         </span>
         <Tag tone="neutral">Target {sandboxCase.target}</Tag>
         <Tag tone="neutral">Gold {sandboxCase.gold ?? "—"}</Tag>

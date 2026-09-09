@@ -8,19 +8,16 @@ import {
   type SandboxCategory,
 } from "@/data/stageground";
 import { Tag } from "../ui/Card";
-import { useSandbox } from "./sandbox-context";
+import { useSandbox, type SandboxMode } from "./sandbox-context";
 import { ExampleSelector } from "./ExampleSelector";
 import { ReportPanel } from "./ReportPanel";
 import { ArmTabs, SingleArmDetail } from "./SingleArmPanel";
 import { CompareTable } from "./CompareTable";
 
-type Mode = "single" | "compare";
-
 export function Sandbox() {
-  const { selectedCaseId, setSelectedCaseId } = useSandbox();
+  const { selectedCaseId, setSelectedCaseId, mode, setMode } = useSandbox();
   const [category, setCategory] = useState<SandboxCategory | "all">("all");
   const [target, setTarget] = useState<"all" | "T" | "N" | "M">("all");
-  const [mode, setMode] = useState<Mode>("compare");
   const [activeArm, setActiveArm] = useState<ArmId>("D_grounded");
 
   const filteredCases = useMemo(
@@ -45,10 +42,13 @@ export function Sandbox() {
     <div id="sandbox" className="scroll-mt-16">
       <div className="rounded-lg border border-border-strong bg-surface overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-4 py-2.5 bg-surface-2">
-          <Tag tone="accent">Reproducible demo</Tag>
-          <span className="text-xs text-muted-2">
-            Using committed 1,000-case experiment outputs — no live model calls
+          <span className="flex items-center gap-2">
+            <Tag tone="accent">Research replay</Tag>
+            <span className="text-xs text-muted-2">
+              Real outputs from the committed 1,000-case StageGround experiment
+            </span>
           </span>
+          <span className="text-xs text-muted-2">No model calls are made in this demo</span>
         </div>
 
         <div className="p-4 sm:p-5">
@@ -67,7 +67,7 @@ export function Sandbox() {
               aria-label="Sandbox mode"
               className="inline-flex rounded border border-border p-0.5 shrink-0"
             >
-              {(["single", "compare"] as Mode[]).map((m) => (
+              {(["single", "compare"] as SandboxMode[]).map((m) => (
                 <button
                   key={m}
                   type="button"

@@ -1,0 +1,5 @@
+,pred_N0,pred_N1,pred_N2,pred_N3
+gold_N0,80,5,2,2
+gold_N1,6,25,2,3
+gold_N2,0,3,9,1
+gold_N3,3,1,0,3

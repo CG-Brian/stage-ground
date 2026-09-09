@@ -1,0 +1,7 @@
+target,truncated,n,accuracy,n_m1,m1_recall,m1_recall_note
+T,False,126,0.7937,,,
+T,True,17,0.8235,,,
+N,False,134,0.8209,,,
+N,True,11,0.6364,,,
+M,False,101,0.901,8.0,0.125,
+M,True,61,0.918,4.0,0.0,"n<5, too small to interpret"

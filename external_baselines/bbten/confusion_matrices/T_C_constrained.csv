@@ -1,0 +1,6 @@
+,pred_T1,pred_T2,pred_T3,pred_T4,pred_ABSTAIN_OR_INVALID
+gold_T1,18,13,1,1,5
+gold_T2,0,51,1,1,0
+gold_T3,0,1,28,2,2
+gold_T4,0,2,2,15,0
+gold_ABSTAIN_OR_INVALID,0,0,0,0,0

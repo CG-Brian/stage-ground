@@ -1,0 +1,128 @@
+{
+  "T": {
+    "BBTEN_vs_A_zero_shot": {
+      "diff": 0.006993006993006978,
+      "ci_low": -0.0699300699300699,
+      "ci_high": 0.07692307692307698,
+      "p_value": 0.948,
+      "n_boot": 5000,
+      "n_paired_cases": 143,
+      "significant": false,
+      "p_display": "0.9480"
+    },
+    "BBTEN_vs_C_constrained": {
+      "diff": 0.013986013986013957,
+      "ci_low": -0.05594405594405594,
+      "ci_high": 0.08391608391608385,
+      "p_value": 0.7808,
+      "n_boot": 5000,
+      "n_paired_cases": 143,
+      "significant": false,
+      "p_display": "0.7808"
+    },
+    "BBTEN_vs_C_plus_unknown": {
+      "diff": 0.04895104895104896,
+      "ci_low": -0.020979020979020935,
+      "ci_high": 0.11888111888111885,
+      "p_value": 0.1936,
+      "n_boot": 5000,
+      "n_paired_cases": 143,
+      "significant": false,
+      "p_display": "0.1936"
+    },
+    "BBTEN_vs_D_grounded": {
+      "diff": 0.034965034965035,
+      "ci_low": -0.034965034965035,
+      "ci_high": 0.1048951048951049,
+      "p_value": 0.3768,
+      "n_boot": 5000,
+      "n_paired_cases": 143,
+      "significant": false,
+      "p_display": "0.3768"
+    }
+  },
+  "N": {
+    "BBTEN_vs_A_zero_shot": {
+      "diff": 0.0,
+      "ci_low": -0.08275862068965523,
+      "ci_high": 0.08965517241379306,
+      "p_value": 1.0,
+      "n_boot": 5000,
+      "n_paired_cases": 145,
+      "significant": false,
+      "p_display": "1.0000"
+    },
+    "BBTEN_vs_C_constrained": {
+      "diff": -0.006896551724137945,
+      "ci_low": -0.096551724137931,
+      "ci_high": 0.08275862068965512,
+      "p_value": 0.9384,
+      "n_boot": 5000,
+      "n_paired_cases": 145,
+      "significant": false,
+      "p_display": "0.9384"
+    },
+    "BBTEN_vs_C_plus_unknown": {
+      "diff": 0.013793103448275779,
+      "ci_low": -0.07586206896551717,
+      "ci_high": 0.10344827586206895,
+      "p_value": 0.8132,
+      "n_boot": 5000,
+      "n_paired_cases": 145,
+      "significant": false,
+      "p_display": "0.8132"
+    },
+    "BBTEN_vs_D_grounded": {
+      "diff": 0.0,
+      "ci_low": -0.08275862068965523,
+      "ci_high": 0.08965517241379306,
+      "p_value": 1.0,
+      "n_boot": 5000,
+      "n_paired_cases": 145,
+      "significant": false,
+      "p_display": "1.0000"
+    }
+  },
+  "M": {
+    "BBTEN_vs_A_zero_shot": {
+      "diff": 0.4444444444444445,
+      "ci_low": 0.3580246913580246,
+      "ci_high": 0.5308641975308642,
+      "p_value": 0.0,
+      "n_boot": 5000,
+      "n_paired_cases": 162,
+      "significant": true,
+      "p_display": "< 0.0002"
+    },
+    "BBTEN_vs_C_constrained": {
+      "diff": 0.3765432098765432,
+      "ci_low": 0.2901234567901234,
+      "ci_high": 0.462962962962963,
+      "p_value": 0.0,
+      "n_boot": 5000,
+      "n_paired_cases": 162,
+      "significant": true,
+      "p_display": "< 0.0002"
+    },
+    "BBTEN_vs_C_plus_unknown": {
+      "diff": 0.5987654320987654,
+      "ci_low": 0.5123456790123457,
+      "ci_high": 0.6851851851851851,
+      "p_value": 0.0,
+      "n_boot": 5000,
+      "n_paired_cases": 162,
+      "significant": true,
+      "p_display": "< 0.0002"
+    },
+    "BBTEN_vs_D_grounded": {
+      "diff": 0.6419753086419753,
+      "ci_low": 0.5493827160493827,
+      "ci_high": 0.728395061728395,
+      "p_value": 0.0,
+      "n_boot": 5000,
+      "n_paired_cases": 162,
+      "significant": true,
+      "p_display": "< 0.0002"
+    }
+  }
+}
